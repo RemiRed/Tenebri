@@ -649,7 +649,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 306720337
+  m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &386856159
@@ -1548,7 +1548,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: -408972191
+  m_SortingLayerID: -2044704085
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1021337640
@@ -2039,8 +2039,8 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal Movement
-  m_VerticalAxis: Vertical Movement
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
@@ -2389,7 +2389,7 @@ Prefab:
     - target: {fileID: 199051012274932008, guid: a45e02791028e504ca9145ff55c0d81c,
         type: 2}
       propertyPath: m_SortingLayerID
-      value: -698793555
+      value: -2044704085
       objectReference: {fileID: 0}
     - target: {fileID: 199051012274932008, guid: a45e02791028e504ca9145ff55c0d81c,
         type: 2}
