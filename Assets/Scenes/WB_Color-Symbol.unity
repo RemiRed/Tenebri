@@ -17219,6 +17219,7 @@ Prefab:
       propertyPath: compatibleRooms.Array.data[0]
       value: 
       objectReference: {fileID: 1525683309}
+<<<<<<< HEAD
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b2a46fd8f442674698972039a38b549, type: 2}
   m_IsPrefabParent: 0
@@ -17277,6 +17278,8 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b1c3d27d55e14704d9ffcd71593d54e7, type: 2}
+=======
+>>>>>>> parent of 06fcf0f... Playtesting
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e00a5d5f4a3e3f41bd596190cb140a4, type: 3}
   m_IsPrefabParent: 0
