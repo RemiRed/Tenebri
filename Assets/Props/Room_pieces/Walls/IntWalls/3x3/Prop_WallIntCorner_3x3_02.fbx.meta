@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 230a50be757076848b50483060fe1a6b
-timeCreated: 1522075767
+guid: c9b3ae433cf9d8a4dbd01fd9f8fc2685
+timeCreated: 1522078104
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -8,10 +8,11 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: lambert5
-    2100002: lambert1
+    2100002: lambert6
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Prop_WallInt3x3_03
+    4300000: Prop_WallIntCorner_3x3_02
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -86,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
