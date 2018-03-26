@@ -4379,7 +4379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interractMethodName: PasswordButtonPressed
-  stopInterractMethodName: RevertColor
+  stopInterractMethodName: 
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
@@ -4398,7 +4398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interractMethodName: PasswordButtonPressed
-  stopInterractMethodName: RevertColor
+  stopInterractMethodName: 
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
@@ -4417,7 +4417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interractMethodName: PasswordButtonPressed
-  stopInterractMethodName: RevertColor
+  stopInterractMethodName: 
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
@@ -4453,7 +4453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interractMethodName: PasswordButtonPressed
-  stopInterractMethodName: RevertColor
+  stopInterractMethodName: 
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
@@ -4504,7 +4504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interractMethodName: PasswordButtonPressed
-  stopInterractMethodName: RevertColor
+  stopInterractMethodName: 
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
@@ -4523,7 +4523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interractMethodName: PasswordButtonPressed
-  stopInterractMethodName: RevertColor
+  stopInterractMethodName: 
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
@@ -4542,7 +4542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interractMethodName: PasswordButtonPressed
-  stopInterractMethodName: RevertColor
+  stopInterractMethodName: 
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
@@ -4561,7 +4561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interractMethodName: PasswordButtonPressed
-  stopInterractMethodName: RevertColor
+  stopInterractMethodName: 
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
@@ -4580,7 +4580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interractMethodName: PasswordButtonPressed
-  stopInterractMethodName: RevertColor
+  stopInterractMethodName: 
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
@@ -4599,7 +4599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interractMethodName: PasswordButtonPressed
-  stopInterractMethodName: RevertColor
+  stopInterractMethodName: 
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
@@ -4618,7 +4618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interractMethodName: PasswordButtonPressed
-  stopInterractMethodName: RevertColor
+  stopInterractMethodName: 
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
@@ -4637,7 +4637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   passwordButtons: []
-  nextID: 1
+  nextID: 0
   passwordLock: 0
   passwordLength: 0
 --- !u!114 &114963405963828820
@@ -4744,7 +4744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interractMethodName: PasswordButtonPressed
-  stopInterractMethodName: RevertColor
+  stopInterractMethodName: 
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
