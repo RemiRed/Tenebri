@@ -19,12 +19,18 @@ public class Password : MonoBehaviour {
 						Debug.Log ("CORRECT PASSWORD!"); //Replace with some door opening method cool
 			}
 				
-		} else {
+		} else if(_ID == 1 && nextID == 2){
 
-			for (int i = 0; i < passwordButtons.Count; i++) {
+			Debug.Log ("Reset to 1st");
+			nextID = 2;
+			passwordLock = 1;
 
-				passwordButtons [i].buttonActive = true;
-			}
+		}else{
+
+//			for (int i = 0; i < passwordButtons.Count; i++) {
+//
+//				passwordButtons [i].buttonActive = true;
+//			}
 
 			nextID = 1;
 			passwordLock = 0;

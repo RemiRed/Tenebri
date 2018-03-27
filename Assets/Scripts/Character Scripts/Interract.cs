@@ -61,9 +61,10 @@ public class Interract : MonoBehaviour
             oldPos = carriedObject.transform.position = Vector3.Lerp(carriedObject.transform.position, transform.position + transform.forward * carryDistance, Time.deltaTime * carrySpeed);
         }
 
-        if (lastInterractedObject != null && oldInterraction)
+        if (lastInterractedObject != null && !oldInterraction)
         {
             lastInterractedObject.GetComponent<Interractable>().StopInterract();
+			lastInterractedObject = null;
         }
     }
 		
