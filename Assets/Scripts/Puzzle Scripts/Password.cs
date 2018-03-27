@@ -9,9 +9,6 @@ public class Password : MonoBehaviour {
 		
 	public void CheckPassword(int _ID){
 
-
-
-
 		if (_ID == nextID) {
 
 			nextID++;
@@ -19,16 +16,16 @@ public class Password : MonoBehaviour {
 
 			if (passwordLock == passwordLength) {
 
-				Debug.Log ("CORRECT PASSWORD!"); //Replace with some door opening method cool
+						Debug.Log ("CORRECT PASSWORD!"); //Replace with some door opening method cool
+			}
+				
+		} else {
+
+			for (int i = 0; i < passwordButtons.Count; i++) {
+
+				passwordButtons [i].buttonActive = true;
 			}
 
-		}else if (_ID == 1) {
-				
-			nextID = 2;
-			passwordLock = 1;
-
-		} else{ 
-			
 			nextID = 1;
 			passwordLock = 0;
 		}
