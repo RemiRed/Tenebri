@@ -16,22 +16,16 @@ public class Password : MonoBehaviour {
 
 			if (passwordLock == passwordLength) {
 
-						Debug.Log ("CORRECT PASSWORD!"); //Replace with some door opening method cool
+				Debug.Log ("CORRECT PASSWORD!"); //Replace with some door opening method
 			}
 				
-		} else if(_ID == 1){
-
-			Debug.Log ("Reset to 1st");
+		} else if(_ID == 1){	//If 1st password button is pressed, password input is restarted
+			
 			nextID = 2;
 			passwordLock = 1;
 
-		}else{
-
-//			for (int i = 0; i < passwordButtons.Count; i++) {
-//
-//				passwordButtons [i].buttonActive = true;
-//			}
-
+		}else if(_ID != nextID-1){
+			
 			nextID = 1;
 			passwordLock = 0;
 		}
