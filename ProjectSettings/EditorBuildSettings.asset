@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/OnlineMenu.unity
     guid: 2b99c08f148dd874e88cb8b07686ec6b
   - enabled: 1
     path: Assets/Scenes/WB_Color-Symbol.unity
@@ -14,3 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pussle_Color-Symbol.unity
     guid: 0d6398c8f45dbc5408b9967e0e145a20
+  - enabled: 1
+    path: Assets/Scenes/Color Symbol Puzzle BY SAM.unity
+    guid: 6254cd4e42f7086449402ff173399796
