@@ -10,4 +10,7 @@ EditorBuildSettings:
     guid: 2b99c08f148dd874e88cb8b07686ec6b
   - enabled: 1
     path: Assets/Scenes/WB_Color-Symbol.unity
-    guid: 16448da5ec4e1bb46a010a249e175110
+    guid: fd5a00bda3e5604479a78f641f9b4edf
+  - enabled: 1
+    path: Assets/Scenes/Pussle_Color-Symbol.unity
+    guid: 0d6398c8f45dbc5408b9967e0e145a20
