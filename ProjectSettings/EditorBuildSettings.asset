@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WB_Color-Symbol.unity
     guid: 16448da5ec4e1bb46a010a249e175110
+  - enabled: 1
+    path: Assets/Scenes/RoundRoom.unity
+    guid: ec413d366c760c249a7fa5339dd5925a
