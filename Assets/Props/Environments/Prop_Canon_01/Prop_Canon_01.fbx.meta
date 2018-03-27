@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: bdd5d12c42ef8754f818c6fac74088a3
-timeCreated: 1522155874
+guid: 800fea5df89db964a818a0dfa6462e7f
+timeCreated: 1522159624
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Prop_Wineglas_01_Mat
+    2100000: Prop_Canon_01_Mat
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Prop_Wineglas_01
+    4300000: Prop_Canon_01
     9500000: //RootNode
   externalObjects: {}
   materials:
