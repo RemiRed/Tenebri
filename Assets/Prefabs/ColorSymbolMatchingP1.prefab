@@ -4678,7 +4678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   passwordButtons: []
-  nextID: 0
+  nextID: 1
   passwordLock: 0
   passwordLength: 0
 --- !u!114 &114963405963828820

@@ -19,7 +19,7 @@ public class Password : MonoBehaviour {
 						Debug.Log ("CORRECT PASSWORD!"); //Replace with some door opening method cool
 			}
 				
-		} else if(_ID == 1 && nextID == 2){
+		} else if(_ID == 1){
 
 			Debug.Log ("Reset to 1st");
 			nextID = 2;

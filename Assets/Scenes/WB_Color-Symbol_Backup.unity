@@ -860,6 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73eafba01b19b8f4fb5ab342b548d390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interractionMessage: {fileID: 0}
   carryDistance: 1.8
   carrySpeed: 0
   slow: 1
