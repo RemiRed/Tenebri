@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Interractable
+  - P1
+  - PasswordManager
+  - P2
+  - InterractionMessage
+  - Movable
   layers:
   - Default
   - TransparentFX
@@ -13,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Interractable
   - 
   - 
   - 
