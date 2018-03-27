@@ -31,22 +31,19 @@ public class Interract : MonoBehaviour
 
     private void Start() //saving the drag on the player component
     {
+        interractionMessage = GameObject.FindGameObjectWithTag("InterractionMessage");
+        interractionMessage.SetActive(false);
         defaultDrag = transform.parent.GetComponent<Rigidbody>().drag;
     }
 
     void FixedUpdate()
     {
-        if (interractionMessage != null) //Reset interractionMessage
-        {
-            interractionMessage.SetActive(false);
-        }
-
         int x = Screen.width / 2;
         int y = Screen.height / 2;
 
         Ray ray = GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, carryDistance, 8)) //Finds an object that's within carry distance 
+        if (Physics.Raycast(ray, out hit, carryDistance)) //Finds an object that's within carry distance 
         {
 
             if (hit.transform.tag == "Movable" || hit.transform.tag == "Interractable") //If the object is movable or interractable, show the interract message
@@ -56,6 +53,14 @@ public class Interract : MonoBehaviour
                     interractionMessage.SetActive(true);
                 }
             }
+            else if (interractionMessage != null) //Reset interractionMessage
+            {
+                interractionMessage.SetActive(false);
+            }
+        }
+        else if (interractionMessage != null) //Reset interractionMessage
+        {
+            interractionMessage.SetActive(false);
         }
 
 
@@ -91,7 +96,7 @@ public class Interract : MonoBehaviour
         if (lastInterractedObject != null && !oldInterraction)
         {
             lastInterractedObject.GetComponent<Interractable>().StopInterract();
-			lastInterractedObject = null;
+            lastInterractedObject = null;
         }
     }
 
@@ -103,7 +108,7 @@ public class Interract : MonoBehaviour
         Ray ray = GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, carryDistance, 8)) //Finds an object that's within carry distance 
+        if (Physics.Raycast(ray, out hit, carryDistance)) //Finds an object that's within carry distance 
         {
 
             if (hit.transform.tag == "Movable") //If the object is movable it starts moving the object around
