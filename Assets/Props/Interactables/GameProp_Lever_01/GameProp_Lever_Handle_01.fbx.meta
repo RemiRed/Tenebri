@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c78237e7c5f65b248a4b21b42f91a4bb
-timeCreated: 1521547951
+timeCreated: 1522242140
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -13,7 +13,6 @@ ModelImporter:
     2300000: GameProp_Lever_Handle_01
     3300000: GameProp_Lever_Handle_01
     4300000: GameProp_Lever_Handle_01
-    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -88,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
