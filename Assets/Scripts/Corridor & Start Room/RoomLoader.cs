@@ -92,14 +92,12 @@ public class RoomLoader : NetworkBehaviour
         if (nextRoomNumber < roomsP1.Length)
         {
             currentCorridorP1 = Instantiate(corridorPrefab, currentCorridorP1.transform.position + new Vector3(0, 0, currentRoomP1.GetComponent<RoomVariables>().length + currentCorridorP1.GetComponent<RoomVariables>().length), new Quaternion());
-			NetworkServer.Spawn(currentRoomP1);
-		}
+        }
 
         if (nextRoomNumber < roomsP2.Length)
         {
             currentCorridorP2 = Instantiate(corridorPrefab, currentCorridorP2.transform.position + new Vector3(0, 0, currentRoomP2.GetComponent<RoomVariables>().length + currentCorridorP2.GetComponent<RoomVariables>().length), new Quaternion());
-			NetworkServer.Spawn(currentRoomP2);
-		}
+        }
 
         NetworkServer.Destroy(doorsP1[0]);
         doorsP1.RemoveAt(0);
@@ -127,9 +125,6 @@ public class RoomLoader : NetworkBehaviour
         doorsP1.Add(Instantiate(doorPrefab, currentCorridorP1.transform.position + new Vector3(0, 1.25f, (finalRoomPrefab.GetComponent<RoomVariables>().length * 2 + currentCorridorP1.GetComponent<RoomVariables>().length) / 2f), new Quaternion()));
         doorsP2.Add(Instantiate(doorPrefab, currentCorridorP2.transform.position + new Vector3(0, 1.25f, (finalRoomPrefab.GetComponent<RoomVariables>().length * 2 + currentCorridorP2.GetComponent<RoomVariables>().length) / 2f), new Quaternion()));
 
-		NetworkServer.Spawn (doorsP1 [doorsP1.Count - 1]);
-		NetworkServer.Spawn (doorsP2 [doorsP2.Count - 1]);
-
     }
 
     public void LoadNextRoom() //Loads the next room
@@ -150,10 +145,6 @@ public class RoomLoader : NetworkBehaviour
                 
         doorsP1.Add(Instantiate(doorPrefab, currentCorridorP1.transform.position + new Vector3(0, 1.25f, (roomsP1[nextRoomNumber].GetComponent<RoomVariables>().length * 2 + currentCorridorP1.GetComponent<RoomVariables>().length) / 2f), new Quaternion()));
         doorsP2.Add(Instantiate(doorPrefab, currentCorridorP2.transform.position + new Vector3(0, 1.25f, (roomsP2[nextRoomNumber].GetComponent<RoomVariables>().length * 2 + currentCorridorP2.GetComponent<RoomVariables>().length) / 2f), new Quaternion()));
-
-		NetworkServer.Spawn (doorsP1 [doorsP1.Count - 1]);
-		NetworkServer.Spawn (doorsP2 [doorsP2.Count - 1]);
-
 
         nextRoomNumber++;
     }
