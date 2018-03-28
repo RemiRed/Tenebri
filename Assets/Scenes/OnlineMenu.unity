@@ -435,7 +435,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh15054
+  m_Name: pb_Mesh86466
   serializedVersion: 8
   m_SubMeshes: []
   m_Shapes:
@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2134190290}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 227461547, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
@@ -1274,7 +1274,7 @@ MonoBehaviour:
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 1
   m_OfflineScene: OnlineMenu
-  m_OnlineScene: WB_Color-Symbol
+  m_OnlineScene: AndresWhiteBoxMazeLevel
   m_SpawnPrefabs:
   - {fileID: 1641460689761824, guid: 9f0ee8aa795ac354d960e1e30d409711, type: 2}
   - {fileID: 1201029179849406, guid: 0677e3a1cedebc74fa12daa0906369b3, type: 2}
@@ -1358,6 +1358,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64a12c3c5b1f3419d879ba263fb500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonLANHost: {fileID: 0}
-  buttonLANJoin: {fileID: 0}
-  textboxLANJoin: {fileID: 0}
