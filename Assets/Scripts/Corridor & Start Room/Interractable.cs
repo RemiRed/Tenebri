@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Interractable : MonoBehaviour
+public class Interractable : NetworkBehaviour
 {
     [SerializeField]
     string interractMethodName, stopInterractMethodName;
