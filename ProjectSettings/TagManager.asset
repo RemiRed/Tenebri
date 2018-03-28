@@ -4,6 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
+=======
+  - Interractable
+  - P1
+  - PasswordManager
+  - P2
+  - InterractionMessage
+>>>>>>> Maze
   - Movable
   layers:
   - Default
@@ -14,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Interractable
   - 
   - 
   - 
