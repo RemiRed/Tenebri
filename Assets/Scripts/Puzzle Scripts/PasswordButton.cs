@@ -16,6 +16,16 @@ public class PasswordButton : Interractable {
 			buttonActive = false;
 
 			passwordManager.CheckPassword (buttonOrderID);
+			gameObject.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.white);
 		}
+	}
+
+	void RevertColor(){
+
+		Debug.Log ("Called");
+
+		buttonActive = true;
+		gameObject.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.black);
+
 	}
 }
