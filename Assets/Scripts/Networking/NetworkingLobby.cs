@@ -6,21 +6,48 @@ using UnityEngine.Networking.Match;
 
 public class NetworkingLobby : NetworkLobbyManager
 {
-    void Start()
+    [SerializeField]
+    GameObject matchmakingButton, scrollView, scrollViewContent, matchUIPrefab;
+    List<GameObject> matchUIList = new List<GameObject>();
+
+    [SerializeField]
+    int delay = 500;
+    int currentDelay;
+
+    bool matchListBool = false;
+
+    private void Update()
     {
-        MatchmakingStart();
-        MatchmakingListMatches();
+        if (matchListBool)
+        {
+            currentDelay--;
+            if (currentDelay <= 0)
+            {
+                currentDelay = delay;
+                MatchmakingListMatches();
+            }
+        }
     }
 
-    void MatchmakingStart()
+    public void MatchmakingStart()
     {
         print("@ MatchmakingStart");
         StartMatchMaker();
+        MatchmakingListMatches();
+        matchmakingButton.SetActive(false);
     }
 
     void MatchmakingListMatches()
     {
         print("@ MatchmakingListMatches");
+        scrollView.SetActive(true);
+        currentDelay = delay;
+        matchListBool = true;
+        foreach (GameObject matchUI in matchUIList)
+        {
+            Destroy(matchUI);
+        }
+        matchUIList.Clear();
         matchMaker.ListMatches(0, 20, "", true, 0, 0, OnMatchList);
     }
 
@@ -37,20 +64,22 @@ public class NetworkingLobby : NetworkLobbyManager
         {
             if (matchList.Count > 0)
             {
-                print("Listed matches. 1st match: " + matchList[0]);
-                MatchmakingJoinMatch(matchList[0]);
-            }
-            else
-            {
-                MatchmakingCreateMatch("MM");
+                print(matchList.Count);
+                foreach (MatchInfoSnapshot match in matchList)
+                {
+                    GameObject matchUIGO = Instantiate(matchUIPrefab, new Vector3(0, -15 - 30 * matchUIList.Count, 0), new Quaternion(), scrollViewContent.transform);
+                    matchUIGO.GetComponent<NetworkingMatch>().matchInfo = match;
+                    matchUIList.Add(matchUIGO);
+                }
             }
         }
     }
 
-    void MatchmakingJoinMatch(MatchInfoSnapshot firstMatch)
+
+    void MatchmakingJoinMatch(MatchInfoSnapshot match)
     {
         print("@ MatchmakingJoinMatch");
-        matchMaker.JoinMatch(firstMatch.networkId, "", "", "", 0, 0, OnMatchJoined);
+        matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnMatchJoined);
     }
 
     public override void OnMatchJoined(bool success, string extendedInfo, MatchInfo matchInfo)
@@ -68,7 +97,7 @@ public class NetworkingLobby : NetworkLobbyManager
         }
     }
 
-    void MatchmakingCreateMatch(string matchName)
+    public void MatchmakingCreateMatch(string matchName)
     {
         print("@ MatchmakingCreateMatch");
         matchMaker.CreateMatch(matchName, 15, true, "", "", "", 0, 0, OnMatchCreate);
@@ -85,7 +114,7 @@ public class NetworkingLobby : NetworkLobbyManager
         }
         else
         {
-            print("Successfully created match: " + matchInfo.networkId);  
+            print("Successfully created match: " + matchInfo.networkId);
         }
     }
 }
