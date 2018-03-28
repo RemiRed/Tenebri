@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4408097598113174}
   - component: {fileID: 33215371108644808}
   - component: {fileID: 23317274163010162}
+  - component: {fileID: 65264685244434342}
   m_Layer: 0
   m_Name: Prop_WallExtNoWindows9x10_01
   m_TagString: Untagged
@@ -83,3 +84,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1176573056183502}
   m_Mesh: {fileID: 4300000, guid: d8ae66223b0c86c43af83a04f5b1d769, type: 3}
+--- !u!65 &65264685244434342
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1176573056183502}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.01, y: 10.0185, z: 0.29916304}
+  m_Center: {x: 0, y: 0, z: -0.25}
