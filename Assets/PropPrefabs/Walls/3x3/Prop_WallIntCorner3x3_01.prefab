@@ -21,12 +21,13 @@ GameObject:
   - component: {fileID: 4745821943326564}
   - component: {fileID: 33997364798604440}
   - component: {fileID: 23491390769040288}
+  - component: {fileID: 65229552499859834}
   m_Layer: 0
   m_Name: Prop_WallIntCorner3x3_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4745821943326564
 Transform:
@@ -83,3 +84,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1463106377360722}
   m_Mesh: {fileID: 4300000, guid: 11c6c6814d0de0645a29c10b6ab71c53, type: 3}
+--- !u!65 &65229552499859834
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1463106377360722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0249999, y: 3.0000002, z: 3.0249999}
+  m_Center: {x: 0, y: 0, z: 0}
