@@ -1774,8 +1774,9 @@ MonoBehaviour:
   m_LobbyScene: OnlineMenu
   m_PlayScene: WB_Color-Symbol
   lobbySlots: []
-  matchmakingButton: {fileID: 896307762}
+  matchmakingGameObject: {fileID: 896307762}
   scrollView: {fileID: 10773382}
   scrollViewContent: {fileID: 1932681823}
   matchUIPrefab: {fileID: 1439584259794578, guid: afaedf26251d8bc48971524d5afd2189,
     type: 2}
+  delay: 500

@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine.Networking.Match;
 
 public class NetworkingLobby : NetworkLobbyManager
 {
     [SerializeField]
-    GameObject matchmakingButton, scrollView, scrollViewContent, matchUIPrefab;
+    GameObject matchmakingGameObject, scrollView, scrollViewContent;
+
+    [SerializeField]
+    GameObject matchUIPrefab;
     List<GameObject> matchUIList = new List<GameObject>();
 
     [SerializeField]
@@ -34,7 +38,7 @@ public class NetworkingLobby : NetworkLobbyManager
         print("@ MatchmakingStart");
         StartMatchMaker();
         MatchmakingListMatches();
-        matchmakingButton.SetActive(false);
+        matchmakingGameObject.SetActive(false);
     }
 
     void MatchmakingListMatches()
@@ -67,7 +71,8 @@ public class NetworkingLobby : NetworkLobbyManager
                 print(matchList.Count);
                 foreach (MatchInfoSnapshot match in matchList)
                 {
-                    GameObject matchUIGO = Instantiate(matchUIPrefab, new Vector3(0, -15 - 30 * matchUIList.Count, 0), new Quaternion(), scrollViewContent.transform);
+                    GameObject matchUIGO = Instantiate(matchUIPrefab, scrollViewContent.transform);
+                    matchUIGO.transform.localPosition = new Vector3(matchUIGO.transform.localPosition.x, -15 - (30 * matchUIList.Count + 1), matchUIGO.transform.localPosition.z);
                     matchUIGO.GetComponent<NetworkingMatch>().matchInfo = match;
                     matchUIList.Add(matchUIGO);
                 }
