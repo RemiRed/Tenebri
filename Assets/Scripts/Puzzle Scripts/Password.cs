@@ -24,7 +24,7 @@ public class Password : MonoBehaviour {
 			nextID = 2;
 			passwordLock = 1;
 
-		}else if(_ID != nextID-1){
+		}else if(_ID != nextID-1){	//Resets password input unless repeating same button 
 			
 			nextID = 1;
 			passwordLock = 0;

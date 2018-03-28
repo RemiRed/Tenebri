@@ -6,19 +6,18 @@ using UnityEngine.Networking;
 public class ColorSymbolPasswordRandomizer : NetworkBehaviour {
 
 	public Password passwordManager;
-	public PasswordClues P1Clues, P2Clues;
-
 	public List<PasswordButton> unsetPasswordButtons;
+	public int passwordLengt;
 
+	public PasswordClues P1Clues, P2Clues;
 	public List<Color> symbolColors;
 	public List<Material> symbols;
 
-	public int passwordLengt;
-
-	bool started = false;
+	bool started = false;	//Temp varible needed for testing
 
 	void Update(){
 
+		//Temp function neeced for testing
 		if (isServer && Input.GetButtonDown("Jump") && !started) {
 
 			started = true;
@@ -37,13 +36,14 @@ public class ColorSymbolPasswordRandomizer : NetworkBehaviour {
 
 		passwordManager = GameObject.FindGameObjectWithTag ("PasswordManager").GetComponent<Password> ();
 
-
 		if (isServer) {
 
 			int randomButtonRange = unsetPasswordButtons.Count;
 			int _randomButton;
+
 			int randomSymbolRange = symbols.Count;
 			int _randomSymbol;
+
 			int randomColorRange = symbolColors.Count;
 			int _randomColor;
 
@@ -54,6 +54,7 @@ public class ColorSymbolPasswordRandomizer : NetworkBehaviour {
 				_randomColor = Random.Range (0, randomColorRange);
 
 				RpcSetRandomPassword (i,_randomButton,_randomSymbol,_randomColor);
+
 				randomButtonRange--;
 				randomSymbolRange--;
 				randomColorRange--;
@@ -62,7 +63,7 @@ public class ColorSymbolPasswordRandomizer : NetworkBehaviour {
 			for (int j = 0; j < randomButtonRange; j++) {
 
 				_randomSymbol = Random.Range (0, randomSymbolRange);
-				RpcAddRestofPasswordButtons (j, _randomSymbol);
+				RpcAddRestOfPasswordButtons (j, _randomSymbol);
 				randomSymbolRange--;
 			}
 		}
@@ -72,10 +73,8 @@ public class ColorSymbolPasswordRandomizer : NetworkBehaviour {
 	void RpcSetRandomPassword(int _index,int _randomButton, int _randomSymbol, int _randomColor){
 
 		passwordManager.passwordButtons.Add (unsetPasswordButtons [_randomButton]);
+		passwordManager.passwordButtons [_index - 1].SetPasswordButton (_index, symbols[_randomSymbol]);
 		unsetPasswordButtons.RemoveAt (_randomButton);
-
-		passwordManager.passwordButtons [_index-1].buttonOrderID = _index;
-		passwordManager.passwordButtons [_index-1].GetComponent<Renderer>().material = symbols[_randomSymbol];
 
 		P1Clues = GameObject.FindGameObjectWithTag ("P1").GetComponent<PasswordClues> ();
 		P2Clues = GameObject.FindGameObjectWithTag ("P2").GetComponent<PasswordClues> ();
@@ -90,7 +89,7 @@ public class ColorSymbolPasswordRandomizer : NetworkBehaviour {
 	}
 
 	[ClientRpc]
-	void RpcAddRestofPasswordButtons(int _index, int _randomSymbol){
+	void RpcAddRestOfPasswordButtons(int _index, int _randomSymbol){
 
 		unsetPasswordButtons [_index].buttonOrderID = 0;
 		passwordManager.passwordButtons.Add (unsetPasswordButtons [_index]);

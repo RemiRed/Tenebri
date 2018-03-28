@@ -5,9 +5,12 @@ using UnityEngine;
 public class PasswordButton : Interractable {
 
 	public Password passwordManager;
-	public int buttonOrderID;
-	public bool buttonActive = true;
+
 	public Material symbol;
+	public int buttonOrderID;
+	public bool lightUpOnPress;
+
+	bool buttonActive = true;
 
 	void PasswordButtonPressed(){
 
@@ -16,16 +19,23 @@ public class PasswordButton : Interractable {
 			buttonActive = false;
 
 			passwordManager.CheckPassword (buttonOrderID);
-			gameObject.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.white);
+
+			if (lightUpOnPress) {
+				gameObject.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.white);
+			}
 		}
 	}
 
 	void RevertColor(){
 
-		Debug.Log ("Called");
-
 		buttonActive = true;
 		gameObject.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.black);
+	}
 
+	public void SetPasswordButton(int _OrderID, Material _Symbol){
+
+		buttonOrderID = _OrderID;
+		symbol = _Symbol;
+		GetComponent<Renderer> ().material = symbol;
 	}
 }
