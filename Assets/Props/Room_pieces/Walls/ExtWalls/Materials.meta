@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Props/Room_pieces/Walls/ExtWalls/Materials.meta
 guid: d3e99c0d4413d664c9a2e63244c496be
 folderAsset: yes
 timeCreated: 1522142247
-=======
-guid: 6226da7ac632c9944a092c8166180c8c
-folderAsset: yes
-timeCreated: 1522180881
->>>>>>> Maze:Assets/Props/Environments/Prop_Wineglas_01/Materials.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}
