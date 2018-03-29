@@ -12,17 +12,18 @@ public class LobbyPlayer : NetworkLobbyPlayer
     {
         readyButton = GameObject.FindGameObjectWithTag("ReadyButton").GetComponent<Button>();
         closeButton = GameObject.FindGameObjectWithTag("CloseButton").GetComponent<Button>();
-        readyButton.onClick.AddListener(Ready);
-        closeButton.onClick.AddListener(Remove);
+        readyButton.onClick.AddListener(CmdReady);
+        //closeButton.onClick.AddListener(Remove);
     }
-
-    public void Ready()
+    [Command]
+    public void CmdReady()
     {
         readyToBegin = !readyToBegin;
     }
     public void Remove()
     {
         RemovePlayer();
+        closeButton.GetComponent<NetworkingMatch>().DestroyMatch();
     }
 }
 
