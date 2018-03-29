@@ -112,7 +112,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114024761723381578}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114462247963917580}
+        m_MethodName: JoinMatch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114458769025476014
@@ -159,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49107d7577e77c04098e5dca00f60887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkManager: {fileID: 0}
 --- !u!222 &222604211882404308
 CanvasRenderer:
   m_ObjectHideFlags: 1

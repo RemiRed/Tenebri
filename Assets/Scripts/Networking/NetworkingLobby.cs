@@ -8,7 +8,7 @@ using UnityEngine.Networking.Match;
 public class NetworkingLobby : NetworkLobbyManager
 {
     [SerializeField]
-    GameObject matchmakingGameObject, scrollView, scrollViewContent;
+    GameObject matchmakingGameObject, scrollView, scrollViewContent, matchPanel, createMatchButton, closeMatchButton;
 
     [SerializeField]
     GameObject matchUIPrefab;
@@ -39,6 +39,7 @@ public class NetworkingLobby : NetworkLobbyManager
         StartMatchMaker();
         MatchmakingListMatches();
         matchmakingGameObject.SetActive(false);
+        createMatchButton.SetActive(true);
     }
 
     void MatchmakingListMatches()
@@ -73,7 +74,7 @@ public class NetworkingLobby : NetworkLobbyManager
                 {
                     GameObject matchUIGO = Instantiate(matchUIPrefab, scrollViewContent.transform);
                     matchUIGO.transform.localPosition = new Vector3(matchUIGO.transform.localPosition.x, -15 - (30 * matchUIList.Count + 1), matchUIGO.transform.localPosition.z);
-                    matchUIGO.GetComponent<NetworkingMatch>().matchInfo = match;
+                    matchUIGO.GetComponent<NetworkingMatch>().matchInfoSnapshot = match;
                     matchUIList.Add(matchUIGO);
                 }
             }
@@ -81,9 +82,13 @@ public class NetworkingLobby : NetworkLobbyManager
     }
 
 
-    void MatchmakingJoinMatch(MatchInfoSnapshot match)
+    public void MatchmakingJoinMatch(MatchInfoSnapshot match)
     {
         print("@ MatchmakingJoinMatch");
+        matchListBool = false;
+        scrollView.SetActive(false);
+        matchPanel.SetActive(true);
+        createMatchButton.SetActive(false);
         matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnMatchJoined);
     }
 
@@ -105,6 +110,10 @@ public class NetworkingLobby : NetworkLobbyManager
     public void MatchmakingCreateMatch(string matchName)
     {
         print("@ MatchmakingCreateMatch");
+        matchListBool = false;
+        scrollView.SetActive(false);
+        matchPanel.SetActive(true);
+        createMatchButton.SetActive(false);
         matchMaker.CreateMatch(matchName, 15, true, "", "", "", 0, 0, OnMatchCreate);
     }
 
@@ -119,7 +128,32 @@ public class NetworkingLobby : NetworkLobbyManager
         }
         else
         {
+            closeMatchButton.GetComponent<NetworkingMatch>().matchInfo = matchInfo;
             print("Successfully created match: " + matchInfo.networkId);
+        }
+    }
+
+    public void MatchmakingDestroyMatch(MatchInfo matchInfo)
+    {
+        print("@ MatchmakingCloseMatch");
+        matchPanel.SetActive(false);
+        createMatchButton.SetActive(true);
+        matchMaker.DestroyMatch(matchInfo.networkId, 0, OnDestroyMatch);
+        MatchmakingListMatches();
+    }
+
+    public override void OnDestroyMatch(bool success, string extendedInfo)
+    {
+        print("@ OnDestroyMatch");
+        base.OnDestroyMatch(success, extendedInfo);
+
+        if (!success)
+        {
+            print("Failed to destroy match: " + extendedInfo);
+        }
+        else
+        {
+            print("Successfully destroyed match");
         }
     }
 }

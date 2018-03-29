@@ -10,6 +10,7 @@ TagManager:
   - P2
   - InterractionMessage
   - Movable
+  - NetworkManager
   layers:
   - Default
   - TransparentFX

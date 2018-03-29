@@ -7,10 +7,32 @@ using UnityEngine.Networking.Match;
 
 public class NetworkingMatch : NetworkBehaviour
 {
-    public MatchInfoSnapshot matchInfo = new MatchInfoSnapshot();
+    public MatchInfoSnapshot matchInfoSnapshot = new MatchInfoSnapshot();
+    public MatchInfo matchInfo = new MatchInfo();
+    [SerializeField]
+    NetworkingLobby networkManager;
 
+    [SerializeField]
+    bool matchList = true;
+    private void Start()
+    {
+        networkManager = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkingLobby>();
+    }
     private void Update()
     {
-        GetComponentInChildren<Text>().text = matchInfo.name;
+        if (matchList)
+        {
+            GetComponentInChildren<Text>().text = matchInfoSnapshot.name;
+        }
+    }
+
+    public void JoinMatch()
+    {
+        networkManager.MatchmakingJoinMatch(matchInfoSnapshot);
+    }
+
+    public void DestroyMatch()
+    {
+        networkManager.MatchmakingDestroyMatch(matchInfo);
     }
 }
