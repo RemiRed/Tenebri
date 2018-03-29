@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 320862800}
   m_Layer: 5
   m_Name: ReadyButton
-  m_TagString: Untagged
+  m_TagString: ReadyButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -934,7 +934,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh73058
+  m_Name: pb_Mesh90644
   serializedVersion: 8
   m_SubMeshes: []
   m_Shapes:
@@ -2711,7 +2711,7 @@ MonoBehaviour:
   m_MaxPlayers: 2
   m_MaxPlayersPerConnection: 1
   m_MinPlayers: 2
-  m_LobbyPlayerPrefab: {fileID: 114751745457443102, guid: 3821b0b42a44b154eb953f5659c10b96,
+  m_LobbyPlayerPrefab: {fileID: 114583041605094768, guid: 3821b0b42a44b154eb953f5659c10b96,
     type: 2}
   m_GamePlayerPrefab: {fileID: 1377563522295830, guid: 0039dc91560c3e1459554e8843bccbae,
     type: 2}

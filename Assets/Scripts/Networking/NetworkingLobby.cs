@@ -149,12 +149,12 @@ public class NetworkingLobby : NetworkLobbyManager
         print("@ MatchmakingCloseMatch");
         matchPanel.SetActive(false);
         //matchMaker.DestroyMatch(matchInfo.networkId, 0, OnDestroyMatch);
-        //matchMaker.DropConnection(matchInfo.networkId, matchInfo.nodeId, 0, OnDropConnection);
         //foreach (GameObject lobbyPlayer in GameObject.FindGameObjectsWithTag("LobbyPlayer"))
         //{
         //    lobbyPlayer.GetComponent<LobbyPlayerCommand>().CmdDisconnect();
         //}
-        singleton.matchMaker.DropConnection(matchInfo.networkId, matchInfo.nodeId, 0, OnDropConnection);
+        matchMaker.DropConnection(matchInfo.networkId, matchInfo.nodeId, 0, OnDropConnection);
+
         MatchmakingListMatches();
     }
 

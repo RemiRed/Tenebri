@@ -12,6 +12,7 @@ TagManager:
   - Movable
   - NetworkManager
   - LobbyPlayer
+  - ReadyButton
   layers:
   - Default
   - TransparentFX
