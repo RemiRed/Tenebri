@@ -153,8 +153,8 @@ public class NetworkingLobby : NetworkLobbyManager
         //{
         //    lobbyPlayer.GetComponent<LobbyPlayerCommand>().CmdDisconnect();
         //}
-        matchMaker.DropConnection(matchInfo.networkId, matchInfo.nodeId, 0, OnDropConnection);
-
+        //matchMaker.DropConnection(matchInfo.networkId, matchInfo.nodeId, 0, OnDropConnection);
+        
         MatchmakingListMatches();
     }
 
