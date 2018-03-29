@@ -22,12 +22,6 @@ public class NetworkingLobby : NetworkLobbyManager
 
     bool matchListBool = false;
 
-    private void Start()
-    {
-        ResetValues();
-    }
-    
-
     private void Update()
     {
         if (matchListBool)
@@ -159,15 +153,9 @@ public class NetworkingLobby : NetworkLobbyManager
         //{
         //    lobbyPlayer.GetComponent<LobbyPlayerCommand>().CmdDisconnect();
         //}
-        // matchMaker.DropConnection(matchInfo.networkId, matchInfo.nodeId, 0, OnDropConnection);
-        StopClient();
+        matchMaker.DropConnection(matchInfo.networkId, matchInfo.nodeId, 0, OnDropConnection);
+
         MatchmakingListMatches();
-    }
-
-    public override void OnStopClient()
-    {
-        base.OnStopClient();
-
     }
 
     public override void OnDropConnection(bool success, string extendedInfo)
