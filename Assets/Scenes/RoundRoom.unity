@@ -118,7 +118,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14522
+  m_Name: pb_Mesh14546
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -248,7 +248,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14878
+  m_Name: pb_Mesh14988
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -2821,7 +2821,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14838
+  m_Name: pb_Mesh14952
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -2958,6 +2958,7 @@ GameObject:
   - component: {fileID: 62858567}
   - component: {fileID: 62858566}
   - component: {fileID: 62858565}
+  - component: {fileID: 62858568}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01
   m_TagString: Untagged
@@ -3021,12 +3022,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 62858564}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &62858568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 62858564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 662848412}
+  - {fileID: 1743275017}
+  - {fileID: 594165837}
+  layer: 3
+  position: 2
 --- !u!43 &84459437
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14802
+  m_Name: pb_Mesh14908
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -5897,7 +5915,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14768
+  m_Name: pb_Mesh14854
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -6034,6 +6052,7 @@ GameObject:
   - component: {fileID: 190323973}
   - component: {fileID: 190323972}
   - component: {fileID: 190323971}
+  - component: {fileID: 190323974}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (4)
   m_TagString: Untagged
@@ -6097,12 +6116,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 190323970}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &190323974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 190323970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 958266520}
+  - {fileID: 683782981}
+  - {fileID: 2071337713}
+  layer: 3
+  position: 7
 --- !u!43 &217839662
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14454
+  m_Name: pb_Mesh14484
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -16090,6 +16126,7 @@ GameObject:
   - component: {fileID: 362858439}
   - component: {fileID: 362858438}
   - component: {fileID: 362858437}
+  - component: {fileID: 362858440}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (5)
   m_TagString: Untagged
@@ -16153,6 +16190,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 362858436}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &362858440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362858436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 254648674}
+  - {fileID: 1607671477}
+  - {fileID: 594165837}
+  layer: 3
+  position: 3
 --- !u!1001 &433190093
 Prefab:
   m_ObjectHideFlags: 0
@@ -16222,7 +16276,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14550
+  m_Name: pb_Mesh14584
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -16366,7 +16420,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14402
+  m_Name: pb_Mesh14426
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -16510,7 +16564,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14438
+  m_Name: pb_Mesh14468
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -16640,7 +16694,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14680
+  m_Name: pb_Mesh14736
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -16770,7 +16824,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14606
+  m_Name: pb_Mesh14656
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -18808,7 +18862,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14374
+  m_Name: pb_Mesh14398
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -30043,6 +30097,7 @@ GameObject:
   - component: {fileID: 671565689}
   - component: {fileID: 671565688}
   - component: {fileID: 671565687}
+  - component: {fileID: 671565690}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (14)
   m_TagString: Untagged
@@ -30106,6 +30161,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 671565686}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &671565690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 671565686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 858949622}
+  - {fileID: 521885697}
+  - {fileID: 867743040}
+  - {fileID: 1671986824}
+  layer: 1
+  position: 2
 --- !u!1 &683782981
 GameObject:
   m_ObjectHideFlags: 0
@@ -31352,7 +31425,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14782
+  m_Name: pb_Mesh14868
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -31496,7 +31569,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14620
+  m_Name: pb_Mesh14670
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -32881,7 +32954,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14500
+  m_Name: pb_Mesh14528
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -33018,6 +33091,7 @@ GameObject:
   - component: {fileID: 798168194}
   - component: {fileID: 798168193}
   - component: {fileID: 798168192}
+  - component: {fileID: 798168195}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (11)
   m_TagString: Untagged
@@ -33081,6 +33155,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 798168191}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &798168195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798168191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 1042230529}
+  - {fileID: 594475171}
+  - {fileID: 134303056}
+  - {fileID: 858949622}
+  layer: 0
+  position: 0
 --- !u!1 &811350757
 GameObject:
   m_ObjectHideFlags: 0
@@ -35453,6 +35545,7 @@ GameObject:
   - component: {fileID: 811470245}
   - component: {fileID: 811470244}
   - component: {fileID: 811470243}
+  - component: {fileID: 811470246}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (3)
   m_TagString: Untagged
@@ -35516,6 +35609,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 811470242}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &811470246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 811470242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 811350757}
+  - {fileID: 551546135}
+  - {fileID: 870703283}
+  layer: 3
+  position: 5
 --- !u!1 &858949622
 GameObject:
   m_ObjectHideFlags: 0
@@ -40912,7 +41022,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14700
+  m_Name: pb_Mesh14766
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -41063,6 +41173,7 @@ GameObject:
   - component: {fileID: 907666192}
   - component: {fileID: 907666191}
   - component: {fileID: 907666190}
+  - component: {fileID: 907666193}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (9)
   m_TagString: Untagged
@@ -41126,12 +41237,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 907666189}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &907666193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 907666189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 1557993583}
+  - {fileID: 958266520}
+  - {fileID: 563101529}
+  - {fileID: 1671986824}
+  - {fileID: 1257668118}
+  layer: 2
+  position: 3
 --- !u!43 &920993415
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14722
+  m_Name: pb_Mesh14808
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -55516,6 +55646,7 @@ GameObject:
   - component: {fileID: 1027459599}
   - component: {fileID: 1027459598}
   - component: {fileID: 1027459597}
+  - component: {fileID: 1027459600}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (10)
   m_TagString: Untagged
@@ -55579,6 +55710,25 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1027459596}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &1027459600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1027459596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 521885697}
+  - {fileID: 811350757}
+  - {fileID: 1945510445}
+  - {fileID: 1421064850}
+  - {fileID: 662372661}
+  layer: 2
+  position: 2
 --- !u!1 &1040326920
 GameObject:
   m_ObjectHideFlags: 0
@@ -58353,6 +58503,7 @@ GameObject:
   - component: {fileID: 1046919466}
   - component: {fileID: 1046919465}
   - component: {fileID: 1046919464}
+  - component: {fileID: 1046919467}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (13)
   m_TagString: Untagged
@@ -58416,12 +58567,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1046919463}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &1046919467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1046919463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 134303056}
+  - {fileID: 1557993583}
+  - {fileID: 752456107}
+  - {fileID: 1671986824}
+  layer: 1
+  position: 3
 --- !u!43 &1066852212
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14994
+  m_Name: pb_Mesh15126
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -58551,7 +58720,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14486
+  m_Name: pb_Mesh14514
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -58681,7 +58850,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14920
+  m_Name: pb_Mesh15036
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -58818,6 +58987,7 @@ GameObject:
   - component: {fileID: 1186984635}
   - component: {fileID: 1186984634}
   - component: {fileID: 1186984633}
+  - component: {fileID: 1186984636}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (2)
   m_TagString: Untagged
@@ -58881,12 +59051,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1186984632}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &1186984636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1186984632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 563101529}
+  - {fileID: 551546135}
+  - {fileID: 2071337713}
+  layer: 3
+  position: 6
 --- !u!43 &1188659965
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14860
+  m_Name: pb_Mesh14970
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -61459,7 +61646,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14742
+  m_Name: pb_Mesh14828
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -62864,7 +63051,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14356
+  m_Name: pb_Mesh14370
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -63027,14 +63214,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1338667480
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14634
+  m_Name: pb_Mesh14684
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -65620,7 +65807,7 @@ GameObject:
   - component: {fileID: 1421064853}
   - component: {fileID: 1421064852}
   m_Layer: 0
-  m_Name: MiddlePlane3
+  m_Name: MiddlePlane4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66858,6 +67045,7 @@ GameObject:
   - component: {fileID: 1437762383}
   - component: {fileID: 1437762382}
   - component: {fileID: 1437762381}
+  - component: {fileID: 1437762384}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (1)
   m_TagString: Untagged
@@ -66921,6 +67109,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1437762380}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &1437762384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1437762380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 1395096232}
+  - {fileID: 2044308010}
+  - {fileID: 1743275017}
+  layer: 3
+  position: 1
 --- !u!1 &1438943445
 GameObject:
   m_ObjectHideFlags: 0
@@ -66953,7 +67158,7 @@ Transform:
   - {fileID: 1666362539}
   - {fileID: 963621237}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1438943447
 MonoBehaviour:
@@ -67012,6 +67217,7 @@ GameObject:
   - component: {fileID: 1443079044}
   - component: {fileID: 1443079043}
   - component: {fileID: 1443079042}
+  - component: {fileID: 1443079045}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (15)
   m_TagString: Untagged
@@ -67075,6 +67281,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1443079041}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &1443079045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1443079041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 1042230529}
+  - {fileID: 867743040}
+  - {fileID: 259512222}
+  - {fileID: 38753876}
+  layer: 1
+  position: 1
 --- !u!1 &1449091393
 GameObject:
   m_ObjectHideFlags: 0
@@ -69396,7 +69620,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14824
+  m_Name: pb_Mesh14938
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -69526,7 +69750,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14388
+  m_Name: pb_Mesh14412
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -69677,6 +69901,7 @@ GameObject:
   - component: {fileID: 1491521979}
   - component: {fileID: 1491521978}
   - component: {fileID: 1491521977}
+  - component: {fileID: 1491521980}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (7)
   m_TagString: Untagged
@@ -69740,6 +69965,25 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1491521976}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &1491521980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1491521976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 38753876}
+  - {fileID: 254648674}
+  - {fileID: 662848412}
+  - {fileID: 1549143423}
+  - {fileID: 1421064850}
+  layer: 2
+  position: 1
 --- !u!1 &1549143423
 GameObject:
   m_ObjectHideFlags: 0
@@ -69755,7 +69999,7 @@ GameObject:
   - component: {fileID: 1549143426}
   - component: {fileID: 1549143425}
   m_Layer: 0
-  m_Name: MiddlePlane2
+  m_Name: MiddlePlane3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76001,7 +76245,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14592
+  m_Name: pb_Mesh14632
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -82420,6 +82664,7 @@ GameObject:
   - component: {fileID: 1690811600}
   - component: {fileID: 1690811599}
   - component: {fileID: 1690811598}
+  - component: {fileID: 1690811601}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (12)
   m_TagString: Untagged
@@ -82483,6 +82728,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1690811597}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &1690811601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690811597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 594475171}
+  - {fileID: 1194359726}
+  - {fileID: 259512222}
+  - {fileID: 752456107}
+  layer: 1
+  position: 0
 --- !u!4 &1705482249
 Transform:
   m_ObjectHideFlags: 0
@@ -82502,7 +82765,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14980
+  m_Name: pb_Mesh15112
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -82632,7 +82895,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14536
+  m_Name: pb_Mesh14560
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -84003,7 +84266,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14468
+  m_Name: pb_Mesh14498
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -89988,7 +90251,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14572
+  m_Name: pb_Mesh14604
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -90118,7 +90381,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14962
+  m_Name: pb_Mesh15094
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -90255,6 +90518,7 @@ GameObject:
   - component: {fileID: 1877016794}
   - component: {fileID: 1877016793}
   - component: {fileID: 1877016792}
+  - component: {fileID: 1877016795}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (8)
   m_TagString: Untagged
@@ -90318,6 +90582,25 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1877016791}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &1877016795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1877016791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 1194359726}
+  - {fileID: 1395096232}
+  - {fileID: 1449091393}
+  - {fileID: 1257668118}
+  - {fileID: 1549143423}
+  layer: 2
+  position: 0
 --- !u!1 &1914734319
 GameObject:
   m_ObjectHideFlags: 0
@@ -90330,6 +90613,7 @@ GameObject:
   - component: {fileID: 1914734322}
   - component: {fileID: 1914734321}
   - component: {fileID: 1914734320}
+  - component: {fileID: 1914734323}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (6)
   m_TagString: Untagged
@@ -90393,6 +90677,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1914734319}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &1914734323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1914734319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 1449091393}
+  - {fileID: 2044308010}
+  - {fileID: 683782981}
+  layer: 3
+  position: 0
 --- !u!4 &1922720131
 Transform:
   m_ObjectHideFlags: 0
@@ -92809,54 +93110,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
---- !u!1001 &1987416527
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4700132726719606, guid: 0039dc91560c3e1459554e8843bccbae, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 18.4296
-      objectReference: {fileID: 0}
-    - target: {fileID: 4700132726719606, guid: 0039dc91560c3e1459554e8843bccbae, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.90005004
-      objectReference: {fileID: 0}
-    - target: {fileID: 4700132726719606, guid: 0039dc91560c3e1459554e8843bccbae, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 6.373809
-      objectReference: {fileID: 0}
-    - target: {fileID: 4700132726719606, guid: 0039dc91560c3e1459554e8843bccbae, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4700132726719606, guid: 0039dc91560c3e1459554e8843bccbae, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4700132726719606, guid: 0039dc91560c3e1459554e8843bccbae, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4700132726719606, guid: 0039dc91560c3e1459554e8843bccbae, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4700132726719606, guid: 0039dc91560c3e1459554e8843bccbae, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 0039dc91560c3e1459554e8843bccbae, type: 2}
-  m_IsPrefabParent: 0
 --- !u!43 &1989538365
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14658
+  m_Name: pb_Mesh14716
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -92986,7 +93245,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14338
+  m_Name: pb_Mesh14342
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -95605,6 +95864,7 @@ GameObject:
   - component: {fileID: 2074456028}
   - component: {fileID: 2074456027}
   - component: {fileID: 2074456026}
+  - component: {fileID: 2074456029}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (4)
   m_TagString: Untagged
@@ -95668,3 +95928,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2074456025}
   m_Mesh: {fileID: 4300000, guid: 9cb1b78333aab47cd9d0c629cd93050c, type: 3}
+--- !u!114 &2074456029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2074456025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 1945510445}
+  - {fileID: 870703283}
+  - {fileID: 1607671477}
+  layer: 3
+  position: 4
