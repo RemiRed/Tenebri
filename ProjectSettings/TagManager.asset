@@ -13,7 +13,6 @@ TagManager:
   - NetworkManager
   - LobbyPlayer
   - ReadyButton
-  - CloseButton
   layers:
   - Default
   - TransparentFX
