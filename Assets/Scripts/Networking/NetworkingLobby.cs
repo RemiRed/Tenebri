@@ -8,7 +8,7 @@ using UnityEngine.Networking.Match;
 public class NetworkingLobby : NetworkLobbyManager
 {
     [SerializeField]
-    GameObject matchmakingGameObject, scrollView, scrollViewContent, matchPanel, createMatchPanel, createMatchButton, closeMatchButton;
+    GameObject matchmakingGameObject, scrollView, scrollViewContent, matchPanel, createMatchPanel, closeMatchButton, createMatchButton;
 
     [SerializeField]
     InputField matchInputField;
@@ -148,14 +148,11 @@ public class NetworkingLobby : NetworkLobbyManager
     {
         print("@ MatchmakingCloseMatch");
         matchPanel.SetActive(false);
-        //matchMaker.DestroyMatch(matchInfo.networkId, 0, OnDestroyMatch);
-        //foreach (GameObject lobbyPlayer in GameObject.FindGameObjectsWithTag("LobbyPlayer"))
-        //{
-        //    lobbyPlayer.GetComponent<LobbyPlayerCommand>().CmdDisconnect();
-        //}
-        //matchMaker.DropConnection(matchInfo.networkId, matchInfo.nodeId, 0, OnDropConnection);
-        
-        MatchmakingListMatches();
+        matchmakingGameObject.SetActive(true);
+        StopMatchMaker();
+        GameObject newGO = new GameObject();
+        transform.parent = newGO.transform;
+        StopHost();
     }
 
     public override void OnDropConnection(bool success, string extendedInfo)

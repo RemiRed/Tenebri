@@ -156,4 +156,6 @@ public class Interract : MonoBehaviour
         carriedObject.GetComponent<Rigidbody>().AddForce((carriedObject.transform.position - oldPos) / (Time.deltaTime * slow));
         carriedObject = null;
     }
+
+    
 }

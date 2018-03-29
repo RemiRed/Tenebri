@@ -453,7 +453,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 0.99999857}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1836,8 +1836,8 @@ GameObject:
   - component: {fileID: 1069450087}
   - component: {fileID: 1069450086}
   m_Layer: 5
-  m_Name: CloseButton
-  m_TagString: Untagged
+  m_Name: CloseMatchButton
+  m_TagString: CloseButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2371,7 +2371,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 282452939}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999857
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2575,7 +2575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00000014901161}
+  m_AnchoredPosition: {x: 0, y: -0.000012779535}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &2134190290
@@ -2723,8 +2723,8 @@ MonoBehaviour:
   scrollViewContent: {fileID: 1932681823}
   matchPanel: {fileID: 357064656}
   createMatchPanel: {fileID: 824926052}
-  createMatchButton: {fileID: 471631016}
   closeMatchButton: {fileID: 1069450081}
+  createMatchButton: {fileID: 471631016}
   matchInputField: {fileID: 1767954295}
   matchUIPrefab: {fileID: 1439584259794578, guid: afaedf26251d8bc48971524d5afd2189,
     type: 2}
