@@ -8,8 +8,10 @@ using UnityEngine.Networking.Match;
 public class NetworkingLobby : NetworkLobbyManager
 {
     [SerializeField]
-    GameObject matchmakingGameObject, scrollView, scrollViewContent, matchPanel, createMatchButton, closeMatchButton;
+    GameObject matchmakingGameObject, scrollView, scrollViewContent, matchPanel, createMatchPanel, createMatchButton, closeMatchButton;
 
+    [SerializeField]
+    InputField matchInputField;
     [SerializeField]
     GameObject matchUIPrefab;
     List<GameObject> matchUIList = new List<GameObject>();
@@ -39,7 +41,6 @@ public class NetworkingLobby : NetworkLobbyManager
         StartMatchMaker();
         MatchmakingListMatches();
         matchmakingGameObject.SetActive(false);
-        createMatchButton.SetActive(true);
     }
 
     void MatchmakingListMatches()
@@ -47,6 +48,7 @@ public class NetworkingLobby : NetworkLobbyManager
         print("@ MatchmakingListMatches");
         scrollView.SetActive(true);
         currentDelay = delay;
+        createMatchPanel.SetActive(true);
         matchListBool = true;
         foreach (GameObject matchUI in matchUIList)
         {
@@ -88,7 +90,7 @@ public class NetworkingLobby : NetworkLobbyManager
         matchListBool = false;
         scrollView.SetActive(false);
         matchPanel.SetActive(true);
-        createMatchButton.SetActive(false);
+        createMatchPanel.SetActive(false);
         matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnMatchJoined);
     }
 
@@ -107,14 +109,22 @@ public class NetworkingLobby : NetworkLobbyManager
         }
     }
 
-    public void MatchmakingCreateMatch(string matchName)
+    public void MatchmakingCreateMatch()
     {
-        print("@ MatchmakingCreateMatch");
-        matchListBool = false;
-        scrollView.SetActive(false);
-        matchPanel.SetActive(true);
-        createMatchButton.SetActive(false);
-        matchMaker.CreateMatch(matchName, 15, true, "", "", "", 0, 0, OnMatchCreate);
+        string matchName = matchInputField.text;
+        if (matchName != null && matchName != "")
+        {
+            print("@ MatchmakingCreateMatch");
+            matchListBool = false;
+            scrollView.SetActive(false);
+            matchPanel.SetActive(true);
+            createMatchPanel.SetActive(false);
+            matchMaker.CreateMatch(matchName, 2, true, "", "", "", 0, 0, OnMatchCreate);
+        }
+        else
+        {
+            //TODO Feedback : ENTER NAME OF MATCH
+        }
     }
 
     public override void OnMatchCreate(bool success, string extendedInfo, MatchInfo matchInfo)
@@ -128,6 +138,7 @@ public class NetworkingLobby : NetworkLobbyManager
         }
         else
         {
+            print(matchInfo.nodeId + " - Node ID");
             closeMatchButton.GetComponent<NetworkingMatch>().matchInfo = matchInfo;
             print("Successfully created match: " + matchInfo.networkId);
         }
@@ -137,10 +148,13 @@ public class NetworkingLobby : NetworkLobbyManager
     {
         print("@ MatchmakingCloseMatch");
         matchPanel.SetActive(false);
-        createMatchButton.SetActive(true);
-        CmdTestMethod();
-        matchMaker.DropConnection(matchInfo.networkId, matchInfo.nodeId, 0, OnDropConnection);
-        matchMaker.DestroyMatch(matchInfo.networkId, 0, OnDestroyMatch);
+        //matchMaker.DestroyMatch(matchInfo.networkId, 0, OnDestroyMatch);
+        //matchMaker.DropConnection(matchInfo.networkId, matchInfo.nodeId, 0, OnDropConnection);
+        //foreach (GameObject lobbyPlayer in GameObject.FindGameObjectsWithTag("LobbyPlayer"))
+        //{
+        //    lobbyPlayer.GetComponent<LobbyPlayerCommand>().CmdDisconnect();
+        //}
+        singleton.matchMaker.DropConnection(matchInfo.networkId, matchInfo.nodeId, 0, OnDropConnection);
         MatchmakingListMatches();
     }
 
@@ -148,13 +162,15 @@ public class NetworkingLobby : NetworkLobbyManager
     {
         print("@ OnDropConnection");
         base.OnDropConnection(success, extendedInfo);
-
-    }
-
-    [Command]
-    void CmdTestMethod()
-    {
-        print("DISCONNECTED!");
+        if (!success)
+        {
+            print("Failed to drop connection: " + extendedInfo);
+        }
+        else
+        {
+            print("Successfully dropped connection");
+            print(IsClientConnected());
+        }
     }
 
 
@@ -172,4 +188,5 @@ public class NetworkingLobby : NetworkLobbyManager
             print("Successfully destroyed match");
         }
     }
+
 }
