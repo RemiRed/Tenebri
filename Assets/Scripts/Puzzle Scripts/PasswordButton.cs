@@ -12,6 +12,7 @@ public class PasswordButton : Interractable {
 
 	bool buttonActive = true;
 
+	//Called when button is pressed
 	void PasswordButtonPressed(){
 
 		if (buttonActive) {
@@ -26,6 +27,7 @@ public class PasswordButton : Interractable {
 		}
 	}
 
+	//Called when button is released
 	void RevertColor(){
 
 		buttonActive = true;
