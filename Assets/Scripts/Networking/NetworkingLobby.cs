@@ -138,9 +138,25 @@ public class NetworkingLobby : NetworkLobbyManager
         print("@ MatchmakingCloseMatch");
         matchPanel.SetActive(false);
         createMatchButton.SetActive(true);
+        CmdTestMethod();
+        matchMaker.DropConnection(matchInfo.networkId, matchInfo.nodeId, 0, OnDropConnection);
         matchMaker.DestroyMatch(matchInfo.networkId, 0, OnDestroyMatch);
         MatchmakingListMatches();
     }
+
+    public override void OnDropConnection(bool success, string extendedInfo)
+    {
+        print("@ OnDropConnection");
+        base.OnDropConnection(success, extendedInfo);
+
+    }
+
+    [Command]
+    void CmdTestMethod()
+    {
+        print("DISCONNECTED!");
+    }
+
 
     public override void OnDestroyMatch(bool success, string extendedInfo)
     {
