@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine.Networking.Match;
+using UnityEngine.SceneManagement;
 
 public class NetworkingLobby : NetworkLobbyManager
 {
@@ -154,36 +155,4 @@ public class NetworkingLobby : NetworkLobbyManager
         transform.parent = newGO.transform;
         StopHost();
     }
-
-    public override void OnDropConnection(bool success, string extendedInfo)
-    {
-        print("@ OnDropConnection");
-        base.OnDropConnection(success, extendedInfo);
-        if (!success)
-        {
-            print("Failed to drop connection: " + extendedInfo);
-        }
-        else
-        {
-            print("Successfully dropped connection");
-            print(IsClientConnected());
-        }
-    }
-
-
-    public override void OnDestroyMatch(bool success, string extendedInfo)
-    {
-        print("@ OnDestroyMatch");
-        base.OnDestroyMatch(success, extendedInfo);
-
-        if (!success)
-        {
-            print("Failed to destroy match: " + extendedInfo);
-        }
-        else
-        {
-            print("Successfully destroyed match");
-        }
-    }
-
 }

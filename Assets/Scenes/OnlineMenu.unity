@@ -934,7 +934,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh90644
+  m_Name: pb_Mesh20670
   serializedVersion: 8
   m_SubMeshes: []
   m_Shapes:
@@ -2652,6 +2652,7 @@ MonoBehaviour:
   - {fileID: 1641460689761824, guid: 9f0ee8aa795ac354d960e1e30d409711, type: 2}
   - {fileID: 1201029179849406, guid: 0677e3a1cedebc74fa12daa0906369b3, type: 2}
   - {fileID: 1348159057234118, guid: 5bbb39d6fcd99f4439a7de21166b13f6, type: 2}
+  - {fileID: 1377563522295830, guid: 0039dc91560c3e1459554e8843bccbae, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -2710,7 +2711,7 @@ MonoBehaviour:
   m_ShowLobbyGUI: 1
   m_MaxPlayers: 2
   m_MaxPlayersPerConnection: 1
-  m_MinPlayers: 2
+  m_MinPlayers: 1
   m_LobbyPlayerPrefab: {fileID: 114583041605094768, guid: 3821b0b42a44b154eb953f5659c10b96,
     type: 2}
   m_GamePlayerPrefab: {fileID: 1377563522295830, guid: 0039dc91560c3e1459554e8843bccbae,
