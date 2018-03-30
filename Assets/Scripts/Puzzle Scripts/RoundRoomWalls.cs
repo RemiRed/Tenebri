@@ -9,18 +9,21 @@ public class RoundRoomWalls : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        RandomRooms();
+        
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+            CloseWalls();
     }
     
-    private void RandomRooms()
+    private void CloseWalls()
     {
-		for(int i = 0; i < walls.Count; i++)
+		foreach(GameObject bwa in walls)
         {
-            if (Random.Range(0, 10) < 5)
-            {
-                walls[i].SetActive(false);
-            }
-	    }
+            bwa.SetActive(true);
+        }
     }
 
 }
