@@ -11,7 +11,7 @@ public class LobbyPlayer : NetworkLobbyPlayer
     private void Start()
     {
         //   readyButton = GameObject.FindGameObjectWithTag("ReadyButton").GetComponent<Button>();
-        readyButton.onClick.AddListener(Ready);
+        // readyButton.onClick.AddListener(Ready);
     }
 
     public void Ready()
