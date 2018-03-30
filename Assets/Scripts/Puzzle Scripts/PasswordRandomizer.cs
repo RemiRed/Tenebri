@@ -46,6 +46,7 @@ public class PasswordRandomizer : NetworkBehaviour {
 	public void StartPuzzle(){
 
 		passwordManager = GameObject.FindGameObjectWithTag ("PasswordManager").GetComponent<Password> ();
+		Debug.Log (passwordManager.name);
 
 		if (isServer) {
 

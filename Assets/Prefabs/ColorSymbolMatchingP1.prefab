@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 65111030738047554}
   - component: {fileID: 23429694984193446}
   - component: {fileID: 114032738966361720}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PasswordButton5
   m_TagString: Interractable
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 65445719180035966}
   - component: {fileID: 23814525672508506}
   - component: {fileID: 114047994764309306}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PasswordButton11
   m_TagString: Interractable
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 65597688049259462}
   - component: {fileID: 23581983716959356}
   - component: {fileID: 114531536456778864}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PasswordButton4
   m_TagString: Interractable
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 65355789340327216}
   - component: {fileID: 23001265203880858}
   - component: {fileID: 114374765630723876}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PasswordButton6
   m_TagString: Interractable
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 65020978325342354}
   - component: {fileID: 23326918499479158}
   - component: {fileID: 114341624533915278}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PasswordButton10
   m_TagString: Interractable
   m_Icon: {fileID: 0}
@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 65943799134799028}
   - component: {fileID: 23366398174210112}
   - component: {fileID: 114607811173489322}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PasswordButton1
   m_TagString: Interractable
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 65202654278751390}
   - component: {fileID: 23474468121908376}
   - component: {fileID: 114331543821099974}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PasswordButton7
   m_TagString: Interractable
   m_Icon: {fileID: 0}
@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 65371382218684844}
   - component: {fileID: 23008081619168404}
   - component: {fileID: 114832294787358150}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PasswordButton2
   m_TagString: Interractable
   m_Icon: {fileID: 0}
@@ -820,7 +820,7 @@ GameObject:
   - component: {fileID: 65653756974819504}
   - component: {fileID: 23625801165633338}
   - component: {fileID: 114091853507344012}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PasswordButton9
   m_TagString: Interractable
   m_Icon: {fileID: 0}
@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 65397153881655644}
   - component: {fileID: 23982265303379790}
   - component: {fileID: 114985399210410222}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PasswordButton3
   m_TagString: Interractable
   m_Icon: {fileID: 0}
@@ -997,7 +997,7 @@ GameObject:
   - component: {fileID: 65646727000997872}
   - component: {fileID: 23890877628729330}
   - component: {fileID: 114739038930118410}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PasswordButton0
   m_TagString: Interractable
   m_Icon: {fileID: 0}
@@ -1016,7 +1016,7 @@ GameObject:
   - component: {fileID: 65495993231085956}
   - component: {fileID: 23888507601891496}
   - component: {fileID: 114268241664006560}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PasswordButton8
   m_TagString: Interractable
   m_Icon: {fileID: 0}
@@ -4413,9 +4413,9 @@ MonoBehaviour:
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
-  buttonOrderID: 4
-  buttonActive: 1
   symbol: {fileID: 0}
+  buttonOrderID: 4
+  lightUpOnPress: 1
 --- !u!114 &114047994764309306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4432,9 +4432,9 @@ MonoBehaviour:
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
-  buttonOrderID: 4
-  buttonActive: 1
   symbol: {fileID: 0}
+  buttonOrderID: 4
+  lightUpOnPress: 1
 --- !u!114 &114091853507344012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4451,9 +4451,9 @@ MonoBehaviour:
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
-  buttonOrderID: 4
-  buttonActive: 1
   symbol: {fileID: 0}
+  buttonOrderID: 4
+  lightUpOnPress: 1
 --- !u!114 &114257683608505498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4487,9 +4487,9 @@ MonoBehaviour:
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
-  buttonOrderID: 4
-  buttonActive: 1
   symbol: {fileID: 0}
+  buttonOrderID: 4
+  lightUpOnPress: 1
 --- !u!114 &114318638797104444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4538,9 +4538,9 @@ MonoBehaviour:
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
-  buttonOrderID: 4
-  buttonActive: 1
   symbol: {fileID: 0}
+  buttonOrderID: 4
+  lightUpOnPress: 1
 --- !u!114 &114341624533915278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4557,9 +4557,9 @@ MonoBehaviour:
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
-  buttonOrderID: 4
-  buttonActive: 1
   symbol: {fileID: 0}
+  buttonOrderID: 4
+  lightUpOnPress: 1
 --- !u!114 &114374765630723876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4576,9 +4576,9 @@ MonoBehaviour:
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
-  buttonOrderID: 4
-  buttonActive: 1
   symbol: {fileID: 0}
+  buttonOrderID: 4
+  lightUpOnPress: 1
 --- !u!114 &114395082399282956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4606,9 +4606,9 @@ MonoBehaviour:
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
-  buttonOrderID: 4
-  buttonActive: 1
   symbol: {fileID: 0}
+  buttonOrderID: 4
+  lightUpOnPress: 1
 --- !u!114 &114607811173489322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4625,9 +4625,9 @@ MonoBehaviour:
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
-  buttonOrderID: 1
-  buttonActive: 1
   symbol: {fileID: 0}
+  buttonOrderID: 1
+  lightUpOnPress: 1
 --- !u!114 &114739038930118410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4644,9 +4644,9 @@ MonoBehaviour:
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
-  buttonOrderID: 3
-  buttonActive: 1
   symbol: {fileID: 0}
+  buttonOrderID: 3
+  lightUpOnPress: 1
 --- !u!114 &114832294787358150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4663,9 +4663,9 @@ MonoBehaviour:
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
-  buttonOrderID: 2
-  buttonActive: 1
   symbol: {fileID: 0}
+  buttonOrderID: 2
+  lightUpOnPress: 1
 --- !u!114 &114938089952126208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4677,10 +4677,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352a66ace4ff8f341bc18be93d7ecce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passwordButtons: []
-  nextID: 1
-  passwordLock: 0
-  passwordLength: 0
 --- !u!114 &114963405963828820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4693,7 +4689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbers: 1
-  infoCube: {fileID: 1611206449602604, guid: b197bc6463babf74d919d93bc8e000ff, type: 2}
+  clueObject: {fileID: 1611206449602604, guid: b197bc6463babf74d919d93bc8e000ff, type: 2}
   symbolNumbers:
   - {fileID: 2100000, guid: e79b5b7504ca2e04990d36862c4ce1e3, type: 2}
   - {fileID: 2100000, guid: 953ec2af66c7d26418980c3b09897bc5, type: 2}
@@ -4701,7 +4697,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d26384c8f7f1055429601ee981aa1773, type: 2}
   - {fileID: 2100000, guid: 9949209a4c4f0094f810a8e460f76e0d, type: 2}
   - {fileID: 2100000, guid: e29346f0f92dc1d43a3c3d108fb71342, type: 2}
-  curClueNumber: 0
   clueLocations:
   - {fileID: 4881122149591486}
   - {fileID: 4602483675650152}
@@ -4730,8 +4725,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   passwordManager: {fileID: 114938089952126208}
-  P1Clues: {fileID: 0}
-  P2Clues: {fileID: 0}
   unsetPasswordButtons:
   - {fileID: 114739038930118410}
   - {fileID: 114607811173489322}
@@ -4745,13 +4738,19 @@ MonoBehaviour:
   - {fileID: 114091853507344012}
   - {fileID: 114341624533915278}
   - {fileID: 114047994764309306}
+  passwordLengt: 5
+  P1Clues: {fileID: 0}
+  P2Clues: {fileID: 0}
   symbolColors:
   - {r: 1, g: 0, b: 0, a: 0}
   - {r: 0, g: 0.8235294, b: 0.27450982, a: 0}
   - {r: 0.15862082, g: 0, b: 1, a: 0}
   - {r: 1, g: 0.93103445, b: 0, a: 0}
-  - {r: 0.986207, g: 0, b: 1, a: 0}
+  - {r: 0.87018263, g: 0, b: 0.88235295, a: 0}
   - {r: 0, g: 1, b: 1, a: 0}
+  - {r: 0, g: 1, b: 0.08965516, a: 0}
+  - {r: 1, g: 0.5147059, b: 0.83086747, a: 0}
+  - {r: 1, g: 0.60784316, b: 0, a: 0}
   symbols:
   - {fileID: 2100000, guid: cc30b7c2051196c48a8f745fd48c83a4, type: 2}
   - {fileID: 2100000, guid: f100847e556a0f843b91572b06f86cc5, type: 2}
@@ -4772,7 +4771,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 6d179862ce06cb942a68438087e94d3b, type: 2}
   - {fileID: 2100000, guid: f2516a6186b451b4c93eb1246335b29b, type: 2}
   - {fileID: 2100000, guid: 48db1d8ba1d2b324d81560654526fd05, type: 2}
-  passwordLengt: 6
 --- !u!114 &114985399210410222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4789,6 +4787,6 @@ MonoBehaviour:
   delay: 0
   playerCmd: {fileID: 0}
   passwordManager: {fileID: 114938089952126208}
-  buttonOrderID: 5
-  buttonActive: 1
   symbol: {fileID: 0}
+  buttonOrderID: 5
+  lightUpOnPress: 1
