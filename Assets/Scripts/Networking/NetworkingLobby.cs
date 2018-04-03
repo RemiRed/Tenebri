@@ -21,6 +21,8 @@ public class NetworkingLobby : NetworkLobbyManager
     int delay = 500;
     int currentDelay;
 
+    MatchInfo test;
+
     bool matchListBool = false;
 
     private void Update()
@@ -141,6 +143,7 @@ public class NetworkingLobby : NetworkLobbyManager
         {
             print(matchInfo.nodeId + " - Node ID");
             closeMatchButton.GetComponent<NetworkingMatch>().matchInfo = matchInfo;
+            test = matchInfo;
             print("Successfully created match: " + matchInfo.networkId);
         }
     }
@@ -156,9 +159,16 @@ public class NetworkingLobby : NetworkLobbyManager
         StopHost();
     }
 
-    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId)
+    public void Test()
     {
-        base.OnServerAddPlayer(conn, playerControllerId);
-        print("CONNECTED");
+        foreach (NetworkLobbyPlayer nlp in lobbySlots)
+        {
+            if (nlp != null)
+            {
+                print("TEST");
+                print(nlp.isServer);
+            }
+        }
+
     }
-}
+ }
