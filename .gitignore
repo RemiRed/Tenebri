@@ -32,7 +32,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-Assets/Scenes/EdwinTest.unity
-Assets/Props/Room_pieces/Doors/Texture/Prop_IntFloor_01.meta
-Assets/Props/Room_pieces/Prop_IntFloor_01.meta
 *.meta
