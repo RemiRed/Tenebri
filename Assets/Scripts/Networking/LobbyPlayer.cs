@@ -27,4 +27,6 @@ public class LobbyPlayer : NetworkLobbyPlayer
             SendNotReadyToBeginMessage();
         }
     }
+
+
 }
