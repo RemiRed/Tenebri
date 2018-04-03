@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class NetworkingLobby : NetworkLobbyManager
 {
     [SerializeField]
-    GameObject matchmakingGameObject, scrollView, scrollViewContent, matchPanel, createMatchPanel, closeMatchButton, createMatchButton;
+    GameObject matchmakingGameObject, scrollView, scrollViewContent, matchPanel, createMatchPanel, closeMatchButton, createMatchButton, playerCount;
 
     [SerializeField]
     InputField matchInputField;
@@ -21,9 +21,8 @@ public class NetworkingLobby : NetworkLobbyManager
     int delay = 500;
     int currentDelay;
 
-    MatchInfo test;
-
     bool matchListBool = false;
+    bool inMatch = false;
 
     private void Update()
     {
@@ -35,6 +34,10 @@ public class NetworkingLobby : NetworkLobbyManager
                 currentDelay = delay;
                 MatchmakingListMatches();
             }
+        }
+        if (inMatch)
+        {
+            PlayerCount();
         }
     }
 
@@ -91,6 +94,7 @@ public class NetworkingLobby : NetworkLobbyManager
     {
         print("@ MatchmakingJoinMatch");
         matchListBool = false;
+        inMatch = true;
         scrollView.SetActive(false);
         matchPanel.SetActive(true);
         createMatchPanel.SetActive(false);
@@ -119,6 +123,7 @@ public class NetworkingLobby : NetworkLobbyManager
         {
             print("@ MatchmakingCreateMatch");
             matchListBool = false;
+            inMatch = true;
             scrollView.SetActive(false);
             matchPanel.SetActive(true);
             createMatchPanel.SetActive(false);
@@ -143,7 +148,6 @@ public class NetworkingLobby : NetworkLobbyManager
         {
             print(matchInfo.nodeId + " - Node ID");
             closeMatchButton.GetComponent<NetworkingMatch>().matchInfo = matchInfo;
-            test = matchInfo;
             print("Successfully created match: " + matchInfo.networkId);
         }
     }
@@ -153,22 +157,34 @@ public class NetworkingLobby : NetworkLobbyManager
         print("@ MatchmakingCloseMatch");
         matchPanel.SetActive(false);
         matchmakingGameObject.SetActive(true);
+        inMatch = false;
         StopMatchMaker();
         GameObject newGO = new GameObject();
         transform.parent = newGO.transform;
         StopHost();
     }
 
-    public void Test()
+    public void PlayerCount()
     {
+        if (playerCount == null)
+        {
+            inMatch = false;
+            return;
+        }
+        int playerCountInt = 0;
+        int readyCountInt = 0;
         foreach (NetworkLobbyPlayer nlp in lobbySlots)
         {
             if (nlp != null)
             {
-                print("TEST");
-                print(nlp.isServer);
+                playerCountInt++;
+                if (nlp.readyToBegin)
+                {
+                    readyCountInt++;
+                }
             }
-        }
 
+        }
+        playerCount.GetComponent<Text>().text = "Player Count: " + playerCountInt + "\nReady: " + readyCountInt;
     }
- }
+}
