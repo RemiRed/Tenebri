@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 4518082910737074}
   - component: {fileID: 33596973731882202}
   - component: {fileID: 23363138820942854}
-  - component: {fileID: 95121969865542470}
   m_Layer: 0
   m_Name: Prop_PaintingFrameAndersZorn_01
   m_TagString: Untagged
@@ -155,7 +154,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1959454916028896}
-  m_Mesh: {fileID: 4300000, guid: 3f472f6e844f88c45860b6b35fb53e94, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 2a26163cd354e8c498f5bce211bc97af, type: 3}
 --- !u!64 &64341612738793500
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -170,20 +169,3 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &95121969865542470
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1959454916028896}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 66ee5b9f5f7cbc04584647fcbcfb7bf6, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
