@@ -429,7 +429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1504703149277202
 GameObject:
   m_ObjectHideFlags: 1
@@ -3339,7 +3339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbers: 0
-  infoCube: {fileID: 1611206449602604, guid: b197bc6463babf74d919d93bc8e000ff, type: 2}
+  clueObject: {fileID: 1611206449602604, guid: b197bc6463babf74d919d93bc8e000ff, type: 2}
   symbolNumbers:
   - {fileID: 2100000, guid: e79b5b7504ca2e04990d36862c4ce1e3, type: 2}
   - {fileID: 2100000, guid: 953ec2af66c7d26418980c3b09897bc5, type: 2}
@@ -3347,7 +3347,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d26384c8f7f1055429601ee981aa1773, type: 2}
   - {fileID: 2100000, guid: 9949209a4c4f0094f810a8e460f76e0d, type: 2}
   - {fileID: 2100000, guid: e29346f0f92dc1d43a3c3d108fb71342, type: 2}
-  curClueNumber: 0
   clueLocations:
   - {fileID: 4457434239538412}
   - {fileID: 4831484952672954}

@@ -203,7 +203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1167976374536040
 GameObject:
   m_ObjectHideFlags: 1
@@ -4677,6 +4677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352a66ace4ff8f341bc18be93d7ecce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  passwordButtons: []
 --- !u!114 &114963405963828820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4743,14 +4744,14 @@ MonoBehaviour:
   P2Clues: {fileID: 0}
   symbolColors:
   - {r: 1, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0.8235294, b: 0.27450982, a: 0}
+  - {r: 0, g: 0.7058824, b: 0.3529412, a: 0}
   - {r: 0.15862082, g: 0, b: 1, a: 0}
-  - {r: 1, g: 0.93103445, b: 0, a: 0}
+  - {r: 1, g: 1, b: 0, a: 0}
   - {r: 0.87018263, g: 0, b: 0.88235295, a: 0}
   - {r: 0, g: 1, b: 1, a: 0}
-  - {r: 0, g: 1, b: 0.08965516, a: 0}
-  - {r: 1, g: 0.5147059, b: 0.83086747, a: 0}
-  - {r: 1, g: 0.60784316, b: 0, a: 0}
+  - {r: 0, g: 1, b: 0.05882353, a: 0}
+  - {r: 1, g: 0.60784316, b: 0.84313726, a: 0}
+  - {r: 1, g: 0.5294118, b: 0, a: 0}
   symbols:
   - {fileID: 2100000, guid: cc30b7c2051196c48a8f745fd48c83a4, type: 2}
   - {fileID: 2100000, guid: f100847e556a0f843b91572b06f86cc5, type: 2}
