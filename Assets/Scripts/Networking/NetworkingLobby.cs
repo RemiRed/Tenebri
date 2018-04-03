@@ -155,4 +155,9 @@ public class NetworkingLobby : NetworkLobbyManager
         transform.parent = newGO.transform;
         StopHost();
     }
+
+    private void OnPlayerConnected(NetworkPlayer player)
+    {
+        print("CONNECTED!");
+    }
 }

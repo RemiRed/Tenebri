@@ -54,6 +54,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLobbyGUI: 1
   readyButton: {fileID: 0}
+  playerText: {fileID: 0}
+  readyText: {fileID: 0}
+  lobbyPlayerUIPrefab: {fileID: 1557144568260470, guid: 2b2d5452d14764e49bc7cd87e44874ff,
+    type: 2}
 --- !u!114 &114829256468896104
 MonoBehaviour:
   m_ObjectHideFlags: 1

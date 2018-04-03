@@ -8,6 +8,7 @@ public class LobbyPlayer : NetworkLobbyPlayer
 {
     [SerializeField]
     Button readyButton;
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
