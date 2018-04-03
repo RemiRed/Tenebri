@@ -1,16 +1,18 @@
 fileFormatVersion: 2
-guid: 42f3f54ff51cfa0408c771f3e935ee6c
-timeCreated: 1521758047
+guid: f1f2af270d06b3c4788d1214e947caa4
+timeCreated: 1522088897
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Prop_Table_02_Mat
+    2100000: Prop_Table_02_LP_lambert5SG1
+    2100002: Prop_Table_02_LP_lambert4SG1
+    2100004: Prop_Table_02_LP_lambert6SG1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Prop_Table_02
+    4300000: Prop_Table_02_LP:Mesh
     9500000: //RootNode
   externalObjects: {}
   materials:
