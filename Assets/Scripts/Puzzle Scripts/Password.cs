@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Password : MonoBehaviour {
 
-	//public List<PasswordButton> passwordButtons;		//List of all buttons in the password. Not nessesary but useful for debug purposes.
+	public List<PasswordButton> passwordButtons;		//List of all buttons in the password. Not nessesary but useful for debug purposes.
 	int nextID, passwordLock, passwordLength;
 	bool solved = false;
 		

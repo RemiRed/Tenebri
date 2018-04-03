@@ -66,8 +66,6 @@ public class PasswordRandomizer : NetworkBehaviour {
 				_randomSymbol = Random.Range (0, randomSymbolRange);
 				_randomColor = Random.Range (0, randomColorRange);
 
-				RpcSetRandomPassword (i,_randomButton,_randomSymbol);
-
 				if (i <= passwordLengt) {
 				
 					if (i <= symbolColors.Count) {
@@ -80,6 +78,9 @@ public class PasswordRandomizer : NetworkBehaviour {
 						Debug.LogWarning ("Not enough colors to assign clues for the whole password");
 					}
 				}
+
+				RpcSetRandomPassword (i,_randomButton,_randomSymbol);
+
 				randomButtonRange--;
 				randomSymbolRange--;
 			}
@@ -89,9 +90,12 @@ public class PasswordRandomizer : NetworkBehaviour {
 	[ClientRpc]
 	void RpcSetRandomPassword(int _index,int _randomButton, int _randomSymbol){
 
-	//	passwordManager.passwordButtons.Add (unsetPasswordButtons [_randomButton]);	//Not nessesary, but useful for debuging purposes.
+		passwordManager.passwordButtons.Add (unsetPasswordButtons [_randomButton]);	//Not nessesary, but useful for debuging purposes.
+
 		unsetPasswordButtons [_randomButton].SetPasswordButton (_index, symbols [_randomSymbol]);
+
 		unsetPasswordButtons.RemoveAt (_randomButton);
+		symbols.RemoveAt (_randomSymbol);
 	}
 
 	[ClientRpc]
@@ -100,7 +104,6 @@ public class PasswordRandomizer : NetworkBehaviour {
 		P1Clues.SetPuzzleClues(symbols[_randomSymbol], symbolColors[_randomColor]);
 		P2Clues.SetPuzzleClues(symbols[_randomSymbol], symbolColors[_randomColor]);
 
-		symbols.RemoveAt (_randomSymbol);
 		symbolColors.RemoveAt (_randomColor);
 	}
 
