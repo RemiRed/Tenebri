@@ -17,8 +17,7 @@ public class RoundDoors : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.G))
-            FindPath();
+
 	}
 
     public void FindPath()
@@ -28,6 +27,7 @@ public class RoundDoors : MonoBehaviour {
             entered = true;
             int randomRoomID = Random.Range(0, availableRoomsList.Count);
             RoundDoors room = availableRoomsList[randomRoomID].GetComponent<RoundDoors>();
+            Debug.Log(gameObject + " went into " + room);
             foreach(GameObject wall in WallList)
             {
                 foreach(GameObject walle in room.WallList)
@@ -35,12 +35,11 @@ public class RoundDoors : MonoBehaviour {
                     if(wall == walle)
                     {
                         wall.GetComponent<RoundWallDoors>().OpenSesamy();
-                        Debug.Log("hello i am a baboon");
                         break;
                     }
                 }
             }
-            //WallList[randomRoomID].GetComponent<RoundWallDoors>().OpenSesamy();
+           
             if (!room.entered)
             {
                 if (layer == room.layer)
@@ -50,7 +49,7 @@ public class RoundDoors : MonoBehaviour {
                 room.FindPath();
             }
         }
-        if(layer == 0)
+        /*if(layer == 0)
         {
             bool allActive = true;
             for(int i = 0; i < WallList.Count; i++)
@@ -67,7 +66,7 @@ public class RoundDoors : MonoBehaviour {
                 WallList[Random.Range(0, WallList.Count)].SetActive(false);
                 Debug.Log("noo");
             }
-        }
+        }*/
     }
 
 }

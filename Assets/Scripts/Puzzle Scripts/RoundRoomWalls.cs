@@ -18,8 +18,12 @@ public class RoundRoomWalls : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.H))
             CloseWalls();
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            print("Wohoo");
             RandomSymbols();
+        }
+
     }
     
     void CloseWalls()
@@ -28,17 +32,24 @@ public class RoundRoomWalls : MonoBehaviour {
         {
             bwa.SetActive(true);
         }
+        NeutralSymbols();
     }
 
     void RandomSymbols()
     {
-        NeutralSymbols();
+        List<GameObject> tempButtons = new List<GameObject>();
+        foreach (GameObject button in buttons)
+        {
+            tempButtons.Add(button);
+        }
         for(int i = 0; i < 3; i++)
         {
             int randomDude = Random.Range(0, buttons.Count);
-            if(buttons[randomDude].GetComponent<RoundDoors>().entered == true)
+            if(tempButtons[randomDude])
             {
-                buttons[randomDude].GetComponent<Renderer>().material.color = Color.red;
+                tempButtons[randomDude].GetComponent<Renderer>().material.color = Color.red;
+                tempButtons[randomDude].GetComponent<RoundDoors>().FindPath();
+                tempButtons.Remove(tempButtons[randomDude]);
             }
         }
     }
