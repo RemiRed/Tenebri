@@ -5,20 +5,21 @@ using UnityEngine;
 public class RoundDoors : MonoBehaviour {
 
     [SerializeField]
-    List<GameObject> WallList = new List<GameObject>(), availableRoomsList = new List<GameObject>(); //room list har alla angränsande rum som antingen är på samma lager eller ett lager in, wall list är väggarna till de rummen.
+    List<GameObject> WallList = new List<GameObject>(),
+					availableRoomsList = new List<GameObject>(); //room list har alla angränsande rum som antingen är på samma lager eller ett lager in, wall list är väggarna till de rummen.
     
     public bool entered = false;
     public int layer;
 
-	// Use this for initialization
-	void Start () {
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
+//	// Use this for initialization
+//	void Start () {
+//        
+//	}
+//	
+//	// Update is called once per frame
+//	void Update () {
+//
+//	}
 
     public void FindPath()
     {
