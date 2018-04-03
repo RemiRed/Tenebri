@@ -18,7 +18,7 @@ public class LeverScript : Interractable {
         if (!leverPulled) {
             
             leverPulled = true;
-            anim.Play("isPulling");
+            anim.Play("Pull");
             Debug.Log("The Lever is now Pulled");
         }
 
