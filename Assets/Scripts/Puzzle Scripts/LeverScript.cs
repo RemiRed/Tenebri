@@ -15,10 +15,10 @@ public class LeverScript : Interractable {
     
     void Pulling()
     {
-        if (leverPulled == false) {
+        if (!leverPulled) {
             
             leverPulled = true;
-            anim.Play("Pull");
+            anim.Play("isPulling");
             Debug.Log("The Lever is now Pulled");
         }
 
@@ -26,11 +26,12 @@ public class LeverScript : Interractable {
     }
     void LettinGo()
     {
-        if (leverPulled =!false)
+        if (leverPulled)
         {
            
-            anim.Play("Return");
+            anim.Play("LetGo");
             leverPulled = false;
+            Debug.Log("Lettin go...");
         }
     }
  
