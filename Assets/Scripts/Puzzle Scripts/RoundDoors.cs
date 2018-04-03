@@ -56,6 +56,23 @@ public class RoundDoors : MonoBehaviour {
                 WallList[Random.Range(0, WallList.Count)].SetActive(false);
             }
         }
+        if(layer == 1)
+        {
+            bool allActive = true;
+            for (int i = 0; i < WallList.Count; i++)
+            {
+                if (!WallList[i].activeInHierarchy)
+                {
+                    allActive = false;
+                    break;
+                }
+
+            }
+            if (allActive == true)
+            {
+                WallList[Random.Range(0, WallList.Count)].SetActive(false);
+            }
+        }
     }
 
 }
