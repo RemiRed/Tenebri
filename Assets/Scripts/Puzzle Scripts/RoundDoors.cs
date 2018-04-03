@@ -28,8 +28,19 @@ public class RoundDoors : MonoBehaviour {
             entered = true;
             int randomRoomID = Random.Range(0, availableRoomsList.Count);
             RoundDoors room = availableRoomsList[randomRoomID].GetComponent<RoundDoors>();
-            Debug.Log(randomRoomID);
-            WallList[randomRoomID].GetComponent<RoundWallDoors>().OpenSesamy();
+            foreach(GameObject wall in WallList)
+            {
+                foreach(GameObject walle in room.WallList)
+                {
+                    if(wall == walle)
+                    {
+                        wall.GetComponent<RoundWallDoors>().OpenSesamy();
+                        Debug.Log("hello i am a baboon");
+                        break;
+                    }
+                }
+            }
+            //WallList[randomRoomID].GetComponent<RoundWallDoors>().OpenSesamy();
             if (!room.entered)
             {
                 if (layer == room.layer)
@@ -54,23 +65,7 @@ public class RoundDoors : MonoBehaviour {
             if (allActive == true)
             {
                 WallList[Random.Range(0, WallList.Count)].SetActive(false);
-            }
-        }
-        if(layer == 1)
-        {
-            bool allActive = true;
-            for (int i = 0; i < WallList.Count; i++)
-            {
-                if (!WallList[i].activeInHierarchy)
-                {
-                    allActive = false;
-                    break;
-                }
-
-            }
-            if (allActive == true)
-            {
-                WallList[Random.Range(0, WallList.Count)].SetActive(false);
+                Debug.Log("noo");
             }
         }
     }
