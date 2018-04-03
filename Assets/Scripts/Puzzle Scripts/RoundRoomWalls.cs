@@ -37,8 +37,6 @@ public class RoundRoomWalls : MonoBehaviour {
         {
             int randomDude = Random.Range(0, buttons.Count-i);
 
-			Debug.LogWarning (randomDude);
-            
 			if(tempButtons[randomDude])
             {
                 tempButtons[randomDude].GetComponent<Renderer>().material.color = Color.red;
