@@ -10,12 +10,20 @@ public class LobbyPlayer : NetworkLobbyPlayer
     Button readyButton;
     private void Start()
     {
-        //   readyButton = GameObject.FindGameObjectWithTag("ReadyButton").GetComponent<Button>();
-        // readyButton.onClick.AddListener(Ready);
+        DontDestroyOnLoad(gameObject);
+        readyButton = GameObject.FindGameObjectWithTag("ReadyButton").GetComponent<Button>();
+        readyButton.onClick.AddListener(Ready);
     }
 
     public void Ready()
     {
-        readyToBegin = !readyToBegin;
+        if (!readyToBegin)
+        {
+            SendReadyToBeginMessage();
+        }
+        else
+        {
+            SendNotReadyToBeginMessage();
+        }
     }
 }
