@@ -156,9 +156,9 @@ public class NetworkingLobby : NetworkLobbyManager
         StopHost();
     }
 
-    public override void OnLobbyClientConnect(NetworkConnection conn)
+    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId)
     {
-        base.OnLobbyClientConnect(conn);
+        base.OnServerAddPlayer(conn, playerControllerId);
         print("CONNECTED");
     }
 }
