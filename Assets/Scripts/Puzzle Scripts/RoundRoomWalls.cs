@@ -11,7 +11,8 @@ public class RoundRoomWalls : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        
+
+		RandomSymbols();
     }
 
     void Update()
@@ -33,7 +34,7 @@ public class RoundRoomWalls : MonoBehaviour {
         {
             tempButtons.Add(button);
         }
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < 1; i++)
         {
             int randomDude = Random.Range(0, buttons.Count-i);
 

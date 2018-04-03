@@ -26,10 +26,14 @@ public class RoundDoors : MonoBehaviour {
         if (layer != 0)
         {
             entered = true;
+
             int randomRoomID = Random.Range(0, availableRoomsList.Count);
-            RoundDoors room = availableRoomsList[randomRoomID].GetComponent<RoundDoors>();
-            Debug.Log(gameObject + " went into " + room);
-            foreach(GameObject wall in WallList)
+            
+			RoundDoors room = availableRoomsList[randomRoomID].GetComponent<RoundDoors>();
+           
+			Debug.Log(gameObject + " went into " + room);
+            
+			foreach(GameObject wall in WallList)
             {
                 foreach(GameObject walle in room.WallList)
                 {
@@ -43,10 +47,10 @@ public class RoundDoors : MonoBehaviour {
            
             if (!room.entered)
             {
-                if (layer == room.layer)
-                {
-                    room.availableRoomsList.Remove(gameObject);
-                }
+//                if (layer == room.layer)
+//                {
+              	room.availableRoomsList.Remove(gameObject);
+                //}
                 room.FindPath();
             }
         }
@@ -69,5 +73,4 @@ public class RoundDoors : MonoBehaviour {
             }
         }*/
     }
-
 }
