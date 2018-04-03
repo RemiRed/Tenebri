@@ -632,9 +632,15 @@ PlayerSettings:
   cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
+<<<<<<< HEAD
   cloudProjectId: 
   projectName: 
   organizationId: 
+=======
+  cloudProjectId: 78f13d7c-81c0-45b2-8ce0-0b89a43157f2
+  projectName: Tenebri
+  organizationId: andreas-halldin
+>>>>>>> Lobby
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

@@ -8,6 +8,16 @@ TagManager:
   - Interractable
   - P1
   - PasswordManager
+<<<<<<< HEAD
+=======
+  - P2
+  - InterractionMessage
+  - Movable
+  - NetworkManager
+  - LobbyPlayer
+  - ReadyButton
+  - CloseButton
+>>>>>>> Lobby
   layers:
   - Default
   - TransparentFX
