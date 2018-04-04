@@ -6,20 +6,30 @@ public class LeverScript : Interractable {
 
     Animator anim;
     bool leverPulled = false;
+    bool a_isPulling;
+    [SerializeField]
+    GameObject openThis;
 
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        a_isPulling = false;
     }
     
     void Pulling()
     {
-        if (!leverPulled) {
+        if (leverPulled == false) {
+
+            a_isPulling = true;
             
+            if(a_isPulling == true)
+            {
+                anim.SetBool("isPulling", true);
+            }
+           
             leverPulled = true;
-            anim.Play("Pull");
-            Debug.Log("The Lever is now Pulled");
+            openThis.GetComponent<Animator>().SetTrigger("Open");
         }
 
         
@@ -28,10 +38,12 @@ public class LeverScript : Interractable {
     {
         if (leverPulled)
         {
-           
-            anim.Play("LetGo");
+            Debug.Log("It Comes here??");
+            //anim.SetBool("LetGo", true);
+            //anim.Play("LetGo");
+            Debug.Log("It Comes here 2n?");
+            anim.SetBool("isPulling", false);
             leverPulled = false;
-            Debug.Log("Lettin go...");
         }
     }
  
