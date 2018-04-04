@@ -2916,6 +2916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 662848412}
   - {fileID: 594165837}
@@ -2924,9 +2925,11 @@ MonoBehaviour:
   - {fileID: 1437762380}
   - {fileID: 362858436}
   - {fileID: 1491521976}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 3
+  origin: {fileID: 0}
 --- !u!43 &84459437
 Mesh:
   m_ObjectHideFlags: 0
@@ -5897,6 +5900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 958266520}
   - {fileID: 683782981}
@@ -5905,9 +5909,11 @@ MonoBehaviour:
   - {fileID: 1914734319}
   - {fileID: 1186984632}
   - {fileID: 907666189}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 3
+  origin: {fileID: 0}
 --- !u!1 &221524986
 GameObject:
   m_ObjectHideFlags: 0
@@ -16000,6 +16006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 254648674}
   - {fileID: 594165837}
@@ -16008,9 +16015,11 @@ MonoBehaviour:
   - {fileID: 2074456025}
   - {fileID: 62858564}
   - {fileID: 1491521976}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 3
+  origin: {fileID: 0}
 --- !u!43 &392799184
 Mesh:
   m_ObjectHideFlags: 0
@@ -31036,6 +31045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 858949622}
   - {fileID: 521885697}
@@ -31046,9 +31056,11 @@ MonoBehaviour:
   - {fileID: 1046919463}
   - {fileID: 1443079041}
   - {fileID: 1027459596}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 1
+  origin: {fileID: 0}
 --- !u!1 &683782981
 GameObject:
   m_ObjectHideFlags: 0
@@ -34060,6 +34072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 1042230529}
   - {fileID: 594475171}
@@ -34070,9 +34083,11 @@ MonoBehaviour:
   - {fileID: 1046919463}
   - {fileID: 671565686}
   - {fileID: 1443079041}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 0
+  origin: {fileID: 0}
 --- !u!1 &811350757
 GameObject:
   m_ObjectHideFlags: 0
@@ -36532,6 +36547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 811350757}
   - {fileID: 551546135}
@@ -36540,9 +36556,11 @@ MonoBehaviour:
   - {fileID: 1186984632}
   - {fileID: 2074456025}
   - {fileID: 1027459596}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 3
+  origin: {fileID: 0}
 --- !u!1 &837818782
 GameObject:
   m_ObjectHideFlags: 0
@@ -43014,6 +43032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 1557993583}
   - {fileID: 662372661}
@@ -43026,9 +43045,11 @@ MonoBehaviour:
   - {fileID: 1877016791}
   - {fileID: 1027459596}
   - {fileID: 1046919463}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 2
+  origin: {fileID: 0}
 --- !u!1 &910416503
 GameObject:
   m_ObjectHideFlags: 0
@@ -59132,6 +59153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 521885697}
   - {fileID: 662372661}
@@ -59144,9 +59166,11 @@ MonoBehaviour:
   - {fileID: 907666189}
   - {fileID: 1491521976}
   - {fileID: 671565686}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 2
+  origin: {fileID: 0}
 --- !u!43 &1029935244
 Mesh:
   m_ObjectHideFlags: 0
@@ -62138,6 +62162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 1557993583}
   - {fileID: 134303056}
@@ -62148,9 +62173,11 @@ MonoBehaviour:
   - {fileID: 1690811597}
   - {fileID: 671565686}
   - {fileID: 907666189}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 1
+  origin: {fileID: 0}
 --- !u!43 &1056899490
 Mesh:
   m_ObjectHideFlags: 0
@@ -62758,6 +62785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 563101529}
   - {fileID: 551546135}
@@ -62766,9 +62794,11 @@ MonoBehaviour:
   - {fileID: 190323970}
   - {fileID: 811470242}
   - {fileID: 907666189}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 3
+  origin: {fileID: 0}
 --- !u!43 &1188659965
 Mesh:
   m_ObjectHideFlags: 0
@@ -72202,6 +72232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 1395096232}
   - {fileID: 2044308010}
@@ -72210,9 +72241,11 @@ MonoBehaviour:
   - {fileID: 62858564}
   - {fileID: 1914734319}
   - {fileID: 1877016791}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 3
+  origin: {fileID: 0}
 --- !u!1 &1438943445
 GameObject:
   m_ObjectHideFlags: 0
@@ -72397,6 +72430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 38753876}
   - {fileID: 1042230529}
@@ -72407,9 +72441,11 @@ MonoBehaviour:
   - {fileID: 1690811597}
   - {fileID: 671565686}
   - {fileID: 1491521976}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 1
+  origin: {fileID: 0}
 --- !u!1 &1449091393
 GameObject:
   m_ObjectHideFlags: 0
@@ -75099,6 +75135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 38753876}
   - {fileID: 1421064850}
@@ -75111,9 +75148,11 @@ MonoBehaviour:
   - {fileID: 1877016791}
   - {fileID: 1027459596}
   - {fileID: 1443079041}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 2
+  origin: {fileID: 0}
 --- !u!43 &1538887539
 Mesh:
   m_ObjectHideFlags: 0
@@ -87917,6 +87956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 594475171}
   - {fileID: 1194359726}
@@ -87927,9 +87967,11 @@ MonoBehaviour:
   - {fileID: 1877016791}
   - {fileID: 1046919463}
   - {fileID: 1443079041}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 1
+  origin: {fileID: 0}
 --- !u!4 &1705482249
 Transform:
   m_ObjectHideFlags: 0
@@ -95399,6 +95441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 1194359726}
   - {fileID: 1257668118}
@@ -95411,9 +95454,11 @@ MonoBehaviour:
   - {fileID: 1491521976}
   - {fileID: 907666189}
   - {fileID: 1690811597}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 2
+  origin: {fileID: 0}
 --- !u!1 &1914734319
 GameObject:
   m_ObjectHideFlags: 0
@@ -95501,6 +95546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 1449091393}
   - {fileID: 2044308010}
@@ -95509,9 +95555,11 @@ MonoBehaviour:
   - {fileID: 1437762380}
   - {fileID: 190323970}
   - {fileID: 1877016791}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 3
+  origin: {fileID: 0}
 --- !u!4 &1922720131
 Transform:
   m_ObjectHideFlags: 0
@@ -101053,6 +101101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b1b991620d9454d9a7fd3c7e4f7414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetManager: {fileID: 1438943447}
   WallList:
   - {fileID: 1945510445}
   - {fileID: 870703283}
@@ -101061,9 +101110,11 @@ MonoBehaviour:
   - {fileID: 811470242}
   - {fileID: 362858436}
   - {fileID: 1027459596}
+  backupRoomList: []
   entered: 0
   bool2: 0
   layer: 3
+  origin: {fileID: 0}
 --- !u!43 &2084535620
 Mesh:
   m_ObjectHideFlags: 0
