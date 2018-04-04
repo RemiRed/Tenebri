@@ -6,21 +6,44 @@ public class RoundDoors : MonoBehaviour {
 
     [SerializeField]
     List<GameObject> WallList = new List<GameObject>(),
-					availableRoomsList = new List<GameObject>(); //room list har alla angränsande rum som antingen är på samma lager eller ett lager in, wall list är väggarna till de rummen.
-    
+					availableRoomsList = new List<GameObject>(), //room list har alla angränsande rum som antingen är på samma lager eller ett lager in, wall list är väggarna till de rummen.
+					backupRoomList = new List<GameObject>();
     public bool entered = false, bool2 = false;
     public int layer;
 
 	public RoundDoors origin;
 
+	void Awake(){
+
+		foreach (GameObject _room in availableRoomsList) {
+
+			backupRoomList.Add (_room);
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
-        
+
+	
 	}
 
     public void FindPath()
     {
 		if (layer != 0) {
+
+			//Allows for infinite rests for improved debugging
+			availableRoomsList.Clear ();
+			Debug.Log ("Backup list : " + backupRoomList.Count);
+			foreach(GameObject _room in backupRoomList){
+
+				availableRoomsList.Add (_room);
+			}
+				
+			//Improved layout randomization
+			int randomRoomToKill = Random.Range (0, availableRoomsList.Count);
+			Debug.Log (randomRoomToKill + " " + availableRoomsList.Count);
+			availableRoomsList.RemoveAt (randomRoomToKill);
+
 			bool2 = true;
 
 			List<int> _intList = new List<int> ();
@@ -35,7 +58,7 @@ public class RoundDoors : MonoBehaviour {
 
 			int randomRoomID = Random.Range (0, availableRoomsList.Count);
 
-			Debug.Log (randomRoomID + " " + availableRoomsList.Count);
+			//Debug.Log (randomRoomID + " " + availableRoomsList.Count);
 
 			if (availableRoomsList.Count == 0) {
 
