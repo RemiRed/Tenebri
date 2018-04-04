@@ -63,8 +63,13 @@ public class RoundDoors : MonoBehaviour {
 			if (availableRoomsList.Count == 0) {
 
 				Debug.LogWarning ("Got stuck in a dead end");
-				origin.FindPath ();
-				return;
+				if (origin != this) {
+					origin.FindPath ();
+					return;
+				} else {
+					Debug.LogWarning ("<! DEAD END GOT STUCK !>");
+					return;
+				}
 			}
 
 			RoundDoors room = availableRoomsList [randomRoomID].GetComponent<RoundDoors> ();
