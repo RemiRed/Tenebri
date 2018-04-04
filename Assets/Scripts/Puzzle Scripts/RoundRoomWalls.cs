@@ -33,6 +33,8 @@ public class RoundRoomWalls : MonoBehaviour {
     void RandomSymbols()
     {
         List<GameObject> tempButtons = new List<GameObject>();
+        int tempLayer = 0;
+        bool firstLayer = false;
         foreach (GameObject button in buttons)
         {
             tempButtons.Add(button);
@@ -41,12 +43,57 @@ public class RoundRoomWalls : MonoBehaviour {
         {
             int randomDude = Random.Range(0, buttons.Count-i);
 
-			if(tempButtons[randomDude])
+			if(tempButtons[randomDude] && i == 0)
             {
                 tempButtons[randomDude].GetComponent<Renderer>().material.color = Color.red;
 				tempButtons [randomDude].GetComponent<RoundDoors> ().origin = tempButtons [randomDude].GetComponent<RoundDoors> ();
                 tempButtons[randomDude].GetComponent<RoundDoors>().FindPath();
+                tempLayer = tempButtons[randomDude].GetComponent<RoundDoors>().layer;
+                if (tempButtons[randomDude].GetComponent<RoundDoors>().layer == 1)
+                    firstLayer = true;
                 tempButtons.Remove(tempButtons[randomDude]);
+            }
+            else if(firstLayer != true)
+            {
+                List<GameObject> tempButtonslayers = new List<GameObject>();
+                foreach(GameObject newButton in tempButtons)
+                {
+                    if (newButton.GetComponent<RoundDoors>().layer != tempLayer)
+                    {
+                        tempButtonslayers.Add(newButton);
+                    }
+                }
+                int anotherRandomDude = Random.Range(0, tempButtonslayers.Count - 1);
+                if (tempButtonslayers[anotherRandomDude])
+                {
+                    tempButtonslayers[anotherRandomDude].GetComponent<Renderer>().material.color = Color.red;
+                    tempButtonslayers[anotherRandomDude].GetComponent<RoundDoors>().origin = tempButtonslayers[anotherRandomDude].GetComponent<RoundDoors>();
+                    tempButtonslayers[anotherRandomDude].GetComponent<RoundDoors>().FindPath();
+                    tempLayer = tempButtonslayers[anotherRandomDude].GetComponent<RoundDoors>().layer;
+                    if (tempButtonslayers[anotherRandomDude].GetComponent<RoundDoors>().layer == 1)
+                        firstLayer = true;
+                    tempButtons.Remove(tempButtonslayers[anotherRandomDude]);
+                }
+            }
+            else
+            {
+                List<GameObject> tempButtonslayers = new List<GameObject>();
+                foreach (GameObject newButton in tempButtons)
+                {
+                    if (newButton.GetComponent<RoundDoors>().layer != tempLayer && newButton.GetComponent<RoundDoors>().layer != 1)
+                    {
+                        tempButtonslayers.Add(newButton);
+                    }
+                }
+                int anotherRandomDude = Random.Range(0, tempButtonslayers.Count - 1);
+                if (tempButtonslayers[anotherRandomDude])
+                {
+                    tempButtonslayers[anotherRandomDude].GetComponent<Renderer>().material.color = Color.red;
+                    tempButtonslayers[anotherRandomDude].GetComponent<RoundDoors>().origin = tempButtonslayers[anotherRandomDude].GetComponent<RoundDoors>();
+                    tempButtonslayers[anotherRandomDude].GetComponent<RoundDoors>().FindPath();
+                    tempLayer = tempButtonslayers[anotherRandomDude].GetComponent<RoundDoors>().layer;
+                    tempButtons.Remove(tempButtonslayers[anotherRandomDude]);
+                }
             }
         }
     }
