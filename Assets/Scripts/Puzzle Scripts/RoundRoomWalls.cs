@@ -9,6 +9,9 @@ public class RoundRoomWalls : MonoBehaviour {
     [SerializeField]
     List<GameObject> buttons = new List<GameObject>();
 
+	[SerializeField]
+	int numberOfButtons;
+
 	// Use this for initialization
 	void Start () {
 
@@ -34,13 +37,14 @@ public class RoundRoomWalls : MonoBehaviour {
         {
             tempButtons.Add(button);
         }
-        for(int i = 0; i < 1; i++)
+		for(int i = 0; i < numberOfButtons; i++)
         {
             int randomDude = Random.Range(0, buttons.Count-i);
 
 			if(tempButtons[randomDude])
             {
                 tempButtons[randomDude].GetComponent<Renderer>().material.color = Color.red;
+				tempButtons [randomDude].GetComponent<RoundDoors> ().origin = tempButtons [randomDude].GetComponent<RoundDoors> ();
                 tempButtons[randomDude].GetComponent<RoundDoors>().FindPath();
                 tempButtons.Remove(tempButtons[randomDude]);
             }
@@ -63,6 +67,8 @@ public class RoundRoomWalls : MonoBehaviour {
         foreach(GameObject bwu in buttons)
         {
             bwu.GetComponent<Renderer>().material.color = Color.gray;
+			bwu.GetComponent<RoundDoors> ().entered = false;
+			bwu.GetComponent<RoundDoors> ().bool2 = false;
         }
     }
 }

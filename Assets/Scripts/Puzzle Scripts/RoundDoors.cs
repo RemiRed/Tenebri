@@ -8,69 +8,72 @@ public class RoundDoors : MonoBehaviour {
     List<GameObject> WallList = new List<GameObject>(),
 					availableRoomsList = new List<GameObject>(); //room list har alla angränsande rum som antingen är på samma lager eller ett lager in, wall list är väggarna till de rummen.
     
-    public bool entered = false;
+    public bool entered = false, bool2 = false;
     public int layer;
 
-//	// Use this for initialization
-//	void Start () {
-//        
-//	}
-//	
-//	// Update is called once per frame
-//	void Update () {
-//
-//	}
+	public RoundDoors origin;
+
+	// Use this for initialization
+	void Start () {
+        
+	}
 
     public void FindPath()
     {
-        if (layer != 0)
-        {
-            entered = true;
+		if (layer != 0) {
+			bool2 = true;
 
-            int randomRoomID = Random.Range(0, availableRoomsList.Count);
-            
-			RoundDoors room = availableRoomsList[randomRoomID].GetComponent<RoundDoors>();
+			List<int> _intList = new List<int> ();
+			for (int i = 0; i < availableRoomsList.Count; i++) {
+				if (availableRoomsList [i].GetComponent<RoundDoors> ().bool2) {
+					_intList.Add (i);
+				}
+			}
+			for (int i = 0; i < _intList.Count; i++) {
+				availableRoomsList.RemoveAt (_intList [i] - i);
+			}
+
+			int randomRoomID = Random.Range (0, availableRoomsList.Count);
+
+			Debug.Log (randomRoomID + " " + availableRoomsList.Count);
+
+			if (availableRoomsList.Count == 0) {
+
+				Debug.LogWarning ("Got stuck in a dead end");
+				origin.FindPath ();
+				return;
+			}
+
+			RoundDoors room = availableRoomsList [randomRoomID].GetComponent<RoundDoors> ();
            
-			Debug.Log(gameObject + " went into " + room);
+			Debug.Log (gameObject + " went into " + room.gameObject);
             
-			foreach(GameObject wall in WallList)
-            {
-                foreach(GameObject walle in room.WallList)
-                {
-                    if(wall == walle)
-                    {
-                        wall.GetComponent<RoundWallDoors>().OpenSesamy();
-                        break;
-                    }
-                }
-            }
+			foreach (GameObject wall in WallList) {
+				foreach (GameObject walle in room.WallList) {
+					if (wall == walle) {
+						wall.GetComponent<RoundWallDoors> ().OpenSesamy ();
+						break;
+					}
+				}
+			}
            
-            if (!room.entered)
-            {
-//                if (layer == room.layer)
-//                {
-              	room.availableRoomsList.Remove(gameObject);
-                //}
-                room.FindPath();
-            }
-        }
-        /*if(layer == 0)
-        {
-            bool allActive = true;
-            for(int i = 0; i < WallList.Count; i++)
-            {
-                if (!WallList[i].activeInHierarchy)
-                {
-                    allActive = false;
-                    break;
-                }
-                    
-            }
-            if (allActive == true)
-            {
-                WallList[Random.Range(0, WallList.Count)].SetActive(false);
-                Debug.Log("noo");
-            }
-        }*/
+			Debug.Log (room.gameObject + "Entered = " + room.entered + " and Bool2 = " + bool2);
+
+			if (room.entered) {
+
+				Debug.Log ("FOUND ANOTHER BUTTONS PATH");
+				return;
+			}
+				
+			room.origin = origin;
+			room.FindPath ();
+
+			bool2 = false;
+			entered = true;
+
+		} else {
+			
+			Debug.Log ("FOUND THE CENTER OF THE MAZE");
+		}
     }
 }
