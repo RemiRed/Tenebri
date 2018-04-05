@@ -11,7 +11,7 @@ public class PauseMenu : MonoBehaviour
     Slider volumeSlider;
 
     NetworkingLobby networkingLobby;
-
+    public CharacterScript character;
     private void Start()
     {
         networkingLobby = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkingLobby>();
@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        gameObject.SetActive(false);
+        character.ToggleMenu();
     }
     public void Options()
     {
