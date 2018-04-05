@@ -16,7 +16,6 @@ public class CameraController : NetworkBehaviour
     float visualAngleLimiter = 80;
 
     GameObject character;
-
     void Start()
     {
 
@@ -25,13 +24,6 @@ public class CameraController : NetworkBehaviour
 
     void Update()
     {
-
-        if (character.GetComponent<CharacterScript>().menu)
-        {
-            return;
-        }
-
-
         var md = new Vector2(Input.GetAxisRaw("Horizontal Camera"), Input.GetAxisRaw("Vertical Camera"));
 
         md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));

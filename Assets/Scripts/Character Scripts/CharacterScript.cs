@@ -26,13 +26,9 @@ public class CharacterScript : NetworkBehaviour
     bool hitCeiling;
     bool jumping;
 
-    public bool menu = false;
-    GameObject pauseMenu;
     // Use this for initialization
     void Start()
     {
-        pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
-        pauseMenu.SetActive(false);
         if (!isLocalPlayer)
         {
             GetComponentInChildren<Camera>().transform.gameObject.SetActive(false);
@@ -46,49 +42,28 @@ public class CharacterScript : NetworkBehaviour
 
     }
 
-    public void ToggleMenu()
-    {
-        menu = !menu;
-        if (menu)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            pauseMenu.SetActive(true);
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            pauseMenu.SetActive(false);
-        }
-    }
     // Update is called once per frame
     void Update()
     {
         if (isLocalPlayer)
         {
-            //Opens Menu and disables the clocked cursor
-            if (Input.GetButtonDown("Menu"))
-            {
-                pauseMenu.GetComponent<PauseMenu>().character = this;
-                ToggleMenu();
-            }
+            //Disables the annoying cursor lock
+            if (Input.GetKeyDown("escape"))
+                Cursor.lockState = CursorLockMode.None;
             Jump();
         }
     }
 
     void FixedUpdate()
     {
-        if (menu)
-        {
-            return;
-        }
         if (isLocalPlayer)
         {
             //Executes all movements determined by active axis and currenty jump value 
             rigby.AddRelativeForce(new Vector3(
                    /* X */     Input.GetAxisRaw("Horizontal Movement") * movementSpeed,
                    /* Y */     Mathf.Max((curJumpPower), -maxFallSpeed),
-                   /* Z */     Input.GetAxisRaw("Vertical Movement") * movementSpeed)
-                  /* All */   * 100 * Time.deltaTime, ForceMode.Force);
+               /* Z */     Input.GetAxisRaw("Vertical Movement") * movementSpeed)
+                 /* All */   * 100 * Time.deltaTime, ForceMode.Force);
         }
     }
 
