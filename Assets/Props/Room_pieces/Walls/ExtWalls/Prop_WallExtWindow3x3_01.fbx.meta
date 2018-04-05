@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: cda7e7c65e3ea8b4e9f8b50f4d3faa9d
-timeCreated: 1521455770
+timeCreated: 1522931559
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -15,7 +15,7 @@ ModelImporter:
     4300000: polySurface18
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1

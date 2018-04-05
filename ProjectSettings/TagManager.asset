@@ -10,6 +10,10 @@ TagManager:
   - P2
   - InterractionMessage
   - Movable
+  - NetworkManager
+  - LobbyPlayer
+  - ReadyButton
+  - CloseButton
   layers:
   - Default
   - TransparentFX
