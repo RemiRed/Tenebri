@@ -1186,6 +1186,46 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1041782493}
+--- !u!1 &1069607667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1069607669}
+  - component: {fileID: 1069607668}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1069607668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1069607667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1050975500, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1069607669
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1069607667}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1094174593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,7 +1511,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1148994690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9c78c9f09d18e428c9fd4425e60beb, type: 3}
+  m_Script: {fileID: 11500000, guid: e651cdee9cce88248888e18995224128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   roomLength: 0
@@ -1481,6 +1521,7 @@ MonoBehaviour:
   pairedRoom: {fileID: 0}
   timerSeconds: 60
   timerPenalty: 2
+  currentTime: 0
 --- !u!1 &1194544676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,10 +1896,9 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c262af39e03e4eb4fbbd2e6fb123c869, type: 2}
   m_IsPrefabParent: 0
---- !u!224 &1438203965 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224702542631785920, guid: c262af39e03e4eb4fbbd2e6fb123c869,
-    type: 2}
+--- !u!4 &1438203965 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 1438203964}
 --- !u!1 &1601017486
 GameObject:
