@@ -39,8 +39,7 @@ public class LeverScript : Interractable {
         if (leverPulled)
         {
             Debug.Log("It Comes here??");
-            //anim.SetBool("LetGo", true);
-            //anim.Play("LetGo");
+ 
             Debug.Log("It Comes here 2n?");
             anim.SetBool("isPulling", false);
             leverPulled = false;
