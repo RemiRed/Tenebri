@@ -9,7 +9,11 @@ using UnityEngine.SceneManagement;
 public class NetworkingLobby : NetworkLobbyManager
 {
     [SerializeField]
+
     GameObject matchmakingGameObject, scrollView, scrollViewContent, matchPanel, createMatchPanel, closeMatchButton, createMatchButton, playerCount;
+
+    GameObject matchmakingGameObject, optionsGameObject, exitGameObject, scrollView, scrollViewContent, matchPanel, createMatchPanel, closeMatchButton, createMatchButton, playerCount;
+
 
     [SerializeField]
     InputField matchInputField;
@@ -47,6 +51,10 @@ public class NetworkingLobby : NetworkLobbyManager
         StartMatchMaker();
         MatchmakingListMatches();
         matchmakingGameObject.SetActive(false);
+
+        optionsGameObject.SetActive(false);
+        exitGameObject.SetActive(false);
+
     }
 
     void MatchmakingListMatches()
@@ -157,6 +165,10 @@ public class NetworkingLobby : NetworkLobbyManager
         print("@ MatchmakingCloseMatch");
         matchPanel.SetActive(false);
         matchmakingGameObject.SetActive(true);
+
+        optionsGameObject.SetActive(true);
+        exitGameObject.SetActive(true);
+
         inMatch = false;
         StopMatchMaker();
         GameObject newGO = new GameObject();
