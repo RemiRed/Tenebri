@@ -19,7 +19,10 @@ public class RoundRoomWalls : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		RandomSymbols();
+		if (!_testing) {
+			
+			RandomSymbols ();
+		}
     }
 
     void Update()
@@ -29,6 +32,7 @@ public class RoundRoomWalls : MonoBehaviour {
 		
 		if ( _testing || Input.GetKeyDown(KeyCode.G))
         {
+			testNumber++;
             RandomSymbols();
         }
     }
@@ -127,7 +131,13 @@ public class RoundRoomWalls : MonoBehaviour {
 
 		foreach(GameObject _rest in tempButtons){
 		
-			_rest.GetComponent<RoundDoors>().OpenToRandomRoom ();
+			if (!_rest.GetComponent<RoundDoors> ().entered) {
+
+				_rest.GetComponent<RoundDoors> ().origin = _rest.GetComponent<RoundDoors> ();
+				_rest.GetComponent<RoundDoors> ().FindPath ();
+			}
+
+			//_rest.GetComponent<RoundDoors>().OpenToRandomRoom ();
 		}
     }
 		
@@ -153,42 +163,7 @@ public class RoundRoomWalls : MonoBehaviour {
         }
     }
 }
-
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-//
-//public class RoundRoomWalls : MonoBehaviour {
-//
-//    [SerializeField]
-//    List<GameObject> walls = new List<GameObject>();
-//    [SerializeField]
-//    List<GameObject> buttons = new List<GameObject>();
-//
-//	[SerializeField]
-//	int numberOfButtons;
-//
-//	public bool _testing = false;
-//	int testNumber = 0;
-//
-//	// Use this for initialization
-//	void Start () {
-//
-//		RandomSymbols();
-//    }
-//
-//    void Update()
-//    {
-//        if (Input.GetKeyDown(KeyCode.H))
-//            CloseWalls();
-//		
-//		if (_testing || Input.GetKeyDown(KeyCode.G))
-//        {
-//            RandomSymbols();
-//			testNumber++;
-//        }
-//    }
-//    
+	  
 //	public void RandomSymbols()
 //    {
 //		CloseWalls();
@@ -222,25 +197,3 @@ public class RoundRoomWalls : MonoBehaviour {
 //			_rest.GetComponent<RoundDoors>().OpenToRandomRoom ();
 //		}
 //    }
-//		
-//	//Resets Everything to default
-//	public void CloseWalls()
-//	{
-//		foreach(GameObject bwa in walls)
-//		{
-//			bwa.SetActive(true);
-//		}
-//		NeutralSymbols();
-//	}
-//
-//	//Resets all buttons to default
-//    void NeutralSymbols()
-//    {
-//        foreach(GameObject bwu in buttons)
-//        {
-//            bwu.GetComponent<Renderer>().material.color = Color.gray;
-//			bwu.GetComponent<RoundDoors> ().entered = false;
-//			bwu.GetComponent<RoundDoors> ().bool2 = false;
-//        }
-//    }
-//}
