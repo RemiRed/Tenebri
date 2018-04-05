@@ -2831,7 +2831,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1087524729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e486c020cdc96754b811e147de6c96a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d73c60d6bb7bab4db99c3e1bbd3aefe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 987441014}
@@ -4261,7 +4261,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2134190293}
   - component: {fileID: 2134190295}
-  - component: {fileID: 2134190291}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: NetworkManager
@@ -4269,21 +4268,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2134190291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2134190290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 227461547, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-  showGUI: 1
-  offsetX: 0
-  offsetY: 0
 --- !u!4 &2134190293
 Transform:
   m_ObjectHideFlags: 0
@@ -4386,12 +4370,12 @@ MonoBehaviour:
   m_MaxPlayers: 2
   m_MaxPlayersPerConnection: 1
   m_MinPlayers: 1
-  m_LobbyPlayerPrefab: {fileID: 114035878989175426, guid: 3821b0b42a44b154eb953f5659c10b96,
+  m_LobbyPlayerPrefab: {fileID: 114289799727507928, guid: 3821b0b42a44b154eb953f5659c10b96,
     type: 2}
-  m_GamePlayerPrefab: {fileID: 1377563522295830, guid: 6fc933b378ccb8b4b8ed9c45e0c22dd2,
+  m_GamePlayerPrefab: {fileID: 1377563522295830, guid: e7f3ef519ade32943b9d9ab227ea526f,
     type: 2}
   m_LobbyScene: OnlineMenu
-  m_PlayScene: TEMPTEST
+  m_PlayScene: WB_Color-Symbol
   lobbySlots: []
   matchmakingGameObject: {fileID: 896307762}
   optionsGameObject: {fileID: 1688720202}
