@@ -1390,7 +1390,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 663719676}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1087524733}
+        m_MethodName: Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &663719676
@@ -1836,7 +1847,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1087524733}
         m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
@@ -2463,7 +2474,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1087524733}
         m_MethodName: Volume
         m_Mode: 1
         m_Arguments:
@@ -2820,7 +2831,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1087524729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86d4434eb5bb6ba4ab0a4ef9e4d0ffb7, type: 3}
+  m_Script: {fileID: 11500000, guid: e486c020cdc96754b811e147de6c96a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 987441014}
@@ -3240,7 +3251,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1524211036}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1087524733}
+        m_MethodName: Controls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1524211036
@@ -3420,7 +3442,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1087524733}
         m_MethodName: Options
         m_Mode: 1
         m_Arguments:
