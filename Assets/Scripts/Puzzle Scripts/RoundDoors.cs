@@ -84,7 +84,7 @@ public class RoundDoors : MonoBehaviour {
 					
 				if (room.entered) {	//End path if room previously entered by another path
 
-					Debug.Log ("FOUND ANOTHER BUTTONS PATH");
+					Debug.Log (origin + "FOUND ANOTHER BUTTONS PATH");
 
 					bool2 = false;
 					entered = true;
@@ -103,7 +103,7 @@ public class RoundDoors : MonoBehaviour {
 
 		} else {
 			
-			Debug.Log ("FOUND THE CENTER OF THE MAZE");
+			Debug.Log (origin + " FOUND THE CENTER OF THE MAZE");
 		}
 		return _bool;
     }
@@ -114,6 +114,7 @@ public class RoundDoors : MonoBehaviour {
 
 			return;
 		}
+		entered = true;
 
 		if (availableRoomsList.Count == 0) {
 
@@ -141,6 +142,6 @@ public class RoundDoors : MonoBehaviour {
 				}
 			}
 		}
-
+		room.availableRoomsList.Remove (gameObject);
 	}
 }
