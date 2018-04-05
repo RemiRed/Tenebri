@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4938788784875640}
   - component: {fileID: 33875580090583488}
   - component: {fileID: 23965826023762168}
+  - component: {fileID: 65800199164416262}
   m_Layer: 0
   m_Name: Prop_Bookshelf_01
   m_TagString: Untagged
@@ -82,3 +83,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1456136285036410}
   m_Mesh: {fileID: 4300000, guid: f55e29a8e66cfdb4b94a707a39b2905c, type: 3}
+--- !u!65 &65800199164416262
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456136285036410}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3490342, y: 2.1795986, z: 0.4656514}
+  m_Center: {x: 0, y: 0, z: 0}
