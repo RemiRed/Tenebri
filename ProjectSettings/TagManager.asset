@@ -14,9 +14,6 @@ TagManager:
   - LobbyPlayer
   - ReadyButton
   - CloseButton
-  - MirrorRoomWall
-  - RoomLoader
-  - PauseMenu
   layers:
   - Default
   - TransparentFX

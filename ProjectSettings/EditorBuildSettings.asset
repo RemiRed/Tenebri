@@ -8,9 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OnlineMenu.unity
     guid: 2b99c08f148dd874e88cb8b07686ec6b
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Color Symbol Puzzle BY SAM.unity
+    guid: 6254cd4e42f7086449402ff173399796
   - enabled: 1
     path: Assets/Scenes/AndresWhiteBoxMazeLevel.unity
     guid: 4aa702796251b6d4b9039b6102bb37ad
   - enabled: 1
     path: Assets/Scenes/TEMPTEST.unity
-    guid: 28738159b052aa042b8e0be1a9932747
+    guid: 07743232aaacfe0478fe22e5bd5e9bb4
