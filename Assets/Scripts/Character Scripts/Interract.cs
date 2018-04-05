@@ -31,38 +31,38 @@ public class Interract : MonoBehaviour
 
     private void Start() //saving the drag on the player component
     {
-        interractionMessage = GameObject.FindGameObjectWithTag("InterractionMessage");
-        interractionMessage.SetActive(false);
+        // interractionMessage = GameObject.FindGameObjectWithTag("InterractionMessage");
+       // interractionMessage.SetActive(false);
         defaultDrag = transform.parent.GetComponent<Rigidbody>().drag;
     }
 
     void FixedUpdate()
     {
-        int x = Screen.width / 2;
-        int y = Screen.height / 2;
+        ////int x = Screen.width / 2;
+        ////int y = Screen.height / 2;
 
-        Ray ray = GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, carryDistance)) //Finds an object that's within carry distance 
-        {
+        ////Ray ray = GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
+        ////RaycastHit hit;
+        ////if (Physics.Raycast(ray, out hit, carryDistance)) //Finds an object that's within carry distance 
+        ////{
 
-            if (hit.transform.tag == "Movable" || hit.transform.tag == "Interractable") //If the object is movable or interractable, show the interract message
-            {
-                if (interractionMessage != null)
-                {
-                    interractionMessage.SetActive(true);
-                }
-            }
-            else if (interractionMessage != null) //Reset interractionMessage
-            {
-                interractionMessage.SetActive(false);
-            }
-        }
-        else if (interractionMessage != null) //Reset interractionMessage
-        {
-            interractionMessage.SetActive(false);
-        }
+        ////    if (hit.transform.tag == "Movable" || hit.transform.tag == "Interractable") //If the object is movable or interractable, show the interract message
+        ////    {
+        ////        if (interractionMessage != null)
+        ////        {
+        ////            interractionMessage.SetActive(true);
+        ////        }
+        ////    else if (interractionMessage != null) //Reset interractionMessage
+        ////    {
+        ////        interractionMessage.SetActive(false);
+        ////    }
+        ////}
+        ////else if (interractionMessage != null) //Reset interractionMessage
+        ////{
+        ////    interractionMessage.SetActive(false);
+        ////}
 
+        //    }
 
         if (Input.GetAxisRaw("Interract") == 1) //Checks if the key has been pressed and picks up, interracts, or drops an object
         {
@@ -156,4 +156,6 @@ public class Interract : MonoBehaviour
         carriedObject.GetComponent<Rigidbody>().AddForce((carriedObject.transform.position - oldPos) / (Time.deltaTime * slow));
         carriedObject = null;
     }
+
+    
 }
