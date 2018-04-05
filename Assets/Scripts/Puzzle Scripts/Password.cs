@@ -28,6 +28,9 @@ public class Password : MonoBehaviour {
 
 			nextID = 1;
 			passwordLock = 0;
+
+			// Add a call to some penalty script
+
 		}
 	}
 }

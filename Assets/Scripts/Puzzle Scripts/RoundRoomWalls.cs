@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class RoundRoomWalls : MonoBehaviour {
+public class RoundRoomWalls : NetworkBehaviour {
 
-	//Debug stuff
-	public bool _testing;
-	int testNumber = 0;
+	//Debuging stuff
+	public bool _testing;	//If True: automatic randomization on Update until randimizer gets stuck and has to start over
+	int testNumber = 0;		//How many times maze got randomized before getting stuck and had to start over
 
     [SerializeField]
     List<GameObject> walls = new List<GameObject>();
@@ -19,7 +20,7 @@ public class RoundRoomWalls : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		if (!_testing) {
+		if (isServer && !_testing) {
 			
 			RandomSymbols ();
 		}
@@ -27,6 +28,11 @@ public class RoundRoomWalls : MonoBehaviour {
 
     void Update()
     {
+
+		if (!isServer) {
+			return;
+		}
+
         if (Input.GetKeyDown(KeyCode.H))
             CloseWalls();
 		

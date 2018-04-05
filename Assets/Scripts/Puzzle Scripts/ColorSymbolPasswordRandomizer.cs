@@ -37,7 +37,6 @@ public class ColorSymbolPasswordRandomizer : NetworkBehaviour {
 
 		passwordManager = GameObject.FindGameObjectWithTag ("PasswordManager").GetComponent<Password> ();
 
-
 		if (isServer) {
 
 			int randomButtonRange = unsetPasswordButtons.Count;
