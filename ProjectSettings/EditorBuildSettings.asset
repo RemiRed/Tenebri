@@ -6,10 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/OnlineMenu.unity
+    path: Assets/Scenes/Menu.unity
     guid: 2b99c08f148dd874e88cb8b07686ec6b
   - enabled: 1
     path: Assets/Scenes/WB_Color-Symbol.unity
+<<<<<<< HEAD
     guid: 16448da5ec4e1bb46a010a249e175110
   - enabled: 1
     path: Assets/Scenes/AndresWhiteBoxMazeLevel.unity
@@ -17,3 +18,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TEMPTEST.unity
     guid: e0719260ac9828843b18972ce5d8389e
+=======
+    guid: fd5a00bda3e5604479a78f641f9b4edf
+  - enabled: 1
+    path: Assets/Scenes/Pussle_Color-Symbol.unity
+    guid: 0d6398c8f45dbc5408b9967e0e145a20
+>>>>>>> Daniel

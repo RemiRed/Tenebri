@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 guid: cda7e7c65e3ea8b4e9f8b50f4d3faa9d
+<<<<<<< HEAD
 timeCreated: 1522938057
+=======
+timeCreated: 1521455770
+>>>>>>> Daniel
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -15,7 +19,11 @@ ModelImporter:
     4300000: polySurface18
   externalObjects: {}
   materials:
+<<<<<<< HEAD
     importMaterials: 1
+=======
+    importMaterials: 0
+>>>>>>> Daniel
     materialName: 0
     materialSearch: 1
     materialLocation: 1
