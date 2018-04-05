@@ -33,15 +33,7 @@ public class Password : MonoBehaviour {
 			
 				nextID = 1;
 				passwordLock = 0;
-
-				Debug.Log ("CORRECT PASSWORD!"); //Replace with some door opening method cool
 			}
-				
-		} else {
-			
-			nextID = 1;
-			passwordLock = 0;
-
 		}
 	}
 
