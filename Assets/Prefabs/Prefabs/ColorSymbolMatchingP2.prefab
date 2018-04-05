@@ -2424,7 +2424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbers: 0
-  infoCube: {fileID: 1611206449602604, guid: b197bc6463babf74d919d93bc8e000ff, type: 2}
+  clueObject: {fileID: 1611206449602604, guid: 8259fc485a6bb824f87f0339f702d2c4, type: 2}
   symbolNumbers:
   - {fileID: 2100000, guid: e79b5b7504ca2e04990d36862c4ce1e3, type: 2}
   - {fileID: 2100000, guid: 953ec2af66c7d26418980c3b09897bc5, type: 2}
@@ -2432,12 +2432,11 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d26384c8f7f1055429601ee981aa1773, type: 2}
   - {fileID: 2100000, guid: 9949209a4c4f0094f810a8e460f76e0d, type: 2}
   - {fileID: 2100000, guid: e29346f0f92dc1d43a3c3d108fb71342, type: 2}
-  curClueNumber: 0
   clueLocations:
   - {fileID: 4730377434581392}
-  - {fileID: 4831484952672954}
-  - {fileID: 4235894363185704}
-  - {fileID: 4280379401443242}
-  - {fileID: 4842253033984850}
-  - {fileID: 4954998959050824}
-  - {fileID: 4307357361968086}
+  - {fileID: 4730377434581392}
+  - {fileID: 4730377434581392}
+  - {fileID: 4730377434581392}
+  - {fileID: 4730377434581392}
+  - {fileID: 4730377434581392}
+  - {fileID: 4730377434581392}

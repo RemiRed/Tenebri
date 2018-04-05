@@ -5,10 +5,14 @@ using UnityEngine;
 public class PasswordButton : Interractable {
 
 	public Password passwordManager;
-	public int buttonOrderID;
-	public bool buttonActive = true;
-	public Material symbol;
 
+	public Material symbol;
+	public int buttonOrderID;
+	public bool lightUpOnPress;
+
+	bool buttonActive = true;
+
+	//Called when button is pressed
 	void PasswordButtonPressed(){
 
 		if (buttonActive) {
@@ -16,6 +20,24 @@ public class PasswordButton : Interractable {
 			buttonActive = false;
 
 			passwordManager.CheckPassword (buttonOrderID);
+
+			if (lightUpOnPress) {
+				gameObject.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.white);
+			}
 		}
+	}
+
+	//Called when button is released
+	void RevertColor(){
+
+		buttonActive = true;
+		gameObject.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.black);
+	}
+
+	public void SetPasswordButton(int _OrderID, Material _Symbol){
+
+		buttonOrderID = _OrderID;
+		symbol = _Symbol;
+		GetComponent<Renderer> ().material = symbol;
 	}
 }

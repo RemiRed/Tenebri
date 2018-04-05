@@ -4,30 +4,49 @@ using UnityEngine;
 
 public class Password : MonoBehaviour {
 
-	public List<PasswordButton> passwordButtons;
+	public List<PasswordButton> passwordButtons;		//List of all buttons in the password. Not nessesary but useful for debug purposes.
 	public int nextID, passwordLock, passwordLength;
+	public bool solved = false;
 		
 	public void CheckPassword(int _ID){
 
-		if (_ID == nextID) {
+		if (!solved) {
 
-			nextID++;
-			passwordLock++;
+			if (_ID == nextID) {
 
-			if (passwordLock == passwordLength) {
+				passwordLock = nextID;
 
-						Debug.Log ("CORRECT PASSWORD!"); //Replace with some door opening method cool
+				//Checks if password is solved
+				if (passwordLock == passwordLength) {
+
+					Debug.Log ("CORRECT PASSWORD!"); //Replace with some door opening method
+					solved = true;
+				}
+				nextID++;
+				
+			} else if (_ID == 1) {	//If first password button is pressed, password input is restarted to first password button
+			
+				nextID = 2;
+				passwordLock = 1;
+
+			} else if (_ID != nextID - 1) {	//Resets password input unless last password button is pressed
+			
+				nextID = 1;
+				passwordLock = 0;
+
+				Debug.Log ("CORRECT PASSWORD!"); //Replace with some door opening method cool
 			}
 				
 		} else {
-
-			for (int i = 0; i < passwordButtons.Count; i++) {
-
-				passwordButtons [i].buttonActive = true;
-			}
-
+			
 			nextID = 1;
 			passwordLock = 0;
+
 		}
+	}
+
+	public void SetPasswordLength(int _length){
+	
+		passwordLength = _length;
 	}
 }
