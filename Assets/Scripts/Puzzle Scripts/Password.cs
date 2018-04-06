@@ -5,8 +5,8 @@ using UnityEngine;
 public class Password : MonoBehaviour {
 
 	public List<PasswordButton> passwordButtons;		//List of all buttons in the password. Not nessesary but useful for debug purposes.
-	public int nextID, passwordLock, passwordLength;
-	public bool solved = false;
+	int nextID, passwordLock, passwordLength;
+	bool solved = false;
 		
 	public void CheckPassword(int _ID){
 
@@ -33,15 +33,7 @@ public class Password : MonoBehaviour {
 			
 				nextID = 1;
 				passwordLock = 0;
-
-				Debug.Log ("CORRECT PASSWORD!"); //Replace with some door opening method cool
 			}
-				
-		} else {
-			
-			nextID = 1;
-			passwordLock = 0;
-
 		}
 	}
 
