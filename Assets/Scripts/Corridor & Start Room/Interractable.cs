@@ -1,11 +1,11 @@
-﻿    using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Interractable : MonoBehaviour
 {
     [SerializeField]
-    string interractMethodName, stopInterractMethodName;
+	string interractMethodName = "", stopInterractMethodName = "";
     [SerializeField]
     protected float delay;
 

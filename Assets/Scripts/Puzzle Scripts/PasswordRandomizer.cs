@@ -15,6 +15,7 @@ public class PasswordRandomizer : NetworkBehaviour {
 	public List<Color> symbolColors;
 	public List<Material> symbols;
 
+
 	bool started = false;	//Temp varible needed for testing
 
 	void Update(){
