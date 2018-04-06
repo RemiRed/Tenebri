@@ -92,7 +92,14 @@ public class PasswordRandomizer : NetworkBehaviour {
 
 		passwordManager.passwordButtons.Add (unsetPasswordButtons [_randomButton]);	//Not nessesary, but useful for debuging purposes.
 
-		unsetPasswordButtons [_randomButton].SetPasswordButton (_index, symbols [_randomSymbol]);
+		if (_index < passwordLengt) {
+
+			unsetPasswordButtons [_randomButton].SetPasswordButton (_index, symbols [_randomSymbol]);
+
+		} else {
+
+			unsetPasswordButtons [_randomButton].SetPasswordButton (0, symbols [_randomSymbol]);
+		}
 
 		unsetPasswordButtons.RemoveAt (_randomButton);
 		symbols.RemoveAt (_randomSymbol);

@@ -31,7 +31,11 @@ public class Password : MonoBehaviour {
 				passwordLock = 1;
 
 			} else if (_ID != nextID - 1) {	//Resets password input unless last password button is pressed
-				
+
+				if (passwordLock != 0) {
+					Debug.Log ("Wrong button");
+				}
+
 				nextID = 1;
 				passwordLock = 0;
 			}
