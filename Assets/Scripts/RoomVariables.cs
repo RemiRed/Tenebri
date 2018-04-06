@@ -11,7 +11,7 @@ public class RoomVariables : NetworkBehaviour
     public GameObject pairedRoom; //Needs to be changed to an enum or something similar later. This is to do an easy Switch.
 
     [SerializeField]
-    float timerSeconds, timerPenalty;
+	float timerSeconds, timerPenalty = 0;
     public float currentTime;
 
     bool firstPenalty = true, startTimer = false;
