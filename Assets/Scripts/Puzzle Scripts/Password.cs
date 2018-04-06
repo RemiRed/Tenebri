@@ -34,7 +34,7 @@ public class Password : MonoBehaviour {
 
 				if (passwordLock != 0) {
 					
-					Debug.Log ("Wrong button");
+					Debug.Log ("Wrong button"); //Replace with penalty stuff 
 				}
 
 				nextID = 1;

@@ -34,6 +34,7 @@ public class PasswordButton : Interractable {
 		gameObject.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.black);
 	}
 
+	//Sets initial values. Called from 'PasswordRandomizer'
 	public void SetPasswordButton(int _OrderID, Material _Symbol){
 
 		buttonOrderID = _OrderID;

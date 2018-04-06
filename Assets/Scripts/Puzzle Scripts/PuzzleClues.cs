@@ -8,11 +8,6 @@ public class PuzzleClues : MonoBehaviour {
 	void Start () {
 		
 	}
-	
-//	// Update is called once per frame
-//	void Update () {
-//		
-//	}
 
 	public virtual void SetPuzzleClues(Material _material, Color _color){
 

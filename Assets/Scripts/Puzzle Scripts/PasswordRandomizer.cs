@@ -24,7 +24,6 @@ public class PasswordRandomizer : NetworkBehaviour {
 		if (isServer && Input.GetButtonDown("Jump") && !started) {
 
 			started = true;
-			Debug.Log ("Starting the puzzle");
 			StartPuzzle ();
 		}
 	}

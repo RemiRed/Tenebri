@@ -19,6 +19,7 @@ public class RoundRoomWalls : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		//Debug stuff
 		if (!_testing) {
 			
 			RandomSymbols ();
@@ -27,6 +28,7 @@ public class RoundRoomWalls : MonoBehaviour {
 
     void Update()
     {
+		//Debug stuff
         if (Input.GetKeyDown(KeyCode.H))
             CloseWalls();
 		
@@ -59,7 +61,7 @@ public class RoundRoomWalls : MonoBehaviour {
                 tempButtons[randomDude].GetComponent<Renderer>().material.color = Color.red;
 				tempButtons [randomDude].GetComponent<RoundDoors> ().origin = tempButtons [randomDude].GetComponent<RoundDoors> ();
 				if (!tempButtons [randomDude].GetComponent<RoundDoors> ().FindPath ()) {
-					Debug.LogError ("RE-RANDOM EVERYTHING! at " + testNumber);
+				//	Debug.LogError ("RE-RANDOM EVERYTHING! at " + testNumber);
 					_testing = false;
 					testNumber = 0;
 				
@@ -87,7 +89,7 @@ public class RoundRoomWalls : MonoBehaviour {
                     tempButtonslayers[anotherRandomDude].GetComponent<Renderer>().material.color = Color.red;
                     tempButtonslayers[anotherRandomDude].GetComponent<RoundDoors>().origin = tempButtonslayers[anotherRandomDude].GetComponent<RoundDoors>();
 					if (!tempButtonslayers [anotherRandomDude].GetComponent<RoundDoors> ().FindPath ()) {
-						Debug.LogError ("RE-RANDOM EVERYTHING! at " + testNumber);
+					//	Debug.LogError ("RE-RANDOM EVERYTHING! at " + testNumber);
 						_testing = false;
 						testNumber = 0;
 
@@ -116,7 +118,7 @@ public class RoundRoomWalls : MonoBehaviour {
                     tempButtonslayers[anotherRandomDude].GetComponent<Renderer>().material.color = Color.red;
                     tempButtonslayers[anotherRandomDude].GetComponent<RoundDoors>().origin = tempButtonslayers[anotherRandomDude].GetComponent<RoundDoors>();
 					if (!tempButtonslayers [anotherRandomDude].GetComponent<RoundDoors> ().FindPath ()) {
-						Debug.LogError ("RE-RANDOM EVERYTHING! at " + testNumber);
+					//	Debug.LogError ("RE-RANDOM EVERYTHING! at " + testNumber);
 						_testing = false;
 						testNumber = 0;
 
@@ -159,41 +161,7 @@ public class RoundRoomWalls : MonoBehaviour {
             bwu.GetComponent<Renderer>().material.color = Color.gray;
 			bwu.GetComponent<RoundDoors> ().origin = null;
 			bwu.GetComponent<RoundDoors> ().entered = false;
-			bwu.GetComponent<RoundDoors> ().bool2 = false;
+			bwu.GetComponent<RoundDoors> ().enteredNow = false;
         }
     }
 }
-	  
-//	public void RandomSymbols()
-//    {
-//		CloseWalls();
-//
-//        List<GameObject> tempButtons = new List<GameObject>();
-//        foreach (GameObject button in buttons)
-//        {
-//            tempButtons.Add(button);
-//        }
-//		for(int i = 0; i < numberOfButtons; i++)
-//        {
-//            int randomDude = Random.Range(0, buttons.Count-i);
-//
-//			if(tempButtons[randomDude])
-//            {
-//                tempButtons[randomDude].GetComponent<Renderer>().material.color = Color.red;
-//				tempButtons [randomDude].GetComponent<RoundDoors> ().origin = tempButtons [randomDude].GetComponent<RoundDoors> ();
-//				if (!tempButtons [randomDude].GetComponent<RoundDoors> ().FindPath ()) {
-//					Debug.LogError ("RE-RANDOM EVERYTHING! at " + testNumber);
-//					_testing = false;
-//					testNumber = 0;
-//
-//					RandomSymbols ();
-//					break;
-//				} 
-//				tempButtons.Remove (tempButtons [randomDude]);
-//            }
-//        }
-//		foreach(GameObject _rest in tempButtons){
-//
-//			_rest.GetComponent<RoundDoors>().OpenToRandomRoom ();
-//		}
-//    }

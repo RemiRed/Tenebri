@@ -10,7 +10,7 @@ public class RoundDoors : MonoBehaviour {
     List<GameObject> WallList = new List<GameObject>(),
 					availableRoomsList = new List<GameObject>(), //room list har alla angränsande rum som antingen är på samma lager eller ett lager in, wall list är väggarna till de rummen.
 					backupRoomList = new List<GameObject>();
-    public bool entered = false, bool2 = false;
+    public bool entered = false, enteredNow = false;
     public int layer;
 
 	public RoundDoors origin;
@@ -35,16 +35,16 @@ public class RoundDoors : MonoBehaviour {
 				availableRoomsList.Add (_room);
 			}
 				
-//			//Improved layout randomization. Maybe? 
-//			int randomRoomToKill = Random.Range (0, availableRoomsList.Count);
-//			availableRoomsList.RemoveAt (randomRoomToKill);
+			//Improved layout randomization. Maybe.
+			int randomRoomToKill = Random.Range (0, availableRoomsList.Count);
+			availableRoomsList.RemoveAt (randomRoomToKill);
 
 			//Removes previously entered rooms from list of availible rooms
-			bool2 = true;
+			enteredNow = true;
 
 			List<int> _intList = new List<int> ();
 			for (int i = 0; i < availableRoomsList.Count; i++) {
-				if (availableRoomsList [i].GetComponent<RoundDoors> ().bool2 /*|| availableRoomsList[i].GetComponent<RoundDoors>().layer > layer*/){
+				if (availableRoomsList [i].GetComponent<RoundDoors> ().enteredNow /*|| availableRoomsList[i].GetComponent<RoundDoors>().layer > layer*/){
 					_intList.Add (i);
 				}
 			}
@@ -60,7 +60,7 @@ public class RoundDoors : MonoBehaviour {
 					_bool = origin.FindPath ();
 					return _bool;
 				} else {
-					Debug.LogWarning ("<! DEAD END GOT STUCK !>");
+//					Debug.LogWarning ("<! DEAD END GOT STUCK !>");
 					return false;
 				}
 
@@ -84,9 +84,9 @@ public class RoundDoors : MonoBehaviour {
 					
 				if (room.entered) {	//End path if room previously entered by another path
 
-					Debug.Log (origin + "FOUND ANOTHER BUTTONS PATH");
+//					Debug.Log (origin + "FOUND ANOTHER BUTTONS PATH");
 
-					bool2 = false;
+					enteredNow = false;
 					entered = true;
 
 					return _bool;
@@ -96,52 +96,53 @@ public class RoundDoors : MonoBehaviour {
 					room.origin = origin;
 					_bool = room.FindPath ();
 
-					bool2 = false;
+					enteredNow = false;
 					entered = true;
 				}
 			}
 
-		} else {
-			
-			Debug.Log (origin + " FOUND THE CENTER OF THE MAZE");
-		}
+		} 
+//		else {
+//			
+//			Debug.Log (origin + " FOUND THE CENTER OF THE MAZE");
+//		}
 		return _bool;
     }
 
-	public void OpenToRandomRoom(){
+	//Maybe obselete
 
-		if (entered) {
-
-			return;
-		}
-		entered = true;
-
-		if (availableRoomsList.Count == 0) {
-
-			Debug.Log ("Screw it");
-
-			availableRoomsList.Clear ();
-			foreach(GameObject _room in backupRoomList){
-
-				availableRoomsList.Add (_room);
-			}
-		}
-
-		int randomRoomID = Random.Range (0, availableRoomsList.Count);
-
-		RoundDoors room = availableRoomsList [randomRoomID].GetComponent<RoundDoors> ();
-
-		Debug.Log ("Open a Door Now from " + gameObject + " to " + room.gameObject);
-
-		//Checks which wall the two rooms shares between them and Removes the wall between the two rooms
-		foreach (GameObject wall in WallList) {
-			foreach (GameObject walle in room.WallList) {
-				if (wall == walle) {
-					wall.GetComponent<RoundWallDoors> ().OpenSesamy ();
-					break;
-				}
-			}
-		}
-		room.availableRoomsList.Remove (gameObject);
-	}
+//	public void OpenToRandomRoom(){
+//
+//		if (entered) {
+//
+//			return;
+//		}
+//		entered = true;
+//
+//		if (availableRoomsList.Count == 0) {
+//
+//			availableRoomsList.Clear ();
+//			foreach(GameObject _room in backupRoomList){
+//
+//				availableRoomsList.Add (_room);
+//			}
+//		}
+//
+//		int randomRoomID = Random.Range (0, availableRoomsList.Count);
+//
+//		RoundDoors room = availableRoomsList [randomRoomID].GetComponent<RoundDoors> ();
+//
+//		Debug.Log ("Open a Door Now from " + gameObject + " to " + room.gameObject);
+//
+//		//Checks which wall the two rooms shares between them and Removes the wall between the two rooms
+//		foreach (GameObject wall in WallList) {
+//			foreach (GameObject walle in room.WallList) {
+//				if (wall == walle) {
+//					wall.GetComponent<RoundWallDoors> ().OpenSesamy ();
+//					break;
+//				}
+//			}
+//		}
+//		room.availableRoomsList.Remove (gameObject);
+//	}
 }
