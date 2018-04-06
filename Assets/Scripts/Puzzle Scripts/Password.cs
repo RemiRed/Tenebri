@@ -5,10 +5,11 @@ using UnityEngine;
 public class Password : MonoBehaviour {
 
 	public List<PasswordButton> passwordButtons;		//List of all buttons in the password. Not nessesary but useful for debug purposes.
-	int nextID, passwordLock, passwordLength;
-	bool solved = false;
+	public int nextID, passwordLock, passwordLength;
+	public bool solved = false;
 		
 	public void CheckPassword(int _ID){
+
 
 		if (!solved) {
 
@@ -30,7 +31,7 @@ public class Password : MonoBehaviour {
 				passwordLock = 1;
 
 			} else if (_ID != nextID - 1) {	//Resets password input unless last password button is pressed
-			
+				
 				nextID = 1;
 				passwordLock = 0;
 			}

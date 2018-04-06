@@ -74,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1377563522295830}
   m_LocalRotation: {x: -0, y: -0.81915104, z: -0, w: -0.5735779}
-  m_LocalPosition: {x: -47.67169, y: 0.9700002, z: 244.82764}
+  m_LocalPosition: {x: 70.007416, y: 167.1638, z: 20.734732}
   m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_Children:
   - {fileID: 4325101140774688}
@@ -194,22 +194,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 0
-    i1: 57
-    i2: 220
-    i3: 145
-    i4: 86
-    i5: 12
-    i6: 62
-    i7: 20
-    i8: 89
-    i9: 85
-    i10: 78
-    i11: 136
-    i12: 67
-    i13: 188
-    i14: 203
-    i15: 174
+    i0: 231
+    i1: 243
+    i2: 239
+    i3: 81
+    i4: 154
+    i5: 222
+    i6: 50
+    i7: 148
+    i8: 59
+    i9: 157
+    i10: 154
+    i11: 178
+    i12: 39
+    i13: 234
+    i14: 82
+    i15: 111
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
 --- !u!114 &114029520191848596
@@ -240,6 +240,7 @@ MonoBehaviour:
   maxJumpHeight: 2
   gravity: 120
   maxFallSpeed: 200
+  menu: 0
 --- !u!114 &114456303138999076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73eafba01b19b8f4fb5ab342b548d390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interractionMessage: {fileID: 0}
   carryDistance: 1.8
   carrySpeed: 4
   slow: 1
