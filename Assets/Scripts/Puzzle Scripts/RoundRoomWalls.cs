@@ -25,7 +25,7 @@ public class RoundRoomWalls : NetworkBehaviour {
     
     void RandomSymbols()
     {
-		//CloseWalls();
+		CloseWalls();
 
 		int tempLayer = 0;
 		bool firstLayer = false;
