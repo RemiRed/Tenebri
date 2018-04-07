@@ -1,16 +1,18 @@
 fileFormatVersion: 2
-guid: f675acddaabc0da4ab3425783402cac7
-timeCreated: 1523108170
+guid: 052dedbb038f88f409383c74c8d40a75
+timeCreated: 1523107628
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Prop_Drawer_01_Mat
+    2100000: Prop_Kopp_01_Mat
+    2100002: Prop_Kopp_01_Handle
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Prop_Clockpillar_01
+    4300000: Prop_Kopp_01
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -85,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
