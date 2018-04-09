@@ -22,48 +22,50 @@ public class RoundRoomWalls : NetworkBehaviour {
 		//Debug Stuff
 		if (isServer && Input.GetKeyDown(KeyCode.G))
         {
-            RandomSymbols();
+			RpcCloseWalls ();
+            RandomSymbols ();
         }
     }
     
     void RandomSymbols()
     {
-		CloseWalls();
+		CloseWalls ();
 
 		int tempLayer = 0;
 		bool firstLayer = false;
 
 		for(int i = 0; i < numberOfButtons; i++)
         {
-			List<RoundDoors> tempButtons = new List<RoundDoors>();
-			foreach (GameObject _button in buttons)
-			{
-				//Conditions for buttons to be added to list of possible buttons to be selected
-				if (!usedButtons.Contains (_button.GetComponent<RoundDoors>()) && 
-					(firstLayer == false || (firstLayer == true && _button.GetComponent<RoundDoors> ().layer != 1)) && 
-					_button.GetComponent<RoundDoors> ().layer != tempLayer) {
+			if (foundPath) {
+				List<RoundDoors> tempButtons = new List<RoundDoors> ();
+				foreach (GameObject _button in buttons) {
+					//Conditions for buttons to be added to list of possible buttons to be selected
+					if (!usedButtons.Contains (_button.GetComponent<RoundDoors> ()) &&
+					    (firstLayer == false || (firstLayer == true && _button.GetComponent<RoundDoors> ().layer != 1)) &&
+					    _button.GetComponent<RoundDoors> ().layer != tempLayer) {
 					 	
-					tempButtons.Add (_button.GetComponent<RoundDoors>());
+						tempButtons.Add (_button.GetComponent<RoundDoors> ());
+					}
 				}
-			}
 
-			int randomDude = Random.Range(0, tempButtons.Count);
+				int randomDude = Random.Range (0, tempButtons.Count);
 
-			Debug.Log (tempButtons [randomDude].gameObject.GetType());
-
-			RpcFindPath (tempButtons [randomDude].gameObject);
+				RpcFindPath (tempButtons [randomDude].gameObject);
 
 //			tempButtons [randomDude].GetComponent<Renderer> ().material.color = Color.red;
 //			tempButtons [randomDude].origin = tempButtons [randomDude];
-//
+
 //			if (!tempButtons [randomDude].FindPath ()) {
 //				
 //				RandomSymbols ();
 //				break;
 //			} 
-			tempLayer = tempButtons [randomDude].layer;
-			if (tempLayer == 1) firstLayer = true;
-			usedButtons.Add (tempButtons [randomDude]);
+
+				tempLayer = tempButtons [randomDude].layer;
+				if (tempLayer == 1)
+					firstLayer = true;
+				usedButtons.Add (tempButtons [randomDude]);
+			} 
         }
 
 		//Opens the rooms that has not been entered
@@ -74,14 +76,13 @@ public class RoundRoomWalls : NetworkBehaviour {
 				_button.GetComponent<RoundDoors> ().origin = _button.GetComponent<RoundDoors> ();
 				_button.GetComponent<RoundDoors> ().FindPath ();
 			}
-			//_rest.GetComponent<RoundDoors>().OpenToRandomRoom (); //Maybe Obselete
 		}
     }
 		
 	[ClientRpc]
 	void RpcFindPath(GameObject _button){
 
-		Debug.Log (_button);
+		Debug.Log ("Added a button");
 
 		_button.GetComponent<Renderer> ().material.color = Color.red;
 		_button.GetComponent<RoundDoors>().origin = _button.GetComponent<RoundDoors>();
@@ -91,13 +92,26 @@ public class RoundRoomWalls : NetworkBehaviour {
 	void ReRandomizeEverything(bool _foundpath){
 
 		if(!_foundpath) {
+
+			Debug.Log ("EVERYTHING");
 			CloseWalls ();
+
 			if (isServer) {
 				RandomSymbols ();
 			}
 		}
 	}
 		
+	[ClientRpc]
+	void RpcCloseWalls(){
+
+		foreach(GameObject bwa in walls)
+		{
+			bwa.SetActive(true);
+		}
+		NeutralSymbols();
+	}
+
 	//Resets Everything to default
 	void CloseWalls()
 	{
@@ -119,5 +133,6 @@ public class RoundRoomWalls : NetworkBehaviour {
 			bwu.GetComponent<RoundDoors> ().enteredNow = false;
         }
 		usedButtons.Clear ();
+		foundPath = true;
     }
 }
