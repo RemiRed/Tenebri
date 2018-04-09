@@ -130,8 +130,6 @@ public class RoundRoomWalls : RoomVariables
 			RpcCloseWalls ();
 			RandomSymbols ();
 
-		} else {
-			Debug.Log ("Not server");
 		}
 	}
 
