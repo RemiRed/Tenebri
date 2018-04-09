@@ -31,14 +31,14 @@ public class CharacterScript : NetworkBehaviour
     // Use this for initialization
     void Start()
     {
-        pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
-        pauseMenu.SetActive(false);
         if (!isLocalPlayer)
         {
             GetComponentInChildren<Camera>().transform.gameObject.SetActive(false);
         }
         else
         {
+			pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
+			pauseMenu.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             rigby = GetComponent<Rigidbody>();
             collider = GetComponent<Collider>();
