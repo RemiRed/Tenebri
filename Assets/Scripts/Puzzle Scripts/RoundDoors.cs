@@ -12,6 +12,8 @@ public class RoundDoors : MonoBehaviour {
     public bool entered = false, enteredNow = false;
     public int layer; 
 
+    public int buttonNumber;
+
 	public RoundDoors origin;
 
 	void Awake(){
