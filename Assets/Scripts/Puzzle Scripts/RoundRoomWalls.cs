@@ -14,14 +14,13 @@ public class RoundRoomWalls : NetworkBehaviour {
 	[SerializeField]
 	int numberOfButtons;
 
-	[SyncVar(hook = "RerandomizeEverything")]
+	[SyncVar(hook = "ReRandomizeEverything")]
 	public bool foundPath = true;
-
 
     void Update()
     {
 		//Debug Stuff
-		if (Input.GetKeyDown(KeyCode.G))
+		if (isServer && Input.GetKeyDown(KeyCode.G))
         {
             RandomSymbols();
         }
@@ -50,14 +49,18 @@ public class RoundRoomWalls : NetworkBehaviour {
 
 			int randomDude = Random.Range(0, tempButtons.Count);
 
-			tempButtons [randomDude].GetComponent<Renderer> ().material.color = Color.red;
-			tempButtons [randomDude].origin = tempButtons [randomDude];
+			Debug.Log (tempButtons [randomDude].gameObject.GetType());
 
-			if (!tempButtons [randomDude].FindPath ()) {
-				
-				RandomSymbols ();
-				break;
-			} 
+			RpcFindPath (tempButtons [randomDude].gameObject);
+
+//			tempButtons [randomDude].GetComponent<Renderer> ().material.color = Color.red;
+//			tempButtons [randomDude].origin = tempButtons [randomDude];
+//
+//			if (!tempButtons [randomDude].FindPath ()) {
+//				
+//				RandomSymbols ();
+//				break;
+//			} 
 			tempLayer = tempButtons [randomDude].layer;
 			if (tempLayer == 1) firstLayer = true;
 			usedButtons.Add (tempButtons [randomDude]);
@@ -76,31 +79,25 @@ public class RoundRoomWalls : NetworkBehaviour {
     }
 		
 	[ClientRpc]
-	void RpcFindPath(){
+	void RpcFindPath(GameObject _button){
 
+		Debug.Log (_button);
 
-
-
+		_button.GetComponent<Renderer> ().material.color = Color.red;
+		_button.GetComponent<RoundDoors>().origin = _button.GetComponent<RoundDoors>();
+		foundPath = _button.GetComponent<RoundDoors>().FindPath ();
 	}
 
-	void RerandomizeEverything(){
+	void ReRandomizeEverything(bool _foundpath){
 
-		if( !foundPath) {
+		if(!_foundpath) {
 			CloseWalls ();
 			if (isServer) {
 				RandomSymbols ();
 			}
 		}
 	}
-
-
-
-
-
-
-
-
-
+		
 	//Resets Everything to default
 	void CloseWalls()
 	{

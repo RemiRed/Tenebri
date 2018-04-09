@@ -601,7 +601,6 @@ MonoBehaviour:
   - {fileID: 1437762380}
   - {fileID: 362858436}
   - {fileID: 1491521976}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 3
@@ -963,7 +962,6 @@ MonoBehaviour:
   - {fileID: 1914734319}
   - {fileID: 1186984632}
   - {fileID: 907666189}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 3
@@ -1456,7 +1454,6 @@ MonoBehaviour:
   - {fileID: 2074456025}
   - {fileID: 62858564}
   - {fileID: 1491521976}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 3
@@ -3320,7 +3317,6 @@ MonoBehaviour:
   - {fileID: 1046919463}
   - {fileID: 1443079041}
   - {fileID: 1027459596}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 1
@@ -4102,7 +4098,6 @@ MonoBehaviour:
   - {fileID: 1046919463}
   - {fileID: 671565686}
   - {fileID: 1443079041}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 0
@@ -4334,7 +4329,6 @@ MonoBehaviour:
   - {fileID: 1186984632}
   - {fileID: 2074456025}
   - {fileID: 1027459596}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 3
@@ -4844,7 +4838,6 @@ MonoBehaviour:
   - {fileID: 1877016791}
   - {fileID: 1027459596}
   - {fileID: 1046919463}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 2
@@ -5618,7 +5611,6 @@ MonoBehaviour:
   - {fileID: 907666189}
   - {fileID: 1491521976}
   - {fileID: 671565686}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 2
@@ -6047,7 +6039,6 @@ MonoBehaviour:
   - {fileID: 1690811597}
   - {fileID: 671565686}
   - {fileID: 907666189}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 1
@@ -6669,7 +6660,6 @@ MonoBehaviour:
   - {fileID: 190323970}
   - {fileID: 811470242}
   - {fileID: 907666189}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 3
@@ -8317,7 +8307,6 @@ MonoBehaviour:
   - {fileID: 62858564}
   - {fileID: 1914734319}
   - {fileID: 1877016791}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 3
@@ -8332,6 +8321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1438943446}
   - component: {fileID: 1438943447}
+  - component: {fileID: 1438943448}
   m_Layer: 0
   m_Name: RoundMaze
   m_TagString: Untagged
@@ -8419,6 +8409,39 @@ MonoBehaviour:
   - {fileID: 671565686}
   - {fileID: 1443079041}
   numberOfButtons: 3
+  foundPath: 1
+--- !u!114 &1438943448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1438943445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &1443079041
 GameObject:
   m_ObjectHideFlags: 0
@@ -8518,7 +8541,6 @@ MonoBehaviour:
   - {fileID: 1690811597}
   - {fileID: 671565686}
   - {fileID: 1491521976}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 1
@@ -9028,7 +9050,6 @@ MonoBehaviour:
   - {fileID: 1877016791}
   - {fileID: 1027459596}
   - {fileID: 1443079041}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 2
@@ -10049,7 +10070,6 @@ MonoBehaviour:
   - {fileID: 1877016791}
   - {fileID: 1046919463}
   - {fileID: 1443079041}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 1
@@ -10690,7 +10710,6 @@ MonoBehaviour:
   - {fileID: 1491521976}
   - {fileID: 907666189}
   - {fileID: 1690811597}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 2
@@ -10792,7 +10811,6 @@ MonoBehaviour:
   - {fileID: 1437762380}
   - {fileID: 190323970}
   - {fileID: 1877016791}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 3
@@ -11818,7 +11836,6 @@ MonoBehaviour:
   - {fileID: 811470242}
   - {fileID: 362858436}
   - {fileID: 1027459596}
-  backupRoomList: []
   entered: 0
   enteredNow: 0
   layer: 3
