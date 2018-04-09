@@ -33,3 +33,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+Assets/Props/Environments/Prop_Open_Book_01.meta
+Assets/Props/Environments/Prop_Hedge_01.meta
