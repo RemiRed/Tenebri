@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Prop_Lever_01_GameProp_Lever_01_Mat_Normal
+  m_Name: GameProp_Lever_HandleFace_01_GameProp_Lever_Base_01_Mat_AlbedoTransparency
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 67b2814370ecea84ab9301492f25e090, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -39,11 +39,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 714a9196c2ebcec4baff6d84d998adb7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 918c6bfb3a64b5a49a01e746b52b6868, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1f3b192a585fd984789d4cf0d706c0ab, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -59,7 +59,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlossMapScale: 1
+    - _GlossMapScale: 0
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
