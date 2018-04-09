@@ -84,41 +84,4 @@ public class RoundDoors : MonoBehaviour {
 		} 
 		return _bool;
     }
-
-	//Maybe obselete
-
-//	public void OpenToRandomRoom(){
-//
-//		if (entered) {
-//
-//			return;
-//		}
-//		entered = true;
-//
-//		if (availableRoomsList.Count == 0) {
-//
-//			availableRoomsList.Clear ();
-//			foreach(GameObject _room in backupRoomList){
-//
-//				availableRoomsList.Add (_room);
-//			}
-//		}
-//
-//		int randomRoomID = Random.Range (0, availableRoomsList.Count);
-//
-//		RoundDoors room = availableRoomsList [randomRoomID].GetComponent<RoundDoors> ();
-//
-//		Debug.Log ("Open a Door Now from " + gameObject + " to " + room.gameObject);
-//
-//		//Checks which wall the two rooms shares between them and Removes the wall between the two rooms
-//		foreach (GameObject wall in WallList) {
-//			foreach (GameObject walle in room.WallList) {
-//				if (wall == walle) {
-//					wall.GetComponent<RoundWallDoors> ().OpenSesamy ();
-//					break;
-//				}
-//			}
-//		}
-//		room.availableRoomsList.Remove (gameObject);
-//	}
 }
