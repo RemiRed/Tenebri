@@ -28,7 +28,7 @@ public class RoundRoomWalls : NetworkBehaviour {
     
     void RandomSymbols()
     {
-		CloseWalls();
+		CloseWalls ();
 
 		int tempLayer = 0;
 		bool firstLayer = false;
@@ -101,6 +101,7 @@ public class RoundRoomWalls : NetworkBehaviour {
 	//Resets Everything to default
 	void CloseWalls()
 	{
+		foundPath = false;
 		foreach(GameObject bwa in walls)
 		{
 			bwa.SetActive(true);
@@ -119,5 +120,6 @@ public class RoundRoomWalls : NetworkBehaviour {
 			bwu.GetComponent<RoundDoors> ().enteredNow = false;
         }
 		usedButtons.Clear ();
+		foundPath = true;
     }
 }
