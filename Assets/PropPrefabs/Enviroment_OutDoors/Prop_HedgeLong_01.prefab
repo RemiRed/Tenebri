@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 4109619004886008}
   - component: {fileID: 33043744915162602}
   - component: {fileID: 23378205568438850}
-  - component: {fileID: 95552933097745098}
   - component: {fileID: 65712116395410964}
   m_Layer: 0
   m_Name: Prop_HedgeLong_01
@@ -266,23 +265,6 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1698006533601198}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 7fcf8e1247c90424ab137a29b33179e8, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95552933097745098
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1960438423369118}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7fcf8e1247c90424ab137a29b33179e8, type: 3}
   m_Controller: {fileID: 0}
