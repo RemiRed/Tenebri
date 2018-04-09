@@ -28,20 +28,22 @@ public class CharacterScript : NetworkBehaviour
 
     public bool menu = false;
     GameObject pauseMenu;
-    // Use this for initialization
+
+    AudioSource footsteps;
     void Start()
     {
-        pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
-        pauseMenu.SetActive(false);
         if (!isLocalPlayer)
         {
             GetComponentInChildren<Camera>().transform.gameObject.SetActive(false);
         }
         else
         {
+            footsteps = GetComponent<AudioSource>();
             Cursor.lockState = CursorLockMode.Locked;
             rigby = GetComponent<Rigidbody>();
             collider = GetComponent<Collider>();
+            pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
+            pauseMenu.SetActive(false);
         }
 
     }
@@ -60,7 +62,7 @@ public class CharacterScript : NetworkBehaviour
             pauseMenu.SetActive(false);
         }
     }
-    // Update is called once per frame
+
     void Update()
     {
         if (isLocalPlayer)
@@ -89,6 +91,14 @@ public class CharacterScript : NetworkBehaviour
                    /* Y */     Mathf.Max((curJumpPower), -maxFallSpeed),
                    /* Z */     Input.GetAxisRaw("Vertical Movement") * movementSpeed)
                   /* All */   * 100 * Time.deltaTime, ForceMode.Force);
+            if (curJumpPower == 0 && (Input.GetAxisRaw("Horizontal Movement") != 0 || Input.GetAxisRaw("Vertical Movement") != 0))
+            {
+                footsteps.mute = false;
+            }
+            else
+            {
+                footsteps.mute = true;
+            }
         }
     }
 
