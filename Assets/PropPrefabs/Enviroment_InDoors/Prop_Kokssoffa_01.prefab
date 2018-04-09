@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33101409371773504}
   - component: {fileID: 23148598377569348}
   m_Layer: 0
-  m_Name: Prop_Soffbord_01
+  m_Name: Prop_Kokssoffa_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
