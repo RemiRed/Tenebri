@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 62858566}
   - component: {fileID: 62858565}
   - component: {fileID: 62858568}
+  - component: {fileID: 62858569}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01
   m_TagString: Untagged
@@ -605,6 +606,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   origin: {fileID: 0}
+--- !u!114 &62858569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 62858564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!43 &84459437
 Mesh:
   m_ObjectHideFlags: 0
@@ -878,6 +911,7 @@ GameObject:
   - component: {fileID: 190323972}
   - component: {fileID: 190323971}
   - component: {fileID: 190323974}
+  - component: {fileID: 190323975}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (16)
   m_TagString: Untagged
@@ -966,6 +1000,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   origin: {fileID: 0}
+--- !u!114 &190323975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 190323970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &221524986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,6 +1436,7 @@ GameObject:
   - component: {fileID: 362858438}
   - component: {fileID: 362858437}
   - component: {fileID: 362858440}
+  - component: {fileID: 362858441}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (5)
   m_TagString: Untagged
@@ -1458,6 +1525,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   origin: {fileID: 0}
+--- !u!114 &362858441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362858436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!43 &392799184
 Mesh:
   m_ObjectHideFlags: 0
@@ -3231,6 +3330,7 @@ GameObject:
   - component: {fileID: 671565688}
   - component: {fileID: 671565687}
   - component: {fileID: 671565690}
+  - component: {fileID: 671565691}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (14)
   m_TagString: Untagged
@@ -3321,6 +3421,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 1
   origin: {fileID: 0}
+--- !u!114 &671565691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 671565686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &683782981
 GameObject:
   m_ObjectHideFlags: 0
@@ -3711,6 +3843,46 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &718226459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 718226461}
+  - component: {fileID: 718226460}
+  m_Layer: 0
+  m_Name: Spawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &718226460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 718226459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1050975500, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &718226461
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 718226459}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 107.18, y: 9.79, z: 8.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &726721761
 Transform:
   m_ObjectHideFlags: 0
@@ -4012,6 +4184,7 @@ GameObject:
   - component: {fileID: 798168193}
   - component: {fileID: 798168192}
   - component: {fileID: 798168195}
+  - component: {fileID: 798168196}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (11)
   m_TagString: Untagged
@@ -4102,6 +4275,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 0
   origin: {fileID: 0}
+--- !u!114 &798168196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798168191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &811350757
 GameObject:
   m_ObjectHideFlags: 0
@@ -4245,6 +4450,7 @@ GameObject:
   - component: {fileID: 811470244}
   - component: {fileID: 811470243}
   - component: {fileID: 811470246}
+  - component: {fileID: 811470247}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (3)
   m_TagString: Untagged
@@ -4333,6 +4539,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   origin: {fileID: 0}
+--- !u!114 &811470247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 811470242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &858949622
 GameObject:
   m_ObjectHideFlags: 0
@@ -4750,6 +4988,7 @@ GameObject:
   - component: {fileID: 907666191}
   - component: {fileID: 907666190}
   - component: {fileID: 907666193}
+  - component: {fileID: 907666194}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (9)
   m_TagString: Untagged
@@ -4842,6 +5081,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 2
   origin: {fileID: 0}
+--- !u!114 &907666194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 907666189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!43 &920993415
 Mesh:
   m_ObjectHideFlags: 0
@@ -5455,7 +5726,7 @@ Prefab:
     - target: {fileID: 224317966198644450, guid: 8b3d8af6dc19b6b4a9750b7df9a2073f,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224317966198644450, guid: 8b3d8af6dc19b6b4a9750b7df9a2073f,
         type: 2}
@@ -5523,6 +5794,7 @@ GameObject:
   - component: {fileID: 1027459598}
   - component: {fileID: 1027459597}
   - component: {fileID: 1027459600}
+  - component: {fileID: 1027459601}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (10)
   m_TagString: Untagged
@@ -5615,6 +5887,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 2
   origin: {fileID: 0}
+--- !u!114 &1027459601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1027459596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!43 &1029935244
 Mesh:
   m_ObjectHideFlags: 0
@@ -5953,6 +6257,7 @@ GameObject:
   - component: {fileID: 1046919465}
   - component: {fileID: 1046919464}
   - component: {fileID: 1046919467}
+  - component: {fileID: 1046919468}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (13)
   m_TagString: Untagged
@@ -6043,6 +6348,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 1
   origin: {fileID: 0}
+--- !u!114 &1046919468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1046919463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!43 &1056899490
 Mesh:
   m_ObjectHideFlags: 0
@@ -6576,6 +6913,7 @@ GameObject:
   - component: {fileID: 1186984634}
   - component: {fileID: 1186984633}
   - component: {fileID: 1186984636}
+  - component: {fileID: 1186984637}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (2)
   m_TagString: Untagged
@@ -6664,6 +7002,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   origin: {fileID: 0}
+--- !u!114 &1186984637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1186984632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!43 &1188659965
 Mesh:
   m_ObjectHideFlags: 0
@@ -7385,7 +7755,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4370250889185946, guid: ad090e47ef0b35744b5f852047edabb7, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad090e47ef0b35744b5f852047edabb7, type: 2}
@@ -7428,7 +7798,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1338667480
 Mesh:
@@ -8223,6 +8593,7 @@ GameObject:
   - component: {fileID: 1437762382}
   - component: {fileID: 1437762381}
   - component: {fileID: 1437762384}
+  - component: {fileID: 1437762385}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (1)
   m_TagString: Untagged
@@ -8311,6 +8682,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   origin: {fileID: 0}
+--- !u!114 &1437762385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1437762380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &1438943445
 GameObject:
   m_ObjectHideFlags: 0
@@ -8344,7 +8747,7 @@ Transform:
   - {fileID: 1666362539}
   - {fileID: 963621237}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1438943447
 MonoBehaviour:
@@ -8455,6 +8858,7 @@ GameObject:
   - component: {fileID: 1443079043}
   - component: {fileID: 1443079042}
   - component: {fileID: 1443079045}
+  - component: {fileID: 1443079046}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (15)
   m_TagString: Untagged
@@ -8545,6 +8949,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 1
   origin: {fileID: 0}
+--- !u!114 &1443079046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1443079041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &1449091393
 GameObject:
   m_ObjectHideFlags: 0
@@ -8962,6 +9398,7 @@ GameObject:
   - component: {fileID: 1491521978}
   - component: {fileID: 1491521977}
   - component: {fileID: 1491521980}
+  - component: {fileID: 1491521981}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (7)
   m_TagString: Untagged
@@ -9054,52 +9491,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 2
   origin: {fileID: 0}
---- !u!1001 &1507367851
-Prefab:
+--- !u!114 &1491521981
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4671010190795730, guid: 30fe0dd2724b52241b003a88a4d07db8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4671010190795730, guid: 30fe0dd2724b52241b003a88a4d07db8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4671010190795730, guid: 30fe0dd2724b52241b003a88a4d07db8, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4671010190795730, guid: 30fe0dd2724b52241b003a88a4d07db8, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4671010190795730, guid: 30fe0dd2724b52241b003a88a4d07db8, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4671010190795730, guid: 30fe0dd2724b52241b003a88a4d07db8, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4671010190795730, guid: 30fe0dd2724b52241b003a88a4d07db8, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4671010190795730, guid: 30fe0dd2724b52241b003a88a4d07db8, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1939260843276512, guid: 30fe0dd2724b52241b003a88a4d07db8, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 30fe0dd2724b52241b003a88a4d07db8, type: 2}
-  m_IsPrefabParent: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1491521976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!43 &1538887539
 Mesh:
   m_ObjectHideFlags: 0
@@ -9984,6 +10407,7 @@ GameObject:
   - component: {fileID: 1690811599}
   - component: {fileID: 1690811598}
   - component: {fileID: 1690811601}
+  - component: {fileID: 1690811602}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (12)
   m_TagString: Untagged
@@ -10074,6 +10498,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 1
   origin: {fileID: 0}
+--- !u!114 &1690811602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690811597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!4 &1705482249
 Transform:
   m_ObjectHideFlags: 0
@@ -10622,6 +11078,7 @@ GameObject:
   - component: {fileID: 1877016793}
   - component: {fileID: 1877016792}
   - component: {fileID: 1877016795}
+  - component: {fileID: 1877016796}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (8)
   m_TagString: Untagged
@@ -10714,6 +11171,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 2
   origin: {fileID: 0}
+--- !u!114 &1877016796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1877016791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &1914734319
 GameObject:
   m_ObjectHideFlags: 0
@@ -10727,6 +11216,7 @@ GameObject:
   - component: {fileID: 1914734321}
   - component: {fileID: 1914734320}
   - component: {fileID: 1914734323}
+  - component: {fileID: 1914734324}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (6)
   m_TagString: Untagged
@@ -10815,6 +11305,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   origin: {fileID: 0}
+--- !u!114 &1914734324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1914734319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!4 &1922720131
 Transform:
   m_ObjectHideFlags: 0
@@ -11752,6 +12274,7 @@ GameObject:
   - component: {fileID: 2074456027}
   - component: {fileID: 2074456026}
   - component: {fileID: 2074456029}
+  - component: {fileID: 2074456030}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (4)
   m_TagString: Untagged
@@ -11840,6 +12363,38 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   origin: {fileID: 0}
+--- !u!114 &2074456030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2074456025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 48
+    i1: 254
+    i2: 13
+    i3: 210
+    i4: 114
+    i5: 75
+    i6: 82
+    i7: 36
+    i8: 27
+    i9: 0
+    i10: 58
+    i11: 136
+    i12: 164
+    i13: 208
+    i14: 125
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!43 &2084535620
 Mesh:
   m_ObjectHideFlags: 0
