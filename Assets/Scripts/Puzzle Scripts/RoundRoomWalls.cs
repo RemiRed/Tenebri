@@ -90,12 +90,11 @@ public class RoundRoomWalls : NetworkBehaviour {
 
 	void ReRandomizeEverything(bool _foundpath){
 
-
 		if(!_foundpath) {
 
 			Debug.Log ("EVERYTHING");
-
 			CloseWalls ();
+
 			if (isServer) {
 				RandomSymbols ();
 			}
