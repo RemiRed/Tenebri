@@ -10,7 +10,7 @@ public class RoundDoors : MonoBehaviour {
     List<GameObject> WallList = new List<GameObject>(), availableRoomsList = new List<GameObject>(); //room list har alla angränsande rum som antingen är på samma lager eller ett lager in, wall list är väggarna till de rummen.
 	List<RoundDoors> backupRoomList = new List<RoundDoors>();
     public bool entered = false, enteredNow = false;
-    public int layer;
+    public int layer; 
 
 	public RoundDoors origin;
 

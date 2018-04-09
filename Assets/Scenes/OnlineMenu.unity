@@ -4375,7 +4375,7 @@ MonoBehaviour:
   m_GamePlayerPrefab: {fileID: 1377563522295830, guid: e7f3ef519ade32943b9d9ab227ea526f,
     type: 2}
   m_LobbyScene: OnlineMenu
-  m_PlayScene: RoundRoom
+  m_PlayScene: WB_Color-Symbol
   lobbySlots: []
   matchmakingGameObject: {fileID: 896307762}
   optionsGameObject: {fileID: 1688720202}

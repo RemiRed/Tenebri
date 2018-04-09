@@ -10,36 +10,32 @@ public class Password : MonoBehaviour {
 		
 	public void CheckPassword(int _ID){
 
+		if (!solved && _ID == nextID) {
 
-		if (!solved) {
+			passwordLock = nextID;
 
-			if (_ID == nextID) {
+			//Checks if password is solved
+			if (passwordLock == passwordLength) {
 
-				passwordLock = nextID;
-
-				//Checks if password is solved
-				if (passwordLock == passwordLength) {
-
-					Debug.Log ("CORRECT PASSWORD!"); //Replace with some door opening method
-					solved = true;
-				}
-				nextID++;
-				
-			} else if (_ID == 1) {	//If first password button is pressed, password input is restarted to first password button
-			
-				nextID = 2;
-				passwordLock = 1;
-
-			} else if (_ID != nextID - 1) {	//Resets password input unless last password button is pressed
-
-				if (passwordLock != 0) {
-					
-					Debug.Log ("Wrong button"); //Replace with penalty stuff 
-				}
-
-				nextID = 1;
-				passwordLock = 0;
+				Debug.Log ("CORRECT PASSWORD!"); //Replace with some door opening method
+				solved = true;
+				return;
 			}
+			nextID++;
+				
+		} else if (_ID == 1) {	//If first password button is pressed, password input is restarted to first password button
+			
+			nextID = 2;
+			passwordLock = 1;
+
+		} else if (_ID != nextID - 1) {	//Resets password input unless last password button is pressed
+
+			if (passwordLock != 0) {
+					
+				Debug.Log ("Wrong button"); //Replace with penalty stuff 
+			}
+			nextID = 1;
+			passwordLock = 0;
 		}
 	}
 
