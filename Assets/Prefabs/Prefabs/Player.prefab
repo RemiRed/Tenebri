@@ -194,22 +194,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 0
-    i1: 57
-    i2: 220
-    i3: 145
-    i4: 86
-    i5: 12
-    i6: 62
-    i7: 20
-    i8: 89
-    i9: 85
-    i10: 78
-    i11: 136
-    i12: 67
-    i13: 188
-    i14: 203
-    i15: 174
+    i0: 111
+    i1: 201
+    i2: 51
+    i3: 179
+    i4: 120
+    i5: 204
+    i6: 184
+    i7: 180
+    i8: 184
+    i9: 237
+    i10: 156
+    i11: 69
+    i12: 224
+    i13: 194
+    i14: 45
+    i15: 210
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
 --- !u!114 &114029520191848596
@@ -240,6 +240,7 @@ MonoBehaviour:
   maxJumpHeight: 2
   gravity: 120
   maxFallSpeed: 200
+  menu: 0
 --- !u!114 &114456303138999076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73eafba01b19b8f4fb5ab342b548d390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interractionMessage: {fileID: 0}
   carryDistance: 1.8
   carrySpeed: 4
   slow: 1

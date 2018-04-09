@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class FallDown : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField]
+    Collider PlayerCollider;
 
     void OnTriggerEnter(Collider other)
     {
-        print(other.gameObject + " is Touching.");
+        (other.gameObject.GetComponent(typeof(Collider)) as Collider).isTrigger = true;
+
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        (other.gameObject.GetComponent(typeof(Collider)) as Collider).isTrigger = false;
+    }
+
+    
 }

@@ -19477,6 +19477,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf673ff061dff54da7c9fad884ba5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerCollider: {fileID: 136384232994948630, guid: 6fc933b378ccb8b4b8ed9c45e0c22dd2,
+    type: 2}
 --- !u!65 &756365408
 BoxCollider:
   m_ObjectHideFlags: 0
