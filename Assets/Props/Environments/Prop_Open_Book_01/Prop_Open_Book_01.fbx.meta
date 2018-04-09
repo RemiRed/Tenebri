@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 15e3ececc67667a4ead80b6db6a74c19
-timeCreated: 1523280281
+guid: bc5b0707c123e9e43b553ea95c2f53e6
+timeCreated: 1523280290
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Prop_Bench_01_Mat
+    2100000: Prop_OpenBook_01_Mat
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Prop_Bench_01
+    4300000: Prop_OpenBook_01
   externalObjects: {}
   materials:
     importMaterials: 1
