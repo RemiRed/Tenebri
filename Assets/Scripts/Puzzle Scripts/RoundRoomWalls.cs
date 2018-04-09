@@ -22,13 +22,14 @@ public class RoundRoomWalls : NetworkBehaviour {
 		//Debug Stuff
 		if (isServer && Input.GetKeyDown(KeyCode.G))
         {
-            RandomSymbols();
+			foundPath = false;
+          //  RandomSymbols();
         }
     }
     
     void RandomSymbols()
     {
-		CloseWalls ();
+		//CloseWalls ();
 
 		int tempLayer = 0;
 		bool firstLayer = false;
@@ -49,8 +50,6 @@ public class RoundRoomWalls : NetworkBehaviour {
 
 			int randomDude = Random.Range(0, tempButtons.Count);
 
-			Debug.Log (tempButtons [randomDude].gameObject.GetType());
-
 			RpcFindPath (tempButtons [randomDude].gameObject);
 
 //			tempButtons [randomDude].GetComponent<Renderer> ().material.color = Color.red;
@@ -61,6 +60,7 @@ public class RoundRoomWalls : NetworkBehaviour {
 //				RandomSymbols ();
 //				break;
 //			} 
+
 			tempLayer = tempButtons [randomDude].layer;
 			if (tempLayer == 1) firstLayer = true;
 			usedButtons.Add (tempButtons [randomDude]);
@@ -81,7 +81,7 @@ public class RoundRoomWalls : NetworkBehaviour {
 	[ClientRpc]
 	void RpcFindPath(GameObject _button){
 
-		Debug.Log (_button);
+		Debug.Log ("Added a button");
 
 		_button.GetComponent<Renderer> ().material.color = Color.red;
 		_button.GetComponent<RoundDoors>().origin = _button.GetComponent<RoundDoors>();
@@ -90,7 +90,11 @@ public class RoundRoomWalls : NetworkBehaviour {
 
 	void ReRandomizeEverything(bool _foundpath){
 
+
 		if(!_foundpath) {
+
+			Debug.Log ("EVERYTHING");
+
 			CloseWalls ();
 			if (isServer) {
 				RandomSymbols ();
@@ -101,7 +105,6 @@ public class RoundRoomWalls : NetworkBehaviour {
 	//Resets Everything to default
 	void CloseWalls()
 	{
-		foundPath = false;
 		foreach(GameObject bwa in walls)
 		{
 			bwa.SetActive(true);
