@@ -63,7 +63,7 @@ public class RoundRoomWalls : RoomVariables
 
                 int randomButtonInt = Random.Range(0, tempButtons.Count);
 
-                RpcFindPath(tempButtons[randomButtonInt].gameObject);
+				RpcFindPath(tempButtons[randomButtonInt].gameObject, true);
 
 //                			tempButtons [randomDude].GetComponent<Renderer> ().material.color = Color.red;
 //                			tempButtons [randomDude].origin = tempButtons [randomDude];
@@ -85,31 +85,37 @@ public class RoundRoomWalls : RoomVariables
         //Opens the rooms that has not been entered
         foreach (GameObject _button in buttons)
         {
-            if (!_button.GetComponent<RoundDoors>().entered)
-            {
+//            if (!_button.GetComponent<RoundDoors>().entered)
+//            {
 
-                _button.GetComponent<RoundDoors>().origin = _button.GetComponent<RoundDoors>();
-                _button.GetComponent<RoundDoors>().FindPath();
-            }
+				RpcFindPath (_button, false);
+// 			  }
         }
     }
 
     [ClientRpc]
-    void RpcFindPath(GameObject _button)
-    {
-        _button.GetComponent<Renderer>().material.color = Color.red;
-        theseButtons.Add(_button.GetComponent<RoundDoors>().buttonNumber);
-        _button.GetComponent<RoundDoors>().origin = _button.GetComponent<RoundDoors>();
-		if (!_button.GetComponent<RoundDoors> ().FindPath()) {
-			foundPath = false;
-		}
+	void RpcFindPath(GameObject _button, bool _ifButton)
+	{
+		if (_ifButton) {
 
-		curButtonNumber++;
-		Debug.Log (curButtonNumber + " " + foundPath);
-		if (curButtonNumber == numberOfButtons && !foundPath) {
+			_button.GetComponent<RoundDoors> ().origin = _button.GetComponent<RoundDoors> ();
+			if (!_button.GetComponent<RoundDoors> ().FindPath ()) {
+				foundPath = false;
+			}
 
-			CmdTest ();
-			curButtonNumber = 0;
+			_button.GetComponent<Renderer> ().material.color = Color.red;
+			theseButtons.Add (_button.GetComponent<RoundDoors> ().buttonNumber);
+
+			curButtonNumber++;
+			if (curButtonNumber >= numberOfButtons && !foundPath) {
+
+				CmdTest ();
+				curButtonNumber = 0;
+			}
+		} else if(!_button.GetComponent<RoundDoors>().entered) {
+			
+			_button.GetComponent<RoundDoors> ().origin = _button.GetComponent<RoundDoors> ();
+			_button.GetComponent<RoundDoors> ().FindPath ();
 		}
     }
 
@@ -121,26 +127,13 @@ public class RoundRoomWalls : RoomVariables
 			Debug.Log ("Works on non-player");
 
 			CloseWalls ();
+			RpcCloseWalls ();
 			RandomSymbols ();
 
 		} else {
 			Debug.Log ("Not server");
 		}
 	}
-
-//    void ReRandomizeEverything(bool _foundpath)
-//    {
-//
-//        if (!_foundpath)
-//        {
-//            CloseWalls();
-//
-//            if (isServer)
-//            {
-//                RandomSymbols();
-//            }
-//        }
-//    }
 
 	//Resets Everything to default // Twice becasue temporary solution to fix over network..
     [ClientRpc]
