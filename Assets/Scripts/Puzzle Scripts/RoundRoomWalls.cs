@@ -40,27 +40,24 @@ public class RoundRoomWalls : RoomVariables
         int tempLayer = 0;
         bool firstLayer = false;
 
-        for (int i = 0; i < numberOfButtons; i++)
-        {
-        	List<RoundDoors> tempButtons = new List<RoundDoors>();
-        	foreach (GameObject _button in buttons){
-          	//Conditions for buttons to be added to list of possible buttons to be selected
-        	if (!usedButtons.Contains(_button.GetComponent<RoundDoors>()) &&
-           		(firstLayer == false || (firstLayer == true && _button.GetComponent<RoundDoors>().layer != 1)) &&
-          		_button.GetComponent<RoundDoors>().layer != tempLayer)
-          		{
-             		tempButtons.Add(_button.GetComponent<RoundDoors>());
-        		}
-         	}
-        	int randomButtonInt = Random.Range(0, tempButtons.Count);
+		for (int i = 0; i < numberOfButtons; i++) {
+			List<RoundDoors> tempButtons = new List<RoundDoors> ();
+			foreach (GameObject _button in buttons) {
+				//Conditions for buttons to be added to list of possible buttons to be selected
+				if (!usedButtons.Contains (_button.GetComponent<RoundDoors> ()) &&
+				(firstLayer == false || (firstLayer == true && _button.GetComponent<RoundDoors> ().layer != 1)) &&
+				_button.GetComponent<RoundDoors> ().layer != tempLayer) 
+				{
+				tempButtons.Add (_button.GetComponent<RoundDoors> ());
+				}
+			}
+			int randomButtonInt = Random.Range (0, tempButtons.Count);
 
-			RpcFindPath(tempButtons[randomButtonInt].gameObject, true);
-
-        	tempLayer = tempButtons[randomButtonInt].layer;
-          	if (tempLayer == 1) firstLayer = true;
-        	usedButtons.Add(tempButtons[randomButtonInt]);
-        }
-			
+			RpcFindPath (tempButtons [randomButtonInt].gameObject, true);
+			tempLayer = tempButtons [randomButtonInt].layer;
+			if (tempLayer == 1) firstLayer = true;
+			usedButtons.Add (tempButtons [randomButtonInt]);
+		}
         //Opens the rooms that has not been entered
         foreach (GameObject _button in buttons)
         {
@@ -82,7 +79,7 @@ public class RoundRoomWalls : RoomVariables
 			curButtonNumber++;
 			if (curButtonNumber >= numberOfButtons && !foundPath) {
 
-				ReRandomizeEverything ();
+				CmdReRandomizeEverything ();
 				curButtonNumber = 0;
 			}
 		} else if(!_button.GetComponent<RoundDoors>().entered) {
@@ -92,7 +89,7 @@ public class RoundRoomWalls : RoomVariables
     }
 
 	[Command]
-	void ReRandomizeEverything(){
+	void CmdReRandomizeEverything(){
 
 		CloseWalls ();
 		RpcCloseWalls ();
@@ -103,11 +100,6 @@ public class RoundRoomWalls : RoomVariables
     [ClientRpc]
     void RpcCloseWalls()
     {
-//        foreach (GameObject bwa in walls)
-//        {
-//            bwa.SetActive(true);
-//        }
-//        NeutralSymbols();
 		CloseWalls();
     }
     void CloseWalls()
