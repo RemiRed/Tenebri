@@ -11,18 +11,25 @@ public class RoundMazeMapRoom : RoomVariables
     [ClientRpc]
     public void RpcMapButtons()
     {
-       // print("helo");
-        foreach (int i in pairedRoom.GetComponent<RoundRoomWalls>().theseButtons)
-        {
-       //     print(i);
-        }
+        NeutralMapButtons();
+       
         foreach (GameObject button in mapButtons)
         {
             if (pairedRoom.GetComponent<RoundRoomWalls>().theseButtons.Contains(button.GetComponent<RoundRoomMapButtonnumber>().buttonNumber))
             {
-         //       print("bla");
                 button.GetComponent<Renderer>().material.SetColor(Shader.PropertyToID("_SpecColor"), Color.red);
             }
         }
+    }
+
+    void NeutralMapButtons()
+    {
+        foreach(GameObject bwutt in mapButtons)
+        {
+            print("hello");
+            bwutt.GetComponent<Renderer>().material.SetColor(Shader.PropertyToID("_SpecColor"), Color.black);
+            print("hello2");
+        }
+        
     }
 }
