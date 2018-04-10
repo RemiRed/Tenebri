@@ -26,7 +26,6 @@ public class RoundRoomWalls : RoomVariables
         if (isServer && Input.GetKeyDown(KeyCode.G))
         {
             RandomSymbols();
-
 			pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
         }
     }
@@ -51,9 +50,10 @@ public class RoundRoomWalls : RoomVariables
 				tempButtons.Add (_button.GetComponent<RoundDoors> ());
 				}
 			}
+			//Selects random button positions and opens path from selected button
 			int randomButtonInt = Random.Range (0, tempButtons.Count);
 			RpcFindPath (tempButtons [randomButtonInt].gameObject, true);
-
+			//Adjusts varables for next loop
 			tempLayer = tempButtons [randomButtonInt].layer;
 			if (tempLayer == 1) firstLayer = true;
 			usedButtons.Add (tempButtons [randomButtonInt]);

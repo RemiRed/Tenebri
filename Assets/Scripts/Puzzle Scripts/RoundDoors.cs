@@ -35,7 +35,7 @@ public class RoundDoors : MonoBehaviour {
 			availableRoomsList.Clear ();
 			foreach (RoundDoors _room in backupRoomList) {
 
-				if (!_room.enteredNow) {
+				if (!_room.enteredNow && _room.layer <= layer /* Honestly makes it a lot more stable*/) {
 
 					availableRoomsList.Add (_room.gameObject);
 				}
@@ -44,10 +44,13 @@ public class RoundDoors : MonoBehaviour {
 			//Checks if path reached a dead end. 
 			if (availableRoomsList.Count == 0) {	//If True: return to origin and try again
 
+				Debug.Log ("Does this ever happen now?");
+
 				if (_origin != this) {
 					_bool = _origin.FindPath (_origin);
 					return _bool;
 				} else {	//If this already is origin the path gets stuck. Returns false (To 'RoundRoomWalls') and start over.
+					Debug.LogWarning("GOT STUCK IN A DEADEND");
 					return false;
 				}
 
