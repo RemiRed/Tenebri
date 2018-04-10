@@ -50,7 +50,7 @@ public class RoundRoomWalls : RoomVariables
 				tempButtons.Add (_button.GetComponent<RoundDoors> ());
 				}
 			}
-			//Selects random button positions and opens path from selected button
+			//Selects random button positions and opens a path from selected button
 			int randomButtonInt = Random.Range (0, tempButtons.Count);
 			RpcFindPath (tempButtons [randomButtonInt].gameObject, true);
 			//Adjusts varables for next loop
@@ -70,14 +70,20 @@ public class RoundRoomWalls : RoomVariables
 	{
 		if (_ifButton) {
 
+			curButtonNumber++;
+
+
+
 			_button.GetComponent<Renderer> ().material.color = Color.red;
+
 			theseButtons.Add (_button.GetComponent<RoundDoors> ().buttonNumber);
-			Debug.Log (theseButtons.Count);
+
+
+
 
 			if (!_button.GetComponent<RoundDoors> ().FindPath (_button.GetComponent<RoundDoors>())) {
 				foundPath = false;
 			}
-			curButtonNumber++;
 			if (curButtonNumber >= numberOfButtons && !foundPath) {
 				
 				CmdReRandomizeEverything ();

@@ -7,7 +7,7 @@ public class RoundMazeMapRoom : RoomVariables
 {
     [SerializeField]
     List<GameObject> mapButtons = new List<GameObject>();
-  
+
     [ClientRpc]
     public void RpcMapButtons()
     {
@@ -26,10 +26,7 @@ public class RoundMazeMapRoom : RoomVariables
     {
         foreach(GameObject bwutt in mapButtons)
         {
-            print("hello");
             bwutt.GetComponent<Renderer>().material.SetColor(Shader.PropertyToID("_SpecColor"), Color.black);
-            print("hello2");
         }
-        
     }
 }
