@@ -14,7 +14,7 @@ public class RoundDoors : MonoBehaviour {
 
     public int buttonNumber;
 
-	public RoundDoors origin;
+	//public RoundDoors origin;
 
 	void Awake(){
 
@@ -24,7 +24,7 @@ public class RoundDoors : MonoBehaviour {
 		}
 	}
 
-    public bool FindPath()
+    public bool FindPath(RoundDoors _origin)
     {
 		bool _bool = true;
 		if (layer != 0) {
@@ -44,11 +44,10 @@ public class RoundDoors : MonoBehaviour {
 			//Checks if path reached a dead end. 
 			if (availableRoomsList.Count == 0) {	//If True: return to origin and try again
 
-				if (origin != this) {
-					_bool = origin.FindPath ();
+				if (_origin != this) {
+					_bool = _origin.FindPath (_origin);
 					return _bool;
-				} else {
-//					Debug.LogWarning ("<! DEAD END GOT STUCK !>");
+				} else {	//If this already is origin the path gets stuck. Returns false (To 'RoundRoomWalls') and start over.
 					return false;
 				}
 
@@ -73,9 +72,8 @@ public class RoundDoors : MonoBehaviour {
 					return _bool;
 
 				} else {	//Continue looking for a path
-
-					room.origin = origin;
-					_bool = room.FindPath ();
+					
+					_bool = room.FindPath (_origin);
 
 					enteredNow = false;
 					entered = true;

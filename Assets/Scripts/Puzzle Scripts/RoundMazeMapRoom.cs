@@ -11,16 +11,16 @@ public class RoundMazeMapRoom : RoomVariables
     [ClientRpc]
     public void RpcMapButtons()
     {
-        print("helo");
+       // print("helo");
         foreach (int i in pairedRoom.GetComponent<RoundRoomWalls>().theseButtons)
         {
-            print(i);
+       //     print(i);
         }
         foreach (GameObject button in mapButtons)
         {
             if (pairedRoom.GetComponent<RoundRoomWalls>().theseButtons.Contains(button.GetComponent<RoundRoomMapButtonnumber>().buttonNumber))
             {
-                print("bla");
+         //       print("bla");
                 button.GetComponent<Renderer>().material.SetColor(Shader.PropertyToID("_SpecColor"), Color.red);
             }
         }
