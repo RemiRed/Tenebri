@@ -25,7 +25,6 @@ public class RoundRoomWalls : RoomVariables
         //Debug Stuff
         if (isServer && Input.GetKeyDown(KeyCode.G))
         {
-            
             RandomSymbols();
 
 			pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
@@ -36,7 +35,7 @@ public class RoundRoomWalls : RoomVariables
     {
 		RpcCloseWalls();
         CloseWalls();
-		theseButtons.Clear ();
+
 		curButtonNumber = 0;
         int tempLayer = 0;
         bool firstLayer = false;
@@ -53,8 +52,8 @@ public class RoundRoomWalls : RoomVariables
 				}
 			}
 			int randomButtonInt = Random.Range (0, tempButtons.Count);
-
 			RpcFindPath (tempButtons [randomButtonInt].gameObject, true);
+
 			tempLayer = tempButtons [randomButtonInt].layer;
 			if (tempLayer == 1) firstLayer = true;
 			usedButtons.Add (tempButtons [randomButtonInt]);
@@ -73,13 +72,14 @@ public class RoundRoomWalls : RoomVariables
 
 			_button.GetComponent<Renderer> ().material.color = Color.red;
 			theseButtons.Add (_button.GetComponent<RoundDoors> ().buttonNumber);
+			Debug.Log (theseButtons.Count);
 
 			if (!_button.GetComponent<RoundDoors> ().FindPath (_button.GetComponent<RoundDoors>())) {
 				foundPath = false;
 			}
 			curButtonNumber++;
 			if (curButtonNumber >= numberOfButtons && !foundPath) {
-
+				
 				CmdReRandomizeEverything ();
 			}
 		} else if(!_button.GetComponent<RoundDoors>().entered) {
@@ -92,7 +92,9 @@ public class RoundRoomWalls : RoomVariables
 	void CmdReRandomizeEverything(){
 
 		RandomSymbols ();
+		pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
 	}
+
 	//Resets Everything to default // Twice becasue temporary solution to fix over network..
     [ClientRpc]
     void RpcCloseWalls()
@@ -110,6 +112,7 @@ public class RoundRoomWalls : RoomVariables
 			bwu.GetComponent<RoundDoors> ().enteredNow = false;
 		}
 		usedButtons.Clear ();
+		theseButtons.Clear ();
 		foundPath = true;
 	}
 }

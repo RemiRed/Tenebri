@@ -606,7 +606,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   buttonNumber: 8
-  origin: {fileID: 0}
 --- !u!114 &62858569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1001,7 +1000,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   buttonNumber: 13
-  origin: {fileID: 0}
 --- !u!114 &190323975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1527,7 +1525,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   buttonNumber: 9
-  origin: {fileID: 0}
 --- !u!114 &362858441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3424,7 +3421,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 1
   buttonNumber: 1
-  origin: {fileID: 0}
 --- !u!114 &671565691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4279,7 +4275,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 0
   buttonNumber: 0
-  origin: {fileID: 0}
 --- !u!114 &798168196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4544,7 +4539,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   buttonNumber: 11
-  origin: {fileID: 0}
 --- !u!114 &811470247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5087,7 +5081,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 2
   buttonNumber: 6
-  origin: {fileID: 0}
 --- !u!114 &907666194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5894,7 +5887,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 2
   buttonNumber: 5
-  origin: {fileID: 0}
 --- !u!114 &1027459601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6356,7 +6348,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 1
   buttonNumber: 2
-  origin: {fileID: 0}
 --- !u!114 &1046919468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7011,7 +7002,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   buttonNumber: 12
-  origin: {fileID: 0}
 --- !u!114 &1186984637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7907,7 +7897,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4844923441773670, guid: b2cebb1b3f4a5fd4ab9ec21c04c64c79, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 100
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4844923441773670, guid: b2cebb1b3f4a5fd4ab9ec21c04c64c79, type: 2}
       propertyPath: m_LocalPosition.y
@@ -8706,7 +8696,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   buttonNumber: 15
-  origin: {fileID: 0}
 --- !u!114 &1437762385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8847,7 +8836,6 @@ MonoBehaviour:
   theseButtons: 
   numberOfButtons: 3
   curButtonNumber: 0
-  foundPath: 1
 --- !u!114 &1438943448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8984,7 +8972,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 1
   buttonNumber: 0
-  origin: {fileID: 0}
 --- !u!114 &1443079046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9527,7 +9514,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 2
   buttonNumber: 4
-  origin: {fileID: 0}
 --- !u!114 &1491521981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10535,7 +10521,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 1
   buttonNumber: 3
-  origin: {fileID: 0}
 --- !u!114 &1690811602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11209,7 +11194,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 2
   buttonNumber: 7
-  origin: {fileID: 0}
 --- !u!114 &1877016796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11344,7 +11328,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   buttonNumber: 14
-  origin: {fileID: 0}
 --- !u!114 &1914734324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12403,7 +12386,6 @@ MonoBehaviour:
   enteredNow: 0
   layer: 3
   buttonNumber: 10
-  origin: {fileID: 0}
 --- !u!114 &2074456030
 MonoBehaviour:
   m_ObjectHideFlags: 0
