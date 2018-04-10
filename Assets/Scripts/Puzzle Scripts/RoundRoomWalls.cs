@@ -30,9 +30,10 @@ public class RoundRoomWalls : RoomVariables
             RpcCloseWalls();
             RandomSymbols();
 
-//        	print(pairedRoom);
-//        	print(pairedRoom.GetComponent<RoundMazeMapRoom>());
-//			pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons(); //NULL REF...?
+            pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
+            //        	print(pairedRoom);
+            //        	print(pairedRoom.GetComponent<RoundMazeMapRoom>());
+            //			pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons(); //NULL REF...?
 
         }
     }
@@ -64,15 +65,14 @@ public class RoundRoomWalls : RoomVariables
                 int randomButtonInt = Random.Range(0, tempButtons.Count);
 
 				RpcFindPath(tempButtons[randomButtonInt].gameObject, true);
-
-//                			tempButtons [randomDude].GetComponent<Renderer> ().material.color = Color.red;
-//                			tempButtons [randomDude].origin = tempButtons [randomDude];
-//
-//                			if (!tempButtons [randomDude].FindPath ()) {
-//                				
-//                				RandomSymbols ();
-//                				break;
-//                			} 
+                //                			tempButtons [randomDude].GetComponent<Renderer> ().material.color = Color.red;
+                //                			tempButtons [randomDude].origin = tempButtons [randomDude];
+                //
+                //                			if (!tempButtons [randomDude].FindPath ()) {
+                //                				
+                //                				RandomSymbols ();
+                //                				break;
+                //                			} 
 
                 tempLayer = tempButtons[randomButtonInt].layer;
                 if (tempLayer == 1)

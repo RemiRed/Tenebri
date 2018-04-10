@@ -21,7 +21,7 @@ public class RoundMazeMapRoom : RoomVariables
             if (pairedRoom.GetComponent<RoundRoomWalls>().theseButtons.Contains(button.GetComponent<RoundRoomMapButtonnumber>().buttonNumber))
             {
                 print("bla");
-                button.GetComponent<Renderer>().material.color = Color.red;
+                button.GetComponent<Renderer>().material.SetColor(Shader.PropertyToID("_SpecColor"), Color.red);
             }
         }
     }
