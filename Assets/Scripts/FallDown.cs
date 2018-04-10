@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class FallDown : MonoBehaviour {
 
-    [SerializeField]
-    Collider PlayerCollider;
+    
 
-    void OnTriggerEnter(Collider other)
+
+    IEnumerator OnTriggerEnter(Collider other)
     {
-        (other.gameObject.GetComponent(typeof(Collider)) as Collider).isTrigger = true;
-
+        other.enabled = !other.enabled;
+        yield return new WaitForSeconds(0.5f);
+        other.enabled = !other.enabled;
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        (other.gameObject.GetComponent(typeof(Collider)) as Collider).isTrigger = false;
-    }
+   
 
     
 }
