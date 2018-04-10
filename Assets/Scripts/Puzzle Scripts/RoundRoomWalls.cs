@@ -103,11 +103,12 @@ public class RoundRoomWalls : RoomVariables
     [ClientRpc]
     void RpcCloseWalls()
     {
-        foreach (GameObject bwa in walls)
-        {
-            bwa.SetActive(true);
-        }
-        NeutralSymbols();
+//        foreach (GameObject bwa in walls)
+//        {
+//            bwa.SetActive(true);
+//        }
+//        NeutralSymbols();
+		CloseWalls();
     }
     void CloseWalls()
     {
