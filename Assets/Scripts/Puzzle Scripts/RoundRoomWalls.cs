@@ -60,7 +60,7 @@ public class RoundRoomWalls : RoomVariables
             //Selects random button positions and opens a path from selected button
             int randomButtonInt = Random.Range(0, tempButtons.Count);
 
-            RpcFindPath(tempButtons[randomButtonInt].gameObject, true, _symbols);
+            RpcFindPath(tempButtons[randomButtonInt].gameObject, true);
             //Adjusts varables for next loop
             tempLayer = tempButtons[randomButtonInt].layer;
             if (tempLayer == 1) firstLayer = true;
@@ -69,13 +69,16 @@ public class RoundRoomWalls : RoomVariables
         //Opens the rooms that has not been entered
         foreach (GameObject _button in buttons)
         {
-            RpcFindPath(_button, false, _symbols);
+            RpcFindPath(_button, false);
         }
     }
 
     [ClientRpc]
-    void RpcFindPath(GameObject _button, bool _ifButton, List<GameObject> _symbols)
+    void RpcFindPath(GameObject _button, bool _ifButton)
     {
+
+        print(_symbols.Count);
+
         if (_ifButton)
         {
 
@@ -83,6 +86,7 @@ public class RoundRoomWalls : RoomVariables
                
             //_button.GetComponent<Renderer>().material.color = Color.red;
             int randomSymbol = Random.Range(0, _symbols.Count);
+            
             _button.GetComponent<Renderer>().material = _symbols[randomSymbol].GetComponent<Renderer>().material;
             _symbols.Remove(_symbols[randomSymbol]);
 
