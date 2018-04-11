@@ -85,10 +85,10 @@ public class RoundRoomWalls : RoomVariables
 
             curButtonNumber++;
                
-            //_button.GetComponent<Renderer>().material.color = Color.red;
+          //  _button.GetComponent<Renderer>().material.color = Color.red;
             int randomSymbol = Random.Range(0, _symbols.Count);
             
-            _button.GetComponent<Renderer>().material = _symbols[randomSymbol].GetComponent<Renderer>().material;
+			_button.GetComponent<Renderer>().material = pairedRoom.GetComponent<RoundRoomManager>().wallSymbols[curButtonNumber-1].GetComponent<Renderer>().material;
             _symbols.Remove(_symbols[randomSymbol]);
 
             theseButtons.Add(_button.GetComponent<RoundDoors>().buttonNumber);

@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class RoundRoomManager : NetworkBehaviour {
 
 	[SerializeField]
-	List<GameObject> wallSymbols = new List<GameObject>();
+	public List<GameObject> wallSymbols = new List<GameObject>();
 	[SerializeField]
 	List<Color> symbolColors = new List<Color>();
 	[SerializeField]
