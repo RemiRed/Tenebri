@@ -98,7 +98,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -240,6 +240,7 @@ MonoBehaviour:
   maxJumpHeight: 2
   gravity: 120
   maxFallSpeed: 200
+  menu: 0
 --- !u!114 &114456303138999076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73eafba01b19b8f4fb5ab342b548d390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interractionMessage: {fileID: 0}
   carryDistance: 1.8
   carrySpeed: 4
   slow: 1
