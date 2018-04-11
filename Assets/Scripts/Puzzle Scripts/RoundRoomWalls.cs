@@ -38,8 +38,6 @@ public class RoundRoomWalls : RoomVariables
 		RpcCloseWalls();
 		CloseWalls();
 
-		Debug.Log ("Server");
-
 		foreach (GameObject symbol in symbols)
 		{
 			_symbols.Add(symbol);
@@ -49,7 +47,6 @@ public class RoundRoomWalls : RoomVariables
 		int _curSymbolIndex = 0;
 		bool firstLayer = false;
 
-		Debug.Log ("Before starting: " + usedMaterials.Count);
 		foreach (GameObject _symbol in pairedRoom.GetComponent<RoundRoomManager>().wallSymbols) {
 
 			usedMaterials.Add (_curSymbolIndex);
@@ -95,10 +92,9 @@ public class RoundRoomWalls : RoomVariables
 		{
 			curButtonNumber++;
 
-			Debug.Log (_button.name);
-
 			if (curButtonNumber == 1) {
 
+				Debug.Log (_button.name);
 				_button.GetComponent<Renderer> ().material = pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material;
 
 			} else {
