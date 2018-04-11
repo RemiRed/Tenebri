@@ -8,7 +8,7 @@ public class RoundRoomManager : NetworkBehaviour {
 	[SerializeField]
 	public List<GameObject> wallSymbols = new List<GameObject>();
 	[SerializeField]
-	List<Color> symbolColors = new List<Color>();
+	public List<Color> symbolColors = new List<Color>();
 	[SerializeField]
 	List<Material> symbols = new List<Material>();
 
