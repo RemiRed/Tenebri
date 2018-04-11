@@ -10,25 +10,17 @@ public class RoundMazeMapRoom : RoomVariables
 
     [ClientRpc]
     public void RpcMapButtons()
-    {
-        NeutralMapButtons();
-       
+    {  
         foreach (GameObject button in mapButtons)
         {
-            if (pairedRoom.GetComponent<RoundRoomWalls>().theseButtons.Contains(button.GetComponent<RoundRoomMapButtonnumber>().buttonNumber))
-            {
-				button.SetActive (true);
-				button.GetComponent<Renderer>().material.SetColor(Shader.PropertyToID("_SpecColor"), Color.red);
-            }
-        }
-    }
+			if (pairedRoom.GetComponent<RoundRoomWalls> ().theseButtonsIndex.Contains (button.GetComponent<RoundRoomMapButtonnumber> ().buttonNumber)) {
 
-    void NeutralMapButtons()
-    {
-        foreach(GameObject bwutt in mapButtons)
-        {
-			bwutt.SetActive (false);
-            //bwutt.GetComponent<Renderer>().material.SetColor(Shader.PropertyToID("_SpecColor"), Color.black);
+				button.SetActive (true);
+				button.GetComponent<Renderer> ().material.SetColor (Shader.PropertyToID ("_SpecColor"), Color.red);
+
+			} else {
+				button.SetActive (false);
+			}
         }
     }
 }

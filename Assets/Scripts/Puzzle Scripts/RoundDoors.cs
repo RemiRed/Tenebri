@@ -40,20 +40,15 @@ public class RoundDoors : MonoBehaviour {
 					availableRoomsList.Add (_room.gameObject);
 				}
 			}
-
 			//Checks if path reached a dead end. 
 			if (availableRoomsList.Count == 0) {	//If True: return to origin and try again
-
-				Debug.Log ("Does this ever happen now?");
 
 				if (_origin != this) {
 					_bool = _origin.FindPath (_origin);
 					return _bool;
 				} else {	//If this already is origin the path gets stuck. Returns false (To 'RoundRoomWalls') and start over.
-					Debug.LogWarning("GOT STUCK IN A DEADEND");
 					return false;
 				}
-
 			} else {	//If False: Selects a random room to conntinue to
 				
 				RoundDoors room = availableRoomsList [Random.Range (0, availableRoomsList.Count)].GetComponent<RoundDoors> ();
@@ -66,7 +61,6 @@ public class RoundDoors : MonoBehaviour {
 						break;
 					}
 				}
-					
 				if (room.entered) {	//End path if room previously entered by another path
 
 					enteredNow = false;

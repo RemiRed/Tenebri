@@ -5,13 +5,10 @@ using UnityEngine.Networking;
 
 public class RoundRoomManager : NetworkBehaviour {
 
-	[SerializeField]
 	public List<GameObject> wallSymbols = new List<GameObject>();
-	[SerializeField]
 	public List<Color> symbolColors = new List<Color>();
 	[SerializeField]
 	List<Material> symbols = new List<Material>();
-
 	[SerializeField]
 	List<int> symbolOrder = new List<int> (), colorOrder = new List<int>(); 
 
@@ -27,7 +24,6 @@ public class RoundRoomManager : NetworkBehaviour {
 
 				_symbols.Add(_symbol);
 			}
-
 			for (int i = 0; i < wallSymbols.Count; i++) {
 
 				int _randomSymbol = Random.Range (0, (_symbols.Count));
@@ -54,23 +50,12 @@ public class RoundRoomManager : NetworkBehaviour {
 			}
 		}
     }
-
-	[Command]
+	//[Command]
 	public void CmdGetWallSymbols(){
 
 		for (int i = 0; i < wallSymbols.Count; i++) {
 
 			RpcSetWallSymbols (i, symbolOrder [i], colorOrder [i]);
 		}
-	}
-		
-	// Update is called once per frame
-	void Update () {
-
-//		if (Input.GetKeyDown (KeyCode.H)) {
-//
-//			Debug.Log ("Setting wall symbols");
-//			CmdGetWallSymbols ();
-//		}
 	}
 }

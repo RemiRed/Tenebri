@@ -5,22 +5,20 @@ using UnityEngine.Networking;
 
 public class RoundRoomWalls : RoomVariables
 {
-
+	
 	[SerializeField]
 	List<GameObject> walls = new List<GameObject>();
 	[SerializeField]
-	List<GameObject> buttons = new List<GameObject>();
+	List<GameObject> buttons = new List<GameObject>();	//Change these from 'GameObject' to 'RoundDoors'
+
 	List<RoundDoors> usedButtons = new List<RoundDoors>();
-	[SerializeField]
-	List<GameObject> symbols = new List<GameObject>();
-	public List<int> theseButtons = new List<int>();
-	List<GameObject> _symbols = new List<GameObject>();
-	public List<int> usedMaterials = new List<int>();
+	List<int> mazeSymbolMaterialIndex = new List<int>();
+	public List<int> theseButtonsIndex = new List<int>();
 
 	public Material defaultButtonMaterial;
 
 	[SerializeField]
-	int numberOfButtons, curButtonNumber = 0;
+	int numberOfButtons, curButtonNumber;
 
 	bool foundPath = true;
 
@@ -37,26 +35,25 @@ public class RoundRoomWalls : RoomVariables
 
 	void RandomSymbols()
 	{
+		//Resets to default
 		RpcCloseWalls();
 		CloseWalls();
 
-		foreach (GameObject symbol in symbols)
-		{
-			_symbols.Add(symbol);
-		}
-		curButtonNumber = 0;
+		curButtonNumber = 0;	//<<-- How can this set 'curButtonNumber' on Client if run on server? 
 		int tempLayer = 0;
 		int _curSymbolIndex = 0;
 		bool firstLayer = false;
 
+		//Creates list of references to the Index of maze symbol materials to be used
 		foreach (GameObject _symbol in pairedRoom.GetComponent<RoundRoomManager>().wallSymbols) {
 
-			usedMaterials.Add (_curSymbolIndex);
+			mazeSymbolMaterialIndex.Add (_curSymbolIndex);
 			_curSymbolIndex++;
 		}
-
+		//Sets Maze buttons
 		for (int i = 0; i < numberOfButtons; i++)
 		{
+			//Generates list of possible buttons to be selected
 			List<RoundDoors> tempButtons = new List<RoundDoors>();
 			foreach (GameObject _button in buttons)
 			{
@@ -68,14 +65,13 @@ public class RoundRoomWalls : RoomVariables
 					tempButtons.Add(_button.GetComponent<RoundDoors>());
 				}
 			}
-			//Selects random button positions and opens a path from selected button
+			//Generates random values for button variables
 			int randomButtonInt = Random.Range(0, tempButtons.Count);
-			int randomSymbol = Random.Range (0, usedMaterials.Count);
-
-			RpcFindPath(tempButtons[randomButtonInt].gameObject, true, usedMaterials[randomSymbol]);
-			usedMaterials.RemoveAt (randomSymbol);
-
+			int randomSymbol = Random.Range (0, mazeSymbolMaterialIndex.Count);
+			//Calls Client to Find path from these button variables
+			RpcFindPath(tempButtons[randomButtonInt].gameObject, true, mazeSymbolMaterialIndex[randomSymbol]);
 			//Adjusts varables for next loop
+			mazeSymbolMaterialIndex.RemoveAt (randomSymbol);
 			tempLayer = tempButtons[randomButtonInt].layer;
 			if (tempLayer == 1) firstLayer = true;
 			usedButtons.Add(tempButtons[randomButtonInt]);
@@ -90,56 +86,57 @@ public class RoundRoomWalls : RoomVariables
 	[ClientRpc]
 	void RpcFindPath(GameObject _button, bool _ifButton, int _randomSymbol)
 	{
-		if (_ifButton)
-		{
+		if (_ifButton) {
+
 			curButtonNumber++;
 
+			//Sets first button to be the correct matching button
 			if (curButtonNumber == 1) {
 
-				Debug.Log (_button.name);
 				_button.GetComponent<Renderer> ().material = pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material;
 
 			} else {
 
 				_button.GetComponent<Renderer> ().material = pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material;
 
+				//Changes color to a non-matching color
 				List<Color> _symbolColors = new List<Color> ();
-				foreach(Color _color in pairedRoom.GetComponent<RoundRoomManager>().symbolColors){
+				foreach (Color _color in pairedRoom.GetComponent<RoundRoomManager>().symbolColors) {
 
-					if (_color != _button.GetComponent<Renderer>().material.color) {
+					if (_color != _button.GetComponent<Renderer> ().material.color) {
 
 						_symbolColors.Add (_color);
 					}
 				}
 				_button.GetComponent<Renderer> ().material.color = _symbolColors [Random.Range (0, _symbolColors.Count)];
 			}
+			//Adds button locations to map room
+			theseButtonsIndex.Add (_button.GetComponent<RoundDoors> ().buttonNumber);
 
-			theseButtons.Add(_button.GetComponent<RoundDoors>().buttonNumber);
-
-
-			if (!_button.GetComponent<RoundDoors>().FindPath(_button.GetComponent<RoundDoors>()))
-			{
+			//Looks for & opens path. If path fails, marks as 'False' to be Re-Randomized 
+			if (!_button.GetComponent<RoundDoors> ().FindPath (_button.GetComponent<RoundDoors> ())) {
 				foundPath = false;
 			}
+			//If Path failed; Re-Randomize everything
 			if (curButtonNumber >= numberOfButtons && !foundPath)
 			{
 				CmdReRandomizeEverything();
 			}
 		}
-		else if (!_button.GetComponent<RoundDoors>().entered)
+		else if (!_button.GetComponent<RoundDoors>().entered)	//Opens remaining unopened rooms
 		{
 			_button.GetComponent<RoundDoors>().FindPath(_button.GetComponent<RoundDoors>());
 		}
 	}
 
 	[Command]
+	//Starts over if fails to find a working path
 	void CmdReRandomizeEverything()
 	{
 		RandomSymbols();
 		pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
 	}
-
-	//Resets Everything to default // Twice becasue temporary solution to fix over network..
+	//Resets Everything to default
 	[ClientRpc]
 	void RpcCloseWalls()
 	{
@@ -153,14 +150,16 @@ public class RoundRoomWalls : RoomVariables
 		}
 		foreach (GameObject bwu in buttons)
 		{
-			//bwu.GetComponent<Renderer>().material.color = Color.gray;
-			bwu.GetComponent<Renderer> ().material = defaultButtonMaterial;
 			bwu.GetComponent<RoundDoors>().entered = false;
 			bwu.GetComponent<RoundDoors>().enteredNow = false;
 		}
+		foreach (GameObject bwe /*named after my gf Ivvie*/ in buttons) 
+		{
+			bwe.GetComponent<Renderer> ().material = defaultButtonMaterial;
+		}
 		usedButtons.Clear();
-		usedMaterials.Clear();
-		theseButtons.Clear();
+		mazeSymbolMaterialIndex.Clear();
+		theseButtonsIndex.Clear();
 		foundPath = true;
 	}
 }
