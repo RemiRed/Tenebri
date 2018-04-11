@@ -9471,7 +9471,7 @@ GameObject:
   - component: {fileID: 1438943447}
   - component: {fileID: 1438943448}
   m_Layer: 0
-  m_Name: RoundMaze
+  m_Name: RoundMaze_Maze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9579,6 +9579,8 @@ MonoBehaviour:
   - {fileID: 1074774472}
   theseButtons: 
   usedMaterials: 
+  defaultButtonMaterial: {fileID: 2100000, guid: f8acb5f3522534b248059b25f42bf1fd,
+    type: 2}
   numberOfButtons: 3
   curButtonNumber: 0
 --- !u!114 &1438943448

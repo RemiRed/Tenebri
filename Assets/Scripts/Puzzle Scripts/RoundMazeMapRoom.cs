@@ -17,6 +17,7 @@ public class RoundMazeMapRoom : RoomVariables
         {
             if (pairedRoom.GetComponent<RoundRoomWalls>().theseButtons.Contains(button.GetComponent<RoundRoomMapButtonnumber>().buttonNumber))
             {
+				button.SetActive (true);
 				button.GetComponent<Renderer>().material.SetColor(Shader.PropertyToID("_SpecColor"), Color.red);
             }
         }
@@ -26,7 +27,8 @@ public class RoundMazeMapRoom : RoomVariables
     {
         foreach(GameObject bwutt in mapButtons)
         {
-            bwutt.GetComponent<Renderer>().material.SetColor(Shader.PropertyToID("_SpecColor"), Color.black);
+			bwutt.SetActive (false);
+            //bwutt.GetComponent<Renderer>().material.SetColor(Shader.PropertyToID("_SpecColor"), Color.black);
         }
     }
 }

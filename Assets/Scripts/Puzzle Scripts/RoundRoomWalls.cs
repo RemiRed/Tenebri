@@ -17,6 +17,8 @@ public class RoundRoomWalls : RoomVariables
 	List<GameObject> _symbols = new List<GameObject>();
 	public List<int> usedMaterials = new List<int>();
 
+	public Material defaultButtonMaterial;
+
 	[SerializeField]
 	int numberOfButtons, curButtonNumber = 0;
 
@@ -109,10 +111,8 @@ public class RoundRoomWalls : RoomVariables
 						_symbolColors.Add (_color);
 					}
 				}
-
 				_button.GetComponent<Renderer> ().material.color = _symbolColors [Random.Range (0, _symbolColors.Count)];
 			}
-
 
 			theseButtons.Add(_button.GetComponent<RoundDoors>().buttonNumber);
 
@@ -153,7 +153,8 @@ public class RoundRoomWalls : RoomVariables
 		}
 		foreach (GameObject bwu in buttons)
 		{
-			bwu.GetComponent<Renderer>().material.color = Color.gray;
+			//bwu.GetComponent<Renderer>().material.color = Color.gray;
+			bwu.GetComponent<Renderer> ().material = defaultButtonMaterial;
 			bwu.GetComponent<RoundDoors>().entered = false;
 			bwu.GetComponent<RoundDoors>().enteredNow = false;
 		}
