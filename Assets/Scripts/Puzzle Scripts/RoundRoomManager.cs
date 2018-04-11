@@ -12,34 +12,35 @@ public class RoundRoomManager : NetworkBehaviour {
 	[SerializeField]
 	List<Material> symbols = new List<Material>();
 
-	void Start(){
+	public List<Material> _symbols = new List<Material> ();
 
-        Debug.Log("Awake?");
+	void Start(){
 
 		if(isServer){
 
-            Debug.Log(isServer);
+			foreach(Material _symbol in symbols){
+
+				_symbols.Add(_symbol);
+			}
 
 			for (int i = 0; i < wallSymbols.Count; i++) {
 
-				int _randomSymbol = Random.Range (0, symbols.Count - i);
-				int _randomColor = Random.Range (0, symbolColors.Count - i);
+				int _randomSymbol = Random.Range (0, (_symbols.Count));
+				int _randomColor = Random.Range (0, symbolColors.Count);
 
-                Debug.Log("In Loop");
+				RpcSetSymbols(i,_randomSymbol,_randomColor);
 
-                RpcSetSymbols(i,_randomSymbol,_randomColor);
-
-				symbols.RemoveAt (_randomSymbol);
+				_symbols.RemoveAt (_randomSymbol);
 			}
 		}
 	}
 
     [ClientRpc]
-    void RpcSetSymbols(int _index,int _randomSymbol, int _randomColor)
-    {
-        Debug.Log("Client Call");
-        wallSymbols[_index].GetComponent<Renderer>().material = symbols[_randomSymbol];
-        wallSymbols[_index].GetComponent<Renderer>().material.color = symbolColors[_randomColor];
+	void RpcSetSymbols(int _index, int _randomSymbol, int _randomColor)
+	{
+		wallSymbols [_index].GetComponent<Renderer> ().material = symbols[_randomSymbol];
+		wallSymbols [_index].GetComponent<Renderer> ().material.color = symbolColors[_randomColor];
+		symbols.RemoveAt (_randomSymbol);
     }
 	
 	// Update is called once per frame
