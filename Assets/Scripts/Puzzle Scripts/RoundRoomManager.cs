@@ -12,6 +12,9 @@ public class RoundRoomManager : NetworkBehaviour {
 	[SerializeField]
 	List<Material> symbols = new List<Material>();
 
+	[SerializeField]
+	List<int> symbolOrder = new List<int> (), colorOrder = new List<int>(); 
+
 	public List<Material> _symbols = new List<Material> ();
 
 	void Start(){
@@ -28,7 +31,8 @@ public class RoundRoomManager : NetworkBehaviour {
 				int _randomSymbol = Random.Range (0, (_symbols.Count));
 				int _randomColor = Random.Range (0, symbolColors.Count);
 
-				RpcSetSymbols(i,_randomSymbol,_randomColor);
+				symbolOrder.Add (_randomSymbol);
+				colorOrder.Add (_randomColor);
 
 				_symbols.RemoveAt (_randomSymbol);
 			}
@@ -36,15 +40,29 @@ public class RoundRoomManager : NetworkBehaviour {
 	}
 
     [ClientRpc]
-	void RpcSetSymbols(int _index, int _randomSymbol, int _randomColor)
+	void RpcSetWallSymbols(int _index, int _randomSymbol, int _randomColor)
 	{
 		wallSymbols [_index].GetComponent<Renderer> ().material = symbols[_randomSymbol];
 		wallSymbols [_index].GetComponent<Renderer> ().material.color = symbolColors[_randomColor];
 		symbols.RemoveAt (_randomSymbol);
     }
-	
+
+	[Command]
+	void CmdGetWallSymbols(){
+
+		for (int i = 0; i < wallSymbols.Count; i++) {
+
+			RpcSetWallSymbols (i, symbolOrder [i], colorOrder [i]);
+		}
+	}
+		
 	// Update is called once per frame
 	void Update () {
-		
+
+		if (Input.GetKeyDown (KeyCode.H)) {
+
+			Debug.Log ("Setting wall symbols");
+			CmdGetWallSymbols ();
+		}
 	}
 }
