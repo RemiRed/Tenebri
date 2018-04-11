@@ -9579,7 +9579,7 @@ MonoBehaviour:
   - {fileID: 1074774472}
   theseButtons: 
   usedMaterials: 
-  numberOfButtons: 7
+  numberOfButtons: 3
   curButtonNumber: 0
 --- !u!114 &1438943448
 MonoBehaviour:
