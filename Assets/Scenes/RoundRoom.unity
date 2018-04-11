@@ -9562,6 +9562,19 @@ MonoBehaviour:
   - {fileID: 1046919463}
   - {fileID: 671565686}
   - {fileID: 1443079041}
+  symbols:
+  - {fileID: 1498584374}
+  - {fileID: 493605261}
+  - {fileID: 1845154203}
+  - {fileID: 214285962}
+  - {fileID: 648829484}
+  - {fileID: 1321718997}
+  - {fileID: 438270009}
+  - {fileID: 1130177488}
+  - {fileID: 2103622709}
+  - {fileID: 1913963276}
+  - {fileID: 299436122}
+  - {fileID: 1074774472}
   theseButtons: 
   numberOfButtons: 3
   curButtonNumber: 0

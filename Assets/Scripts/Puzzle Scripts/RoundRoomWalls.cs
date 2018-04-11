@@ -11,12 +11,13 @@ public class RoundRoomWalls : RoomVariables
     [SerializeField]
     List<GameObject> buttons = new List<GameObject>();
     List<RoundDoors> usedButtons = new List<RoundDoors>();
-
+    [SerializeField]
+    List<GameObject> symbols = new List<GameObject>();
     public List<int> theseButtons = new List<int>();
-
+    List<GameObject> _symbols = new List<GameObject>();
 
     [SerializeField]
-	int numberOfButtons, curButtonNumber = 0;
+    int numberOfButtons, curButtonNumber = 0;
 
     bool foundPath = true;
 
@@ -26,99 +27,117 @@ public class RoundRoomWalls : RoomVariables
         if (isServer && Input.GetKeyDown(KeyCode.G))
         {
             RandomSymbols();
-			pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
+            pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
         }
     }
 
     void RandomSymbols()
     {
-		RpcCloseWalls();
+        RpcCloseWalls();
         CloseWalls();
+        foreach (GameObject symbol in symbols)
+        {
+            _symbols.Add(symbol);
+        }
 
-		curButtonNumber = 0;
+        curButtonNumber = 0;
         int tempLayer = 0;
         bool firstLayer = false;
 
-		for (int i = 0; i < numberOfButtons; i++) {
-			List<RoundDoors> tempButtons = new List<RoundDoors> ();
-			foreach (GameObject _button in buttons) {
-				//Conditions for buttons to be added to list of possible buttons to be selected
-				if (!usedButtons.Contains (_button.GetComponent<RoundDoors> ()) &&
-				(firstLayer == false || (firstLayer == true && _button.GetComponent<RoundDoors> ().layer != 1)) &&
-				_button.GetComponent<RoundDoors> ().layer != tempLayer) 
-				{
-				tempButtons.Add (_button.GetComponent<RoundDoors> ());
-				}
-			}
-			//Selects random button positions and opens a path from selected button
-			int randomButtonInt = Random.Range (0, tempButtons.Count);
-			RpcFindPath (tempButtons [randomButtonInt].gameObject, true);
-			//Adjusts varables for next loop
-			tempLayer = tempButtons [randomButtonInt].layer;
-			if (tempLayer == 1) firstLayer = true;
-			usedButtons.Add (tempButtons [randomButtonInt]);
-		}
+        for (int i = 0; i < numberOfButtons; i++)
+        {
+            List<RoundDoors> tempButtons = new List<RoundDoors>();
+            foreach (GameObject _button in buttons)
+            {
+                //Conditions for buttons to be added to list of possible buttons to be selected
+                if (!usedButtons.Contains(_button.GetComponent<RoundDoors>()) &&
+                (firstLayer == false || (firstLayer == true && _button.GetComponent<RoundDoors>().layer != 1)) &&
+                _button.GetComponent<RoundDoors>().layer != tempLayer)
+                {
+                    tempButtons.Add(_button.GetComponent<RoundDoors>());
+                }
+            }
+            //Selects random button positions and opens a path from selected button
+            int randomButtonInt = Random.Range(0, tempButtons.Count);
+
+            RpcFindPath(tempButtons[randomButtonInt].gameObject, true);
+            //Adjusts varables for next loop
+            tempLayer = tempButtons[randomButtonInt].layer;
+            if (tempLayer == 1) firstLayer = true;
+            usedButtons.Add(tempButtons[randomButtonInt]);
+        }
         //Opens the rooms that has not been entered
         foreach (GameObject _button in buttons)
         {
-			RpcFindPath (_button, false);
+            RpcFindPath(_button, false);
         }
     }
 
     [ClientRpc]
-	void RpcFindPath(GameObject _button, bool _ifButton)
-	{
-		if (_ifButton) {
+    void RpcFindPath(GameObject _button, bool _ifButton)
+    {
+        if (_ifButton)
+        {
 
-			curButtonNumber++;
-
-
-
-			_button.GetComponent<Renderer> ().material.color = Color.red;
-
-			theseButtons.Add (_button.GetComponent<RoundDoors> ().buttonNumber);
+            curButtonNumber++;
 
 
 
+            //_button.GetComponent<Renderer>().material.color = Color.red;
+            int randomSymbol = Random.Range(0, _symbols.Count);
+            _button.GetComponent<Renderer>().material = _symbols[randomSymbol].GetComponent<Renderer>().material;
+            _symbols.Remove(_symbols[randomSymbol]);
 
-			if (!_button.GetComponent<RoundDoors> ().FindPath (_button.GetComponent<RoundDoors>())) {
-				foundPath = false;
-			}
-			if (curButtonNumber >= numberOfButtons && !foundPath) {
-				
-				CmdReRandomizeEverything ();
-			}
-		} else if(!_button.GetComponent<RoundDoors>().entered) {
-			
-			_button.GetComponent<RoundDoors> ().FindPath (_button.GetComponent<RoundDoors>());
-		}
+            theseButtons.Add(_button.GetComponent<RoundDoors>().buttonNumber);
+
+
+
+
+            if (!_button.GetComponent<RoundDoors>().FindPath(_button.GetComponent<RoundDoors>()))
+            {
+                foundPath = false;
+            }
+            if (curButtonNumber >= numberOfButtons && !foundPath)
+            {
+
+                CmdReRandomizeEverything();
+            }
+        }
+        else if (!_button.GetComponent<RoundDoors>().entered)
+        {
+
+            _button.GetComponent<RoundDoors>().FindPath(_button.GetComponent<RoundDoors>());
+        }
     }
 
-	[Command]
-	void CmdReRandomizeEverything(){
+    [Command]
+    void CmdReRandomizeEverything()
+    {
 
-		RandomSymbols ();
-		pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
-	}
+        RandomSymbols();
+        pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
+    }
 
-	//Resets Everything to default // Twice becasue temporary solution to fix over network..
+    //Resets Everything to default // Twice becasue temporary solution to fix over network..
     [ClientRpc]
     void RpcCloseWalls()
     {
-		CloseWalls();
+        CloseWalls();
     }
     void CloseWalls()
-	{
-		foreach (GameObject bwa in walls) {
-			bwa.SetActive (true);
-		}
-		foreach (GameObject bwu in buttons) {
-			bwu.GetComponent<Renderer> ().material.color = Color.gray;
-			bwu.GetComponent<RoundDoors> ().entered = false;
-			bwu.GetComponent<RoundDoors> ().enteredNow = false;
-		}
-		usedButtons.Clear ();
-		theseButtons.Clear ();
-		foundPath = true;
-	}
+    {
+        foreach (GameObject bwa in walls)
+        {
+            bwa.SetActive(true);
+        }
+        foreach (GameObject bwu in buttons)
+        {
+            bwu.GetComponent<Renderer>().material.color = Color.gray;
+            bwu.GetComponent<RoundDoors>().entered = false;
+            bwu.GetComponent<RoundDoors>().enteredNow = false;
+        }
+        usedButtons.Clear();
+        theseButtons.Clear();
+        foundPath = true;
+    }
 }
