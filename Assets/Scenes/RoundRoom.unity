@@ -8672,6 +8672,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 6d179862ce06cb942a68438087e94d3b, type: 2}
   - {fileID: 2100000, guid: f2516a6186b451b4c93eb1246335b29b, type: 2}
   - {fileID: 2100000, guid: 48db1d8ba1d2b324d81560654526fd05, type: 2}
+  symbolOrder: 
+  colorOrder: 
   _symbols: []
 --- !u!43 &1378938143
 Mesh:
@@ -9576,7 +9578,8 @@ MonoBehaviour:
   - {fileID: 299436122}
   - {fileID: 1074774472}
   theseButtons: 
-  numberOfButtons: 3
+  usedMaterials: 
+  numberOfButtons: 7
   curButtonNumber: 0
 --- !u!114 &1438943448
 MonoBehaviour:

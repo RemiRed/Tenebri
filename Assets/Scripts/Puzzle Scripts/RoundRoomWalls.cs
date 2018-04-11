@@ -15,6 +15,7 @@ public class RoundRoomWalls : RoomVariables
     List<GameObject> symbols = new List<GameObject>();
     public List<int> theseButtons = new List<int>();
     List<GameObject> _symbols = new List<GameObject>();
+	public List<int> usedMaterials = new List<int>();
 
     [SerializeField]
     int numberOfButtons, curButtonNumber = 0;
@@ -37,13 +38,23 @@ public class RoundRoomWalls : RoomVariables
         RpcCloseWalls();
         CloseWalls();
 
+		Debug.Log ("Server");
+
         foreach (GameObject symbol in symbols)
         {
             _symbols.Add(symbol);
         }
         curButtonNumber = 0;
         int tempLayer = 0;
+		int _curSymbolIndex = 0;
         bool firstLayer = false;
+
+		Debug.Log ("Before starting: " + usedMaterials.Count);
+		foreach (GameObject _symbol in pairedRoom.GetComponent<RoundRoomManager>().wallSymbols) {
+
+			usedMaterials.Add (_curSymbolIndex);
+			_curSymbolIndex++;
+		}
 
         for (int i = 0; i < numberOfButtons; i++)
         {
@@ -61,8 +72,19 @@ public class RoundRoomWalls : RoomVariables
             //Selects random button positions and opens a path from selected button
             int randomButtonInt = Random.Range(0, tempButtons.Count);
 
-			int randomSymbol = Random.Range(0, pairedRoom.GetComponent<RoundRoomManager>().wallSymbols.Count);
-			RpcFindPath(tempButtons[randomButtonInt].gameObject, true, randomSymbol);
+			int randomSymbol = Random.Range (0, usedMaterials.Count);
+
+
+			Debug.Log (tempButtons[randomButtonInt].name + " " + usedMaterials[randomSymbol] + ". " + randomSymbol + "/" + usedMaterials.Count);
+
+
+		
+
+			RpcFindPath(tempButtons[randomButtonInt].gameObject, true, usedMaterials[randomSymbol]);
+
+			usedMaterials.RemoveAt (randomSymbol);
+
+
             //Adjusts varables for next loop
             tempLayer = tempButtons[randomButtonInt].layer;
             if (tempLayer == 1) firstLayer = true;
@@ -78,17 +100,24 @@ public class RoundRoomWalls : RoomVariables
     [ClientRpc]
 	void RpcFindPath(GameObject _button, bool _ifButton, int _randomSymbol)
     {
-
-        print(_symbols.Count);
-
         if (_ifButton)
         {
 
             curButtonNumber++;
                
-			_button.GetComponent<Renderer>().material = pairedRoom.GetComponent<RoundRoomManager>().wallSymbols[_randomSymbol].GetComponent<Renderer>().material;
 
-            theseButtons.Add(_button.GetComponent<RoundDoors>().buttonNumber);
+
+			if (curButtonNumber == 1) {
+
+				_button.GetComponent<Renderer> ().material = pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material;
+
+
+			} else {
+				
+				_button.GetComponent<Renderer> ().material = pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material;
+			}
+				
+			theseButtons.Add(_button.GetComponent<RoundDoors>().buttonNumber);
 
             if (!_button.GetComponent<RoundDoors>().FindPath(_button.GetComponent<RoundDoors>()))
             {
@@ -110,7 +139,6 @@ public class RoundRoomWalls : RoomVariables
     [Command]
     void CmdReRandomizeEverything()
     {
-
         RandomSymbols();
         pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
     }
@@ -134,6 +162,7 @@ public class RoundRoomWalls : RoomVariables
             bwu.GetComponent<RoundDoors>().enteredNow = false;
         }
         usedButtons.Clear();
+		usedMaterials.Clear();
         theseButtons.Clear();
         foundPath = true;
     }
