@@ -26,6 +26,7 @@ public class RoundRoomWalls : RoomVariables
         //Debug Stuff
         if (isServer && Input.GetKeyDown(KeyCode.G))
         {
+			pairedRoom.GetComponent<RoundRoomManager> ().CmdGetWallSymbols ();
             RandomSymbols();
             pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
         }

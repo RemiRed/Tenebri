@@ -48,7 +48,7 @@ public class RoundRoomManager : NetworkBehaviour {
     }
 
 	[Command]
-	void CmdGetWallSymbols(){
+	public void CmdGetWallSymbols(){
 
 		for (int i = 0; i < wallSymbols.Count; i++) {
 
@@ -59,10 +59,10 @@ public class RoundRoomManager : NetworkBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown (KeyCode.H)) {
-
-			Debug.Log ("Setting wall symbols");
-			CmdGetWallSymbols ();
-		}
+//		if (Input.GetKeyDown (KeyCode.H)) {
+//
+//			Debug.Log ("Setting wall symbols");
+//			CmdGetWallSymbols ();
+//		}
 	}
 }
