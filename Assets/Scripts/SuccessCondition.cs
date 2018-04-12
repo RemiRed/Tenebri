@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This class inherited by different puzzles success condition scripts
 public class SuccessCondition : MonoBehaviour {
 
 	// Use this for initialization

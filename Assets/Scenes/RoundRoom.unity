@@ -6121,7 +6121,8 @@ MonoBehaviour:
   nextID: 1
   passwordLock: 0
   passwordLength: 1
-  passwordRounds: 3
+  passwordRounds: 4
+  curPasswordRound: 1
   solved: 0
 --- !u!1 &995790633
 GameObject:
@@ -9788,7 +9789,7 @@ MonoBehaviour:
   theseButtonsIndex: 
   defaultButtonMaterial: {fileID: 2100000, guid: f8acb5f3522534b248059b25f42bf1fd,
     type: 2}
-  numberOfButtons: 3
+  numberOfButtons: 7
   curButtonNumber: 0
 --- !u!114 &1438943448
 MonoBehaviour:
