@@ -36,7 +36,7 @@ public class RoundRoomWalls : RoomVariables
 		}
 	}
 
-	void RandomSymbols()
+	public void RandomSymbols()
 	{
 		//Resets to default
 		RpcCloseWalls(true);
