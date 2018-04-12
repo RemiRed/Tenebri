@@ -4,16 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - P2
   - Interractable
   - P1
   - PasswordManager
-  - P2
-  - InterractionMessage
-  - Movable
-  - NetworkManager
-  - LobbyPlayer
-  - ReadyButton
-  - CloseButton
   layers:
   - Default
   - TransparentFX
@@ -23,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - Interractable
+  - 
   - 
   - 
   - 

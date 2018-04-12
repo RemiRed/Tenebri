@@ -1,0 +1,2 @@
+The material for Prop_HatchStone_01 is found:
+Assets>Props>Environments>Prop_Stone>Materials

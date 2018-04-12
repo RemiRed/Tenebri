@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/EffectExamples/FireExplosionEffects.meta
 guid: 9c9c292c9091a7d4fbaf34fdd81b85fc
 folderAsset: yes
 timeCreated: 1523017397
+=======
+guid: 0c03ca6796dc51f4f80eb59d3110cdae
+folderAsset: yes
+timeCreated: 1522759952
+>>>>>>> Grafiker:Assets/Props/Environments/Prop_Spade_01.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

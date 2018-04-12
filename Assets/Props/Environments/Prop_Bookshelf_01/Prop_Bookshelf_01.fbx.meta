@@ -1,22 +1,20 @@
 fileFormatVersion: 2
-guid: 4ebd531048441b742b0ec8dd18b5525d
-timeCreated: 1522157863
+guid: f55e29a8e66cfdb4b94a707a39b2905c
+timeCreated: 1522830489
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Prop_Bookshelf_01 1
     400000: //RootNode
-    400002: Prop_Bookshelf_01 1
-    2100000: Prop_Bookshelf_01_Mat
-    2300000: Prop_Bookshelf_01 1
-    3300000: Prop_Bookshelf_01 1
-    4300000: Prop_Bookshelf_01
+    2100000: lambert1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pCube1
     9500000: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -69,7 +67,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -88,7 +86,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

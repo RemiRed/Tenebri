@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 3fb471e1c0e2ead4a9bb7ae94c34250f
 folderAsset: yes
 timeCreated: 1523483224
@@ -8,6 +9,11 @@ guid: db6011c6085207d4e8d7bceb894dfe4e
 folderAsset: yes
 timeCreated: 1523387711
 >>>>>>> 533468e9105e15e17aaf055a0fdf96e109f01287
+=======
+guid: e6a386ba3f9e95e488a2f3d449983023
+folderAsset: yes
+timeCreated: 1523524603
+>>>>>>> Grafiker
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

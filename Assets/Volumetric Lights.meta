@@ -1,9 +1,18 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: ef340b12a29995b4981d0f06a4cb63b8
 folderAsset: yes
 timeCreated: 1482441154
 licenseType: Pro
 DefaultImporter:
+=======
+guid: 88b1eb8baf33a1a41bd8c95e77c4eb49
+folderAsset: yes
+timeCreated: 1523524129
+licenseType: Free
+DefaultImporter:
+  externalObjects: {}
+>>>>>>> Grafiker
   userData: 
   assetBundleName: 
   assetBundleVariant: 

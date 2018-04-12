@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Props/Environments/Prop_Bench_01/Materials.meta
 guid: 6a71ec69eeb018f48a4f6caa9d75342d
 folderAsset: yes
 timeCreated: 1523283173
+=======
+guid: f484a7593ed60914c99d276b71ba4962
+folderAsset: yes
+timeCreated: 1522759600
+>>>>>>> Grafiker:Assets/Props/Environments/Prop_Wheelbarrow_01/Materials.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

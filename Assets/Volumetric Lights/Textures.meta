@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Volumetric Lights/Textures.meta
 guid: 4f439f13d0d81684e86bfb6f6e6a0c33
 folderAsset: yes
 timeCreated: 1459178233
+=======
+guid: 7b085d7f0ffacf741a8bf848e8618560
+folderAsset: yes
+timeCreated: 1522759613
+>>>>>>> Grafiker:Assets/Props/Environments/Prop_Wheelbarrow_01/Textures.meta
 licenseType: Free
 DefaultImporter:
   userData: 

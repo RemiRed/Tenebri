@@ -223,6 +223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 584f7f81878875d41a3dc79b2453e8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  map1: {fileID: 0}
+  map2: {fileID: 0}
+  wall: {fileID: 0}
   roomLoader: {fileID: 0}
 --- !u!114 &114087305687234668
 MonoBehaviour:
