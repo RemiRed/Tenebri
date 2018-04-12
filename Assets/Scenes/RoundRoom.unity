@@ -6121,7 +6121,7 @@ MonoBehaviour:
   nextID: 1
   passwordLock: 0
   passwordLength: 1
-  passwordRounds: 5
+  passwordRounds: 4
   curPasswordRound: 1
   solved: 0
 --- !u!1 &995790633
