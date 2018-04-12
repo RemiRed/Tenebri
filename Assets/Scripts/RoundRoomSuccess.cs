@@ -30,5 +30,6 @@ public class RoundRoomSuccess : SuccessCondition {
 	public override void Failure(){
 
 		GetComponent<RoundRoomWalls> ().CloseWalls (false);
+		GetComponent<RoundRoomWalls> ().usedCorrectSymbolMaterialIndex.Clear ();
 	}
 }

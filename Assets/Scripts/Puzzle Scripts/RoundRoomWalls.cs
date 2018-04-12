@@ -15,6 +15,7 @@ public class RoundRoomWalls : RoomVariables
 
 	List<RoundDoors> usedButtons = new List<RoundDoors>();
 	List<int> mazeSymbolMaterialIndex = new List<int>();
+	public List<int> usedCorrectSymbolMaterialIndex = new List<int> ();
 	public List<int> theseButtonsIndex = new List<int>();
 
 	public Material defaultButtonMaterial;
@@ -49,7 +50,10 @@ public class RoundRoomWalls : RoomVariables
 		//Creates list of references to the Index of maze symbol materials to be used
 		foreach (GameObject _symbol in pairedRoom.GetComponent<RoundRoomManager>().wallSymbols) {
 
-			mazeSymbolMaterialIndex.Add (_curSymbolIndex);
+			if (!usedCorrectSymbolMaterialIndex.Contains (_curSymbolIndex)) {
+
+				mazeSymbolMaterialIndex.Add (_curSymbolIndex);
+			}
 			_curSymbolIndex++;
 		}
 		//Sets Maze buttons
@@ -95,7 +99,10 @@ public class RoundRoomWalls : RoomVariables
 			//Sets first button to be the correct matching button
 			if (curButtonNumber == 1) {
 
+
 				_button.GetComponent<PasswordButton>().SetPasswordButton(1, pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material);
+				Debug.Log (_button.GetComponent<Renderer>().material);
+				usedCorrectSymbolMaterialIndex.Add (_randomSymbol);
 
 			} else {
 
