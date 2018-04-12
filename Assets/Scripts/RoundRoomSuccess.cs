@@ -31,5 +31,7 @@ public class RoundRoomSuccess : SuccessCondition {
 
 		GetComponent<RoundRoomWalls> ().CloseWalls (false);
 		GetComponent<RoundRoomWalls> ().usedCorrectSymbolMaterialIndex.Clear ();
+		GetComponent<RoundRoomWalls> ().TriggerFailCondition ();
+		GetComponentInChildren<RoundRomCenter> ().activeRandom = true;
 	}
 }

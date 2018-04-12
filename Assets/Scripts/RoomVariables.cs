@@ -49,7 +49,9 @@ public class RoomVariables : NetworkBehaviour
 
     private void GameOver()
     {
-        print("NI E KASS, LUL GEJM ÖVER. GETGUDSTÄDSKRUBB");
+
+		Debug.LogError ("NI E KASS, LUL GEJM ÖVER. GETGUDSTÄDSKRUBB");
+       // print("NI E KASS, LUL GEJM ÖVER. GETGUDSTÄDSKRUBB");
         //Gameover kod
     }
 }

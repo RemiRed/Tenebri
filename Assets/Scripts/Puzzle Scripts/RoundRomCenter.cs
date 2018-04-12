@@ -4,25 +4,21 @@ using UnityEngine;
 
 public class RoundRomCenter : MonoBehaviour {
 
-    bool activeRandom = true;
+    public bool activeRandom = true;
     [SerializeField]
     GameObject roundRoom;
     [SerializeField]
     GameObject roomManager;
+	NetworkingLobby lobby;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	void Start(){
+
+		lobby = GameObject.FindGameObjectWithTag ("NetworkManager").GetComponent<NetworkingLobby> ();
 	}
 
     void OnTriggerEnter(Collider playa)
     {        
-        if (playa.gameObject.tag == "Player" && activeRandom == true)
+		if (playa.tag == "Player" && activeRandom == true /*&& lobby.numPlayers >= 2*/)
         {
             roomManager.GetComponent<RoundRoomManager>().CmdGetWallSymbols();
             roundRoom.GetComponent<RoundRoomWalls>().RandomSymbols();

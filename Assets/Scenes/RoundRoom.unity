@@ -4819,6 +4819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db53632ba56295947b831427a0ceb3f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeRandom: 1
   roundRoom: {fileID: 1438943445}
   roomManager: {fileID: 1341466451}
 --- !u!1 &811350757
@@ -8822,6 +8823,16 @@ Prefab:
       propertyPath: pairedRoom
       value: 
       objectReference: {fileID: 1438943445}
+    - target: {fileID: 114758476289704988, guid: b2cebb1b3f4a5fd4ab9ec21c04c64c79,
+        type: 2}
+      propertyPath: timerSeconds
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114758476289704988, guid: b2cebb1b3f4a5fd4ab9ec21c04c64c79,
+        type: 2}
+      propertyPath: timerPenalty
+      value: 1.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2cebb1b3f4a5fd4ab9ec21c04c64c79, type: 2}
   m_IsPrefabParent: 0
@@ -9746,8 +9757,8 @@ MonoBehaviour:
   entryDoor: {fileID: 0}
   exitDoor: {fileID: 0}
   pairedRoom: {fileID: 1341466451}
-  timerSeconds: 0
-  timerPenalty: 1
+  timerSeconds: 60
+  timerPenalty: 1.2
   currentTime: 0
   passwordManager: {fileID: 963621238}
   walls:
