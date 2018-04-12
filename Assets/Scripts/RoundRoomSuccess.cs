@@ -26,4 +26,9 @@ public class RoundRoomSuccess : SuccessCondition {
 
 		Debug.Log ("You passed this Puzzle");
 	}
+
+	public override void Failure(){
+
+		GetComponent<RoundRoomWalls> ().CmdReRandomizeEverything ();
+	}
 }

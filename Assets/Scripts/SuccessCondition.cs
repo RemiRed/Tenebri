@@ -17,4 +17,8 @@ public class SuccessCondition : MonoBehaviour {
 	public virtual void PartialSuccess(){
 
 	}
+
+	public virtual void Failure(){
+
+	}
 }

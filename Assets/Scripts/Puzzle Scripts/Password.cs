@@ -45,6 +45,7 @@ public class Password : MonoBehaviour {
 
 //			if (passwordLock != 0) {
 					
+				success.Failure ();
 				Debug.Log ("Wrong button"); //Replace with penalty stuff
 				curPasswordRound = 1;
 //			}
