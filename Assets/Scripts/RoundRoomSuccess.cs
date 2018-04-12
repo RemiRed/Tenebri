@@ -19,7 +19,7 @@ public class RoundRoomSuccess : SuccessCondition {
 	public override void PartialSuccess(){
 
 		Debug.Log ("YOU WON!");
-		GetComponent<RoundRoomWalls> ().CmdReRandomizeEverything ();
+		GetComponent<RoundRoomWalls> ().CmdRandomizeEverything ();
 	}
 
 	public override void CompleteSuccess(){
@@ -29,6 +29,6 @@ public class RoundRoomSuccess : SuccessCondition {
 
 	public override void Failure(){
 
-		GetComponent<RoundRoomWalls> ().CmdReRandomizeEverything ();
+		GetComponent<RoundRoomWalls> ().CloseWalls (false);
 	}
 }

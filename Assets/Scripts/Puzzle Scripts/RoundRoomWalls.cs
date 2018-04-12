@@ -38,8 +38,8 @@ public class RoundRoomWalls : RoomVariables
 	void RandomSymbols()
 	{
 		//Resets to default
-		RpcCloseWalls();
-		CloseWalls();
+		RpcCloseWalls(true);
+		CloseWalls(true);
 
 		curButtonNumber = 0;	//<<-- How can this set 'curButtonNumber' on Client if run on server? 
 		int tempLayer = 0;
@@ -95,9 +95,7 @@ public class RoundRoomWalls : RoomVariables
 			//Sets first button to be the correct matching button
 			if (curButtonNumber == 1) {
 
-				//_button.GetComponent<Renderer> ().material = ;
 				_button.GetComponent<PasswordButton>().SetPasswordButton(1, pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material);
-
 
 			} else {
 
@@ -116,6 +114,7 @@ public class RoundRoomWalls : RoomVariables
 			//Adds button locations to map room
 			theseButtonsIndex.Add (_button.GetComponent<RoundDoors> ().buttonNumber);
 
+
 			//Looks for & opens path. If path fails, marks as 'False' to be Re-Randomized 
 			if (!_button.GetComponent<RoundDoors> ().FindPath (_button.GetComponent<RoundDoors> ())) {
 				foundPath = false;
@@ -123,7 +122,7 @@ public class RoundRoomWalls : RoomVariables
 			//If Path failed; Re-Randomize everything
 			if (curButtonNumber >= numberOfButtons && !foundPath)
 			{
-				CmdReRandomizeEverything();
+				CmdRandomizeEverything();
 			}
 		}
 		else if (!_button.GetComponent<RoundDoors>().entered)	//Opens remaining unopened rooms
@@ -135,22 +134,22 @@ public class RoundRoomWalls : RoomVariables
 
 	[Command]
 	//Starts over if fails to find a working path
-	public void CmdReRandomizeEverything()
+	public void CmdRandomizeEverything()
 	{
 		RandomSymbols();
 		pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
 	}
 	//Resets Everything to default
 	[ClientRpc]
-	void RpcCloseWalls()
+	void RpcCloseWalls(bool _walls)
 	{
-		CloseWalls();
+		CloseWalls(_walls);
 	}
-	void CloseWalls()
+	public void CloseWalls(bool _walls)
 	{
 		foreach (GameObject bwa in walls)
 		{
-			bwa.SetActive(true);
+			bwa.SetActive(_walls);
 		}
 		foreach (GameObject bwu in buttons)
 		{
