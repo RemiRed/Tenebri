@@ -24,7 +24,9 @@ public class RoundRoomSuccess : SuccessCondition {
 
 	public override void CompleteSuccess(){
 
+
 		Debug.Log ("You passed this Puzzle");
+		GetComponent<RoundRoomWalls> ().passed = true;
 	}
 
 	public override void Failure(){

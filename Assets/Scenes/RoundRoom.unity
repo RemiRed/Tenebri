@@ -9757,9 +9757,10 @@ MonoBehaviour:
   entryDoor: {fileID: 0}
   exitDoor: {fileID: 0}
   pairedRoom: {fileID: 1341466451}
-  timerSeconds: 60
+  timerSeconds: 500
   timerPenalty: 1.2
   currentTime: 0
+  passed: 0
   passwordManager: {fileID: 963621238}
   walls:
   - {fileID: 254648674}

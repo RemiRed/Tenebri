@@ -14,7 +14,8 @@ public class RoomVariables : NetworkBehaviour
 	float timerSeconds, timerPenalty = 1;
     public float currentTime;
 
-    bool firstPenalty = true, startTimer = false;
+	bool firstPenalty = true, startTimer = false; 
+	public bool passed = false;
 
     protected bool Fail()
     {
@@ -38,20 +39,19 @@ public class RoomVariables : NetworkBehaviour
     IEnumerator StartTimer()
     {
         currentTime = timerSeconds;
-        while (currentTime > 0)
+		while (currentTime > 0 || passed)
         {
             print(currentTime);
             yield return new WaitForSeconds(.1f);
             currentTime -= .1f;
         }
-        GameOver();
+		if (!passed) {
+			GameOver ();
+		}
     }
 
     private void GameOver()
     {
-
 		Debug.LogError ("NI E KASS, LUL GEJM ÖVER. GETGUDSTÄDSKRUBB");
-       // print("NI E KASS, LUL GEJM ÖVER. GETGUDSTÄDSKRUBB");
-        //Gameover kod
     }
 }

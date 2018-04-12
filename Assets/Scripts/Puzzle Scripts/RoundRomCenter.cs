@@ -18,7 +18,7 @@ public class RoundRomCenter : MonoBehaviour {
 
     void OnTriggerEnter(Collider playa)
     {        
-		if (playa.tag == "Player" && activeRandom == true /*&& lobby.numPlayers >= 2*/)
+		if (playa.tag == "Player" && activeRandom == true && lobby.numPlayers >= 2)
         {
             roomManager.GetComponent<RoundRoomManager>().CmdGetWallSymbols();
             roundRoom.GetComponent<RoundRoomWalls>().RandomSymbols();
