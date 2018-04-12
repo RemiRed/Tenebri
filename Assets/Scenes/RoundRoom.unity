@@ -518,9 +518,10 @@ GameObject:
   - component: {fileID: 62858565}
   - component: {fileID: 62858568}
   - component: {fileID: 62858569}
+  - component: {fileID: 62858570}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -638,6 +639,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &62858570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 62858564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!43 &84459437
 Mesh:
   m_ObjectHideFlags: 0
@@ -912,9 +932,10 @@ GameObject:
   - component: {fileID: 190323971}
   - component: {fileID: 190323974}
   - component: {fileID: 190323975}
+  - component: {fileID: 190323976}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (16)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1032,6 +1053,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &190323976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 190323970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!1 &214285962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,9 +1645,10 @@ GameObject:
   - component: {fileID: 362858437}
   - component: {fileID: 362858440}
   - component: {fileID: 362858441}
+  - component: {fileID: 362858442}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (5)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1725,6 +1766,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &362858442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362858436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!43 &392799184
 Mesh:
   m_ObjectHideFlags: 0
@@ -3751,9 +3811,10 @@ GameObject:
   - component: {fileID: 671565687}
   - component: {fileID: 671565690}
   - component: {fileID: 671565691}
+  - component: {fileID: 671565692}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (14)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3873,6 +3934,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &671565692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 671565686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!1 &683782981
 GameObject:
   m_ObjectHideFlags: 0
@@ -4871,9 +4951,10 @@ GameObject:
   - component: {fileID: 811470243}
   - component: {fileID: 811470246}
   - component: {fileID: 811470247}
+  - component: {fileID: 811470248}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (3)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4991,6 +5072,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &811470248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 811470242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!1 &858949622
 GameObject:
   m_ObjectHideFlags: 0
@@ -5409,9 +5509,10 @@ GameObject:
   - component: {fileID: 907666190}
   - component: {fileID: 907666193}
   - component: {fileID: 907666194}
+  - component: {fileID: 907666195}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (9)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5533,6 +5634,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &907666195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 907666189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!43 &920993415
 Mesh:
   m_ObjectHideFlags: 0
@@ -5946,6 +6066,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 963621237}
+  - component: {fileID: 963621238}
   m_Layer: 0
   m_Name: Buttons
   m_TagString: Untagged
@@ -5984,6 +6105,24 @@ Transform:
   m_Father: {fileID: 1438943446}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963621238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 963621236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 352a66ace4ff8f341bc18be93d7ecce2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  success: {fileID: 1438943449}
+  passwordButtons: []
+  nextID: 1
+  passwordLock: 0
+  passwordLength: 1
+  passwordRounds: 3
+  solved: 0
 --- !u!1 &995790633
 GameObject:
   m_ObjectHideFlags: 0
@@ -6215,9 +6354,10 @@ GameObject:
   - component: {fileID: 1027459597}
   - component: {fileID: 1027459600}
   - component: {fileID: 1027459601}
+  - component: {fileID: 1027459602}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (10)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6339,6 +6479,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &1027459602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1027459596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!43 &1029935244
 Mesh:
   m_ObjectHideFlags: 0
@@ -6678,9 +6837,10 @@ GameObject:
   - component: {fileID: 1046919464}
   - component: {fileID: 1046919467}
   - component: {fileID: 1046919468}
+  - component: {fileID: 1046919469}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (13)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6800,6 +6960,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &1046919469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1046919463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!43 &1056899490
 Mesh:
   m_ObjectHideFlags: 0
@@ -7502,9 +7681,10 @@ GameObject:
   - component: {fileID: 1186984633}
   - component: {fileID: 1186984636}
   - component: {fileID: 1186984637}
+  - component: {fileID: 1186984638}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (2)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7622,6 +7802,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &1186984638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1186984632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!43 &1188659965
 Mesh:
   m_ObjectHideFlags: 0
@@ -9339,9 +9538,10 @@ GameObject:
   - component: {fileID: 1437762381}
   - component: {fileID: 1437762384}
   - component: {fileID: 1437762385}
+  - component: {fileID: 1437762386}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (1)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9459,6 +9659,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &1437762386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1437762380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!1 &1438943445
 GameObject:
   m_ObjectHideFlags: 0
@@ -9470,6 +9689,7 @@ GameObject:
   - component: {fileID: 1438943446}
   - component: {fileID: 1438943447}
   - component: {fileID: 1438943448}
+  - component: {fileID: 1438943449}
   m_Layer: 0
   m_Name: RoundMaze_Maze
   m_TagString: Untagged
@@ -9514,6 +9734,7 @@ MonoBehaviour:
   timerSeconds: 0
   timerPenalty: 1
   currentTime: 0
+  passwordManager: {fileID: 963621238}
   walls:
   - {fileID: 254648674}
   - {fileID: 662848412}
@@ -9564,21 +9785,7 @@ MonoBehaviour:
   - {fileID: 1046919463}
   - {fileID: 671565686}
   - {fileID: 1443079041}
-  symbols:
-  - {fileID: 1498584374}
-  - {fileID: 493605261}
-  - {fileID: 1845154203}
-  - {fileID: 214285962}
-  - {fileID: 648829484}
-  - {fileID: 1321718997}
-  - {fileID: 438270009}
-  - {fileID: 1130177488}
-  - {fileID: 2103622709}
-  - {fileID: 1913963276}
-  - {fileID: 299436122}
-  - {fileID: 1074774472}
-  theseButtons: 
-  usedMaterials: 
+  theseButtonsIndex: 
   defaultButtonMaterial: {fileID: 2100000, guid: f8acb5f3522534b248059b25f42bf1fd,
     type: 2}
   numberOfButtons: 3
@@ -9615,6 +9822,17 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &1438943449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1438943445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de1e3cbd64b29314f9895034d637dcb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1443079041
 GameObject:
   m_ObjectHideFlags: 0
@@ -9629,9 +9847,10 @@ GameObject:
   - component: {fileID: 1443079042}
   - component: {fileID: 1443079045}
   - component: {fileID: 1443079046}
+  - component: {fileID: 1443079047}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (15)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9751,6 +9970,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &1443079047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1443079041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!1 &1449091393
 GameObject:
   m_ObjectHideFlags: 0
@@ -10169,9 +10407,10 @@ GameObject:
   - component: {fileID: 1491521977}
   - component: {fileID: 1491521980}
   - component: {fileID: 1491521981}
+  - component: {fileID: 1491521982}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (7)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10293,6 +10532,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &1491521982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1491521976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!1 &1498584374
 GameObject:
   m_ObjectHideFlags: 0
@@ -11262,9 +11520,10 @@ GameObject:
   - component: {fileID: 1690811598}
   - component: {fileID: 1690811601}
   - component: {fileID: 1690811602}
+  - component: {fileID: 1690811603}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (12)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11384,6 +11643,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &1690811603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690811597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!4 &1705482249
 Transform:
   m_ObjectHideFlags: 0
@@ -12017,9 +12295,10 @@ GameObject:
   - component: {fileID: 1877016792}
   - component: {fileID: 1877016795}
   - component: {fileID: 1877016796}
+  - component: {fileID: 1877016797}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (8)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12141,6 +12420,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &1877016797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1877016791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!1 &1913963276
 GameObject:
   m_ObjectHideFlags: 0
@@ -12239,9 +12537,10 @@ GameObject:
   - component: {fileID: 1914734320}
   - component: {fileID: 1914734323}
   - component: {fileID: 1914734324}
+  - component: {fileID: 1914734325}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (6)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12359,6 +12658,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &1914734325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1914734319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!4 &1922720131
 Transform:
   m_ObjectHideFlags: 0
@@ -13337,9 +13655,10 @@ GameObject:
   - component: {fileID: 2074456026}
   - component: {fileID: 2074456029}
   - component: {fileID: 2074456030}
+  - component: {fileID: 2074456031}
   m_Layer: 0
   m_Name: GameProp_PressurePlate_01 (4)
-  m_TagString: Untagged
+  m_TagString: Interractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13457,6 +13776,25 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &2074456031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2074456025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d42398429842144b61d824cddd7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractMethodName: PasswordButtonPressed
+  stopInterractMethodName: RevertColor
+  delay: 0
+  playerCmd: {fileID: 0}
+  passwordManager: {fileID: 963621238}
+  symbol: {fileID: 0}
+  buttonOrderID: 0
+  lightUpOnPress: 1
 --- !u!43 &2084535620
 Mesh:
   m_ObjectHideFlags: 0

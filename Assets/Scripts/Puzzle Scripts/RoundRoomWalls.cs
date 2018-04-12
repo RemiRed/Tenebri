@@ -5,7 +5,9 @@ using UnityEngine.Networking;
 
 public class RoundRoomWalls : RoomVariables
 {
-	
+
+	public Password passwordManager;
+
 	[SerializeField]
 	List<GameObject> walls = new List<GameObject>();
 	[SerializeField]
@@ -89,16 +91,17 @@ public class RoundRoomWalls : RoomVariables
 		if (_ifButton) {
 
 			curButtonNumber++;
-
+			_button.tag = "Interractable"; 
 			//Sets first button to be the correct matching button
 			if (curButtonNumber == 1) {
 
-				_button.GetComponent<Renderer> ().material = pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material;
+				//_button.GetComponent<Renderer> ().material = ;
+				_button.GetComponent<PasswordButton>().SetPasswordButton(1, pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material);
+
 
 			} else {
 
-				_button.GetComponent<Renderer> ().material = pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material;
-
+				_button.GetComponent<PasswordButton>().SetPasswordButton(-1, pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material);
 				//Changes color to a non-matching color
 				List<Color> _symbolColors = new List<Color> ();
 				foreach (Color _color in pairedRoom.GetComponent<RoundRoomManager>().symbolColors) {
@@ -126,12 +129,13 @@ public class RoundRoomWalls : RoomVariables
 		else if (!_button.GetComponent<RoundDoors>().entered)	//Opens remaining unopened rooms
 		{
 			_button.GetComponent<RoundDoors>().FindPath(_button.GetComponent<RoundDoors>());
+			_button.GetComponent<PasswordButton> ().SetPasswordButton (false);
 		}
 	}
 
 	[Command]
 	//Starts over if fails to find a working path
-	void CmdReRandomizeEverything()
+	public void CmdReRandomizeEverything()
 	{
 		RandomSymbols();
 		pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
@@ -152,10 +156,8 @@ public class RoundRoomWalls : RoomVariables
 		{
 			bwu.GetComponent<RoundDoors>().entered = false;
 			bwu.GetComponent<RoundDoors>().enteredNow = false;
-		}
-		foreach (GameObject bwe /*named after my gf Ivvie*/ in buttons) 
-		{
-			bwe.GetComponent<Renderer> ().material = defaultButtonMaterial;
+			bwu.GetComponent<Renderer> ().material = defaultButtonMaterial;
+			bwu.tag = "Untagged";
 		}
 		usedButtons.Clear();
 		mazeSymbolMaterialIndex.Clear();

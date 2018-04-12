@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114318638797104444}
   - component: {fileID: 114257683608505498}
   - component: {fileID: 114974545167358980}
+  - component: {fileID: 114605174094679338}
   m_Layer: 0
   m_Name: ColorSymbolMatchingP1
   m_TagString: Untagged
@@ -4612,6 +4613,17 @@ MonoBehaviour:
   symbol: {fileID: 0}
   buttonOrderID: 4
   lightUpOnPress: 1
+--- !u!114 &114605174094679338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1004689718124106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e62f27ab1937b754f8a390564fb90763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114607811173489322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4680,7 +4692,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352a66ace4ff8f341bc18be93d7ecce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  success: {fileID: 114605174094679338}
   passwordButtons: []
+  nextID: 0
+  passwordLock: 0
+  passwordLength: 0
+  passwordRounds: 1
+  curPasswordRound: 1
+  solved: 0
 --- !u!114 &114963405963828820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4754,7 +4773,6 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 1, a: 0}
   - {r: 0, g: 1, b: 0, a: 0}
   - {r: 1, g: 0.49019608, b: 1, a: 0}
-  - {r: 1, g: 0.5294118, b: 0, a: 0}
   - {r: 1, g: 0.5294118, b: 0, a: 0}
   symbols:
   - {fileID: 2100000, guid: cc30b7c2051196c48a8f745fd48c83a4, type: 2}

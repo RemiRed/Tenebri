@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Password : MonoBehaviour {
 
+	public SuccessCondition success;
 	public List<PasswordButton> passwordButtons;		//List of all buttons in the password. Not nessesary but useful for debug purposes.
 	public int nextID, passwordLock, passwordLength;
+
+	public int passwordRounds;
+	public int curPasswordRound = 1;
+
 	public bool solved = false;
-		
+
 	public void CheckPassword(int _ID){
 
 		if (!solved && _ID == nextID) {
@@ -17,9 +22,17 @@ public class Password : MonoBehaviour {
 			//Checks if password is solved
 			if (passwordLock == passwordLength) {
 
-				Debug.Log ("CORRECT PASSWORD!"); //Replace with some door opening method
-				solved = true;
-				return;
+				if (curPasswordRound >= passwordRounds) {
+
+					solved = true;
+					success.CompleteSuccess ();
+
+				} else {
+
+					success.PartialSuccess ();
+					curPasswordRound++;
+					nextID = 0;
+				}
 			}
 			nextID++;
 				
@@ -28,12 +41,13 @@ public class Password : MonoBehaviour {
 			nextID = 2;
 			passwordLock = 1;
 
-		} else if (_ID != nextID - 1) {	//Resets password input unless last password button is pressed
+		} else /* if (_ID != nextID - 1)*/ {	//Resets password input unless last password button is pressed
 
-			if (passwordLock != 0) {
+//			if (passwordLock != 0) {
 					
-				Debug.Log ("Wrong button"); //Replace with penalty stuff 
-			}
+				Debug.Log ("Wrong button"); //Replace with penalty stuff
+				curPasswordRound = 1;
+//			}
 			nextID = 1;
 			passwordLock = 0;
 		}

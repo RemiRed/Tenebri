@@ -41,4 +41,9 @@ public class PasswordButton : Interractable {
 		symbol = _Symbol;
 		GetComponent<Renderer> ().material = symbol;
 	}
+
+	public void SetPasswordButton(bool _active){
+
+		buttonActive = _active;
+	}
 }
