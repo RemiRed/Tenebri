@@ -39,7 +39,7 @@ public class RoomVariables : NetworkBehaviour
     IEnumerator StartTimer()
     {
         currentTime = timerSeconds;
-		while (currentTime > 0 || passed)
+		while (currentTime > 0 && !passed)
         {
             print(currentTime);
             yield return new WaitForSeconds(.1f);

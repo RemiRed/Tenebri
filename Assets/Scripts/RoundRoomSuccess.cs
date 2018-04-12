@@ -25,7 +25,7 @@ public class RoundRoomSuccess : SuccessCondition {
 	public override void CompleteSuccess(){
 
 
-		Debug.Log ("You passed this Puzzle");
+		Debug.LogWarning ("You passed this Puzzle");
 		GetComponent<RoundRoomWalls> ().passed = true;
 	}
 
@@ -35,5 +35,7 @@ public class RoundRoomSuccess : SuccessCondition {
 		GetComponent<RoundRoomWalls> ().usedCorrectSymbolMaterialIndex.Clear ();
 		GetComponent<RoundRoomWalls> ().TriggerFailCondition ();
 		GetComponentInChildren<RoundRomCenter> ().activeRandom = true;
+
+
 	}
 }
