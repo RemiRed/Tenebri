@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a33cc46193f8bec4d85cc568b8de97da
-timeCreated: 1522766290
+guid: d1a855235da6d4147bc95295cb221fbb
+timeCreated: 1522915493
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -13,7 +13,7 @@ ModelImporter:
     4300000: Prop_TerracottaPot_01
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -66,7 +66,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
