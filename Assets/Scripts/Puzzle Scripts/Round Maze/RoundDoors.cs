@@ -8,7 +8,9 @@ public class RoundDoors : MonoBehaviour {
 
     [SerializeField]
 	List<RoundWallDoors> WallList = new List<RoundWallDoors> ();
-	List<RoundDoors> availableRoomsList = new List<RoundDoors>(), backupRoomList = new List<RoundDoors>();  //room list har alla angränsande rum som antingen är på samma lager eller ett lager in, wall list är väggarna till de rummen.
+	[SerializeField]
+	List<RoundDoors> availableRoomsList = new List<RoundDoors> ();
+	List <RoundDoors> backupRoomList = new List<RoundDoors>();  //room list har alla angränsande rum som antingen är på samma lager eller ett lager in, wall list är väggarna till de rummen.
     public bool entered = false, enteredNow = false;
     public int layer; 
 
