@@ -15,33 +15,35 @@ public class Password : MonoBehaviour {
 
 	public void CheckPassword(int _ID){
 
-		if (!solved && _ID == nextID) {
+		if (!solved) {
 
-			passwordLock = nextID;
+			if (_ID == nextID) {
 
-			//Checks if password is solved
-			if (passwordLock == passwordLength) {
+				passwordLock = nextID;
 
-				if (curPasswordRound >= passwordRounds) {
+				//Checks if password is solved
+				if (passwordLock == passwordLength) {
 
-					solved = true;
-					success.CompleteSuccess ();
+					if (curPasswordRound >= passwordRounds) {
 
-				} else {
+						solved = true;
+						success.CompleteSuccess ();
 
-					success.PartialSuccess ();
-					curPasswordRound++;
-					nextID = 0;
+					} else {
+
+						success.PartialSuccess ();
+						curPasswordRound++;
+						nextID = 0;
+					}
 				}
-			}
-			nextID++;
+				nextID++;
 				
-		} else if (_ID == 1) {	//If first password button is pressed, password input is restarted to first password button
+			} else if (_ID == 1) {	//If first password button is pressed, password input is restarted to first password button
 			
-			nextID = 2;
-			passwordLock = 1;
+				nextID = 2;
+				passwordLock = 1;
 
-		} else /* if (_ID != nextID - 1)*/ {	//Resets password input unless last password button is pressed
+			} else { /* if (_ID != nextID - 1)*///Resets password input unless last password button is pressed
 
 //			if (passwordLock != 0) {
 					
@@ -49,8 +51,9 @@ public class Password : MonoBehaviour {
 				Debug.Log ("Wrong button"); //Replace with penalty stuff
 				curPasswordRound = 1;
 //			}
-			nextID = 1;
-			passwordLock = 0;
+				nextID = 1;
+				passwordLock = 0;
+			}
 		}
 	}
 

@@ -103,6 +103,7 @@ public class PasswordRandomizer : NetworkBehaviour {
 
 		P1Clues = GameObject.FindGameObjectWithTag ("P1").GetComponent<PuzzleClues> ();
 		P2Clues = GameObject.FindGameObjectWithTag ("P2").GetComponent<PuzzleClues> ();
+
 		passwordManager.SetPasswordLength (passwordLengt);
 	}
 }

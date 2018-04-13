@@ -13,16 +13,21 @@ public class ColorSymbolSuccess : SuccessCondition  {
 	void Update () {
 		
 	}
-
-	public override void CompleteSuccess(){
-
-	}
-
+		
 	public override void PartialSuccess(){
 
 	}
 
+	public override void CompleteSuccess(){
+
+		Debug.LogWarning ("You passed this Puzzle");
+		passed = true;
+		OpenDoorToNextLevel ();
+	}
+
 	public override void Failure(){
 
+		Debug.Log ("Wrong password");
+		Fail ();
 	}
 }

@@ -168,8 +168,4 @@ public class RoundRoomWalls : RoomVariables
 		theseButtonsIndex.Clear();
 		foundPath = true;
 	}
-	public void TriggerFailCondition(){
-
-		Fail ();
-	}
 }

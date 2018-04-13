@@ -20,9 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4978536245326318}
   - component: {fileID: 114318638797104444}
-  - component: {fileID: 114257683608505498}
-  - component: {fileID: 114974545167358980}
   - component: {fileID: 114605174094679338}
+  - component: {fileID: 114974545167358980}
   m_Layer: 0
   m_Name: ColorSymbolMatchingP1
   m_TagString: Untagged
@@ -4455,26 +4454,6 @@ MonoBehaviour:
   symbol: {fileID: 0}
   buttonOrderID: 4
   lightUpOnPress: 1
---- !u!114 &114257683608505498
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1004689718124106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ddae29e3497501478f5d53fb74328f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roomLength: 0
-  compatibleRooms:
-  - {fileID: 0}
-  entryDoor: {fileID: 0}
-  exitDoor: {fileID: 0}
-  pairedRoom: {fileID: 0}
-  timerSeconds: 0
-  timerPenalty: 0
-  currentTime: 0
 --- !u!114 &114268241664006560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4621,9 +4600,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1004689718124106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e62f27ab1937b754f8a390564fb90763, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ec141468d3febc40bb82a295f50d921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomLength: 0
+  compatibleRooms: []
+  entryDoor: {fileID: 0}
+  exitDoor: {fileID: 0}
+  pairedRoom: {fileID: 0}
+  timerSeconds: 0
+  timerPenalty: 1
+  currentTime: 0
+  passed: 0
 --- !u!114 &114607811173489322
 MonoBehaviour:
   m_ObjectHideFlags: 1

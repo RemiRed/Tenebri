@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //This class inherited by different puzzles success condition scripts
-public class SuccessCondition : MonoBehaviour {
+public class SuccessCondition : RoomVariables {
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +26,6 @@ public class SuccessCondition : MonoBehaviour {
 
 		//Add the functions to progress to next level here
 
+		Debug.Log ("Door to next level should now be open");
 	}
-
 }

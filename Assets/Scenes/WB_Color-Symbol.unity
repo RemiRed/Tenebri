@@ -287,9 +287,24 @@ Prefab:
       propertyPath: pairedRoom
       value: 
       objectReference: {fileID: 1871021393}
+    - target: {fileID: 114716514275749502, guid: 35da988b39aba1442a8a0148f6ef1e79,
+        type: 2}
+      propertyPath: timerPenalty
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114716514275749502, guid: 35da988b39aba1442a8a0148f6ef1e79,
+        type: 2}
+      propertyPath: timerSeconds
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35da988b39aba1442a8a0148f6ef1e79, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &498719631 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1092117414226614, guid: 35da988b39aba1442a8a0148f6ef1e79,
+    type: 2}
+  m_PrefabInternal: {fileID: 498719630}
 --- !u!1 &518591198
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,11 +737,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &1525683309 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1092117414226614, guid: 35da988b39aba1442a8a0148f6ef1e79,
-    type: 2}
-  m_PrefabInternal: {fileID: 498719630}
 --- !u!1 &1593890827
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +907,12 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1001 &1871021392
+--- !u!1 &1871021393 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1004689718124106, guid: 6b2a46fd8f442674698972039a38b549,
+    type: 2}
+  m_PrefabInternal: {fileID: 2109795028}
+--- !u!1001 &2109795028
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -936,16 +951,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114257683608505498, guid: 6b2a46fd8f442674698972039a38b549,
+    - target: {fileID: 114605174094679338, guid: 6b2a46fd8f442674698972039a38b549,
         type: 2}
-      propertyPath: compatibleRooms.Array.data[0]
+      propertyPath: pairedRoom
       value: 
-      objectReference: {fileID: 1525683309}
+      objectReference: {fileID: 498719631}
+    - target: {fileID: 114605174094679338, guid: 6b2a46fd8f442674698972039a38b549,
+        type: 2}
+      propertyPath: timerSeconds
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114605174094679338, guid: 6b2a46fd8f442674698972039a38b549,
+        type: 2}
+      propertyPath: timerPenalty
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b2a46fd8f442674698972039a38b549, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1871021393 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1004689718124106, guid: 6b2a46fd8f442674698972039a38b549,
-    type: 2}
-  m_PrefabInternal: {fileID: 1871021392}
