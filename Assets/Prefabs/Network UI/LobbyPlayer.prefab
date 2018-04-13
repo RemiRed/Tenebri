@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4166471190983142}
   - component: {fileID: 114829256468896104}
   - component: {fileID: 114035878989175426}
+  - component: {fileID: 114249392509095042}
   m_Layer: 0
   m_Name: LobbyPlayer
   m_TagString: LobbyPlayer
@@ -50,6 +51,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ea91db0aed7c2e439eb940082cc3d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLobbyGUI: 1
+  readyButton: {fileID: 0}
+--- !u!114 &114249392509095042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1592008875601812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388b1feb801db484980a8eee74b5b7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShowLobbyGUI: 1
