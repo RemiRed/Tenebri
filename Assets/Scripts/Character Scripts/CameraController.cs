@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -27,6 +27,8 @@ public class CameraController : NetworkBehaviour
     {
         if (character.GetComponent<CharacterScript>().menu)
         {
+        transform.localRotation = transform.localRotation;
+        character.transform.localRotation = character.transform.localRotation;
             return;
         }
 
