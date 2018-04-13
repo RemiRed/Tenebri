@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Password : MonoBehaviour {
 
-	public SuccessCondition success;
+	public RoomVariables success;
 	public List<PasswordButton> passwordButtons;		//List of all buttons in the password. Not nessesary but useful for debug purposes.
 	public int nextID, passwordLock, passwordLength;
 
@@ -46,13 +46,11 @@ public class Password : MonoBehaviour {
 			} else { /* if (_ID != nextID - 1)*///Resets password input unless last password button is pressed
 
 //			if (passwordLock != 0) {
-					
+
 				success.Failure ();
-				Debug.Log ("Wrong button"); //Replace with penalty stuff
-				curPasswordRound = 1;
-//			}
 				nextID = 1;
 				passwordLock = 0;
+				curPasswordRound = 1;
 			}
 		}
 	}

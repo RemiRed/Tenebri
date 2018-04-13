@@ -169,8 +169,27 @@ public class RoundRoomWalls : RoomVariables
 		foundPath = true;
 	}
 
-	public void TriggerFailure(){
+	public override void PartialSuccess(){
 
+		Debug.Log ("YOU WON!");
+		CmdRandomizeEverything ();
+	}
+
+	public override void CompleteSuccess(){
+
+		Debug.LogWarning ("You passed this Puzzle");
+
+		passed = true;
+		CloseWalls (false);
+		OpenDoorToNextLevel ();
+	}
+
+	public override void Failure(){
+
+		Debug.Log ("incorrect");
+		CloseWalls (false);
+		usedCorrectSymbolMaterialIndex.Clear ();
+		GetComponentInChildren<RoundRomCenter> ().activeRandom = true;
 		Fail ();
 	}
 }

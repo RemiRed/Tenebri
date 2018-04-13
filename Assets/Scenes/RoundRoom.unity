@@ -6131,7 +6131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352a66ace4ff8f341bc18be93d7ecce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  success: {fileID: 1438943449}
+  success: {fileID: 1438943447}
   passwordButtons: []
   nextID: 1
   passwordLock: 0
@@ -9715,7 +9715,6 @@ GameObject:
   - component: {fileID: 1438943446}
   - component: {fileID: 1438943447}
   - component: {fileID: 1438943448}
-  - component: {fileID: 1438943449}
   m_Layer: 0
   m_Name: RoundMaze_Maze
   m_TagString: Untagged
@@ -9851,17 +9850,6 @@ MonoBehaviour:
     i15: 184
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &1438943449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1438943445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00281a9bb3bce154daa75b8283ae7e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1443079041
 GameObject:
   m_ObjectHideFlags: 0

@@ -978,26 +978,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1004689718124106, guid: 6b2a46fd8f442674698972039a38b549,
     type: 2}
   m_PrefabInternal: {fileID: 2109795028}
---- !u!114 &1871021394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1871021393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ddae29e3497501478f5d53fb74328f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roomLength: 0
-  compatibleRooms: []
-  entryDoor: {fileID: 0}
-  exitDoor: {fileID: 0}
-  pairedRoom: {fileID: 0}
-  timerSeconds: 500
-  timerPenalty: 1.2
-  currentTime: 0
-  passed: 0
 --- !u!1001 &2109795028
 Prefab:
   m_ObjectHideFlags: 0

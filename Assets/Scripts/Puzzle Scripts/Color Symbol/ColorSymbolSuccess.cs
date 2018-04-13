@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorSymbolSuccess : SuccessCondition  {
+public class ColorSymbolSuccess : RoomVariables  {
 
 	// Use this for initialization
 	void Start () {

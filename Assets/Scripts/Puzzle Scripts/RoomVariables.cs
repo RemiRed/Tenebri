@@ -55,20 +55,20 @@ public class RoomVariables : NetworkBehaviour
 		Debug.LogError ("NI E KASS, LUL GEJM ÖVER. GETGUDSTÄDSKRUBB");
     }
 
-//	public void OpenDoorToNextLevel(){
-//
-//		Debug.Log ("Door to next level should now be open");
-//	}
-//
-//	public virtual void CompleteSuccess(){
-//
-//	}
-//
-//	public virtual void PartialSuccess(){
-//
-//	}
-//
-//	public virtual void Failure(){
-//
-//	}
+	public void OpenDoorToNextLevel(){
+
+		Debug.Log ("Door to next level should now be open");
+	}
+
+	public virtual void CompleteSuccess(){
+
+	}
+
+	public virtual void PartialSuccess(){
+
+	}
+
+	public virtual void Failure(){
+
+	}
 }
