@@ -65,6 +65,10 @@ public class CharacterScript : NetworkBehaviour
 
     void Update()
     {
+        if (menu)
+        {
+            return;
+        }
         if (isLocalPlayer)
         {
             //Opens Menu and disables the clocked cursor
@@ -104,7 +108,6 @@ public class CharacterScript : NetworkBehaviour
 
     void Jump()
     {
-
         if (IsGrounded())
         {
 
