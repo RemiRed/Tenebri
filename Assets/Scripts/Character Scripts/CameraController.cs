@@ -27,7 +27,7 @@ public class CameraController : NetworkBehaviour
     {
         if (character.GetComponent<CharacterScript>().menu)
         {
-        character.GetComponent<RigidBody>().freezeRotation = true;
+        character.GetComponent<Rigidbody>().freezeRotation = true;
             return;
         }
 
