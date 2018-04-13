@@ -7,6 +7,6 @@ public class GameTimer : MonoBehaviour {
   public void TotalTime()
   {
     //Change to UI instead of print
-    print(Time.timeSinceLevelLoad / 60 + ":" + Time.timeSinceLevelLoad % 60);
+    print(Mathf.FloorToInt(Time.timeSinceLevelLoad / 60) + ":" + Mathf.FloorToInt(Time.timeSinceLevelLoad % 60));
   }
 }
