@@ -30,10 +30,6 @@ public class CameraController : NetworkBehaviour
             character.GetComponent<Rigidbody>().freezeRotation = true;
             return;
         }
-        else   
-        {
-            character.GetComponent<Rigidbody>().freezeRotation = false;
-        }
         
 
         var md = new Vector2(Input.GetAxisRaw("Horizontal Camera"), Input.GetAxisRaw("Vertical Camera"));
