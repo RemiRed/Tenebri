@@ -7,8 +7,8 @@ public class RoundDoors : MonoBehaviour {
 	public RoundRoomWalls resetManager;
 
     [SerializeField]
-    List<GameObject> WallList = new List<GameObject>(), availableRoomsList = new List<GameObject>(); //room list har alla angränsande rum som antingen är på samma lager eller ett lager in, wall list är väggarna till de rummen.
-	List<RoundDoors> backupRoomList = new List<RoundDoors>();
+	List<RoundWallDoors> WallList = new List<RoundWallDoors> ();
+	List<RoundDoors> availableRoomsList = new List<RoundDoors>(), backupRoomList = new List<RoundDoors>();  //room list har alla angränsande rum som antingen är på samma lager eller ett lager in, wall list är väggarna till de rummen.
     public bool entered = false, enteredNow = false;
     public int layer; 
 
@@ -18,9 +18,9 @@ public class RoundDoors : MonoBehaviour {
 
 	void Awake(){
 
-		foreach (GameObject _room in availableRoomsList) {
+		foreach (RoundDoors _room in availableRoomsList) {
 
-			backupRoomList.Add (_room.GetComponent<RoundDoors>());
+			backupRoomList.Add (_room);
 		}
 	}
 
@@ -37,7 +37,7 @@ public class RoundDoors : MonoBehaviour {
 
 				if (!_room.enteredNow && _room.layer <= layer /* Honestly makes it a lot more stable*/) {
 
-					availableRoomsList.Add (_room.gameObject);
+					availableRoomsList.Add (_room);
 				}
 			}
 			//Checks if path reached a dead end. 
@@ -51,13 +51,13 @@ public class RoundDoors : MonoBehaviour {
 				}
 			} else {	//If False: Selects a random room to conntinue to
 				
-				RoundDoors room = availableRoomsList [Random.Range (0, availableRoomsList.Count)].GetComponent<RoundDoors> ();
+				RoundDoors room = availableRoomsList [Random.Range (0, availableRoomsList.Count)];
 
 				//Checks which wall the two rooms shares between them and Removes the wall between the two rooms
-				foreach (GameObject wall in WallList) {
+				foreach (RoundWallDoors wall in WallList) {
 
 					if (room.WallList.Contains (wall)) {
-						wall.GetComponent<RoundWallDoors> ().OpenSesamy ();
+						wall.OpenSesamy ();
 						break;
 					}
 				}

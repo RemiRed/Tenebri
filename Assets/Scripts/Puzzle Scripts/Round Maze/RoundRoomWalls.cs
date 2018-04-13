@@ -11,9 +11,9 @@ public class RoundRoomWalls : RoomVariables
 	[SerializeField]
 	List<GameObject> walls = new List<GameObject>();
 	[SerializeField]
-	List<GameObject> buttons = new List<GameObject>();	//Change these from 'GameObject' to 'RoundDoors'
-
+	List<RoundDoors> buttons = new List<RoundDoors>();	
 	List<RoundDoors> usedButtons = new List<RoundDoors>();
+
 	List<int> mazeSymbolMaterialIndex = new List<int>();
 	public List<int> usedCorrectSymbolMaterialIndex = new List<int> ();
 	public List<int> theseButtonsIndex = new List<int>();
@@ -61,14 +61,14 @@ public class RoundRoomWalls : RoomVariables
 		{
 			//Generates list of possible buttons to be selected
 			List<RoundDoors> tempButtons = new List<RoundDoors>();
-			foreach (GameObject _button in buttons)
+			foreach (RoundDoors _button in buttons)
 			{
 				//Conditions for buttons to be added to list of possible buttons to be selected
-				if (!usedButtons.Contains(_button.GetComponent<RoundDoors>()) &&
-					(firstLayer == false || (firstLayer == true && _button.GetComponent<RoundDoors>().layer != 1)) &&
-					_button.GetComponent<RoundDoors>().layer != tempLayer)
+				if (!usedButtons.Contains(_button) &&
+					(firstLayer == false || (firstLayer == true && _button.layer != 1)) &&
+					_button.layer != tempLayer)
 				{
-					tempButtons.Add(_button.GetComponent<RoundDoors>());
+					tempButtons.Add(_button);
 				}
 			}
 			//Generates random values for button variables
@@ -83,9 +83,9 @@ public class RoundRoomWalls : RoomVariables
 			usedButtons.Add(tempButtons[randomButtonInt]);
 		}
 		//Opens the rooms that has not been entered
-		foreach (GameObject _button in buttons)
+		foreach (RoundDoors _button in buttons)
 		{
-			RpcFindPath(_button, false,0);
+			RpcFindPath(_button.gameObject, false,0);
 		}
 	}
 
@@ -121,7 +121,7 @@ public class RoundRoomWalls : RoomVariables
 
 
 			//Looks for & opens path. If path fails, marks as 'False' to be Re-Randomized 
-			if (!_button.GetComponent<RoundDoors> ().FindPath (_button.GetComponent<RoundDoors> ())) {
+			if (!_button.GetComponent<RoundDoors>().FindPath (_button.GetComponent<RoundDoors>())) {
 				foundPath = false;
 			}
 			//If Path failed; Re-Randomize everything
@@ -154,12 +154,12 @@ public class RoundRoomWalls : RoomVariables
 	{
 		foreach (GameObject bwa in walls)
 		{
-			bwa.SetActive(_walls);
+			bwa.SetActive (_walls);
 		}
-		foreach (GameObject bwu in buttons)
+		foreach (RoundDoors bwu in buttons)
 		{
-			bwu.GetComponent<RoundDoors>().entered = false;
-			bwu.GetComponent<RoundDoors>().enteredNow = false;
+			bwu.entered = false;
+			bwu.enteredNow = false;
 			bwu.GetComponent<Renderer> ().material = defaultButtonMaterial;
 			bwu.tag = "Untagged";
 		}
