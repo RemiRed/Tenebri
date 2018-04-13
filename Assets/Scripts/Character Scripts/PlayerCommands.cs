@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class PlayerCommands : NetworkBehaviour
-{
+{   [SerializeField]
+    RevealMap map1, map2, wall;
     [SerializeField]
     RoomLoader roomLoader;
 
@@ -35,8 +36,27 @@ public class PlayerCommands : NetworkBehaviour
 
 
     }
+ 
+
+
 
     [Command]
+    public void CmdMazeLever0()
+    {
+    map1.RpcRevealMap();
+    }
+    [Command]
+    public void CmdMazeLever1()
+    {
+    map2.RpcRevealMap();
+    }
+    [Command]
+    public void CmdMazeLever2()
+    {
+    wall.RpcWallRemover();
+    }
+
+[Command]
     public void CmdLoad() //Loads the next room, or last room if the last room is the next room
     {
         if (roomLoader.nextRoomNumber < roomLoader.numberOfRooms)
