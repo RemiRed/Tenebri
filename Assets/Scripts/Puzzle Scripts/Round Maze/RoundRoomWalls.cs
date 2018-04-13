@@ -178,7 +178,6 @@ public class RoundRoomWalls : RoomVariables
 	public override void CompleteSuccess(){
 
 		Debug.LogWarning ("You passed this Puzzle");
-
 		passed = true;
 		CloseWalls (false);
 		OpenDoorToNextLevel ();
