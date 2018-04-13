@@ -24,8 +24,7 @@ public class SuccessCondition : RoomVariables {
 
 	public void OpenDoorToNextLevel(){
 
-		//Add the functions to progress to next level here
-
+		 
 		Debug.Log ("Door to next level should now be open");
 	}
 }

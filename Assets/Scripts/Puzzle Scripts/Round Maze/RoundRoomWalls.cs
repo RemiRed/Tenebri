@@ -21,7 +21,7 @@ public class RoundRoomWalls : RoomVariables
 	public Material defaultButtonMaterial;
 
 	[SerializeField]
-	int numberOfButtons, curButtonNumber;
+	int numberOfButtons, curButtonNumber, numberOfPasswordButtons;
 
 	bool foundPath = true;
 
@@ -97,7 +97,7 @@ public class RoundRoomWalls : RoomVariables
 			curButtonNumber++;
 			_button.tag = "Interractable"; 
 			//Sets first button to be the correct matching button
-			if (curButtonNumber == 1) {
+			if (curButtonNumber <= numberOfPasswordButtons) {
 
 				_button.GetComponent<PasswordButton>().SetPasswordButton(1, pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material);
 				usedCorrectSymbolMaterialIndex.Add (_randomSymbol);
