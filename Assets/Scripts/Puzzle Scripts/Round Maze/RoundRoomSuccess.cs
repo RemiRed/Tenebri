@@ -22,9 +22,10 @@ public class RoundRoomSuccess : SuccessCondition {
 
 	public override void CompleteSuccess(){
 
-
 		Debug.LogWarning ("You passed this Puzzle");
 		GetComponent<RoundRoomWalls> ().passed = true;
+		GetComponent<RoundRoomWalls> ().CloseWalls (false);
+	//	GetComponent<>
 	}
 
 	public override void Failure(){
