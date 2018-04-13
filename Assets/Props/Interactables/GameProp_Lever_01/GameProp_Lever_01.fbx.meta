@@ -1,19 +1,24 @@
 fileFormatVersion: 2
-guid: c78237e7c5f65b248a4b21b42f91a4bb
-timeCreated: 1521547951
+guid: 9308326d81e464348ade0b83880e60d3
+timeCreated: 1523617536
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: GameProp_Lever_Handle_01
-    100002: //RootNode
-    400000: GameProp_Lever_Handle_01
-    400002: //RootNode
-    2100000: GameProp_Lever_01_Mat
-    2300000: GameProp_Lever_Handle_01
-    3300000: GameProp_Lever_Handle_01
-    4300000: GameProp_Lever_Handle_01
-    9500000: //RootNode
+    100000: //RootNode
+    100002: GameProp_LeverBase_01
+    100004: GameProp_LeverHandle_02
+    400000: //RootNode
+    400002: GameProp_LeverBase_01
+    400004: GameProp_LeverHandle_02
+    2100000: GameProp_LeverBase_01_Mat
+    2100002: GameProp_LeverHandle_01_Mat
+    2300000: GameProp_LeverBase_01
+    2300002: GameProp_LeverHandle_02
+    3300000: GameProp_LeverBase_01
+    3300002: GameProp_LeverHandle_02
+    4300000: GameProp_LeverBase_01
+    4300002: GameProp_LeverHandle_02
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -88,7 +93,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
