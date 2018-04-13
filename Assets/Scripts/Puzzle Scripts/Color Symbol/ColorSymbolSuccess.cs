@@ -21,13 +21,13 @@ public class ColorSymbolSuccess : SuccessCondition  {
 	public override void CompleteSuccess(){
 
 		Debug.LogWarning ("You passed this Puzzle");
-		passed = true;
+		GetComponent<RoomVariables> ().passed = true;
 		OpenDoorToNextLevel ();
 	}
 
 	public override void Failure(){
 
 		Debug.Log ("Wrong password");
-		Fail ();
+		GetComponent<RoomVariables> ().Fail ();
 	}
 }

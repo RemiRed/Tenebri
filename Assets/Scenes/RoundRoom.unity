@@ -8826,12 +8826,12 @@ Prefab:
     - target: {fileID: 114758476289704988, guid: b2cebb1b3f4a5fd4ab9ec21c04c64c79,
         type: 2}
       propertyPath: timerSeconds
-      value: 60
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 114758476289704988, guid: b2cebb1b3f4a5fd4ab9ec21c04c64c79,
         type: 2}
       propertyPath: timerPenalty
-      value: 1.25
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2cebb1b3f4a5fd4ab9ec21c04c64c79, type: 2}
@@ -9818,6 +9818,7 @@ MonoBehaviour:
     type: 2}
   numberOfButtons: 5
   curButtonNumber: 0
+  numberOfPasswordButtons: 1
 --- !u!114 &1438943448
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class RoomVariables : NetworkBehaviour
 	bool firstPenalty = true, startTimer = false; 
 	public bool passed = false;
 
-    protected bool Fail()
+	public /*protected*/ bool Fail()
     {
         if (firstPenalty)
         {
@@ -54,4 +54,21 @@ public class RoomVariables : NetworkBehaviour
     {
 		Debug.LogError ("NI E KASS, LUL GEJM ÖVER. GETGUDSTÄDSKRUBB");
     }
+
+//	public void OpenDoorToNextLevel(){
+//
+//		Debug.Log ("Door to next level should now be open");
+//	}
+//
+//	public virtual void CompleteSuccess(){
+//
+//	}
+//
+//	public virtual void PartialSuccess(){
+//
+//	}
+//
+//	public virtual void Failure(){
+//
+//	}
 }
