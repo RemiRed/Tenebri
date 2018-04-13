@@ -99,9 +99,7 @@ public class RoundRoomWalls : RoomVariables
 			//Sets first button to be the correct matching button
 			if (curButtonNumber == 1) {
 
-
 				_button.GetComponent<PasswordButton>().SetPasswordButton(1, pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material);
-				Debug.Log (_button.GetComponent<Renderer>().material);
 				usedCorrectSymbolMaterialIndex.Add (_randomSymbol);
 
 			} else {

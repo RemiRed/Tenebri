@@ -8,9 +8,7 @@ public class RoundRoomSuccess : SuccessCondition {
 	void Start () {
 		
 	}
-
-
-	
+		
 	// Update is called once per frame
 	void Update () {
 		
