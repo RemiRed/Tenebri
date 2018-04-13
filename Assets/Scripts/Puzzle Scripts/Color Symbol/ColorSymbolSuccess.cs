@@ -13,4 +13,16 @@ public class ColorSymbolSuccess : SuccessCondition  {
 	void Update () {
 		
 	}
+
+	public override void CompleteSuccess(){
+
+	}
+
+	public override void PartialSuccess(){
+
+	}
+
+	public override void Failure(){
+
+	}
 }

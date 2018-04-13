@@ -21,4 +21,11 @@ public class SuccessCondition : MonoBehaviour {
 	public virtual void Failure(){
 
 	}
+
+	public void OpenDoorToNextLevel(){
+
+		//Add the functions to progress to next level here
+
+	}
+
 }

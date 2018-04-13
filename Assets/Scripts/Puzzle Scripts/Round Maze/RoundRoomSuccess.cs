@@ -25,7 +25,7 @@ public class RoundRoomSuccess : SuccessCondition {
 		Debug.LogWarning ("You passed this Puzzle");
 		GetComponent<RoundRoomWalls> ().passed = true;
 		GetComponent<RoundRoomWalls> ().CloseWalls (false);
-	//	GetComponent<>
+		OpenDoorToNextLevel ();
 	}
 
 	public override void Failure(){

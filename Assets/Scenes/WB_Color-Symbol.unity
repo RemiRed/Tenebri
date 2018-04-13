@@ -282,6 +282,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114716514275749502, guid: 35da988b39aba1442a8a0148f6ef1e79,
+        type: 2}
+      propertyPath: pairedRoom
+      value: 
+      objectReference: {fileID: 1871021393}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35da988b39aba1442a8a0148f6ef1e79, type: 2}
   m_IsPrefabParent: 0
@@ -939,3 +944,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b2a46fd8f442674698972039a38b549, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1871021393 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1004689718124106, guid: 6b2a46fd8f442674698972039a38b549,
+    type: 2}
+  m_PrefabInternal: {fileID: 1871021392}
