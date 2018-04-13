@@ -5,8 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/OnlineMenu.unity
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/2b99c08f148dd874e88cb8b07686ec6b
     guid: 2b99c08f148dd874e88cb8b07686ec6b
   - enabled: 1
     path: Assets/Scenes/AndresWhiteBoxMazeLevel.unity
@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WB_Color-Symbol.unity
     guid: fd5a00bda3e5604479a78f641f9b4edf
+  - enabled: 1
+    path: Assets/Scenes/OnlineMenu.unity
+    guid: c30880d600f294e44817bb02cc5ba12a
