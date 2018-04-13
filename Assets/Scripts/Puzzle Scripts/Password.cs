@@ -38,18 +38,19 @@ public class Password : MonoBehaviour {
 				}
 				nextID++;
 				
-			} else if (_ID == 1) {	//If first password button is pressed, password input is restarted to first password button
-			
-				nextID = 2;
-				passwordLock = 1;
+			} else {
 
-			} else { /* if (_ID != nextID - 1)*///Resets password input unless last password button is pressed
+				if (_ID == 1) {	//If first password button is pressed, password input is restarted to first password button
 
-//			if (passwordLock != 0) {
+					nextID = 2;
+					passwordLock = 1;
 
+				} else if (_ID != nextID - 1) {
+
+					nextID = 1;
+					passwordLock = 0;
+				}
 				success.Failure ();
-				nextID = 1;
-				passwordLock = 0;
 				curPasswordRound = 1;
 			}
 		}

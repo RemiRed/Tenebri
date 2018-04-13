@@ -4365,7 +4365,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -4495,14 +4495,9 @@ MonoBehaviour:
   m_MaxPlayers: 2
   m_MaxPlayersPerConnection: 1
   m_MinPlayers: 1
-<<<<<<< HEAD
-  m_LobbyPlayerPrefab: {fileID: 0}
-  m_GamePlayerPrefab: {fileID: 1377563522295830, guid: e7f3ef519ade32943b9d9ab227ea526f,
-=======
   m_LobbyPlayerPrefab: {fileID: 114249392509095042, guid: 3821b0b42a44b154eb953f5659c10b96,
     type: 2}
   m_GamePlayerPrefab: {fileID: 1377563522295830, guid: 6fc933b378ccb8b4b8ed9c45e0c22dd2,
->>>>>>> 671d8d166a2a7418c1d78962a9988725bcbdf664
     type: 2}
   m_LobbyScene: OnlineMenu
   m_PlayScene: RoundRoom
