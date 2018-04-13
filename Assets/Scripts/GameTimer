@@ -1,0 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameTimer : MonoBehaviour {
+
+  public void TotalTime()
+  {
+    //Change to UI instead of print
+    print(Time.timeSinceLevelLoad / 60 + ":" Time.timeSinceLevelLoad % 60);
+  }
+}
