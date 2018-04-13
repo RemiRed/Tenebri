@@ -2324,12 +2324,28 @@ Prefab:
       propertyPath: m_Name
       value: Prop_Candelabra_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.598
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.0564
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.988
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0111a1443408734abc35567e807b4ce, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &305562643 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4561367250933602, guid: b0111a1443408734abc35567e807b4ce,
+  m_PrefabParentObject: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce,
     type: 2}
   m_PrefabInternal: {fileID: 305562642}
 --- !u!4 &306135467 stripped
@@ -3713,12 +3729,28 @@ Prefab:
       propertyPath: m_Name
       value: Prop_Candelabra_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.579
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.0325
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.872
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_RootOrder
+      value: 43
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0111a1443408734abc35567e807b4ce, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &485823089 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4561367250933602, guid: b0111a1443408734abc35567e807b4ce,
+  m_PrefabParentObject: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce,
     type: 2}
   m_PrefabInternal: {fileID: 485823088}
 --- !u!1001 &495804441
@@ -9007,12 +9039,24 @@ Prefab:
       propertyPath: m_Name
       value: Prop_Candelabra_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.579
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.0325
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.872
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0111a1443408734abc35567e807b4ce, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1055566204 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4561367250933602, guid: b0111a1443408734abc35567e807b4ce,
+  m_PrefabParentObject: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce,
     type: 2}
   m_PrefabInternal: {fileID: 1055566203}
 --- !u!1001 &1095762618
@@ -9181,12 +9225,24 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.598
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.0564
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.988
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0111a1443408734abc35567e807b4ce, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1103934254 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4561367250933602, guid: b0111a1443408734abc35567e807b4ce,
+  m_PrefabParentObject: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce,
     type: 2}
   m_PrefabInternal: {fileID: 1103934253}
 --- !u!1001 &1109601932
@@ -11743,12 +11799,28 @@ Prefab:
       propertyPath: m_RootOrder
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.742
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.0764
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0111a1443408734abc35567e807b4ce, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1371706026 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4561367250933602, guid: b0111a1443408734abc35567e807b4ce,
+  m_PrefabParentObject: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce,
     type: 2}
   m_PrefabInternal: {fileID: 1371706025}
 --- !u!1001 &1374119190
@@ -12828,12 +12900,28 @@ Prefab:
       propertyPath: m_Name
       value: Prop_Candelabra_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.742
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.0764
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.996
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0111a1443408734abc35567e807b4ce, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1521146568 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4561367250933602, guid: b0111a1443408734abc35567e807b4ce,
+  m_PrefabParentObject: {fileID: 4069956839736520, guid: b0111a1443408734abc35567e807b4ce,
     type: 2}
   m_PrefabInternal: {fileID: 1521146567}
 --- !u!1001 &1544974815
