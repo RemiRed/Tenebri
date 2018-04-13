@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: bdc1ef58a03e3da4aa95ccb69cdb2253
-timeCreated: 1522766290
+guid: 5e2daeac68004c3429bfcd3238168f6e
+timeCreated: 1522830487
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -13,7 +13,7 @@ ModelImporter:
     4300000: Prop_Cabinet_01
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
