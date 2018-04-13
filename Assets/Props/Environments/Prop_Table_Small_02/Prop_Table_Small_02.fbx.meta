@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: dedefe1e306ac0946bca65115a35dcbc
-timeCreated: 1522938057
+guid: 7534da35c98ab5a45b34dda83b7707e9
+timeCreated: 1523108930
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -14,7 +14,7 @@ ModelImporter:
     4300000: Prop_Table_Small_02
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -67,7 +67,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

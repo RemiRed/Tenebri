@@ -18,12 +18,16 @@ ModelImporter:
     400008: transform1
     400010: transform2
     2100000: lambert1
+    2100002: lambert2
     2300000: pPlane26
+    2300002: //RootNode
     3300000: pPlane26
+    3300002: //RootNode
     4300000: pPlane26
+    4300002: Prop_CeilingFlat3x3_01
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1

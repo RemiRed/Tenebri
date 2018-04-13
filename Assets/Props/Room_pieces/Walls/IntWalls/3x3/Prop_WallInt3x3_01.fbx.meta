@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 230a50be757076848b50483060fe1a6b
-timeCreated: 1522075767
+guid: d6c92c32549513949907f5322d98a461
+timeCreated: 1521118598
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -14,7 +14,7 @@ ModelImporter:
     4300000: Prop_WallInt3x3_03
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -61,13 +61,13 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

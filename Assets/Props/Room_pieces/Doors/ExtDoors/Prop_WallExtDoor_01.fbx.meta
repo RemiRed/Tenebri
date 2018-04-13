@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f66fcc02b1a180245b8749bc1efa9f03
-timeCreated: 1522938062
+guid: 8f75e97873d3a7e4180441b2e5f52a6a
+timeCreated: 1522915493
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -32,7 +32,7 @@ ModelImporter:
     4300006: Handle
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1

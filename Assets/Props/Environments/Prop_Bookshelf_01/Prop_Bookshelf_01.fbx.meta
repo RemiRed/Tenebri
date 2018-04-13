@@ -1,28 +1,20 @@
 fileFormatVersion: 2
-guid: 85b77e3dd5f1b0448bca13a4c2ec69af
-timeCreated: 1522938057
+guid: f55e29a8e66cfdb4b94a707a39b2905c
+timeCreated: 1522830489
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: polySurface135
-    100002: //RootNode
-    100004: Prop_Bookshelf_01 1
-    400000: polySurface135
-    400002: //RootNode
-    400004: Prop_Bookshelf_01 1
-    2100000: Prop_Bookshelf_01_Mat1
-    2100002: Prop_Bookshelf_01_Mat
-    2300000: polySurface135
-    2300002: Prop_Bookshelf_01 1
-    3300000: polySurface135
-    3300002: Prop_Bookshelf_01 1
-    4300000: polySurface135
-    4300002: Prop_Bookshelf_01
+    100000: //RootNode
+    400000: //RootNode
+    2100000: lambert1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pCube1
     9500000: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -75,7 +67,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -94,7 +86,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
