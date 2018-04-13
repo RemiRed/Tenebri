@@ -27,9 +27,14 @@ public class CameraController : NetworkBehaviour
     {
         if (character.GetComponent<CharacterScript>().menu)
         {
-        character.GetComponent<Rigidbody>().freezeRotation = true;
+            character.GetComponent<Rigidbody>().freezeRotation = true;
             return;
         }
+        else   
+        {
+            character.GetComponent<Rigidbody>().freezeRotation = false;
+        }
+        
 
         var md = new Vector2(Input.GetAxisRaw("Horizontal Camera"), Input.GetAxisRaw("Vertical Camera"));
 
