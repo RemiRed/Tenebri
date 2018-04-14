@@ -6,13 +6,14 @@ public class RoundDoors : MonoBehaviour {
 
 	public RoundRoomWalls resetManager;
 
+	public GameObject graphicalObject;
     [SerializeField]
 	List<RoundWallDoors> WallList = new List<RoundWallDoors> ();
 	[SerializeField]
 	List<RoundDoors> availableRoomsList = new List<RoundDoors> ();
 	List <RoundDoors> backupRoomList = new List<RoundDoors>();  //room list har alla angränsande rum som antingen är på samma lager eller ett lager in, wall list är väggarna till de rummen.
     public bool entered = false, enteredNow = false;
-    public int layer; 
+	public int layer; 
 
     public int buttonNumber;
 
@@ -36,7 +37,7 @@ public class RoundDoors : MonoBehaviour {
 			//Uppdates availible rooms list to not include rooms previously entered by this path
 			availableRoomsList.Clear ();
 			foreach (RoundDoors _room in backupRoomList) {
-
+				
 				if (!_room.enteredNow && _room.layer <= layer /* Honestly makes it a lot more stable*/) {
 
 					availableRoomsList.Add (_room);

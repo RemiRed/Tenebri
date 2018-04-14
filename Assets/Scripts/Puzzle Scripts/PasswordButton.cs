@@ -5,9 +5,9 @@ using UnityEngine;
 public class PasswordButton : Interractable {
 
 	public Password passwordManager;
-
+	public GameObject graphicalObject;
 	public Material symbol;
-	public int buttonOrderID;
+	public int buttonOrderID, materialIndex;
 	public bool lightUpOnPress;
 
 	bool buttonActive = true;
@@ -22,7 +22,9 @@ public class PasswordButton : Interractable {
 			passwordManager.CheckPassword (buttonOrderID);
 
 			if (lightUpOnPress) {
-				gameObject.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.white);
+				Material[] _materials = graphicalObject.GetComponent<Renderer> ().materials;
+				_materials[materialIndex].SetColor ("_EmissionColor", Color.white);
+				graphicalObject.GetComponent<Renderer> ().materials = _materials;
 			}
 		}
 	}
@@ -31,7 +33,9 @@ public class PasswordButton : Interractable {
 	void RevertColor(){
 
 		buttonActive = true;
-		gameObject.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.black);
+		Material[] _materials = graphicalObject.GetComponent<Renderer> ().materials;
+		_materials[materialIndex].SetColor ("_EmissionColor", Color.black);
+		graphicalObject.GetComponent<Renderer> ().materials = _materials;
 	}
 
 	//Sets initial values. Called from 'PasswordRandomizer'
@@ -39,7 +43,9 @@ public class PasswordButton : Interractable {
 
 		buttonOrderID = _OrderID;
 		symbol = _Symbol;
-		GetComponent<Renderer> ().material = symbol;
+		Material[] _materials = graphicalObject.GetComponent<Renderer> ().materials;
+		_materials [materialIndex] = symbol;
+		graphicalObject.GetComponent<Renderer> ().materials = _materials;
 	}
 
 	public void SetPasswordButton(bool _active){

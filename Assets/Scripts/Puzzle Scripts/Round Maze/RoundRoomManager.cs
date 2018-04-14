@@ -12,9 +12,9 @@ public class RoundRoomManager : NetworkBehaviour {
 	[SerializeField]
 	List<int> symbolOrder = new List<int> (), colorOrder = new List<int>(); 
 
-	bool symbolsSet = false;
+	List<Material> _symbols = new List<Material> ();
 
-	public List<Material> _symbols = new List<Material> ();
+	bool symbolsSet = false;
 
 	void Start(){
 
@@ -24,9 +24,10 @@ public class RoundRoomManager : NetworkBehaviour {
 
 				_symbols.Add(_symbol);
 			}
+
 			for (int i = 0; i < wallSymbols.Count; i++) {
 
-				int _randomSymbol = Random.Range (0, (_symbols.Count));
+				int _randomSymbol = Random.Range (0, _symbols.Count);
 				int _randomColor = Random.Range (0, symbolColors.Count);
 
 				symbolOrder.Add (_randomSymbol);
@@ -44,6 +45,7 @@ public class RoundRoomManager : NetworkBehaviour {
 			wallSymbols [_index].GetComponent<Renderer> ().material = symbols [_randomSymbol];
 			wallSymbols [_index].GetComponent<Renderer> ().material.color = symbolColors [_randomColor];
 			symbols.RemoveAt (_randomSymbol);
+			//_colors.RemoveAt (_randomColor);
 
 			if (_index == wallSymbols.Count - 1) {
 				symbolsSet = true;

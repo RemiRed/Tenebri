@@ -21,7 +21,7 @@ public class RoundRoomWalls : RoomVariables
 	public Material defaultButtonMaterial;
 
 	[SerializeField]
-	int numberOfButtons, curButtonNumber, numberOfPasswordButtons;
+	int numberOfButtons, curButtonNumber, numberOfPasswordButtons, materialIndex;
 
 	bool foundPath = true;
 
@@ -47,6 +47,7 @@ public class RoundRoomWalls : RoomVariables
 		int _curSymbolIndex = 0;
 		bool firstLayer = false;
 
+
 		//Creates list of references to the Index of maze symbol materials to be used
 		foreach (GameObject _symbol in pairedRoom.GetComponent<RoundRoomManager>().wallSymbols) {
 
@@ -59,10 +60,13 @@ public class RoundRoomWalls : RoomVariables
 		//Sets Maze buttons
 		for (int i = 0; i < numberOfButtons; i++)
 		{
+			int _n = 0;
 			//Generates list of possible buttons to be selected
 			List<RoundDoors> tempButtons = new List<RoundDoors>();
 			foreach (RoundDoors _button in buttons)
 			{
+				_button.buttonNumber = _n;
+				_n++;
 				//Conditions for buttons to be added to list of possible buttons to be selected
 				if (!usedButtons.Contains(_button) &&
 					(firstLayer == false || (firstLayer == true && _button.layer != 1)) &&
@@ -103,22 +107,23 @@ public class RoundRoomWalls : RoomVariables
 				usedCorrectSymbolMaterialIndex.Add (_randomSymbol);
 
 			} else {
-
-				_button.GetComponent<PasswordButton>().SetPasswordButton(-1, pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material);
+				
+				_button.GetComponent<PasswordButton>().SetPasswordButton(0, pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material);
 				//Changes color to a non-matching color
 				List<Color> _symbolColors = new List<Color> ();
 				foreach (Color _color in pairedRoom.GetComponent<RoundRoomManager>().symbolColors) {
 
-					if (_color != _button.GetComponent<Renderer> ().material.color) {
+					if (_color != _button.GetComponent<RoundDoors>().graphicalObject.GetComponent<Renderer> ().materials[materialIndex].color) {
 
 						_symbolColors.Add (_color);
 					}
 				}
-				_button.GetComponent<Renderer> ().material.color = _symbolColors [Random.Range (0, _symbolColors.Count)];
+				Material[] _materials = _button.GetComponent<RoundDoors> ().graphicalObject.GetComponent<Renderer> ().materials;
+				_materials [materialIndex].color = _symbolColors [Random.Range (0, _symbolColors.Count)];
+				_button.GetComponent<RoundDoors> ().graphicalObject.GetComponent<Renderer> ().materials = _materials;
 			}
 			//Adds button locations to map room
 			theseButtonsIndex.Add (_button.GetComponent<RoundDoors> ().buttonNumber);
-
 
 			//Looks for & opens path. If path fails, marks as 'False' to be Re-Randomized 
 			if (!_button.GetComponent<RoundDoors>().FindPath (_button.GetComponent<RoundDoors>())) {
@@ -160,7 +165,9 @@ public class RoundRoomWalls : RoomVariables
 		{
 			bwu.entered = false;
 			bwu.enteredNow = false;
-			bwu.GetComponent<Renderer> ().material = defaultButtonMaterial;
+			Material[] _materials = bwu.graphicalObject.GetComponent<Renderer> ().materials;
+			_materials [materialIndex] = defaultButtonMaterial;
+			bwu.graphicalObject.GetComponent<Renderer> ().materials = _materials;
 			bwu.tag = "Untagged";
 		}
 		usedButtons.Clear();
