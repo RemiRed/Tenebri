@@ -5,6 +5,9 @@ using UnityEngine;
 public class LeverScript : Interractable
 {
 
+    [SerializeField]
+    int leverId;
+
     Animator anim;
     bool leverPulled = false;
     bool a_isPulling;
@@ -32,6 +35,38 @@ public class LeverScript : Interractable
             leverPulled = true;
            // anim.Play("Pull");
             Debug.Log("The Lever is now Pulled");
+        }
+        switch (leverId)
+        {
+
+            case 0:
+
+                playerCmd.CmdMazeLever0();
+
+                break;
+
+            case 1:
+
+                playerCmd.CmdMazeLever1();
+
+                break;
+
+            case 2:
+
+                playerCmd.CmdMazeLever2();
+
+                break;
+
+            case 3:
+
+                playerCmd.CmdLoad();
+
+                break;
+
+            default:
+
+                break;
+
         }
 
 
