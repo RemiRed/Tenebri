@@ -7,6 +7,8 @@ public class PlayerCommands : NetworkBehaviour
 {
     [SerializeField]
     RoomLoader roomLoader;
+    [SerializeField]
+    RevealMap map1, map2, wall;
 
     private void Start()
     {
@@ -33,6 +35,26 @@ public class PlayerCommands : NetworkBehaviour
     public void CmdUppdatePosition()
     {
 
+
+    }
+
+    public void CmdMazeLever0()
+    {
+
+        map1.RpcRevealMap();
+
+    }
+    [Command]
+    public void CmdMazeLever1()
+    {
+        map2.RpcRevealMap();
+    }
+    [Command]
+
+    public void CmdMazeLever2()
+    {
+
+        wall.RpcWallRemover();
 
     }
 
