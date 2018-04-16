@@ -350,9 +350,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688ba75b2a85afd4dae8d45acc192ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 3
-  smoothing: 2
-  visualAngleLimiter: 70
+  trippy: 0
+  sensitivity: 7
+  smoothing: 5
+  visualAngleLimiter: 180
 --- !u!114 &114605931160798978
 MonoBehaviour:
   m_ObjectHideFlags: 1
