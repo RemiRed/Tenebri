@@ -9,9 +9,7 @@ public class RevealMap : NetworkBehaviour
     [ClientRpc]
     public void RpcRevealMap()
     {
-        //Reveal the map
-        print("Lever on clients");
-
+        gameObject.GetComponent<Renderer>().enabled = true;
     }
 
 
@@ -19,8 +17,8 @@ public class RevealMap : NetworkBehaviour
     public void RpcWallRemover()
 
     {
-
-        // Flytta väggen.
+        Debug.Log("Wall is now a gonner");
+        gameObject.SetActive(false);
     }
 
 
