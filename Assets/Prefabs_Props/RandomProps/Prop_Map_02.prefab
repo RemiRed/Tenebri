@@ -21,8 +21,6 @@ GameObject:
   - component: {fileID: 4547550969068570}
   - component: {fileID: 33155995704959668}
   - component: {fileID: 23372967795013560}
-  - component: {fileID: 114866511093622630}
-  - component: {fileID: 114248381586017700}
   m_Layer: 0
   m_Name: Prop_Map_02
   m_TagString: Untagged
@@ -36,13 +34,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1576177458500620}
-  m_LocalRotation: {x: -0.50000006, y: -0.5, z: 0.50000006, w: 0.5}
-  m_LocalPosition: {x: 108.64, y: 9.711, z: 94.633}
-  m_LocalScale: {x: 2.026717, y: 2.0267172, z: 2.0267172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90.00001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23372967795013560
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -84,46 +82,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1576177458500620}
   m_Mesh: {fileID: 4300000, guid: a24554cabc5f5d744ba9141fa276e913, type: 3}
---- !u!114 &114248381586017700
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1576177458500620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79f4aa54d2053cd4ebe7c5fb190cda2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114866511093622630
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1576177458500620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 50
-    i1: 128
-    i2: 0
-    i3: 68
-    i4: 125
-    i5: 211
-    i6: 165
-    i7: 148
-    i8: 154
-    i9: 55
-    i10: 92
-    i11: 242
-    i12: 40
-    i13: 27
-    i14: 217
-    i15: 216
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
