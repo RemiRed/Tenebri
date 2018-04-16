@@ -7,8 +7,8 @@ public class PlayerCommands : NetworkBehaviour
 {
     [SerializeField]
     RoomLoader roomLoader;
-    [SerializeField]
-    RevealMap map1, map2, wall;
+    
+    public GameObject map1, map2, wall;
 
     private void Start()
     {
@@ -38,23 +38,24 @@ public class PlayerCommands : NetworkBehaviour
 
     }
 
+    [Command]
     public void CmdMazeLever0()
     {
 
-        map1.RpcRevealMap();
+        map1.GetComponent<RevealMap>().RpcRevealMap();
 
     }
     [Command]
     public void CmdMazeLever1()
     {
-        map2.RpcRevealMap();
+        map2.GetComponent<RevealMap>().RpcRevealMap();
     }
-    [Command]
 
+    [Command]
     public void CmdMazeLever2()
     {
 
-        wall.RpcWallRemover();
+        wall.GetComponent<RevealMap>().RpcWallRemover();
 
     }
 

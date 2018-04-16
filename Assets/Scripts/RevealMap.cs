@@ -5,13 +5,15 @@ using UnityEngine.Networking;
 
 public class RevealMap : NetworkBehaviour
 {
+    [SerializeField]
+    
 
     [ClientRpc]
     public void RpcRevealMap()
     {
         //Reveal the map
         print("Lever on clients");
-
+        gameObject.GetComponent<Renderer>().enabled = true;
     }
 
 
@@ -19,7 +21,8 @@ public class RevealMap : NetworkBehaviour
     public void RpcWallRemover()
 
     {
-
+        Debug.Log("Wall is now a gonner");
+        gameObject.SetActive(false);
         // Flytta väggen.
     }
 
