@@ -11,8 +11,6 @@ public class RoundMazeMapRoom : RoomVariables
     [ClientRpc]
     public void RpcMapButtons()
     {  
-		Debug.Log ("setting  map buttons");
-
 		for (int i = 0; i < mapButtons.Count; i++) {
 
 			if (pairedRoom.GetComponent<RoundRoomWalls> ().theseButtonsIndex.Contains (i)) {

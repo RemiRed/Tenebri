@@ -6,20 +6,20 @@ using UnityEngine.Networking;
 public class CameraController : NetworkBehaviour
 {
 
+	public bool trippy;
     Vector2 mouseLook;
     Vector2 smoothV;
-    [SerializeField]
+	[SerializeField][Range(1,10)]
     float sensitivity;
-    [SerializeField]
+	[SerializeField][Range(1,10)]
     float smoothing;
-    [SerializeField]
+	[SerializeField][Range(0,180)]
     float visualAngleLimiter = 80;
 
     GameObject character;
 
     void Start()
     {
-
         character = transform.parent.gameObject;
     }
 
@@ -32,21 +32,19 @@ public class CameraController : NetworkBehaviour
         }
         
 
-        var md = new Vector2(Input.GetAxisRaw("Horizontal Camera"), Input.GetAxisRaw("Vertical Camera"));
+		var cameraView = new Vector2(Input.GetAxisRaw("Horizontal Camera"), Input.GetAxisRaw("Vertical Camera"));
 
-        md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
-        smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f / smoothing);
-        smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smoothing);
+        cameraView = Vector2.Scale(cameraView, new Vector2(sensitivity * 1.25f, sensitivity));
+        smoothV.x = Mathf.Lerp(smoothV.x, cameraView.x, 1f / smoothing);
+        smoothV.y = Mathf.Lerp(smoothV.y, cameraView.y, 1f / smoothing);
         mouseLook += smoothV;
 
-        transform.localRotation = Quaternion.AngleAxis(Mathf.Clamp(-mouseLook.y, -visualAngleLimiter, visualAngleLimiter), Vector3.right);
+		mouseLook.y = Mathf.Clamp (mouseLook.y, -visualAngleLimiter, visualAngleLimiter);
+		if (trippy) {
+			mouseLook.y = 180;
+		}
+		transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
         character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, character.transform.up);
-
-
-        if (mouseLook.y < -visualAngleLimiter)
-            mouseLook.y = -visualAngleLimiter;
-        if (mouseLook.y > visualAngleLimiter)
-            mouseLook.y = visualAngleLimiter;
     }
 
 }
