@@ -105,10 +105,8 @@ public class RoundRoomWalls : RoomVariables
 
 				_button.GetComponent<PasswordButton>().SetPasswordButton(1, pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material);
 				usedCorrectSymbolMaterialIndex.Add (_randomSymbol);
-                pairedRoom.GetComponent<RoundMazeMapRoom>().mapButtonColors.Add(pairedRoom.GetComponent<RoundRoomManager>().wallSymbols[_randomSymbol].GetComponent<Renderer>().material.color);
-                theseButtonsIndex.Add(_button.GetComponent<RoundDoors>().buttonNumber);
 
-            } else {
+			} else {
 				
 				_button.GetComponent<PasswordButton>().SetPasswordButton(0, pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material);
 				//Changes color to a non-matching color
@@ -118,19 +116,14 @@ public class RoundRoomWalls : RoomVariables
 					if (_color != _button.GetComponent<RoundDoors>().graphicalObject.GetComponent<Renderer> ().materials[materialIndex].color) {
 
 						_symbolColors.Add (_color);
-                    }
+					}
 				}
 				Material[] _materials = _button.GetComponent<RoundDoors> ().graphicalObject.GetComponent<Renderer> ().materials;
-                int _randomIndex = Random.Range(0, _symbolColors.Count);
-                _materials [materialIndex].color = _symbolColors [_randomIndex];
-                theseButtonsIndex.Sort();
-                pairedRoom.GetComponent<RoundMazeMapRoom>().mapButtonColors.Add(_symbolColors[_randomIndex]);
+				_materials [materialIndex].color = _symbolColors [Random.Range (0, _symbolColors.Count)];
 				_button.GetComponent<RoundDoors> ().graphicalObject.GetComponent<Renderer> ().materials = _materials;
-                theseButtonsIndex.Add(_button.GetComponent<RoundDoors>().buttonNumber);
-            }
+			}
 			//Adds button locations to map room
-			
-
+			theseButtonsIndex.Add (_button.GetComponent<RoundDoors> ().buttonNumber);
 
 			//Looks for & opens path. If path fails, marks as 'False' to be Re-Randomized 
 			if (!_button.GetComponent<RoundDoors>().FindPath (_button.GetComponent<RoundDoors>())) {
@@ -180,7 +173,6 @@ public class RoundRoomWalls : RoomVariables
 		usedButtons.Clear();
 		mazeSymbolMaterialIndex.Clear();
 		theseButtonsIndex.Clear();
-        pairedRoom.GetComponent<RoundMazeMapRoom>().mapButtonColors.Clear();
 		foundPath = true;
 	}
 
