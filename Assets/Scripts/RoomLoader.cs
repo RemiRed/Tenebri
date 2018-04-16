@@ -9,9 +9,6 @@ public class RoomLoader : NetworkBehaviour
     GameObject corridorPrefab;
 
     [SerializeField]
-    GameObject finalRoomPrefab;
-
-    [SerializeField]
     GameObject doorPrefab;
 
     public int numberOfRooms;
@@ -37,7 +34,7 @@ public class RoomLoader : NetworkBehaviour
 
     [SerializeField]
     List<GameObject> doorsP2 = new List<GameObject>();
-    
+
 
     private void Start()
     {
@@ -106,26 +103,6 @@ public class RoomLoader : NetworkBehaviour
 
 
     }
-    
-    public void LoadFinalRoom() //Loads the final room
-    {
-        if (!isServer)
-        {
-            return;
-        }
-        NetworkServer.Destroy(currentRoomP1);
-        NetworkServer.Destroy(currentRoomP2);
-
-        currentRoomP1 = Instantiate(finalRoomPrefab, currentCorridorP1.transform.position + new Vector3(0, 0, (finalRoomPrefab.GetComponent<RoomVariables>().roomLength + currentCorridorP1.GetComponent<RoomVariables>().roomLength) / 2f), new Quaternion());
-        currentRoomP2 = Instantiate(finalRoomPrefab, currentCorridorP2.transform.position + new Vector3(0, 0, (finalRoomPrefab.GetComponent<RoomVariables>().roomLength + currentCorridorP2.GetComponent<RoomVariables>().roomLength) / 2f), new Quaternion());
-
-        NetworkServer.Spawn(currentRoomP1);
-        NetworkServer.Spawn(currentRoomP2);
-
-        doorsP1.Add(Instantiate(doorPrefab, currentCorridorP1.transform.position + new Vector3(0, 1.25f, (finalRoomPrefab.GetComponent<RoomVariables>().roomLength * 2 + currentCorridorP1.GetComponent<RoomVariables>().roomLength) / 2f), new Quaternion()));
-        doorsP2.Add(Instantiate(doorPrefab, currentCorridorP2.transform.position + new Vector3(0, 1.25f, (finalRoomPrefab.GetComponent<RoomVariables>().roomLength * 2 + currentCorridorP2.GetComponent<RoomVariables>().roomLength) / 2f), new Quaternion()));
-
-    }
 
     public void LoadNextRoom() //Loads the next room
     {
@@ -142,7 +119,7 @@ public class RoomLoader : NetworkBehaviour
 
         NetworkServer.Spawn(currentRoomP1);
         NetworkServer.Spawn(currentRoomP2);
-                
+
         doorsP1.Add(Instantiate(doorPrefab, currentCorridorP1.transform.position + new Vector3(0, 1.25f, (roomsP1[nextRoomNumber].GetComponent<RoomVariables>().roomLength * 2 + currentCorridorP1.GetComponent<RoomVariables>().roomLength) / 2f), new Quaternion()));
         doorsP2.Add(Instantiate(doorPrefab, currentCorridorP2.transform.position + new Vector3(0, 1.25f, (roomsP2[nextRoomNumber].GetComponent<RoomVariables>().roomLength * 2 + currentCorridorP2.GetComponent<RoomVariables>().roomLength) / 2f), new Quaternion()));
 
