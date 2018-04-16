@@ -33,7 +33,7 @@ public class LeverScript : Interractable
             }
 
             leverPulled = true;
-           //anim.Play("Pull");
+           anim.Play("Pull");
             Debug.Log("The Lever is now Pulled");
         }
         switch (leverId)
@@ -71,7 +71,7 @@ public class LeverScript : Interractable
 
 
     }
-    void LettinGo()
+    void LetGo()
     {
         if (leverPulled)
             if (leverPulled = !false)
