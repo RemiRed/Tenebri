@@ -335,8 +335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 32
-  jumpSpeed: 55
-  maxJumpHeight: 2
+  jumpSpeed: 32
+  maxJumpHeight: 1.75
   gravity: 120
   maxFallSpeed: 200
   menu: 0
@@ -352,8 +352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trippy: 0
-  sensitivity: 5
-  smoothing: 3
+  sensitivity: 6
+  smoothing: 3.2
   visualAngleLimiter: 85
 --- !u!114 &114605931160798978
 MonoBehaviour:
