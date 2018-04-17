@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114029520191848596}
   - component: {fileID: 114605931160798978}
   - component: {fileID: 82455756428582076}
-  - component: {fileID: 114942128539173700}
+  - component: {fileID: 114735787209702174}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -335,8 +335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 32
-  jumpSpeed: 55
-  maxJumpHeight: 2
+  jumpSpeed: 32
+  maxJumpHeight: 1.75
   gravity: 120
   maxFallSpeed: 200
   menu: 0
@@ -352,8 +352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trippy: 0
-  sensitivity: 5
-  smoothing: 3
+  sensitivity: 6
+  smoothing: 3.2
   visualAngleLimiter: 85
 --- !u!114 &114605931160798978
 MonoBehaviour:
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
---- !u!114 &114942128539173700
+--- !u!114 &114735787209702174
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -418,7 +418,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.35
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
