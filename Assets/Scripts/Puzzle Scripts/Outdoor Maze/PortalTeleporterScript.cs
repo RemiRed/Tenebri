@@ -22,7 +22,6 @@ public class PortalTeleporterScript : MonoBehaviour {
             {
                 // Teleportera spelaren. 
                 float rotationDiff = -Quaternion.Angle(transform.rotation, reciver.rotation);
-               // rotationDiff += 40;
                 player.Rotate(Vector3.up, rotationDiff);
 
                 Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;

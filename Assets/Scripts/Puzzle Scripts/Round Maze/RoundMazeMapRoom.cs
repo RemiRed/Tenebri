@@ -7,11 +7,12 @@ public class RoundMazeMapRoom : RoomVariables
 {
     [SerializeField]
     List<GameObject> mapButtons = new List<GameObject>();
+    public List<Color> mapColours = new List<Color>();
 
     [ClientRpc]
     public void RpcMapButtons()
-    {  
-		for (int i = 0; i < mapButtons.Count; i++) {
+    {
+        /*for (int i = 0; i < mapButtons.Count; i++) {
 
 			if (pairedRoom.GetComponent<RoundRoomWalls> ().theseButtonsIndex.Contains (i)) {
 
@@ -22,18 +23,35 @@ public class RoundMazeMapRoom : RoomVariables
 				
 				mapButtons[i].SetActive (false);
 			}
-		}
-		
-//        foreach (GameObject button in mapButtons)
-//        {
-//			if (pairedRoom.GetComponent<RoundRoomWalls> ().theseButtonsIndex.Contains (button.GetComponent<RoundRoomMapButtonnumber> ().buttonNumber)) {
-//
-//				button.SetActive (true);
-//				button.GetComponent<Renderer> ().material.SetColor (Shader.PropertyToID ("_SpecColor"), Color.red);
-//
-//			} else {
-//				button.SetActive (false);
-//			}
-//        }
+		}*/
+        List<GameObject> moreButtons = new List<GameObject>();
+        int index = 0;
+        foreach (int button in pairedRoom.GetComponent<RoundRoomWalls>().theseButtonsIndex)
+        {
+            foreach(GameObject _buttons in mapButtons)
+            {
+                if(button == _buttons.GetComponent<RoundRoomMapButtonnumber>().buttonNumber)
+                {
+                    _buttons.SetActive(true);
+                    _buttons.GetComponent<Renderer>().material.color = mapColours[index];
+                    index++;
+                    moreButtons.Add(_buttons);
+                }
+                else if(!moreButtons.Contains(_buttons))
+                {
+                    _buttons.SetActive(false);
+                }
+            }
+        }
+    }
+
+    [ClientRpc]
+    public void RpcResetMap()
+    {
+        foreach(GameObject button in mapButtons)
+        {
+            button.SetActive(true);
+            button.GetComponent<Renderer>().material.color = Color.black;
+        }
     }
 }

@@ -105,8 +105,9 @@ public class RoundRoomWalls : RoomVariables
 
 				_button.GetComponent<PasswordButton>().SetPasswordButton(1, pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material);
 				usedCorrectSymbolMaterialIndex.Add (_randomSymbol);
+                pairedRoom.GetComponent<RoundMazeMapRoom>().mapColours.Add(pairedRoom.GetComponent<RoundRoomManager>().wallSymbols[_randomSymbol].GetComponent<Renderer>().material.color);
 
-			} else {
+            } else {
 				
 				_button.GetComponent<PasswordButton>().SetPasswordButton(0, pairedRoom.GetComponent<RoundRoomManager> ().wallSymbols [_randomSymbol].GetComponent<Renderer> ().material);
 				//Changes color to a non-matching color
@@ -116,10 +117,13 @@ public class RoundRoomWalls : RoomVariables
 					if (_color != _button.GetComponent<RoundDoors>().graphicalObject.GetComponent<Renderer> ().materials[materialIndex].color) {
 
 						_symbolColors.Add (_color);
+                        
 					}
 				}
 				Material[] _materials = _button.GetComponent<RoundDoors> ().graphicalObject.GetComponent<Renderer> ().materials;
-				_materials [materialIndex].color = _symbolColors [Random.Range (0, _symbolColors.Count)];
+                int rara = Random.Range(0, _symbolColors.Count);
+				_materials [materialIndex].color = _symbolColors [rara];
+                pairedRoom.GetComponent<RoundMazeMapRoom>().mapColours.Add(_symbolColors[rara]);
 				_button.GetComponent<RoundDoors> ().graphicalObject.GetComponent<Renderer> ().materials = _materials;
 			}
 			//Adds button locations to map room
@@ -172,6 +176,7 @@ public class RoundRoomWalls : RoomVariables
 		}
 		usedButtons.Clear();
 		mazeSymbolMaterialIndex.Clear();
+        pairedRoom.GetComponent<RoundMazeMapRoom>().mapColours.Clear();
 		theseButtonsIndex.Clear();
 		foundPath = true;
 	}
@@ -195,6 +200,7 @@ public class RoundRoomWalls : RoomVariables
 		Debug.Log ("incorrect");
 		CloseWalls (false);
 		usedCorrectSymbolMaterialIndex.Clear ();
+        pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();
 		GetComponentInChildren<RoundRomCenter> ().activeRandom = true;
 		Fail ();
 	}
