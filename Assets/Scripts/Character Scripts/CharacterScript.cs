@@ -27,7 +27,7 @@ public class CharacterScript : NetworkBehaviour
 
 	public bool menu = false;
 
-	bool grounded, jumping;
+	bool jumping;
 
     void Start()
     {
@@ -71,7 +71,7 @@ public class CharacterScript : NetworkBehaviour
     void Update()
     {
       
-        if (isLocalPlayer)
+		if (isLocalPlayer)
         {
             //Opens Menu and disables the clocked cursor
             if (Input.GetButtonDown("Menu"))
@@ -85,19 +85,16 @@ public class CharacterScript : NetworkBehaviour
 
     void FixedUpdate()
     {
-        if (menu)
-        {
-            return;
-        }
-        if (isLocalPlayer)
+		if (isLocalPlayer && !menu)
         {
             //Executes all movements determined by active axis and currenty jump value 
             rigby.AddRelativeForce(new Vector3(
-                   /* X */     Input.GetAxisRaw("Horizontal Movement") * movementSpeed,
-                   /* Y */     Mathf.Max((curJumpPower), -maxFallSpeed),
-                   /* Z */     Input.GetAxisRaw("Vertical Movement") * movementSpeed)
-                  /* All */   * 100 * Time.deltaTime, ForceMode.Force);
-            if (curJumpPower == 0 && (Input.GetAxisRaw("Horizontal Movement") != 0 || Input.GetAxisRaw("Vertical Movement") != 0))
+            	/* X */     Input.GetAxisRaw("Horizontal Movement") * movementSpeed,
+             	/* Y */     Mathf.Max(curJumpPower, -maxFallSpeed),
+              	/* Z */     Input.GetAxisRaw("Vertical Movement") * movementSpeed)
+              	/* All */   * 100 * Time.deltaTime, ForceMode.Force);
+
+			if (curJumpPower == 0 && (Input.GetAxisRaw("Horizontal Movement") != 0 || Input.GetAxisRaw("Vertical Movement") != 0))
             {
                 footsteps.mute = false;
             }
@@ -110,10 +107,7 @@ public class CharacterScript : NetworkBehaviour
 
     void Jump()
     {
-      if (menu)
-        {
-            return;
-        }
+      	if (menu) return;
         if (proximityDetection.IsGrounded())
         {
             if (Input.GetButtonDown("Jump"))
@@ -139,7 +133,9 @@ public class CharacterScript : NetworkBehaviour
         if (jumping)
         {
             //Cancels jump if jump is interupted or reaches jumping limit. 
-            if (Input.GetButtonUp("Jump") || transform.position.y >= jumpStartY + maxJumpHeight || proximityDetection.DetectDirectionalCollision(Vector3.up))
+            if (Input.GetButtonUp("Jump") || 
+            	transform.position.y >= jumpStartY + maxJumpHeight || 
+            	proximityDetection.DetectDirectionalCollision(Vector3.up))
             {
                 jumping = false;
                 curJumpPower = Mathf.Min(curJumpPower, 0);
