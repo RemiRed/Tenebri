@@ -176,6 +176,7 @@ public class RoundRoomWalls : RoomVariables
 		}
 		usedButtons.Clear();
 		mazeSymbolMaterialIndex.Clear();
+        pairedRoom.GetComponent<RoundMazeMapRoom>().mapColours.Clear();
 		theseButtonsIndex.Clear();
 		foundPath = true;
 	}
@@ -199,6 +200,7 @@ public class RoundRoomWalls : RoomVariables
 		Debug.Log ("incorrect");
 		CloseWalls (false);
 		usedCorrectSymbolMaterialIndex.Clear ();
+        pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();
 		GetComponentInChildren<RoundRomCenter> ().activeRandom = true;
 		Fail ();
 	}

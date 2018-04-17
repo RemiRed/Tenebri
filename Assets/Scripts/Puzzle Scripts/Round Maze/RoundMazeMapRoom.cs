@@ -44,4 +44,14 @@ public class RoundMazeMapRoom : RoomVariables
             }
         }
     }
+
+    [ClientRpc]
+    public void RpcResetMap()
+    {
+        foreach(GameObject button in mapButtons)
+        {
+            button.SetActive(true);
+            button.GetComponent<Renderer>().material.color = Color.black;
+        }
+    }
 }

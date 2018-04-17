@@ -339,7 +339,6 @@ MonoBehaviour:
   maxJumpHeight: 2
   gravity: 120
   maxFallSpeed: 200
-  proximityDetection: {fileID: 0}
   menu: 0
 --- !u!114 &114456303138999076
 MonoBehaviour:
@@ -353,9 +352,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trippy: 0
-  sensitivity: 7
-  smoothing: 5
-  visualAngleLimiter: 180
+  sensitivity: 5
+  smoothing: 3
+  visualAngleLimiter: 85
 --- !u!114 &114605931160798978
 MonoBehaviour:
   m_ObjectHideFlags: 1
