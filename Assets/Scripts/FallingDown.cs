@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FallingDown : MonoBehaviour {
     Animator anim;
+    [SerializeField]
+    RoomVariables failure;
 
     void Start()
     {
@@ -20,6 +22,8 @@ public class FallingDown : MonoBehaviour {
         anim.SetTrigger("isFalling");
         yield return new WaitForSeconds(1f);
         other.enabled = !other.enabled;
+        yield return new WaitForSeconds(7f);
+        failure.Failure();
     }
 
 
