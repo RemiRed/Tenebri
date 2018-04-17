@@ -11618,10 +11618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339b272bd4a9c384c81ab3151ffdc914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomLength: 0
-  compatibleRooms: []
   entryDoor: {fileID: 0}
-  exitDoor: {fileID: 0}
   pairedRoom: {fileID: 1893348768}
   room: 0
   timerSeconds: 0
@@ -15020,7 +15017,8 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &955805618 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 4403834922935158, guid: c5c96fa6a5d0640488d04b0711844e27,
+    type: 2}
   m_PrefabInternal: {fileID: 955805617}
 --- !u!4 &959081396 stripped
 Transform:
@@ -18345,12 +18343,17 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.19
       objectReference: {fileID: 0}
+    - target: {fileID: 1569105142011502, guid: 8a537eeb04cf44cd08e798848706117f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a537eeb04cf44cd08e798848706117f, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1161850613 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 4053363510176228, guid: 8a537eeb04cf44cd08e798848706117f,
+    type: 2}
   m_PrefabInternal: {fileID: 1161850612}
 --- !u!1001 &1164845738
 Prefab:
@@ -29302,10 +29305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee325b1fbd7fae4d93eb76404a3397a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomLength: 0
-  compatibleRooms: []
   entryDoor: {fileID: 2074795836}
-  exitDoor: {fileID: 1965107491}
   pairedRoom: {fileID: 750602017}
   room: 0
   timerSeconds: 500
@@ -30413,7 +30413,8 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &1944324901 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 4464904156795768, guid: 52966b660eaec4e1e8d747290943fa62,
+    type: 2}
   m_PrefabInternal: {fileID: 1944324900}
 --- !u!1001 &1947946932
 Prefab:
