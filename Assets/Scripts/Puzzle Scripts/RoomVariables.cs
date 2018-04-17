@@ -5,10 +5,8 @@ using UnityEngine.Networking;
 
 public class RoomVariables : NetworkBehaviour
 {
-    public float roomLength;
-    public List<GameObject> compatibleRooms = new List<GameObject>();
-    public GameObject entryDoor, exitDoor;
-    public GameObject pairedRoom; //Needs to be changed to an enum or something similar later. This is to do an easy Switch.
+    public GameObject entryDoor;
+    public GameObject pairedRoom; 
     public RoomLoader.Room room = RoomLoader.Room.startRoom;
 
     [SerializeField]
