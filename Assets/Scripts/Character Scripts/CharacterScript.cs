@@ -124,7 +124,6 @@ public class CharacterScript : NetworkBehaviour
 
                 //Sets base for calculating when jump reaches maximum jump height
                 jumpStartY = transform.position.y;
-
             }
             else if (!jumping)
             {
@@ -137,9 +136,6 @@ public class CharacterScript : NetworkBehaviour
             //Increases fall speed while not grounded
             curJumpPower -= gravity * Time.deltaTime;
         }
-
-	//	new DirectionalCollision();
-	
         if (jumping)
         {
             //Cancels jump if jump is interupted or reaches jumping limit. 
