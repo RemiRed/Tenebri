@@ -26,3 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RoundRoomDecoration02.unity
     guid: 4234f72bfacc87242812dead8c49b9ce
+  - enabled: 1
+    path: Assets/Scenes/Color Symbol Puzzle BY SAM.unity
+    guid: 5a18294e57ac85f489a81dae8cb02ec6

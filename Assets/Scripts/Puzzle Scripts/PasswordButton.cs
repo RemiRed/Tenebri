@@ -12,6 +12,13 @@ public class PasswordButton : Interractable {
 
 	bool buttonActive = true;
 
+	void Start(){
+
+		if (graphicalObject == null) {
+			graphicalObject = gameObject;
+		}
+	}
+
 	//Called when button is pressed
 	void PasswordButtonPressed(){
 

@@ -3440,7 +3440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &193437599
 Transform:
   m_ObjectHideFlags: 0
@@ -3895,6 +3895,30 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: lightUpOnPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666608184903140, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
+      propertyPath: m_TagString
+      value: Interractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: interractMethodName
+      value: PasswordButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: stopInterractMethodName
+      value: RevertColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: passwordManager
+      value: 
+      objectReference: {fileID: 559634946}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
   m_IsPrefabParent: 0
@@ -6353,6 +6377,30 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: lightUpOnPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666608184903140, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
+      propertyPath: m_TagString
+      value: Interractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: interractMethodName
+      value: PasswordButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: stopInterractMethodName
+      value: RevertColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: passwordManager
+      value: 
+      objectReference: {fileID: 559634946}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
   m_IsPrefabParent: 0
@@ -8501,7 +8549,7 @@ GameObject:
   - component: {fileID: 559634946}
   m_Layer: 0
   m_Name: PasswordManager
-  m_TagString: Untagged
+  m_TagString: PasswordManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8942,6 +8990,30 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: lightUpOnPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666608184903140, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
+      propertyPath: m_TagString
+      value: Interractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: interractMethodName
+      value: PasswordButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: stopInterractMethodName
+      value: RevertColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: passwordManager
+      value: 
+      objectReference: {fileID: 559634946}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
   m_IsPrefabParent: 0
@@ -12743,6 +12815,30 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: lightUpOnPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666608184903140, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
+      propertyPath: m_TagString
+      value: Interractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: interractMethodName
+      value: PasswordButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: stopInterractMethodName
+      value: RevertColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: passwordManager
+      value: 
+      objectReference: {fileID: 559634946}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
   m_IsPrefabParent: 0
@@ -12879,6 +12975,30 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: lightUpOnPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666608184903140, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
+      propertyPath: m_TagString
+      value: Interractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: interractMethodName
+      value: PasswordButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: stopInterractMethodName
+      value: RevertColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: passwordManager
+      value: 
+      objectReference: {fileID: 559634946}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
   m_IsPrefabParent: 0
@@ -15480,7 +15600,7 @@ GameObject:
   - component: {fileID: 1045770935}
   m_Layer: 0
   m_Name: ColorSymbolCluesP1
-  m_TagString: P2
+  m_TagString: P1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17789,7 +17909,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1198853786
 Transform:
   m_ObjectHideFlags: 0
@@ -18557,7 +18677,7 @@ MonoBehaviour:
   - {fileID: 217861268}
   - {fileID: 806188512}
   - {fileID: 1795447513}
-  passwordLengt: 0
+  passwordLengt: 5
   P1Clues: {fileID: 0}
   P2Clues: {fileID: 0}
   symbolColors:
@@ -18633,11 +18753,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec141468d3febc40bb82a295f50d921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomLength: 0
-  compatibleRooms: []
   entryDoor: {fileID: 0}
-  exitDoor: {fileID: 0}
   pairedRoom: {fileID: 0}
+  room: 0
   timerSeconds: 500
   timerPenalty: 1.2
   currentTime: 0
@@ -18857,11 +18975,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ddae29e3497501478f5d53fb74328f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomLength: 0
-  compatibleRooms: []
   entryDoor: {fileID: 0}
-  exitDoor: {fileID: 0}
   pairedRoom: {fileID: 0}
+  room: 0
   timerSeconds: 0
   timerPenalty: 1
   currentTime: 0
@@ -19124,7 +19240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1275782943
 Transform:
   m_ObjectHideFlags: 0
@@ -19725,6 +19841,30 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: lightUpOnPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666608184903140, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
+      propertyPath: m_TagString
+      value: Interractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: interractMethodName
+      value: PasswordButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: stopInterractMethodName
+      value: RevertColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: passwordManager
+      value: 
+      objectReference: {fileID: 559634946}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
   m_IsPrefabParent: 0
@@ -21143,6 +21283,30 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: lightUpOnPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666608184903140, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
+      propertyPath: m_TagString
+      value: Interractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: interractMethodName
+      value: PasswordButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: stopInterractMethodName
+      value: RevertColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: passwordManager
+      value: 
+      objectReference: {fileID: 559634946}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
   m_IsPrefabParent: 0
@@ -21459,6 +21623,30 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: lightUpOnPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666608184903140, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
+      propertyPath: m_TagString
+      value: Interractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: interractMethodName
+      value: PasswordButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: stopInterractMethodName
+      value: RevertColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: passwordManager
+      value: 
+      objectReference: {fileID: 559634946}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
   m_IsPrefabParent: 0
@@ -23811,6 +23999,30 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: lightUpOnPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666608184903140, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
+      propertyPath: m_TagString
+      value: Interractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: interractMethodName
+      value: PasswordButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: stopInterractMethodName
+      value: RevertColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: passwordManager
+      value: 
+      objectReference: {fileID: 559634946}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
   m_IsPrefabParent: 0
@@ -26983,6 +27195,30 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: lightUpOnPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666608184903140, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
+      propertyPath: m_TagString
+      value: Interractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: interractMethodName
+      value: PasswordButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: stopInterractMethodName
+      value: RevertColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: passwordManager
+      value: 
+      objectReference: {fileID: 559634946}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
   m_IsPrefabParent: 0
@@ -27052,6 +27288,30 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: lightUpOnPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666608184903140, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
+      propertyPath: m_TagString
+      value: Interractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: interractMethodName
+      value: PasswordButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: stopInterractMethodName
+      value: RevertColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: passwordManager
+      value: 
+      objectReference: {fileID: 559634946}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
   m_IsPrefabParent: 0
@@ -32230,6 +32490,30 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: lightUpOnPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666608184903140, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
+      propertyPath: m_TagString
+      value: Interractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: interractMethodName
+      value: PasswordButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: stopInterractMethodName
+      value: RevertColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973487125469888, guid: 680330223ca66574e8d0e6e1147ffc1b,
+        type: 2}
+      propertyPath: passwordManager
+      value: 
+      objectReference: {fileID: 559634946}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680330223ca66574e8d0e6e1147ffc1b, type: 2}
   m_IsPrefabParent: 0
