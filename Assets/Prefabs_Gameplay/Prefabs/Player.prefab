@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114029520191848596}
   - component: {fileID: 114605931160798978}
   - component: {fileID: 82455756428582076}
-  - component: {fileID: 114942128539173700}
+  - component: {fileID: 114735787209702174}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -339,7 +339,6 @@ MonoBehaviour:
   maxJumpHeight: 2
   gravity: 120
   maxFallSpeed: 200
-  proximityDetection: {fileID: 0}
   menu: 0
 --- !u!114 &114456303138999076
 MonoBehaviour:
@@ -377,7 +376,7 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
---- !u!114 &114942128539173700
+--- !u!114 &114735787209702174
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
