@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CloseDoor : MonoBehaviour
 {
-    
+
     RoomVariables room;
     RoomLoader roomLoader;
 
@@ -12,7 +12,6 @@ public class CloseDoor : MonoBehaviour
     {
         roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
         room = transform.parent.GetComponent<RoomVariables>();
-        roomLoader.SetEntryDoors();
     }
 
     private void OnTriggerEnter(Collider c)
@@ -25,7 +24,6 @@ public class CloseDoor : MonoBehaviour
 
     void Unload()
     {
-        roomLoader.UnloadCorridor();
         room.entryDoor.SetActive(true);
         Destroy(gameObject);
     }

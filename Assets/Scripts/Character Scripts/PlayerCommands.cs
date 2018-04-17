@@ -12,7 +12,7 @@ public class PlayerCommands : NetworkBehaviour
 
     private void Start()
     {
-        //roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
+        roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
     }
 
     [Command]
@@ -31,12 +31,6 @@ public class PlayerCommands : NetworkBehaviour
         roomLoader.clearedRoom = false;
     }
 
-    [Command]
-    public void CmdUppdatePosition()
-    {
-
-
-    }
     [Command]
     public void CmdMazeLever0()
     {
@@ -60,10 +54,10 @@ public class PlayerCommands : NetworkBehaviour
     [Command]
     public void CmdLoad() //Loads the next room, or last room if the last room is the next room
     {
-        if (roomLoader.nextRoomNumber <= roomLoader.numberOfRooms)
-        {
-            roomLoader.LoadNextRoom();
-            roomLoader.OpenCorridorDoors();
-        }
+        //if (roomLoader.nextRoomNumber <= roomLoader.numberOfRooms)
+        //{
+        //    roomLoader.LoadNextRoom();
+        //    roomLoader.OpenCorridorDoors();
+        //}
     }
 }
