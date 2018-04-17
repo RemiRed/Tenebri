@@ -5,11 +5,9 @@ using UnityEngine.Networking;
 
 public class ButtonStartRoom : Interractable
 {
-    [SerializeField]
-    GameObject startRoomDoor;
 
     [SerializeField]
-    RoomLoader roomLoader;
+    private RoomLoader roomLoader;
 
     [SerializeField]
     float doorDelay;

@@ -5,124 +5,98 @@ using UnityEngine.Networking;
 
 public class RoomLoader : NetworkBehaviour
 {
-    [SerializeField]
-    GameObject corridorPrefab;
-
-    [SerializeField]
-    GameObject doorPrefab;
-
-    public int numberOfRooms;
-
-    GameObject[] roomsP1, roomsP2;
-
-    [SerializeField]
-    List<GameObject> availableRooms = new List<GameObject>();
-
-    [SerializeField]
-    GameObject currentRoomP1, currentRoomP2;
-
-    [SerializeField]
-    GameObject currentCorridorP1, currentCorridorP2;
-
+    public enum Room { startRoom, colorSymbols, roundMaze, outdoorMaze };
     [SyncVar]
     public bool clearedRoom;
 
-    public int nextRoomNumber;
+    [SerializeField]
+    GameObject startRoomP1, startRoomP2, colorSymbolsP1, colorSymbolsP2, roundMazeP1, roundMazeP2, outdoorMazeP1, outdoorMazeP2;
 
     [SerializeField]
-    List<GameObject> doorsP1 = new List<GameObject>();
+    List<GameObject> corridorsP1 = new List<GameObject>(), corridorsP2 = new List<GameObject>();
 
-    [SerializeField]
-    List<GameObject> doorsP2 = new List<GameObject>();
+    Room currentRoom = Room.startRoom;
 
-
-    private void Start()
-    {
-        if (isServer)
-        {
-            roomsP1 = new GameObject[numberOfRooms];
-            roomsP2 = new GameObject[numberOfRooms];
-            for (int i = 0; i < roomsP1.Length; i++)
-            {
-                int randomP1 = Random.Range(0, availableRooms.Count);
-                roomsP1[i] = availableRooms[randomP1];
-                GameObject compatableRoom = roomsP1[i].GetComponent<RoomVariables>().compatibleRooms[Random.Range(0, roomsP1[i].GetComponent<RoomVariables>().compatibleRooms.Count)];
-                roomsP2[i] = compatableRoom;
-                roomsP1[i].GetComponent<RoomVariables>().pairedRoom = roomsP2[i];
-                roomsP2[i].GetComponent<RoomVariables>().pairedRoom = roomsP1[i];
-                availableRooms.RemoveAt(randomP1);
-                availableRooms.Remove(compatableRoom);
-            }
-        }
-    }
-
-    public void SetEntryDoors()
-    {
-        currentRoomP1.GetComponent<RoomVariables>().entryDoor = doorsP1[1];
-        currentRoomP2.GetComponent<RoomVariables>().entryDoor = doorsP2[1];
-    }
 
     public void OpenRoomDoors()
     {
-        doorsP1[0].SetActive(false);
-        doorsP1[1].SetActive(true);
-        doorsP2[0].SetActive(false);
-        doorsP2[1].SetActive(true);
+        //doorsP1[0].SetActive(false);
+        //doorsP1[1].SetActive(true);
+        //doorsP2[0].SetActive(false);
+        //doorsP2[1].SetActive(true);
     }
 
     public void OpenCorridorDoors()
     {
-        doorsP1[0].SetActive(true);
-        doorsP1[1].SetActive(false);
-        doorsP2[0].SetActive(true);
-        doorsP2[1].SetActive(false);
+        //doorsP1[0].SetActive(true);
+        //doorsP1[1].SetActive(false);
+        //doorsP2[0].SetActive(true);
+        //doorsP2[1].SetActive(false);
     }
 
-    public void UnloadCorridor() //Unloads the previous corridor. Call this after entering the next room
+    public void LoadNextRoom(Room room) //Loads the next room, unloads the previous.
     {
-        if (!isServer)
+        if (room == Room.startRoom)
         {
-            return;
+            startRoomP1.SetActive(true);
+            startRoomP2.SetActive(true);
         }
-        NetworkServer.Destroy(currentCorridorP1);
-        NetworkServer.Destroy(currentCorridorP2);
-        if (nextRoomNumber < roomsP1.Length)
+        else
         {
-            currentCorridorP1 = Instantiate(corridorPrefab, currentCorridorP1.transform.position + new Vector3(0, 0, currentRoomP1.GetComponent<RoomVariables>().roomLength + currentCorridorP1.GetComponent<RoomVariables>().roomLength), new Quaternion());
-        }
-
-        if (nextRoomNumber < roomsP2.Length)
-        {
-            currentCorridorP2 = Instantiate(corridorPrefab, currentCorridorP2.transform.position + new Vector3(0, 0, currentRoomP2.GetComponent<RoomVariables>().roomLength + currentCorridorP2.GetComponent<RoomVariables>().roomLength), new Quaternion());
+            startRoomP1.SetActive(false);
+            startRoomP2.SetActive(false);
         }
 
-        NetworkServer.Destroy(doorsP1[0]);
-        doorsP1.RemoveAt(0);
-        NetworkServer.Destroy(doorsP2[0]);
-        doorsP2.RemoveAt(0);
+        if (room == Room.colorSymbols)
+        {
+            colorSymbolsP1.SetActive(true);
+            colorSymbolsP2.SetActive(true);
+        }
+        else
+        {
+            colorSymbolsP1.SetActive(false);
+            colorSymbolsP2.SetActive(false);
+        }
 
+        if (room == Room.roundMaze)
+        {
+            roundMazeP1.SetActive(true);
+            roundMazeP2.SetActive(true);
+        }
+        else
+        {
+            roundMazeP1.SetActive(false);
+            roundMazeP2.SetActive(false);
+        }
 
+        if (room == Room.outdoorMaze)
+        {
+            outdoorMazeP1.SetActive(true);
+            outdoorMazeP2.SetActive(true);
+        }
+        else
+        {
+            outdoorMazeP1.SetActive(false);
+            outdoorMazeP2.SetActive(false);
+        }
     }
 
-    public void LoadNextRoom() //Loads the next room
+    public void LoadNextCorridor(int corridorID)
     {
-
-        if (!isServer)
+        for (int i = 0; i < corridorsP1.Count; i++)
         {
-            return;
+            if (i== corridorID)
+            {
+                corridorsP1[i].SetActive(true);
+                corridorsP2[i].SetActive(true);
+            }
+            else
+            {
+                corridorsP1[i].SetActive(false);
+                corridorsP2[i].SetActive(false);
+            }
         }
-        NetworkServer.Destroy(currentRoomP1);
-        NetworkServer.Destroy(currentRoomP2);
-
-        currentRoomP1 = Instantiate(roomsP1[nextRoomNumber], currentCorridorP1.transform.position + new Vector3(0, 0, (roomsP1[nextRoomNumber].GetComponent<RoomVariables>().roomLength + currentCorridorP1.GetComponent<RoomVariables>().roomLength) / 2f), new Quaternion());
-        currentRoomP2 = Instantiate(roomsP2[nextRoomNumber], currentCorridorP2.transform.position + new Vector3(0, 0, (roomsP2[nextRoomNumber].GetComponent<RoomVariables>().roomLength + currentCorridorP2.GetComponent<RoomVariables>().roomLength) / 2f), new Quaternion());
-
-        NetworkServer.Spawn(currentRoomP1);
-        NetworkServer.Spawn(currentRoomP2);
-
-        doorsP1.Add(Instantiate(doorPrefab, currentCorridorP1.transform.position + new Vector3(0, 1.25f, (roomsP1[nextRoomNumber].GetComponent<RoomVariables>().roomLength * 2 + currentCorridorP1.GetComponent<RoomVariables>().roomLength) / 2f), new Quaternion()));
-        doorsP2.Add(Instantiate(doorPrefab, currentCorridorP2.transform.position + new Vector3(0, 1.25f, (roomsP2[nextRoomNumber].GetComponent<RoomVariables>().roomLength * 2 + currentCorridorP2.GetComponent<RoomVariables>().roomLength) / 2f), new Quaternion()));
-
-        nextRoomNumber++;
     }
+
+
 }
