@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4112881998137216}
   - component: {fileID: 33859397935223334}
   - component: {fileID: 23002968062798650}
+  - component: {fileID: 65969533694608798}
   m_Layer: 0
   m_Name: Prop_FloorLamp_01
   m_TagString: Untagged
@@ -82,3 +83,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1449022152144214}
   m_Mesh: {fileID: 4300000, guid: 451a5d704aa6f094b8b4f6341d125e31, type: 3}
+--- !u!65 &65969533694608798
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1449022152144214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39499187, y: 1.5374069, z: 0.37565953}
+  m_Center: {x: 0, y: 0, z: 0}
