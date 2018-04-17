@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RoundRoomDecoration.unity
     guid: efa92b1155d5d4f78a6f7cad03aa98e1
+  - enabled: 1
+    path: Assets/Scenes/RoundRoomDecoration02.unity
+    guid: 4234f72bfacc87242812dead8c49b9ce

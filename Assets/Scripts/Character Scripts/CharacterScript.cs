@@ -2,36 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+//using proximityDetection;
 
 public class CharacterScript : NetworkBehaviour
 {
     [SerializeField]
     float movementSpeed = 32;
     [SerializeField]
-    float jumpSpeed = 55;
+    float jumpSpeed = 32;
     [SerializeField]
-    float maxJumpHeight = 1.85f;
+    float maxJumpHeight = 1.75f;
     [SerializeField]
     float gravity = 120;
     [SerializeField]
     float maxFallSpeed = 200;
 
-    float jumpStartY;
-    float curJumpPower;
+	float jumpStartY, curJumpPower;
 
     Rigidbody rigby;
     Collider collider;
+	AudioSource footsteps;
+	GameObject pauseMenu;
+	DirectionalCollision proximityDetection;
 
-    bool grounded;
-    bool hitCeiling;
-    bool jumping;
+	public bool menu = false;
 
-    public bool menu = false;
-    GameObject pauseMenu;
+	bool grounded, jumping;
 
-    AudioSource footsteps;
     void Start()
     {
+		if (GetComponent<DirectionalCollision> () != null) {
+			proximityDetection = GetComponent<DirectionalCollision> ();
+		} else {
+			Debug.LogWarning ("No Directional Collision assigned");
+		}
+			
         if (!isLocalPlayer)
         {
             GetComponentInChildren<Camera>().transform.gameObject.SetActive(false);
@@ -109,12 +114,10 @@ public class CharacterScript : NetworkBehaviour
         {
             return;
         }
-        if (IsGrounded())
+        if (proximityDetection.IsGrounded())
         {
-
             if (Input.GetButtonDown("Jump"))
             {
-
                 //Initiates player jump after jump button is pressed
                 curJumpPower = jumpSpeed;
                 jumping = true;
@@ -125,81 +128,26 @@ public class CharacterScript : NetworkBehaviour
             }
             else if (!jumping)
             {
-
                 //Sets jump value to a neutral value as long as the player is grounded and not jumping
                 curJumpPower = 0;
             }
-
         }
         else
         {
-
             //Increases fall speed while not grounded
             curJumpPower -= gravity * Time.deltaTime;
         }
 
+	//	new DirectionalCollision();
+	
         if (jumping)
         {
-
             //Cancels jump if jump is interupted or reaches jumping limit. 
-            if (Input.GetButtonUp("Jump") || transform.position.y >= jumpStartY + maxJumpHeight || HitCeiling())
+            if (Input.GetButtonUp("Jump") || transform.position.y >= jumpStartY + maxJumpHeight || proximityDetection.DetectDirectionalCollision(Vector3.up))
             {
-
                 jumping = false;
                 curJumpPower = Mathf.Min(curJumpPower, 0);
             }
         }
-    }
-
-    bool IsGrounded()
-    {
-        //Runs Raycasts to determine if grounded or not. Uses a triad of raycasts for smoother edge detection.
-        if (Physics.Raycast(transform.position + new Vector3(0, 0, collider.bounds.extents.x / 1.5f), -Vector3.up, collider.bounds.extents.y + 0.05f))
-        {
-            grounded = true;
-        }
-        else if (Physics.Raycast(transform.position + new Vector3(0, 0, -collider.bounds.extents.x / 1.5f), -Vector3.up, collider.bounds.extents.y + 0.05f))
-        {
-            grounded = true;
-        }
-        else if (Physics.Raycast(transform.position + new Vector3(collider.bounds.extents.x / 1.5f, 0, 0), -Vector3.up, collider.bounds.extents.y + 0.05f))
-        {
-            grounded = true;
-        }
-        else if (Physics.Raycast(transform.position + new Vector3(-collider.bounds.extents.x / 1.5f, 0, 0), -Vector3.up, collider.bounds.extents.y + 0.05f))
-        {
-            grounded = true;
-        }
-        else
-        {
-            grounded = false;
-        }
-        return grounded;
-    }
-
-    bool HitCeiling()
-    {
-        //Runs Raycasts to determine if htting a ceiling or not. Uses a triad of raycasts for smoother edge detection.
-        if (Physics.Raycast(transform.position + new Vector3(0, 0, collider.bounds.extents.x / 1.5f), Vector3.up, collider.bounds.extents.y + 0.05f))
-        {
-            hitCeiling = true;
-        }
-        else if (Physics.Raycast(transform.position + new Vector3(0, 0, -collider.bounds.extents.x / 1.5f), Vector3.up, collider.bounds.extents.y + 0.05f))
-        {
-            hitCeiling = true;
-        }
-        else if (Physics.Raycast(transform.position + new Vector3(collider.bounds.extents.x / 1.5f, 0, 0), Vector3.up, collider.bounds.extents.y + 0.05f))
-        {
-            hitCeiling = true;
-        }
-        else if (Physics.Raycast(transform.position + new Vector3(-collider.bounds.extents.x / 1.5f, 0, 0), Vector3.up, collider.bounds.extents.y + 0.05f))
-        {
-            hitCeiling = true;
-        }
-        else
-        {
-            hitCeiling = false;
-        }
-        return hitCeiling;
-    }
+    }	
 }

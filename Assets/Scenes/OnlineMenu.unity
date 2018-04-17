@@ -4472,7 +4472,7 @@ MonoBehaviour:
   m_GamePlayerPrefab: {fileID: 1377563522295830, guid: 6fc933b378ccb8b4b8ed9c45e0c22dd2,
     type: 2}
   m_LobbyScene: OnlineMenu
-  m_PlayScene: AndresWhiteBoxMazeLevel
+  m_PlayScene: RoundRoomDecoration02
   lobbySlots: []
   matchmakingGameObject: {fileID: 896307762}
   optionsGameObject: {fileID: 1688720202}
