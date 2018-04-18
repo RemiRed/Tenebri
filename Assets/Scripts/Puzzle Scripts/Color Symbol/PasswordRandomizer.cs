@@ -31,16 +31,15 @@ public class PasswordRandomizer : NetworkBehaviour
     }
 
     // Use this for initialization
-    void OnEnable()
+    void Start()
     {
         //Makes sure password lenght can't be to set to longer than the number of availible buttons.
         if (passwordLength > unsetPasswordButtons.Count)
         {
-
             passwordLength = unsetPasswordButtons.Count;
             Debug.LogWarning("Password set to too long. Password length adjusted to " + unsetPasswordButtons.Count);
         }
-        StartPuzzle();
+        //StartPuzzle();
     }
 
     //Starts the puzzle by randomizing the password and assigns values to clues on server to send to clients. 
