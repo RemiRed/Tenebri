@@ -32,7 +32,7 @@ public class PlayerCommands : NetworkBehaviour
         {
             if (currentRoom == RoomLoader.Room.colorSymbols)
             {
-                roomLoader.colorSymbolsP1.GetComponent<PasswordRandomizer>().StartPuzzle();
+                roomLoader.colorSymbolsP1.GetComponent<PasswordRandomizer>().CmdStartPuzzle();
             }
             roomLoader.RpcOpenDoorTo(currentRoom);
         }

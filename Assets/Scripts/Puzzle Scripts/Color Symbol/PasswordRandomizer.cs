@@ -41,6 +41,12 @@ public class PasswordRandomizer : NetworkBehaviour {
 		StartPuzzle ();
 	}
 
+    [Command]
+    public void CmdStartPuzzle()
+    {
+        StartPuzzle();
+    }
+
 	//Starts the puzzle by randomizing the password and assigns values to clues on server to send to clients. 
 	public void StartPuzzle(){
 
