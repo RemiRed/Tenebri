@@ -28,7 +28,6 @@ public class Interract : MonoBehaviour
 
     float defaultDrag;
 
-
     private void Start() //saving the drag on the player component
     {
         interractionMessage = GameObject.FindGameObjectWithTag("InterractionMessage");
