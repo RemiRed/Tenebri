@@ -190,7 +190,7 @@ public class RoundRoomWalls : RoomVariables
 		CmdRandomizeEverything ();
 	}
 
-	public override void RpcCompleteSuccess(){
+	public override void CompleteSuccess(){
 
 		Debug.LogWarning ("You passed this Puzzle");
 		passed = true;
@@ -198,7 +198,7 @@ public class RoundRoomWalls : RoomVariables
 		OpenDoorToNextLevel ();
 	}
 
-	public override void RpcFailure(){
+	public override void Failure(){
 
 		Debug.Log ("incorrect");
 		CloseWalls (true);
