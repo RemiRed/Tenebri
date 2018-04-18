@@ -36,6 +36,17 @@ public class PlayerCommands : NetworkBehaviour
                GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<PasswordRandomizer>().StartPuzzle();
             }
             roomLoader.RpcOpenDoorTo(currentRoom);
+            switch (currentRoom)
+            {
+                case RoomLoader.Room.colorSymbols:
+                    currentRoom = RoomLoader.Room.roundMaze;
+                    break;
+                case RoomLoader.Room.roundMaze:
+                    currentRoom = RoomLoader.Room.outdoorMaze;
+                    break;
+                default:
+                    break;
+            }
         }
         roomLoader.clearedRoom = true;
     }
@@ -64,25 +75,6 @@ public class PlayerCommands : NetworkBehaviour
 
         wall.GetComponent<RevealMap>().RpcWallRemover();
 
-    }
-
-    [Command]
-    public void CmdLoad() //Loads the next room, or last room if the last room is the next room
-    {
-        switch (currentRoom)
-        {
-            case RoomLoader.Room.colorSymbols:
-                currentRoom = RoomLoader.Room.roundMaze;
-                break;
-            case RoomLoader.Room.roundMaze:
-                currentRoom = RoomLoader.Room.outdoorMaze;
-                break;
-            default:
-                break;
-        }
-        print(currentRoom);
-        print("HEJ");
-        roomLoader.LoadRoom(currentRoom);
     }
 
 }
