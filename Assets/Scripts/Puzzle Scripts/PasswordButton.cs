@@ -45,7 +45,7 @@ public class PasswordButton : Interractable {
 		graphicalObject.GetComponent<Renderer> ().materials = _materials;
 	}
 
-	//Sets initial values. Called from 'PasswordRandomizer'
+	//Sets initial values. Ajusting order ID & material
 	public void SetPasswordButton(int _OrderID, Material _Symbol){
 
 		buttonOrderID = _OrderID;
@@ -54,7 +54,6 @@ public class PasswordButton : Interractable {
 		_materials [materialIndex] = symbol;
 		graphicalObject.GetComponent<Renderer> ().materials = _materials;
 	}
-
 	public void SetPasswordButton(bool _active){
 
 		buttonActive = _active;
