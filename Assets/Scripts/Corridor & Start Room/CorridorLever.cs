@@ -23,7 +23,6 @@ public class CorridorLever : Interractable
     {
         if (!pulled)
         {
-            print("PULLED");
             pulled = true;
             playerCmd.CmdCorridorLever();
         }
