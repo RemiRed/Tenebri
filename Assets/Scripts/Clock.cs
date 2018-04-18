@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ public class Clock : MonoBehaviour
 
     int lastTick;
     // Use this for initialization
-   /* void Start()
+    void Start()
     {
         transform.localEulerAngles = new Vector3(-6 * room.timerSeconds, 0, 0);
         lastTick = (int)room.timerSeconds;
@@ -26,8 +26,9 @@ public class Clock : MonoBehaviour
             {
                 lastTick = (int)room.timerSeconds;
                 //tick sound here
-    }      
+            }
 
         }
-    }*/
+    }
 }
+*/
