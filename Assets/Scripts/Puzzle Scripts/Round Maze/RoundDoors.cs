@@ -60,7 +60,8 @@ public class RoundDoors : MonoBehaviour {
 				foreach (RoundWallDoors wall in WallList) {
 
 					if (room.WallList.Contains (wall)) {
-						wall.OpenSesamy ();
+						//wall.OpenSesamy ();
+						wall.GetComponent<Animator> ().SetBool ("OpenSesamy", false);
 						break;
 					}
 				}
