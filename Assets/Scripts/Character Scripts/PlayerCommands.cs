@@ -25,7 +25,7 @@ public class PlayerCommands : NetworkBehaviour
     }
 
     [Command]
-    public void CommandCorridorLever()
+    public void CmdCorridorLever()
     {
         if (roomLoader.clearedRoom)
         {
