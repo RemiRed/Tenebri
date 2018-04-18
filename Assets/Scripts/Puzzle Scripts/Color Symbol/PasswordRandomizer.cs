@@ -38,7 +38,7 @@ public class PasswordRandomizer : NetworkBehaviour {
 			Debug.LogWarning ("Password set to too long. Password length adjusted to " + unsetPasswordButtons.Count);
 		}
         print(isServer);
-		//StartPuzzle ();
+		StartPuzzle ();
 	}
 
 	//Starts the puzzle by randomizing the password and assigns values to clues on server to send to clients. 

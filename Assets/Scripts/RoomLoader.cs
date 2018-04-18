@@ -15,6 +15,34 @@ public class RoomLoader : NetworkBehaviour
     List<GameObject> corridorsP1 = new List<GameObject>(), corridorsP2 = new List<GameObject>();
 
     Room currentRoom = Room.startRoom;
+    
+    public void LoadRoom(Room room) //Loads the next room
+    {
+        if (room == Room.startRoom)
+        {
+            startRoomP1.SetActive(true);
+            startRoomP2.SetActive(true);
+        }
+
+        if (room == Room.colorSymbols)
+        {
+            colorSymbolsP1.SetActive(true);
+            colorSymbolsP2.SetActive(true);
+        }
+
+        if (room == Room.roundMaze)
+        {
+            roundMazeP1.SetActive(true);
+            roundMazeP2.SetActive(true);
+        }
+
+        if (room == Room.outdoorMaze)
+        {
+            outdoorMazeP1.SetActive(true);
+            outdoorMazeP2.SetActive(true);
+        }
+        CmdLoadRoom(room);
+    }
 
     [Command]
     public void CmdLoadRoom(Room room) //Loads the next room
@@ -43,6 +71,7 @@ public class RoomLoader : NetworkBehaviour
             outdoorMazeP2.SetActive(true);
         }
     }
+
 
     public void UnloadAllRoomsExcept(Room room)
     {
