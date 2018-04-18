@@ -1664,7 +1664,7 @@ Transform:
   - {fileID: 83314645}
   - {fileID: 1691731209}
   m_Father: {fileID: 1478059079}
-  m_RootOrder: 75
+  m_RootOrder: 77
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!1 &251330855
 GameObject:
@@ -3751,7 +3751,7 @@ Transform:
   - {fileID: 404121897}
   - {fileID: 1234093376}
   m_Father: {fileID: 1834892473}
-  m_RootOrder: 42
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &512847152
 GameObject:
@@ -4631,7 +4631,7 @@ Transform:
   - {fileID: 204128118}
   - {fileID: 136304423}
   m_Father: {fileID: 1834892473}
-  m_RootOrder: 40
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!1 &581973978
 GameObject:
@@ -5736,7 +5736,7 @@ Transform:
   - {fileID: 1391668852}
   - {fileID: 1893615675}
   m_Father: {fileID: 1478059079}
-  m_RootOrder: 76
+  m_RootOrder: 78
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!1 &708289421
 GameObject:
@@ -10139,7 +10139,7 @@ Transform:
   - {fileID: 828965664}
   - {fileID: 1056707902}
   m_Father: {fileID: 1834892473}
-  m_RootOrder: 39
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!1 &1208143195
 GameObject:
@@ -13101,7 +13101,7 @@ Transform:
   - {fileID: 488043761}
   - {fileID: 1374913824}
   m_Father: {fileID: 1834892473}
-  m_RootOrder: 43
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!1 &1506549161
 GameObject:
@@ -16336,6 +16336,14 @@ Prefab:
     - target: {fileID: 4329801475458542, guid: 0f9de0f0329a65a4ab30e2757d985c6d, type: 2}
       propertyPath: m_RootOrder
       value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724016575719848, guid: 0f9de0f0329a65a4ab30e2757d985c6d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.9555
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724016575719848, guid: 0f9de0f0329a65a4ab30e2757d985c6d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 18.105
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f9de0f0329a65a4ab30e2757d985c6d, type: 2}
