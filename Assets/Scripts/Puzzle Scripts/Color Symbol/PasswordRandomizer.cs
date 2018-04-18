@@ -46,7 +46,7 @@ public class PasswordRandomizer : NetworkBehaviour {
         print("StartPuzzle");
 		passwordManager = GameObject.FindGameObjectWithTag ("PasswordManager").GetComponent<Password> ();
         print(isServer);
-		if (isServer) {
+		//if (isServer) {
             print("is server");
 			RpcStartPuzzleClues (passwordLengt);
 
@@ -69,7 +69,7 @@ public class PasswordRandomizer : NetworkBehaviour {
 				}
 				RpcSetRandomPassword (i+1,_randomButton,_randomSymbol);
 			}
-		}
+		//}
 	}
 		
 	[ClientRpc]
