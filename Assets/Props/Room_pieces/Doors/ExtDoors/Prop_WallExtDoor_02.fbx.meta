@@ -9,29 +9,45 @@ ModelImporter:
     100002: Door_Frame
     100004: Handle
     100006: //RootNode
+    100008: Door_FrameExt
+    100010: Door_FrameInt
     400000: Door
     400002: Door_Frame
     400004: Handle
     400006: //RootNode
+    400008: Door_FrameExt
+    400010: Door_FrameInt
     2100000: lambert6
     2100002: lambert1
     2100004: lambert3
     2100006: lambert7
+    2100008: lambert11
+    2100010: lambert12
+    2100012: lambert9
+    2100014: lambert_Door_Wallint3x4
+    2100016: lambert13
+    2100018: lambert14
     2300000: Door
     2300002: Door_Frame
     2300004: Handle
     2300006: //RootNode
+    2300008: Door_FrameExt
+    2300010: Door_FrameInt
     3300000: Door
     3300002: Door_Frame
     3300004: Handle
     3300006: //RootNode
+    3300008: Door_FrameExt
+    3300010: Door_FrameInt
     4300000: PropWallExtDoor_02
     4300002: Door_Frame
     4300004: Door
     4300006: Handle
+    4300008: Door_FrameInt
+    4300010: Door_FrameExt
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -84,7 +100,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
