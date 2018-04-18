@@ -17,6 +17,7 @@ TagManager:
   - RoomLoader
   - PauseMenu
   - GameOverMenu
+  - ColorSymbol
   layers:
   - Default
   - TransparentFX
