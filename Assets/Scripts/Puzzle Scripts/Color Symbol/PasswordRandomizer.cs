@@ -25,7 +25,7 @@ public class PasswordRandomizer : NetworkBehaviour {
         {
 
             started = true;
-            StartPuzzle();
+            //StartPuzzle();
         }
     }
 
