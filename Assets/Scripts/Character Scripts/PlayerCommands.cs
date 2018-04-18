@@ -24,32 +24,13 @@ public class PlayerCommands : NetworkBehaviour
         }
     }
 
-    [ClientRpc]
-    public void RpcCorridorLever()
+    [Command]
+    public void CommandCorridorLever()
     {
         if (roomLoader.clearedRoom)
         {
-            print("IF");
-            print(currentRoom);
-            switch (currentRoom)
-            {
-                case RoomLoader.Room.colorSymbols:
-                    print("COLORSYMBOLS");
-                    roomLoader.colorSymbolsP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
-                    roomLoader.colorSymbolsP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
-                    break;
-                case RoomLoader.Room.roundMaze:
-                    roomLoader.roundMazeP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
-                    roomLoader.roundMazeP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
-                    break;
-                case RoomLoader.Room.outdoorMaze:
-                    roomLoader.outdoorMazeP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
-                    roomLoader.outdoorMazeP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
-                    break;
-                default:
-                    break;
-            }
-            CmdLoad();
+            roomLoader.RpcOpenDoorTo(currentRoom);
+
         }
         roomLoader.clearedRoom = true;
     }
@@ -96,7 +77,7 @@ public class PlayerCommands : NetworkBehaviour
         }
         print(currentRoom);
         print("HEJ");
-        //roomLoader.LoadNextRoom(currentRoom);
+        roomLoader.LoadNextRoom(currentRoom);
     }
 
 }

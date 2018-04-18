@@ -94,4 +94,27 @@ public class RoomLoader : NetworkBehaviour
         }
     }
 
+    [ClientRpc]
+    public void RpcOpenDoorTo(Room room)
+    {
+        switch (room)
+        {
+            case Room.colorSymbols:
+                colorSymbolsP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                colorSymbolsP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                break;
+            case Room.roundMaze:
+                roundMazeP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                roundMazeP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                break;
+            case Room.outdoorMaze:
+                outdoorMazeP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                outdoorMazeP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                break;
+            default:
+                break;
+        }
+    }
+}
+
 }
