@@ -9,7 +9,7 @@ public class CharacterScript : NetworkBehaviour
     [SerializeField]
     float movementSpeed = 32;
     [SerializeField]
-    float jumpSpeed = 42;
+    float jumpSpeed = 32;
     [SerializeField]
     float maxJumpHeight = 1.75f;
     [SerializeField]
@@ -48,7 +48,7 @@ public class CharacterScript : NetworkBehaviour
         else
         {
             footsteps = GetComponent<AudioSource>();
-           	Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Locked;
             rigby = GetComponent<Rigidbody>();
             collider = GetComponent<Collider>();
 
