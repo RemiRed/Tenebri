@@ -7,12 +7,13 @@ public class FallingDown : MonoBehaviour {
 	Animator anim;
     [SerializeField]
     RoomVariables failure;
-
+    //Hämtar rum variabeln failure.
     void Start()
     {
         anim = GetComponent<Animator>();
     }
-		
+    //När spelaren går på collidern så kommer spelarens collider stängas av och spelaren kommer falla igenom i 1 sekund.
+    //Animation kommer att spelas och sedan så hämtas Failure condition.
     IEnumerator OnTriggerEnter(Collider other)
     {
         other.enabled = !other.enabled;
