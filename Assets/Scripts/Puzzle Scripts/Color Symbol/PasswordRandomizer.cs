@@ -17,19 +17,19 @@ public class PasswordRandomizer : NetworkBehaviour {
 
 	bool started = false;	//Temp varible needed for testing
 
-	void Update(){
+	//void Update(){
 
-		//Temp function neeced for testing
-		if (isServer && Input.GetButtonDown("Jump") && !started) {
+	//	//Temp function neeced for testing
+	//	if (isServer && Input.GetButtonDown("Jump") && !started) {
 
-			started = true;
-			StartPuzzle ();
-		}
-	}
+	//		started = true;
+	//		StartPuzzle ();
+	//	}
+	//}
 
 	// Use this for initialization
 	void Start () {
-
+        StartPuzzle();
 		//Makes sure password lenght can't be to set to longer than the number of availible buttons.
 		if (passwordLengt > unsetPasswordButtons.Count) {
 
