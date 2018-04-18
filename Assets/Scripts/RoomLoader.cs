@@ -16,7 +16,8 @@ public class RoomLoader : NetworkBehaviour
 
     Room currentRoom = Room.startRoom;
 
-    public void LoadNextRoom(Room room) //Loads the next room, unloads the previous.
+    [Command]
+    public void CmdLoadRoom(Room room) //Loads the next room
     {
         if (room == Room.startRoom)
         {

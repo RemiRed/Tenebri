@@ -81,7 +81,7 @@ public class PlayerCommands : NetworkBehaviour
         }
         print(currentRoom);
         print("HEJ");
-        roomLoader.LoadNextRoom(currentRoom);
+        roomLoader.CmdLoadRoom(currentRoom);
     }
 
 }
