@@ -71,6 +71,7 @@ public class RoomVariables : NetworkBehaviour
     public void OpenDoorToNextLevel()
     {
         exitDoor.GetComponent<Animator>().SetBool("open", true);
+        pairedRoom.GetComponent<RoomVariables>().exitDoor.GetComponent<Animator>().SetBool("open", true);
     }
 
     [ClientRpc]
