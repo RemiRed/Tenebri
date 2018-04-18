@@ -70,7 +70,7 @@ public class LeverScript : Interractable
 
             case 3:
 
-                playerCmd.CmdLoad();
+//                playerCmd.CmdLoad();
 
                 break;
 
