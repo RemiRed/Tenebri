@@ -74,7 +74,7 @@ public class RoomVariables : NetworkBehaviour
         pairedRoom.GetComponent<RoomVariables>().exitDoor.GetComponent<Animator>().SetBool("open", true);
     }
 
-
+    [ClientRpc]
     public virtual void CompleteSuccess()
     {
 
@@ -85,7 +85,7 @@ public class RoomVariables : NetworkBehaviour
 
     }
 
-
+    [ClientRpc]
     public virtual void Failure()
     {
 
