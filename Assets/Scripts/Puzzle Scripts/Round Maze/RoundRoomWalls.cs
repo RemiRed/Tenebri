@@ -163,7 +163,8 @@ public class RoundRoomWalls : RoomVariables
 	{
 		foreach (GameObject bwa in walls)
 		{
-			bwa.SetActive (_walls);
+			//bwa.SetActive (_walls);
+			bwa.GetComponent<Animator>().SetBool("OpenSesamy",true);
 		}
 		foreach (RoundDoors bwu in buttons)
 		{
