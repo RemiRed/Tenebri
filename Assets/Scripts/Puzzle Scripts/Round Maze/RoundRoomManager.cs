@@ -52,8 +52,8 @@ public class RoundRoomManager : NetworkBehaviour {
 			}
 		}
     }
-	[Command]
-	public void CmdGetWallSymbols(){
+	//[Command]
+	public void GetWallSymbols(){
 
 		for (int i = 0; i < wallSymbols.Count; i++) {
 

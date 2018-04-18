@@ -36,8 +36,15 @@ public class RoundRoomWalls : RoomVariables
 //		}
 	}
 
+
+
 	[Command]
 	public void CmdRandomSymbols()
+	{
+		RandomSymbols ();
+	}
+
+	public void RandomSymbols()
 	{
 		//Resets to default
 		RpcCloseWalls(false);
@@ -151,7 +158,7 @@ public class RoundRoomWalls : RoomVariables
 	//Starts over if fails to find a working path
 	public void CmdRandomizeEverything()
 	{
-		CmdRandomSymbols();
+		RandomSymbols();
 		pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
 	}
 	//Resets Everything to default
