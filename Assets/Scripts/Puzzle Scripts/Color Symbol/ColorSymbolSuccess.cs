@@ -11,6 +11,7 @@ public class ColorSymbolSuccess : RoomVariables  {
 		Debug.LogWarning ("You passed this Puzzle");
 		GetComponent<RoomVariables> ().passed = true;
 		OpenDoorToNextLevel ();
+        roomLoader.LoadRoom(RoomLoader.Room.roundMaze);
 	}
 
     [ClientRpc]
