@@ -8,7 +8,7 @@ AnimatorController:
   m_Name: RoundMazeDoor
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: DoorOpen
+  - m_Name: OpenSesamy
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -34,8 +34,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: DoorOpen
+  - m_ConditionMode: 2
+    m_ConditionEvent: OpenSesamy
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102582986313127144}
@@ -58,8 +58,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: DoorOpen
+  - m_ConditionMode: 1
+    m_ConditionEvent: OpenSesamy
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102994583949026908}
@@ -95,7 +95,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 52ab19849b838674ab129fff28875a9c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 0ed8c1bba5363454c961f496bb3bd33e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -121,7 +121,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0ed8c1bba5363454c961f496bb3bd33e, type: 2}
+  m_Motion: {fileID: 7400000, guid: 52ab19849b838674ab129fff28875a9c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -137,10 +137,10 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102582986313127144}
-    m_Position: {x: 264, y: 192, z: 0}
+    m_Position: {x: 288, y: 36, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102994583949026908}
-    m_Position: {x: 264, y: 36, z: 0}
+    m_Position: {x: 288, y: 264, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
