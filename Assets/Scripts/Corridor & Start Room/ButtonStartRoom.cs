@@ -5,15 +5,8 @@ using UnityEngine.Networking;
 
 public class ButtonStartRoom : Interractable
 {
-
-    [SerializeField]
-    private RoomLoader roomLoader;
-
-    [SerializeField]
-    float doorDelay;
-
     bool activated = false;
-    
+
 
     void Press()
     {
@@ -22,6 +15,7 @@ public class ButtonStartRoom : Interractable
             return;
         }
         activated = true;
-        roomLoader.OpenRoomDoors();
+        GetComponentInParent<RoomVariables>().OpenDoorToNextLevel();
+        roomLoader.LoadNextRoom(RoomLoader.Room.colorSymbols);
     }
 }

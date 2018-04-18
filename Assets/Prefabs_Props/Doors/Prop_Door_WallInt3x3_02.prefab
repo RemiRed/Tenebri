@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4195616574142438}
   - component: {fileID: 33779316861965200}
   - component: {fileID: 23561202531435692}
+  - component: {fileID: 65239137455717348}
   m_Layer: 0
   m_Name: polySurface43
   m_TagString: Untagged
@@ -39,6 +40,7 @@ GameObject:
   - component: {fileID: 33317679456498098}
   - component: {fileID: 23690662796241216}
   - component: {fileID: 95105103679739510}
+  - component: {fileID: 64940404126316030}
   m_Layer: 0
   m_Name: Prop_Door_WallInt3x3_02
   m_TagString: Untagged
@@ -69,14 +71,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1611323623256198}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30, y: -2.545556, z: 2.2738647}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -1.1696, y: -0.0018747, z: -4.9377}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4195616574142438}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4195616574142438
 Transform:
   m_ObjectHideFlags: 1
@@ -228,6 +230,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1587128840307636}
   m_Mesh: {fileID: 4300002, guid: 3dd3977ec32d83440a4eb150196834ad, type: 3}
+--- !u!64 &64940404126316030
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1611323623256198}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 3dd3977ec32d83440a4eb150196834ad, type: 3}
+--- !u!65 &65239137455717348
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1587128840307636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8479755, y: 2.1744301, z: 0.11853424}
+  m_Center: {x: 0.42412078, y: 0, z: -0.04025223}
 --- !u!95 &95105103679739510
 Animator:
   serializedVersion: 3

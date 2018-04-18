@@ -10,6 +10,8 @@ public class Interractable : MonoBehaviour
     protected float delay;
 
     public PlayerCommands playerCmd;
+    [SerializeField]
+    protected RoomLoader roomLoader;
 
     public void Interract() //Calls the interractable objects method that happens when it's interracted with after a delay
     {

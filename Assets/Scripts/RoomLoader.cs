@@ -41,21 +41,11 @@ public class RoomLoader : NetworkBehaviour
             startRoomP1.SetActive(true);
             startRoomP2.SetActive(true);
         }
-        else
-        {
-            startRoomP1.SetActive(false);
-            startRoomP2.SetActive(false);
-        }
 
         if (room == Room.colorSymbols)
         {
             colorSymbolsP1.SetActive(true);
             colorSymbolsP2.SetActive(true);
-        }
-        else
-        {
-            colorSymbolsP1.SetActive(false);
-            colorSymbolsP2.SetActive(false);
         }
 
         if (room == Room.roundMaze)
@@ -63,18 +53,35 @@ public class RoomLoader : NetworkBehaviour
             roundMazeP1.SetActive(true);
             roundMazeP2.SetActive(true);
         }
-        else
-        {
-            roundMazeP1.SetActive(false);
-            roundMazeP2.SetActive(false);
-        }
 
         if (room == Room.outdoorMaze)
         {
             outdoorMazeP1.SetActive(true);
             outdoorMazeP2.SetActive(true);
         }
-        else
+    }
+
+    public void UnloadAllRoomsExcept(Room room)
+    {
+        if (room != Room.startRoom)
+        {
+            startRoomP1.SetActive(false);
+            startRoomP2.SetActive(false);
+        }
+
+        if (room != Room.colorSymbols)
+        {
+            colorSymbolsP1.SetActive(false);
+            colorSymbolsP2.SetActive(false);
+        }
+
+        if (room != Room.roundMaze)
+        {
+            roundMazeP1.SetActive(false);
+            roundMazeP2.SetActive(false);
+        }
+
+        if (room != Room.outdoorMaze)
         {
             outdoorMazeP1.SetActive(false);
             outdoorMazeP2.SetActive(false);

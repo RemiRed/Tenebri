@@ -52,7 +52,7 @@ public class CharacterScript : NetworkBehaviour
             rigby = GetComponent<Rigidbody>();
             collider = GetComponent<Collider>();
 
-            gameOverMenu= GameObject.FindGameObjectWithTag("GameOverMenu");
+            gameOverMenu = GameObject.FindGameObjectWithTag("GameOverMenu");
             gameOverMenu.SetActive(false);
 
             pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");

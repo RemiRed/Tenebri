@@ -5,13 +5,16 @@ using UnityEngine.Networking;
 
 public class RoomVariables : NetworkBehaviour
 {
-    public GameObject entryDoor;
-    public GameObject pairedRoom; 
+    public GameObject entryDoor, exitDoor;
+    public GameObject pairedRoom;
     public RoomLoader.Room room = RoomLoader.Room.startRoom;
 
     [SerializeField]
     float timerSeconds = 0, timerPenalty = 1;
     public float currentTime;
+
+    [SerializeField]
+    string doorAnimOpen, doorAnimClose;
 
     bool firstPenalty = true, startTimer = false;
     public bool passed = false;
@@ -64,8 +67,7 @@ public class RoomVariables : NetworkBehaviour
 
     public void OpenDoorToNextLevel()
     {
-
-        Debug.Log("Door to next level should now be open");
+        exitDoor.GetComponent<Animator>().SetBool("open", true);
     }
 
     public virtual void CompleteSuccess()

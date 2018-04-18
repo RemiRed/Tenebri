@@ -15,6 +15,14 @@ public class PlayerCommands : NetworkBehaviour
         roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
     }
 
+    private void Update()
+    {
+        if (roomLoader == null)
+        {
+            roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
+        }
+    }
+
     [Command]
     public void CmdCorridorLever()
     {

@@ -5,12 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 2b99c08f148dd874e88cb8b07686ec6b
-  - enabled: 1
-    path: Assets/Scenes/AndresWhiteBoxMazeLevel.unity
-    guid: 4aa702796251b6d4b9039b6102bb37ad
   - enabled: 1
     path: Assets/Scenes/RoundRoom.unity
     guid: ec413d366c760c249a7fa5339dd5925a
@@ -29,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Color Symbol Puzzle BY SAM.unity
     guid: 5a18294e57ac85f489a81dae8cb02ec6
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: fe1fa995545f1b148ada5b4fcaf4fbe6
