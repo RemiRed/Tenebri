@@ -31,7 +31,7 @@ public class PasswordRandomizer : NetworkBehaviour
     }
 
     // Use this for initialization
-    void Start()
+    void OnEnable()
     {
         //Makes sure password lenght can't be to set to longer than the number of availible buttons.
         if (passwordLength > unsetPasswordButtons.Count)
