@@ -29,9 +29,12 @@ public class PlayerCommands : NetworkBehaviour
     {
         if (roomLoader.clearedRoom)
         {
+            print("IF");
+            print(currentRoom);
             switch (currentRoom)
             {
                 case RoomLoader.Room.colorSymbols:
+                    print("COLORSYMBOLS");
                     roomLoader.colorSymbolsP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
                     roomLoader.colorSymbolsP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
                     break;
@@ -80,7 +83,20 @@ public class PlayerCommands : NetworkBehaviour
     [Command]
     public void CmdLoad() //Loads the next room, or last room if the last room is the next room
     {
-        currentRoom++;
+        switch (currentRoom)
+        {
+            case RoomLoader.Room.startRoom:
+                currentRoom = RoomLoader.Room.colorSymbols;
+                break;
+            case RoomLoader.Room.colorSymbols:
+                currentRoom = RoomLoader.Room.roundMaze;
+                break;
+            case RoomLoader.Room.roundMaze:
+                currentRoom = RoomLoader.Room.outdoorMaze;
+                break;
+            default:
+                break;
+        }
         roomLoader.LoadNextRoom(currentRoom);
     }
 
