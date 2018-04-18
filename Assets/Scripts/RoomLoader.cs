@@ -102,6 +102,7 @@ public class RoomLoader : NetworkBehaviour
             case Room.colorSymbols:
                 colorSymbolsP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
                 colorSymbolsP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                colorSymbolsP1.GetComponent<PasswordRandomizer>().StartPuzzle();
                 LoadCorridor(1);
                 break;
             case Room.roundMaze:
