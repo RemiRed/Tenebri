@@ -21,17 +21,17 @@ public class RoundRomCenter : NetworkBehaviour {
     {        
 		if (playa.tag == "Player" && activeRandom == true)
         {
-			CmdActivateRoundMazePuzzle ();
+			playa.GetComponent<PlayerCommands>().CmdActivateRoundMazePuzzle ();
             activeRandom = false;
         }
     }
 
-	[Command]
-	void CmdActivateRoundMazePuzzle(){
-
-		roomManager.GetComponent<RoundRoomManager>().GetWallSymbols();
-		roundRoom.GetComponent<RoundRoomWalls>().RandomSymbols();
-		roomManager.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
-
-	}
+//	[Command]
+//	void CmdActivateRoundMazePuzzle(){
+//
+//		roomManager.GetComponent<RoundRoomManager>().GetWallSymbols();
+//		roundRoom.GetComponent<RoundRoomWalls>().RandomSymbols();
+//		roomManager.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
+//
+//	}
 }

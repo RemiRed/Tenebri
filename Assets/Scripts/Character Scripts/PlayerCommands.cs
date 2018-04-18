@@ -51,6 +51,17 @@ public class PlayerCommands : NetworkBehaviour
         roomLoader.clearedRoom = true;
     }
 
+	[Command]
+	public void CmdActivateRoundMazePuzzle(){
+
+		Debug.Log ("commanding from player");
+
+		roomManager.GetComponent<RoundRoomManager>().GetWallSymbols();
+		roundRoom.GetComponent<RoundRoomWalls>().RandomSymbols();
+		roomManager.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
+
+	}
+
     [Command]
     public void CmdCorridorLeverRelease()
     {
