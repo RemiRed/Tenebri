@@ -27,7 +27,7 @@ public class Password : MonoBehaviour {
 					if (curPasswordRound >= passwordRounds) {
 
 						solved = true;
-						success.CompleteSuccess ();
+						success.RpcCompleteSuccess ();
 
 					} else {
 
@@ -50,7 +50,7 @@ public class Password : MonoBehaviour {
 					nextID = 1;
 					passwordLock = 0;
 				}
-				success.Failure ();
+				success.RpcFailure ();
 				curPasswordRound = 1;
 			}
 		}

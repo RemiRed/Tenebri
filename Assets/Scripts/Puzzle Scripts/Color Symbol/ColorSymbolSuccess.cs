@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class ColorSymbolSuccess : RoomVariables  {
 
     [ClientRpc]
-	public override void CompleteSuccess(){
+	public override void RpcCompleteSuccess(){
 
 		Debug.LogWarning ("You passed this Puzzle");
 		GetComponent<RoomVariables> ().passed = true;
@@ -15,7 +15,7 @@ public class ColorSymbolSuccess : RoomVariables  {
 	}
 
     [ClientRpc]
-	public override void Failure(){
+	public override void RpcFailure(){
 
 		Debug.Log ("Wrong password");
 		GetComponent<RoomVariables> ().Fail ();

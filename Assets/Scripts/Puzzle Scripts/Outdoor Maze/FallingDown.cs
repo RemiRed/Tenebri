@@ -21,6 +21,6 @@ public class FallingDown : MonoBehaviour {
         yield return new WaitForSeconds(1f);
         other.enabled = !other.enabled;
         yield return new WaitForSeconds(7f);
-        failure.Failure();
+        failure.RpcFailure();
     }
 }
