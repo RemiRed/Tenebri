@@ -9,7 +9,8 @@ public class PlayerCommands : NetworkBehaviour
     RoomLoader roomLoader;
     RoomLoader.Room currentRoom = RoomLoader.Room.colorSymbols;
 
-    
+    [SerializeField]
+    PasswordRandomizer colorSymbol;
     public GameObject map1, map2, wall;
 
     private void Start()
@@ -32,7 +33,7 @@ public class PlayerCommands : NetworkBehaviour
         {
             if (currentRoom == RoomLoader.Room.colorSymbols)
             {
-                roomLoader.colorSymbolsP1.GetComponent<PasswordRandomizer>().StartPuzzle();
+               GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<PasswordRandomizer>().StartPuzzle();
             }
             roomLoader.RpcOpenDoorTo(currentRoom);
         }
