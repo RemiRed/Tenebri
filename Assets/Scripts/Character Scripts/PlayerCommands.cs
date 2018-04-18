@@ -7,7 +7,7 @@ public class PlayerCommands : NetworkBehaviour
 {
     [SerializeField]
     RoomLoader roomLoader;
-    RoomLoader.Room currentRoom = RoomLoader.Room.startRoom;
+    RoomLoader.Room currentRoom = RoomLoader.Room.colorSymbols;
 
     public GameObject map1, map2, wall;
 
@@ -85,9 +85,6 @@ public class PlayerCommands : NetworkBehaviour
     {
         switch (currentRoom)
         {
-            case RoomLoader.Room.startRoom:
-                currentRoom = RoomLoader.Room.colorSymbols;
-                break;
             case RoomLoader.Room.colorSymbols:
                 currentRoom = RoomLoader.Room.roundMaze;
                 break;
@@ -97,7 +94,9 @@ public class PlayerCommands : NetworkBehaviour
             default:
                 break;
         }
-        roomLoader.LoadNextRoom(currentRoom);
+        print(currentRoom);
+        print("HEJ");
+        //roomLoader.LoadNextRoom(currentRoom);
     }
 
 }
