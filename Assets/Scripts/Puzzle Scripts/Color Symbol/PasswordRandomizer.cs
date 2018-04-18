@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class PasswordRandomizer : NetworkBehaviour {
+public class PasswordRandomizer : NetworkBehaviour
+{
 
-	//Variables needed for password randomization & assignment
-	public Password passwordManager;
-	public List<PasswordButton> unsetPasswordButtons;
-	public int passwordLength;
+    //Variables needed for password randomization & assignment
+    public Password passwordManager;
+    public List<PasswordButton> unsetPasswordButtons;
+    public int passwordLength;
 
-	//Variables needed for password clues randomization & assignment
-	public PuzzleClues P1Clues, P2Clues;
-	public List<Color> symbolColors;
-	public List<Material> symbols;
+    //Variables needed for password clues randomization & assignment
+    public PuzzleClues P1Clues, P2Clues;
+    public List<Color> symbolColors;
+    public List<Material> symbols;
 
-	bool started = false;   //Temp varible needed for testing
+    bool started = false;   //Temp varible needed for testing
 
     void Update()
     {
@@ -30,85 +31,94 @@ public class PasswordRandomizer : NetworkBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
-		//Makes sure password lenght can't be to set to longer than the number of availible buttons.
-		if (passwordLength > unsetPasswordButtons.Count) {
-
-			passwordLength = unsetPasswordButtons.Count;
-			Debug.LogWarning ("Password set to too long. Password length adjusted to " + unsetPasswordButtons.Count);
-		}
-		StartPuzzle ();
-	}
-    
-	//Starts the puzzle by randomizing the password and assigns values to clues on server to send to clients. 
-
-        [ClientRpc]
-        public void RpcStartPuzzle()
+    void Start()
     {
+        //Makes sure password lenght can't be to set to longer than the number of availible buttons.
+        if (passwordLength > unsetPasswordButtons.Count)
+        {
+
+            passwordLength = unsetPasswordButtons.Count;
+            Debug.LogWarning("Password set to too long. Password length adjusted to " + unsetPasswordButtons.Count);
+        }
         StartPuzzle();
     }
 
-	public void StartPuzzle(){
+    //Starts the puzzle by randomizing the password and assigns values to clues on server to send to clients. 
+    public void StartPuzzle()
+    {
 
-		passwordManager = GameObject.FindGameObjectWithTag ("PasswordManager").GetComponent<Password> ();
-		if (isServer) {
+        passwordManager = GameObject.FindGameObjectWithTag("PasswordManager").GetComponent<Password>();
 
-			RpcStartPuzzleClues (passwordLength);
+        if (isServer)
+        {
 
-			for (int i = 0; i < unsetPasswordButtons.Count; i++) {
+            RpcStartPuzzleClues(passwordLength);
 
-				int _randomButton = Random.Range (0, unsetPasswordButtons.Count-i);	
-				int _randomSymbol = Random.Range (0, symbols.Count-i);
-				int _randomColor = Random.Range (0, symbolColors.Count-i);
+            for (int i = 0; i < unsetPasswordButtons.Count; i++)
+            {
 
-				if (i < passwordLength) {
-				
-					if (i < symbolColors.Count-i) {
+                int _randomButton = Random.Range(0, unsetPasswordButtons.Count - i);
+                int _randomSymbol = Random.Range(0, symbols.Count - i);
+                int _randomColor = Random.Range(0, symbolColors.Count - i);
 
-						RpcSetRandomPuzzleClues (_randomSymbol, _randomColor);
-					
-					} else {
+                if (i < passwordLength)
+                {
 
-						Debug.LogWarning ("Not enough colors to assign clues for the whole password");
-					}
-				}
-				RpcSetRandomPassword (i+1,_randomButton,_randomSymbol);
-			}
-		}
-	}
-		
-	[ClientRpc]
-	void RpcSetRandomPassword(int _index,int _randomButton, int _randomSymbol){
+                    if (i < symbolColors.Count - i)
+                    {
 
-		passwordManager.passwordButtons.Add (unsetPasswordButtons [_randomButton]);	//Not nessesary, but useful for debuging purposes.
+                        RpcSetRandomPuzzleClues(_randomSymbol, _randomColor);
 
-		if (_index <= passwordLength) {
+                    }
+                    else
+                    {
 
-			unsetPasswordButtons [_randomButton].SetPasswordButton (_index, symbols [_randomSymbol]);
+                        Debug.LogWarning("Not enough colors to assign clues for the whole password");
+                    }
+                }
+                RpcSetRandomPassword(i + 1, _randomButton, _randomSymbol);
+            }
+        }
+    }
 
-		} else {
+    [ClientRpc]
+    void RpcSetRandomPassword(int _index, int _randomButton, int _randomSymbol)
+    {
 
-			unsetPasswordButtons [_randomButton].SetPasswordButton (0, symbols [_randomSymbol]);
-		}
-		unsetPasswordButtons.RemoveAt (_randomButton);
-		symbols.RemoveAt (_randomSymbol);
-	}
+        passwordManager.passwordButtons.Add(unsetPasswordButtons[_randomButton]);   //Not nessesary, but useful for debuging purposes.
 
-	[ClientRpc]
-	void RpcSetRandomPuzzleClues(int _randomSymbol, int _randomColor){
+        if (_index <= passwordLength)
+        {
 
-		P1Clues.SetPuzzleClues(symbols[_randomSymbol], symbolColors[_randomColor]);
-		P2Clues.SetPuzzleClues(symbols[_randomSymbol], symbolColors[_randomColor]);
+            unsetPasswordButtons[_randomButton].SetPasswordButton(_index, symbols[_randomSymbol]);
 
-		symbolColors.RemoveAt (_randomColor);
-	}
+        }
+        else
+        {
 
-	[ClientRpc]
-	void RpcStartPuzzleClues(int _passwordLength){
+            unsetPasswordButtons[_randomButton].SetPasswordButton(0, symbols[_randomSymbol]);
+        }
+        unsetPasswordButtons.RemoveAt(_randomButton);
+        symbols.RemoveAt(_randomSymbol);
+    }
 
-		P1Clues = GameObject.FindGameObjectWithTag ("P1").GetComponent<PuzzleClues> ();
-		P2Clues = GameObject.FindGameObjectWithTag ("P2").GetComponent<PuzzleClues> ();
+    [ClientRpc]
+    void RpcSetRandomPuzzleClues(int _randomSymbol, int _randomColor)
+    {
 
-		passwordManager.SetPasswordLength (passwordLength);
-	}
+        P1Clues.SetPuzzleClues(symbols[_randomSymbol], symbolColors[_randomColor]);
+        P2Clues.SetPuzzleClues(symbols[_randomSymbol], symbolColors[_randomColor]);
+
+        symbolColors.RemoveAt(_randomColor);
+    }
+
+    [ClientRpc]
+    void RpcStartPuzzleClues(int _passwordLength)
+    {
+
+        P1Clues = GameObject.FindGameObjectWithTag("P1").GetComponent<PuzzleClues>();
+        P2Clues = GameObject.FindGameObjectWithTag("P2").GetComponent<PuzzleClues>();
+
+        passwordManager.SetPasswordLength(passwordLength);
+    }
 }
