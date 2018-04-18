@@ -16,9 +16,8 @@ public class Interract : MonoBehaviour
     [Range(0.001f, int.MaxValue)]
     float slow; //Modifier for the force added to the object to simulate throwing
 
-    GameObject carriedObject;
+	GameObject carriedObject, lastInterractedObject;
     Transform carriedObjectParent;
-    GameObject lastInterractedObject;
     bool oldInterraction = false;
     bool keyUp = true;
     bool carrying = false;
@@ -27,7 +26,6 @@ public class Interract : MonoBehaviour
     Quaternion oldRot; //Old Rotation, used to stop the object from rotating
 
     float defaultDrag;
-
 
     private void Start() //saving the drag on the player component
     {

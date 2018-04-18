@@ -90,8 +90,7 @@ public class NetworkingLobby : NetworkLobbyManager
             }
         }
     }
-
-
+		
     public void MatchmakingJoinMatch(MatchInfoSnapshot match)
     {
         print("@ MatchmakingJoinMatch");
