@@ -17,26 +17,30 @@ public class CharacterScript : NetworkBehaviour
     [SerializeField]
     float maxFallSpeed = 200;
 
-	float jumpStartY, curJumpPower;
+    float jumpStartY, curJumpPower;
 
     Rigidbody rigby;
     Collider collider;
-	AudioSource footsteps;
-	GameObject pauseMenu;
-	DirectionalCollision proximityDetection;
+    AudioSource footsteps;
+    GameObject pauseMenu;
+    public GameObject gameOverMenu;
+    DirectionalCollision proximityDetection;
 
-	public bool menu = false;
+    public bool menu = false, gameOver = false;
 
-	bool jumping;
+    bool jumping;
 
     void Start()
     {
-		if (GetComponent<DirectionalCollision> () != null) {
-			proximityDetection = GetComponent<DirectionalCollision> ();
-		} else {
-			Debug.LogWarning ("No Directional Collision assigned");
-		}
-			
+        if (GetComponent<DirectionalCollision>() != null)
+        {
+            proximityDetection = GetComponent<DirectionalCollision>();
+        }
+        else
+        {
+            Debug.LogWarning("No Directional Collision assigned");
+        }
+
         if (!isLocalPlayer)
         {
             GetComponentInChildren<Camera>().transform.gameObject.SetActive(false);
@@ -47,6 +51,10 @@ public class CharacterScript : NetworkBehaviour
            	Cursor.lockState = CursorLockMode.Locked;
             rigby = GetComponent<Rigidbody>();
             collider = GetComponent<Collider>();
+
+            gameOverMenu= GameObject.FindGameObjectWithTag("GameOverMenu");
+            gameOverMenu.SetActive(false);
+
             pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
             pauseMenu.SetActive(false);
         }
@@ -70,11 +78,11 @@ public class CharacterScript : NetworkBehaviour
 
     void Update()
     {
-      
-		if (isLocalPlayer)
+
+        if (isLocalPlayer)
         {
             //Opens Menu and disables the clocked cursor
-            if (Input.GetButtonDown("Menu"))
+            if (Input.GetButtonDown("Menu") && !gameOver)
             {
                 pauseMenu.GetComponent<PauseMenu>().character = this;
                 ToggleMenu();
@@ -85,16 +93,16 @@ public class CharacterScript : NetworkBehaviour
 
     void FixedUpdate()
     {
-		if (isLocalPlayer && !menu)
+        if (isLocalPlayer && !menu)
         {
             //Executes all movements determined by active axis and currenty jump value 
             rigby.AddRelativeForce(new Vector3(
-            	/* X */     Input.GetAxisRaw("Horizontal Movement") * movementSpeed,
-             	/* Y */     Mathf.Max(curJumpPower, -maxFallSpeed),
-              	/* Z */     Input.GetAxisRaw("Vertical Movement") * movementSpeed)
-              	/* All */   * 100 * Time.deltaTime, ForceMode.Force);
+                /* X */     Input.GetAxisRaw("Horizontal Movement") * movementSpeed,
+                /* Y */     Mathf.Max(curJumpPower, -maxFallSpeed),
+                /* Z */     Input.GetAxisRaw("Vertical Movement") * movementSpeed)
+                /* All */   * 100 * Time.deltaTime, ForceMode.Force);
 
-			if (curJumpPower == 0 && (Input.GetAxisRaw("Horizontal Movement") != 0 || Input.GetAxisRaw("Vertical Movement") != 0))
+            if (curJumpPower == 0 && (Input.GetAxisRaw("Horizontal Movement") != 0 || Input.GetAxisRaw("Vertical Movement") != 0))
             {
                 footsteps.mute = false;
             }
@@ -107,7 +115,7 @@ public class CharacterScript : NetworkBehaviour
 
     void Jump()
     {
-      	if (menu) return;
+        if (menu) return;
         if (proximityDetection.IsGrounded())
         {
             if (Input.GetButtonDown("Jump"))
@@ -133,13 +141,13 @@ public class CharacterScript : NetworkBehaviour
         if (jumping)
         {
             //Cancels jump if jump is interupted or reaches jumping limit. 
-            if (Input.GetButtonUp("Jump") || 
-            	transform.position.y >= jumpStartY + maxJumpHeight || 
-            	proximityDetection.DetectDirectionalCollision(Vector3.up))
+            if (Input.GetButtonUp("Jump") ||
+                transform.position.y >= jumpStartY + maxJumpHeight ||
+                proximityDetection.DetectDirectionalCollision(Vector3.up))
             {
                 jumping = false;
                 curJumpPower = Mathf.Min(curJumpPower, 0);
             }
         }
-    }	
+    }
 }

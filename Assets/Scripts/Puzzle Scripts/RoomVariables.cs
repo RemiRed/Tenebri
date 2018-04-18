@@ -52,6 +52,13 @@ public class RoomVariables : NetworkBehaviour
 
     private void GameOver()
     {
+        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            player.GetComponent<CharacterScript>().gameOver = true;
+            player.GetComponent<CharacterScript>().menu = true;
+            player.GetComponent<CharacterScript>().gameOverMenu.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+        }
         Debug.LogError("NI E KASS, LUL GEJM ÖVER. GETGUDSTÄDSKRUBB");
     }
 
