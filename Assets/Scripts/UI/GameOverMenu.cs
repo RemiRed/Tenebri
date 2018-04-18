@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class GameOverMenu : MonoBehaviour {
 
-    //FIND NETWORK LOBBY
-        //CLOSE CONNECTION
+    NetworkingLobby networkingLobby;
+    private void Start()
+    {
+        networkingLobby = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkingLobby>();
+    }
+
+    public void Menu()
+    {
+        networkingLobby.StopMatchMaker();
+        GameObject newGO = new GameObject();
+        networkingLobby.gameObject.transform.parent = newGO.transform;
+        networkingLobby.StopHost();
+    }
 }
