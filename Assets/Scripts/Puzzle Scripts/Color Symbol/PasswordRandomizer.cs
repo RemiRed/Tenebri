@@ -15,20 +15,22 @@ public class PasswordRandomizer : NetworkBehaviour {
 	public List<Color> symbolColors;
 	public List<Material> symbols;
 
-	bool started = false;	//Temp varible needed for testing
+	bool started = false;   //Temp varible needed for testing
 
-	//void Update(){
+    void Update()
+    {
 
-	//	//Temp function neeced for testing
-	//	if (isServer && Input.GetButtonDown("Jump") && !started) {
+        //Temp function neeced for testing
+        if (isServer && Input.GetButtonDown("Jump") && !started)
+        {
 
-	//		started = true;
-	//		StartPuzzle ();
-	//	}
-	//}
+            started = true;
+            StartPuzzle();
+        }
+    }
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		//Makes sure password lenght can't be to set to longer than the number of availible buttons.
 		if (passwordLengt > unsetPasswordButtons.Count) {
 
@@ -41,11 +43,11 @@ public class PasswordRandomizer : NetworkBehaviour {
 
 	//Starts the puzzle by randomizing the password and assigns values to clues on server to send to clients. 
 	public void StartPuzzle(){
-
+        print("StartPuzzle");
 		passwordManager = GameObject.FindGameObjectWithTag ("PasswordManager").GetComponent<Password> ();
-
+        print(isServer);
 		if (isServer) {
-
+            print("is server");
 			RpcStartPuzzleClues (passwordLengt);
 
 			for (int i = 0; i < unsetPasswordButtons.Count; i++) {
