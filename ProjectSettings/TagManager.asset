@@ -18,6 +18,8 @@ TagManager:
   - PauseMenu
   - GameOverMenu
   - ColorSymbol
+  - roomManager
+  - roundRoom
   layers:
   - Default
   - TransparentFX

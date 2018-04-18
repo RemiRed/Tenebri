@@ -11,6 +11,8 @@ public class PlayerCommands : NetworkBehaviour
 
     [SerializeField]
     PasswordRandomizer colorSymbol;
+	[SerializeField]
+	GameObject roomManager, roundRoom;
     public GameObject map1, map2, wall;
 
     private void Start()
@@ -34,7 +36,12 @@ public class PlayerCommands : NetworkBehaviour
             if (currentRoom == RoomLoader.Room.colorSymbols)
             {
                GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<PasswordRandomizer>().StartPuzzle();
-            }
+			}
+			else if (currentRoom == RoomLoader.Room.roundMaze)
+			{
+				roomManager = GameObject.FindGameObjectWithTag ("roomManager");
+				roundRoom = GameObject.FindGameObjectWithTag ("roundRoom");
+			}
             roomLoader.RpcOpenDoorTo(currentRoom);
             switch (currentRoom)
             {
@@ -59,7 +66,6 @@ public class PlayerCommands : NetworkBehaviour
 		roomManager.GetComponent<RoundRoomManager>().GetWallSymbols();
 		roundRoom.GetComponent<RoundRoomWalls>().RandomSymbols();
 		roomManager.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
-
 	}
 
     [Command]
