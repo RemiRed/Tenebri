@@ -18,13 +18,13 @@ public class CloseDoor : MonoBehaviour
     {
         if (c.tag == "Player")
         {
-            Unload();
+            Close();
         }
     }
 
-    void Unload()
+    void Close()
     {
-        room.entryDoor.SetActive(true);
-        Destroy(gameObject);
+        room.entryDoor.GetComponent<Animator>().SetTrigger("isClosing");
+        roomLoader.UnloadAllRoomsExcept(room.room);
     }
 }

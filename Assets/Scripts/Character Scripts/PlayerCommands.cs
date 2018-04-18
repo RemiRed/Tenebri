@@ -7,6 +7,7 @@ public class PlayerCommands : NetworkBehaviour
 {
     [SerializeField]
     RoomLoader roomLoader;
+    RoomLoader.Room currentRoom = RoomLoader.Room.startRoom;
 
     public GameObject map1, map2, wall;
 
@@ -28,6 +29,23 @@ public class PlayerCommands : NetworkBehaviour
     {
         if (roomLoader.clearedRoom)
         {
+            switch (currentRoom)
+            {
+                case RoomLoader.Room.colorSymbols:
+                    roomLoader.colorSymbolsP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                    roomLoader.colorSymbolsP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                    break;
+                case RoomLoader.Room.roundMaze:
+                    roomLoader.roundMazeP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                    roomLoader.roundMazeP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                    break;
+                case RoomLoader.Room.outdoorMaze:
+                    roomLoader.outdoorMazeP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                    roomLoader.outdoorMazeP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                    break;
+                default:
+                    break;
+            }
             CmdLoad();
         }
         roomLoader.clearedRoom = true;
@@ -62,10 +80,8 @@ public class PlayerCommands : NetworkBehaviour
     [Command]
     public void CmdLoad() //Loads the next room, or last room if the last room is the next room
     {
-        //if (roomLoader.nextRoomNumber <= roomLoader.numberOfRooms)
-        //{
-        //    roomLoader.LoadNextRoom();
-        //    roomLoader.OpenCorridorDoors();
-        //}
+        currentRoom++;
+        roomLoader.LoadNextRoom(currentRoom);
     }
+
 }

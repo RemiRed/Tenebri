@@ -9,30 +9,12 @@ public class RoomLoader : NetworkBehaviour
     [SyncVar]
     public bool clearedRoom;
 
-    [SerializeField]
-    GameObject startRoomP1, startRoomP2, colorSymbolsP1, colorSymbolsP2, roundMazeP1, roundMazeP2, outdoorMazeP1, outdoorMazeP2;
+    public GameObject startRoomP1, startRoomP2, colorSymbolsP1, colorSymbolsP2, roundMazeP1, roundMazeP2, outdoorMazeP1, outdoorMazeP2;
 
     [SerializeField]
     List<GameObject> corridorsP1 = new List<GameObject>(), corridorsP2 = new List<GameObject>();
 
     Room currentRoom = Room.startRoom;
-
-
-    public void OpenRoomDoors()
-    {
-        //doorsP1[0].SetActive(false);
-        //doorsP1[1].SetActive(true);
-        //doorsP2[0].SetActive(false);
-        //doorsP2[1].SetActive(true);
-    }
-
-    public void OpenCorridorDoors()
-    {
-        //doorsP1[0].SetActive(true);
-        //doorsP1[1].SetActive(false);
-        //doorsP2[0].SetActive(true);
-        //doorsP2[1].SetActive(false);
-    }
 
     public void LoadNextRoom(Room room) //Loads the next room, unloads the previous.
     {
@@ -92,18 +74,24 @@ public class RoomLoader : NetworkBehaviour
     {
         for (int i = 0; i < corridorsP1.Count; i++)
         {
-            if (i== corridorID)
+            if (i == corridorID)
             {
                 corridorsP1[i].SetActive(true);
                 corridorsP2[i].SetActive(true);
             }
-            else
+        }
+    }
+
+    public void UnloadAlllCorridorsExcept(int corridorID)
+    {
+        for (int i = 0; i < corridorsP1.Count; i++)
+        {
+            if (i != corridorID)
             {
                 corridorsP1[i].SetActive(false);
                 corridorsP2[i].SetActive(false);
             }
         }
     }
-
 
 }
