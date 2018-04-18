@@ -38,10 +38,10 @@ public class PlayerCommands : NetworkBehaviour
                GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<PasswordRandomizer>().StartPuzzle();
 			}
 			else if (currentRoom == RoomLoader.Room.roundMaze)
-			{
-				roomManager = GameObject.FindGameObjectWithTag ("roomManager");
-				roundRoom = GameObject.FindGameObjectWithTag ("roundRoom");
-			}
+            {
+                roomManager = GameObject.FindGameObjectWithTag("roomManager");
+                roundRoom = GameObject.FindGameObjectWithTag("roundRoom");
+            }
             roomLoader.RpcOpenDoorTo(currentRoom);
             switch (currentRoom)
             {
@@ -63,7 +63,9 @@ public class PlayerCommands : NetworkBehaviour
 
 		Debug.Log ("commanding from player");
 
-		roomManager.GetComponent<RoundRoomManager>().GetWallSymbols();
+        roomManager = GameObject.FindGameObjectWithTag("roomManager");
+        roundRoom = GameObject.FindGameObjectWithTag("roundRoom");
+        roomManager.GetComponent<RoundRoomManager>().GetWallSymbols();
 		roundRoom.GetComponent<RoundRoomWalls>().RandomSymbols();
 		roomManager.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
 	}
