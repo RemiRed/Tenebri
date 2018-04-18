@@ -9,8 +9,12 @@ public class RoundMazeMapRoom : RoomVariables
     List<GameObject> mapButtons = new List<GameObject>();
     public List<Color> mapColours = new List<Color>();
 
-    [ClientRpc]
-    public void RpcMapButtons()
+	[ClientRpc]
+	public void RpcMapButtons(){
+		MapButtons ();
+	}
+
+    public void MapButtons()
     {
         /*for (int i = 0; i < mapButtons.Count; i++) {
 

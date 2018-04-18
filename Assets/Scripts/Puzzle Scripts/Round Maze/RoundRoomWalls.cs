@@ -27,16 +27,17 @@ public class RoundRoomWalls : RoomVariables
 
 	void Update()
 	{
-		//Debug Stuff
-		if (isServer && Input.GetKeyDown(KeyCode.G))
-		{
-			pairedRoom.GetComponent<RoundRoomManager> ().CmdGetWallSymbols ();
-			RandomSymbols();
-			pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
-		}
+//		//Debug Stuff
+//		if (isServer && Input.GetKeyDown(KeyCode.G))
+//		{
+//			pairedRoom.GetComponent<RoundRoomManager> ().CmdGetWallSymbols ();
+//			CmdRandomSymbols();
+//			pairedRoom.GetComponent<RoundMazeMapRoom>().MapButtons();
+//		}
 	}
 
-	public void RandomSymbols()
+	[Command]
+	public void CmdRandomSymbols()
 	{
 		//Resets to default
 		RpcCloseWalls(false);
@@ -150,7 +151,7 @@ public class RoundRoomWalls : RoomVariables
 	//Starts over if fails to find a working path
 	public void CmdRandomizeEverything()
 	{
-		RandomSymbols();
+		CmdRandomSymbols();
 		pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
 	}
 	//Resets Everything to default
