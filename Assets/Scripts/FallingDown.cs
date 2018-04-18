@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FallingDown : MonoBehaviour {
-    Animator anim;
+   
+	Animator anim;
     [SerializeField]
     RoomVariables failure;
 
@@ -11,13 +12,9 @@ public class FallingDown : MonoBehaviour {
     {
         anim = GetComponent<Animator>();
     }
-
-
-
+		
     IEnumerator OnTriggerEnter(Collider other)
     {
-
-
         other.enabled = !other.enabled;
         anim.SetTrigger("isFalling");
         yield return new WaitForSeconds(1f);
@@ -25,8 +22,4 @@ public class FallingDown : MonoBehaviour {
         yield return new WaitForSeconds(7f);
         failure.Failure();
     }
-
-
-
-
 }

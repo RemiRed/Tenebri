@@ -14,6 +14,7 @@ public class NetworkingMatch : NetworkBehaviour
 
     [SerializeField]
     bool matchList = true;
+
     private void Start()
     {
         networkManager = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkingLobby>();
