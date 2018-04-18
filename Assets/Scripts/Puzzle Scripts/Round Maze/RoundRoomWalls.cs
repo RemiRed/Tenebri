@@ -39,8 +39,8 @@ public class RoundRoomWalls : RoomVariables
 	public void RandomSymbols()
 	{
 		//Resets to default
-		RpcCloseWalls(true);
-		CloseWalls(true);
+		RpcCloseWalls(false);
+		CloseWalls(false);
 
 		curButtonNumber = 0;	//<<-- How can this set 'curButtonNumber' on Client if run on server? 
 		int tempLayer = 0;
@@ -159,13 +159,15 @@ public class RoundRoomWalls : RoomVariables
 	{
 		CloseWalls(_walls);
 	}
+		
 	public void CloseWalls(bool _walls)
 	{
 		foreach (GameObject bwa in walls)
 		{
 			//bwa.SetActive (_walls);
-			bwa.GetComponent<Animator>().SetBool("OpenSesamy",true);
+			bwa.GetComponent<Animator>().SetBool("OpenSesamy",_walls);
 		}
+
 		foreach (RoundDoors bwu in buttons)
 		{
 			bwu.entered = false;
@@ -199,7 +201,7 @@ public class RoundRoomWalls : RoomVariables
 	public override void Failure(){
 
 		Debug.Log ("incorrect");
-		CloseWalls (false);
+		CloseWalls (true);
 		usedCorrectSymbolMaterialIndex.Clear ();
         pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();
 		GetComponentInChildren<RoundRomCenter> ().activeRandom = true;
