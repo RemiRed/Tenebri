@@ -25,7 +25,7 @@ public class PasswordRandomizer : NetworkBehaviour {
         {
 
             started = true;
-            //StartPuzzle();
+            StartPuzzle();
         }
     }
 
@@ -37,13 +37,18 @@ public class PasswordRandomizer : NetworkBehaviour {
 			passwordLength = unsetPasswordButtons.Count;
 			Debug.LogWarning ("Password set to too long. Password length adjusted to " + unsetPasswordButtons.Count);
 		}
-        print(isServer);
-		CmdStartPuzzle ();
+		StartPuzzle ();
 	}
     
 	//Starts the puzzle by randomizing the password and assigns values to clues on server to send to clients. 
-    [Command]
-	public void CmdStartPuzzle(){
+
+        [ClientRpc]
+        public void RpcStartPuzzle()
+    {
+        StartPuzzle();
+    }
+
+	public void StartPuzzle(){
 
 		passwordManager = GameObject.FindGameObjectWithTag ("PasswordManager").GetComponent<Password> ();
 		if (isServer) {
