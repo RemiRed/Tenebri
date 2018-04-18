@@ -15,10 +15,7 @@ public class RoomVariables : NetworkBehaviour
 
     [SerializeField]
     protected RoomLoader roomLoader;
-
-    [SerializeField]
-    string doorAnimOpen, doorAnimClose;
-
+    
     bool firstPenalty = true, startTimer = false;
     public bool passed = false;
 
