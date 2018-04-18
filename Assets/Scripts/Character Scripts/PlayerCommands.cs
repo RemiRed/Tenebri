@@ -9,6 +9,7 @@ public class PlayerCommands : NetworkBehaviour
     RoomLoader roomLoader;
     RoomLoader.Room currentRoom = RoomLoader.Room.colorSymbols;
 
+    
     public GameObject map1, map2, wall;
 
     private void Start()
@@ -30,7 +31,10 @@ public class PlayerCommands : NetworkBehaviour
         if (roomLoader.clearedRoom)
         {
             roomLoader.RpcOpenDoorTo(currentRoom);
-
+            if (currentRoom == RoomLoader.Room.colorSymbols)
+            {
+                roomLoader.colorSymbolsP1.GetComponent<PasswordRandomizer>().StartPuzzle();
+            }
         }
         roomLoader.clearedRoom = true;
     }
