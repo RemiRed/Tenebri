@@ -70,7 +70,7 @@ public class RoomLoader : NetworkBehaviour
         }
     }
 
-    public void LoadNextCorridor(int corridorID)
+    public void LoadCorridor(int corridorID)
     {
         for (int i = 0; i < corridorsP1.Count; i++)
         {
@@ -102,10 +102,12 @@ public class RoomLoader : NetworkBehaviour
             case Room.colorSymbols:
                 colorSymbolsP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
                 colorSymbolsP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                LoadCorridor(1);
                 break;
             case Room.roundMaze:
                 roundMazeP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
                 roundMazeP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
+                LoadCorridor(2);
                 break;
             case Room.outdoorMaze:
                 outdoorMazeP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);

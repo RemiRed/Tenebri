@@ -14,6 +14,9 @@ public class RoomVariables : NetworkBehaviour
     public float currentTime;
 
     [SerializeField]
+    protected RoomLoader roomLoader;
+
+    [SerializeField]
     string doorAnimOpen, doorAnimClose;
 
     bool firstPenalty = true, startTimer = false;
