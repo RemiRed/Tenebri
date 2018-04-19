@@ -11,7 +11,7 @@ public class RoundRoomCenter : NetworkBehaviour {
     [SerializeField]
     GameObject roomManager;
 
-    [SyncVar]
+    [SyncVar(hook = "Test")]
     public bool playerInCenter = false;
 //	NetworkingLobby lobby;
 //
@@ -36,6 +36,11 @@ public class RoundRoomCenter : NetworkBehaviour {
         {
             playerInCenter = false;
         }
+    }
+
+    private void Test(bool playerInCenter)
+    {
+        print("Hook");
     }
 
     //	[Command]
