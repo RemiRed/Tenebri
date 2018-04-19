@@ -15,6 +15,8 @@ public class PlayerCommands : NetworkBehaviour
 	GameObject roomManager, roundRoom;
     public GameObject map1, map2, wall;
 
+    RoundRoomCenter center;
+
     private void Start()
     {
         roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
@@ -69,6 +71,17 @@ public class PlayerCommands : NetworkBehaviour
 		roundRoom.GetComponent<RoundRoomWalls>().RandomSymbols();
 		roomManager.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
 	}
+
+    [Command]
+    public void CmdStartRoundMaze()
+    {
+        center = GameObject.FindGameObjectWithTag("RoundRoomCenter").GetComponent<RoundRoomCenter>();
+        if (center.playerInCenter)
+        {
+            print("JAMEN JA");
+        }
+    }
+
 
     [Command]
     public void CmdCorridorLeverRelease()
