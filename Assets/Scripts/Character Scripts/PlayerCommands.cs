@@ -80,17 +80,23 @@ public class PlayerCommands : NetworkBehaviour
             print("JAMEN JA");
         }
     }
+//	[Command]
+//	public void CmdSetRoundRoomVar(GameObject _roundRoom){
+//
+//		roundRoom = _roundRoom;
+//	}
+
 	[Command]
 	public void CmdReRandomRoundMazePuzzle()
 	{
 		Debug.Log ("Looking for round room:" + roundRoom.name);
-		roundRoom.GetComponent<RoundRoomWalls>().reRandomNow = true;
+		GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls>().reRandomNow = true;
 	}
 
 	[Command]
 	public void CmdRoundMazeFailure(){
 
-		roundRoom.GetComponent<RoundRoomWalls> ().RpcFailureOnServer ();
+		GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls> ().RpcFailureOnServer ();
 	}
 
     [Command]
