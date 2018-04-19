@@ -17,11 +17,20 @@ public class PlayerCommands : NetworkBehaviour
 
     RoundRoomCenter center;
 
+    [SyncVar]
+    public bool localPlayer;
+
     private void Start()
     {
         roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
+        CmdLocalPlayer(isLocalPlayer);
     }
 
+    [Command]
+    private void CmdLocalPlayer(bool localPlayer)
+    {
+        this.localPlayer = localPlayer;
+    }
     private void Update()
     {
         if (roomLoader == null)

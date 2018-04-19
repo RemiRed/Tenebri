@@ -211,8 +211,14 @@ public class RoundRoomWalls : RoomVariables
     public override void PartialSuccess()
     {
         Debug.Log("YOU WON!");
-//      RandomizeEverything();
-		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCommands>().CmdReRandomRoundMazePuzzle(); 
+        //      RandomizeEverything();
+        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            if (player.GetComponent<PlayerCommands>().localPlayer)
+            {
+                player.GetComponent<PlayerCommands>().CmdReRandomRoundMazePuzzle();
+            }
+        }
 
 		//reRandomNow = true;
 
