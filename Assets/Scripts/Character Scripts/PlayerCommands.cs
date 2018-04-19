@@ -41,6 +41,7 @@ public class PlayerCommands : NetworkBehaviour
 			}
 			else if (currentRoom == RoomLoader.Room.roundMaze)
             {
+				Debug.Log ("Did the puzzle find these objects?");
                 roomManager = GameObject.FindGameObjectWithTag("roomManager");
                 roundRoom = GameObject.FindGameObjectWithTag("roundRoom");
             }

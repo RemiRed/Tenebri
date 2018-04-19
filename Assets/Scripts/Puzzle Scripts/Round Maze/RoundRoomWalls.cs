@@ -23,6 +23,9 @@ public class RoundRoomWalls : RoomVariables
     [SerializeField]
     int numberOfButtons, curButtonNumber, numberOfPasswordButtons, materialIndex;
 
+	[SyncVar (hook = "RandomizeEverything")]
+	bool reRandomNow = false;
+
     bool foundPath = true;
 
     void Update()
@@ -35,14 +38,6 @@ public class RoundRoomWalls : RoomVariables
         //			pairedRoom.GetComponent<RoundMazeMapRoom>().MapButtons();
         //		}
     }
-
-
-
-//    [Command]
-//    public void CmdRandomSymbols()
-//    {
-//        RandomSymbols();
-//    }
 
     public void RandomSymbols()
     {
@@ -153,7 +148,8 @@ public class RoundRoomWalls : RoomVariables
             //If Path failed; Re-Randomize everything
             if (curButtonNumber >= numberOfButtons && !foundPath)
             {
-                CmdRandomizeEverything();
+//                RandomizeEverything();
+				reRandomNow = true;
             }
         }
         else if (!_button.GetComponent<RoundDoors>().entered)   //Opens remaining unopened rooms
@@ -162,13 +158,15 @@ public class RoundRoomWalls : RoomVariables
             _button.GetComponent<PasswordButton>().SetPasswordButton(false);
         }
     }
-
-    [Command]
+		
     //Starts over if fails to find a working path
-    public void CmdRandomizeEverything()
+    public void RandomizeEverything()
     {
-        RandomSymbols();
-        pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
+		if (isServer) {
+			RandomSymbols ();
+			pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
+		}
+		reRandomNow = false;
     }
     //Resets Everything to default
     [ClientRpc]
@@ -201,11 +199,14 @@ public class RoundRoomWalls : RoomVariables
         foundPath = true;
     }
 
+
+
     public override void PartialSuccess()
     {
-
         Debug.Log("YOU WON!");
-        CmdRandomizeEverything();
+//      RandomizeEverything();
+		reRandomNow = true;
+
     }
 
     public override void RpcCompleteSuccess()
