@@ -236,7 +236,7 @@ public class RoundRoomWalls : RoomVariables
 	public void RpcFailureOnServer(){
 
 		Debug.Log ("Stuff should fail now");
-		CloseWalls(false);
+		CloseWalls(true);
 		usedCorrectSymbolMaterialIndex.Clear();
 		pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();
 		GetComponentInChildren<RoundRoomCenter>().activeRandom = true;
