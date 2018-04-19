@@ -136,6 +136,7 @@ public class RoundRoomWalls : RoomVariables
                 pairedRoom.GetComponent<RoundMazeMapRoom>().mapColours.Add(_symbolColors[rara]);
                 _button.GetComponent<RoundDoors>().graphicalObject.GetComponent<Renderer>().materials = _materials;
             }
+           
             //Adds button locations to map room
             theseButtonsIndex.Add(_button.GetComponent<RoundDoors>().buttonNumber);
 
@@ -183,7 +184,8 @@ public class RoundRoomWalls : RoomVariables
 
     public void CloseWalls(bool _walls)
     {
-		Debug.Log ("Close walls locally");
+        curButtonNumber = 0;
+        Debug.Log ("Close walls locally");
         foreach (GameObject bwa in walls)
         {
 			Debug.Log ("Animation should be called");
