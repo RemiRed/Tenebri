@@ -212,7 +212,9 @@ public class RoundRoomWalls : RoomVariables
     {
         Debug.Log("YOU WON!");
 //      RandomizeEverything();
-		reRandomNow = true;
+		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCommands>().CmdReRandomRoundMazePuzzle(); 
+
+		//reRandomNow = true;
 
     }
 

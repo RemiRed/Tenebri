@@ -82,6 +82,11 @@ public class PlayerCommands : NetworkBehaviour
             print("JAMEN JA");
         }
     }
+	[Command]
+	public void CmdReRandomRoundMazePuzzle(){
+
+		roundRoom.GetComponent<RoundRoomWalls>().reRandomNow = true;
+	}
 
     [Command]
     public void CmdPlayerInCenter(bool playerInCenter)
