@@ -38,7 +38,7 @@ public class RoundRoomCenter : NetworkBehaviour {
         }
     }
 
-    private void Test(bool playerInCenter)
+    void Test(bool playerInCenter)
     {
         print("Hook");
     }
