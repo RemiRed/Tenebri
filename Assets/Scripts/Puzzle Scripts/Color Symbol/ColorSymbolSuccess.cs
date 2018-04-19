@@ -5,21 +5,40 @@ using UnityEngine.Networking;
 
 public class ColorSymbolSuccess : RoomVariables  {
 
-    [ClientRpc]
-	public override void RpcCompleteSuccess(){
+	public override void CompleteSuccess ()
+	{
+		if (isServer) {
 
-		Debug.Log ("Color symbol success server:" + isServer);
-		Debug.LogWarning ("You passed this Puzzle");
-		GetComponent<RoomVariables> ().passed = true;
-		OpenDoorToNextLevel ();
-        roomLoader.LoadRoom(RoomLoader.Room.roundMaze);
+			RpcCompleteSuccess ();
+		}
+	}
+		
+    [ClientRpc]
+	public void RpcCompleteSuccess(){
+
+		if (isServer) {
+			Debug.Log ("Color symbol success server:" + isServer);
+			Debug.LogWarning ("You passed this Puzzle");
+			GetComponent<RoomVariables> ().passed = true;
+			OpenDoorToNextLevel ();
+			roomLoader.LoadRoom (RoomLoader.Room.roundMaze);
+		}
+	}
+
+	public override void Failure ()
+	{
+		if (isServer) {
+			RpcFailure ();
+		}
 	}
 
     [ClientRpc]
-	public override void RpcFailure(){
+	public void RpcFailure(){
 
-		Debug.Log ("server: " + isServer);
-		Debug.Log ("Wrong password");
-		GetComponent<RoomVariables> ().Fail ();
+		if (isServer) {
+			Debug.Log ("server: " + isServer);
+			Debug.Log ("Wrong password");
+			GetComponent<RoomVariables> ().Fail ();
+		}
 	}
 }

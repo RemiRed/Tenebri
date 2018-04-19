@@ -71,16 +71,6 @@ public class PlayerCommands : NetworkBehaviour
         roomLoader.clearedRoom = true;
     }
 
-//	[Command]
-//	public void CmdActivateRoundMazePuzzle(){
-//
-//        roomManager = GameObject.FindGameObjectWithTag("roomManager");
-//        roundRoom = GameObject.FindGameObjectWithTag("roundRoom");
-//        roomManager.GetComponent<RoundRoomManager>().GetWallSymbols();
-//		roundRoom.GetComponent<RoundRoomWalls>().RandomSymbols();
-//		roomManager.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
-//	}
-
     [Command]
     public void CmdStartRoundMaze()
     {
@@ -91,8 +81,8 @@ public class PlayerCommands : NetworkBehaviour
         }
     }
 	[Command]
-	public void CmdReRandomRoundMazePuzzle(){
-
+	public void CmdReRandomRoundMazePuzzle()
+	{
 		Debug.Log ("Looking for round room:" + roundRoom.name);
 		roundRoom.GetComponent<RoundRoomWalls>().reRandomNow = true;
 	}
@@ -114,9 +104,7 @@ public class PlayerCommands : NetworkBehaviour
     [Command]
     public void CmdMazeLever0()
     {
-
         map1.GetComponent<RevealMap>().RpcRevealMap();
-
     }
     [Command]
     public void CmdMazeLever1()
@@ -126,9 +114,7 @@ public class PlayerCommands : NetworkBehaviour
     [Command]
     public void CmdMazeLever2()
     {
-
         wall.GetComponent<RevealMap>().RpcWallRemover();
-
     }
 
 }

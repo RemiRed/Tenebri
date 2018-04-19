@@ -14,7 +14,7 @@ public class OutdoorMazeSuccess : RoomVariables {
     }
 
 
-    public override void RpcCompleteSuccess()
+    public override void CompleteSuccess()
     {
 
     }
@@ -24,7 +24,7 @@ public class OutdoorMazeSuccess : RoomVariables {
 
     }
 
-    public override void RpcFailure()
+    public override void Failure()
     {
         player.transform.position = respawnLocatiom.position;
         Fail();

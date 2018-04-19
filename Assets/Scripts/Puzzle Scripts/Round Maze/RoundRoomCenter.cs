@@ -13,25 +13,16 @@ public class RoundRoomCenter : NetworkBehaviour {
 
     [SyncVar(hook = "Test")]
     public bool playerInCenter = false;
-    
-//	NetworkingLobby lobby;
-//
-//	void Start(){
-//
-//		lobby = GameObject.FindGameObjectWithTag ("NetworkManager").GetComponent<NetworkingLobby> ();
-//	}
 
     void OnTriggerEnter(Collider player)
     {        
 		if (player.tag == "Player" && activeRandom == true)
         {
-            //player.GetComponent<PlayerCommands>().CmdActivateRoundMazePuzzle ();
-            //         activeRandom = false;
             player.gameObject.GetComponent<PlayerCommands>().CmdPlayerInCenter(true);
 			player.gameObject.name = "Player(localPlayer)";
 
-			Debug.Log (player.GetComponent<PlayerCommands> ());
-			Debug.Log (GetComponentInParent<Password> ().success.gameObject.name);
+//			Debug.Log (player.GetComponent<PlayerCommands> ());
+//			Debug.Log (GetComponentInParent<Password> ().success.gameObject.name);
 
 			GetComponentInParent<Password> ().success.playercommand = player.GetComponent<PlayerCommands>();
         }
@@ -55,13 +46,4 @@ public class RoundRoomCenter : NetworkBehaviour {
 			roomManager.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
 		}
     }
-
-    //	[Command]
-    //	void CmdActivateRoundMazePuzzle(){
-    //
-    //		roomManager.GetComponent<RoundRoomManager>().GetWallSymbols();
-    //		roundRoom.GetComponent<RoundRoomWalls>().RandomSymbols();
-    //		roomManager.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
-    //
-    //	}
 }

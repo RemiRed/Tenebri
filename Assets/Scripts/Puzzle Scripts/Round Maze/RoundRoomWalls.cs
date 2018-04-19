@@ -51,11 +51,9 @@ public class RoundRoomWalls : RoomVariables
         int _curSymbolIndex = 0;
         bool firstLayer = false;
 
-
         //Creates list of references to the Index of maze symbol materials to be used
         foreach (GameObject _symbol in pairedRoom.GetComponent<RoundRoomManager>().wallSymbols)
         {
-
             if (!usedCorrectSymbolMaterialIndex.Contains(_curSymbolIndex))
             {
 
@@ -212,18 +210,18 @@ public class RoundRoomWalls : RoomVariables
 		playercommand.CmdReRandomRoundMazePuzzle();
     }
 
-    public override void RpcCompleteSuccess()
+    public override void CompleteSuccess()
     {
         Debug.LogWarning("You passed this Puzzle");
         passed = true;
-        CloseWalls(false);
+		CloseWalls(true);
         OpenDoorToNextLevel();
     }
 
-    public override void RpcFailure()
+    public override void Failure()
     {
         Debug.Log("incorrect");
-        CloseWalls(true);
+		CloseWalls(false);
         usedCorrectSymbolMaterialIndex.Clear();
         pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();
         GetComponentInChildren<RoundRoomCenter>().activeRandom = true;
