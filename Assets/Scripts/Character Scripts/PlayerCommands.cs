@@ -51,7 +51,6 @@ public class PlayerCommands : NetworkBehaviour
 			}
 			else if (currentRoom == RoomLoader.Room.roundMaze)
             {
-				Debug.Log ("Did the puzzle find these objects?");
                 roomManager = GameObject.FindGameObjectWithTag("roomManager");
                 roundRoom = GameObject.FindGameObjectWithTag("roundRoom");
 				Debug.Log (roundRoom.name);
@@ -94,7 +93,6 @@ public class PlayerCommands : NetworkBehaviour
 	[Command]
 	public void CmdReRandomRoundMazePuzzle(){
 
-		Debug.Log (roundRoom.name);
 		Debug.Log ("Looking for round room:" + roundRoom.name);
 		roundRoom.GetComponent<RoundRoomWalls>().reRandomNow = true;
 	}

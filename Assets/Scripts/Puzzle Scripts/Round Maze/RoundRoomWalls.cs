@@ -149,9 +149,9 @@ public class RoundRoomWalls : RoomVariables
             //If Path failed; Re-Randomize everything
             if (curButtonNumber >= numberOfButtons && !foundPath)
             {
-                RandomizeEverything(true);
-				//reRandomNow = true;
-				Debug.Log ("Re-random fixing stuff?");
+//                RandomizeEverything(true);
+//				//reRandomNow = true;
+				playercommand.CmdReRandomRoundMazePuzzle();
             }
         }
         else if (!_button.GetComponent<RoundDoors>().entered)   //Opens remaining unopened rooms
@@ -206,25 +206,10 @@ public class RoundRoomWalls : RoomVariables
         foundPath = true;
     }
 
-
-
     public override void PartialSuccess()
     {
         Debug.Log("YOU WON!");
-//    	RandomizeEverything();
 		playercommand.CmdReRandomRoundMazePuzzle();
-//        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
-//        {
-//			Debug.Log (player.name);
-//            player.GetComponent<PlayerCommands>().CmdLocalPlayer();
-//            if (player.GetComponent<PlayerCommands>().localPlayer)
-//            {
-//                player.GetComponent<PlayerCommands>().CmdReRandomRoundMazePuzzle();
-//            }
-//        }
-
-		//reRandomNow = true;
-
     }
 
     public override void RpcCompleteSuccess()
