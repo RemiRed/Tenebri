@@ -82,6 +82,13 @@ public class PlayerCommands : NetworkBehaviour
         }
     }
 
+    [Command]
+    public void CmdPlayerInCenter(bool playerInCenter)
+    {
+        center = GameObject.FindGameObjectWithTag("RoundRoomCenter").GetComponent<RoundRoomCenter>();
+        center.playerInCenter = playerInCenter;
+    }
+
 
     [Command]
     public void CmdCorridorLeverRelease()

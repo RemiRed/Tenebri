@@ -13,6 +13,7 @@ public class RoundRoomCenter : NetworkBehaviour {
 
     [SyncVar(hook = "Test")]
     public bool playerInCenter = false;
+    
 //	NetworkingLobby lobby;
 //
 //	void Start(){
@@ -26,7 +27,7 @@ public class RoundRoomCenter : NetworkBehaviour {
         {
             //player.GetComponent<PlayerCommands>().CmdActivateRoundMazePuzzle ();
             //         activeRandom = false;
-            playerInCenter = true;
+            player.gameObject.GetComponent<PlayerCommands>().CmdPlayerInCenter(true);
         }
     }
 
@@ -34,13 +35,13 @@ public class RoundRoomCenter : NetworkBehaviour {
     {
         if (player.tag == "Player" && activeRandom == true)
         {
-            playerInCenter = false;
+            player.gameObject.GetComponent<PlayerCommands>().CmdPlayerInCenter(false);
         }
     }
 
     void Test(bool playerInCenter)
     {
-        print("Hook");
+        print("Hook en är hä");
     }
 
     //	[Command]
