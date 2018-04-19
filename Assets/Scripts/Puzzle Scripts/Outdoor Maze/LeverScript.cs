@@ -19,8 +19,6 @@ public class LeverScript : Interractable
     bool leverPulled = false;
     bool a_isPulling;
 
-
-
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -86,7 +84,7 @@ public class LeverScript : Interractable
     void LetGo()
     {
         if (leverPulled)
-            if (leverPulled = !false)
+            if (leverPulled != false)
             {
                 anim.SetBool("isPulling", false);
                 

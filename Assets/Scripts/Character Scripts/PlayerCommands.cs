@@ -11,8 +11,8 @@ public class PlayerCommands : NetworkBehaviour
 
     [SerializeField]
     PasswordRandomizer colorSymbol;
-	[SerializeField]
-	GameObject roomManager, roundRoom;
+	//[SerializeField]
+	public GameObject roomManager, roundRoom;
     public GameObject map1, map2, wall;
 
     RoundRoomCenter center;
@@ -74,8 +74,6 @@ public class PlayerCommands : NetworkBehaviour
 	[Command]
 	public void CmdActivateRoundMazePuzzle(){
 
-		Debug.Log ("commanding from player");
-
         roomManager = GameObject.FindGameObjectWithTag("roomManager");
         roundRoom = GameObject.FindGameObjectWithTag("roundRoom");
         roomManager.GetComponent<RoundRoomManager>().GetWallSymbols();
@@ -95,6 +93,7 @@ public class PlayerCommands : NetworkBehaviour
 	[Command]
 	public void CmdReRandomRoundMazePuzzle(){
 
+		Debug.Log ("Looking for round room:" + roundRoom);
 		roundRoom.GetComponent<RoundRoomWalls>().reRandomNow = true;
 	}
 
