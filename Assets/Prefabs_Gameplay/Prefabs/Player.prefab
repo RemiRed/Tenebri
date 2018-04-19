@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 114456303138999076}
   - component: {fileID: 114997999790617198}
   - component: {fileID: 114047692334094794}
+  - component: {fileID: 114142633595961290}
   m_Layer: 0
   m_Name: View
   m_TagString: MainCamera
@@ -101,7 +102,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -307,9 +308,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomLoader: {fileID: 0}
+  colorSymbol: {fileID: 0}
+  roomManager: {fileID: 0}
+  roundRoom: {fileID: 0}
   map1: {fileID: 0}
   map2: {fileID: 0}
   wall: {fileID: 0}
+  localPlayer: 0
 --- !u!114 &114047692334094794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -342,6 +347,18 @@ MonoBehaviour:
   gameOverMenu: {fileID: 0}
   menu: 0
   gameOver: 0
+--- !u!114 &114142633595961290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1973606981855708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9247f1cd14599d54296c02676cdf7ace, type: 2}
 --- !u!114 &114456303138999076
 MonoBehaviour:
   m_ObjectHideFlags: 1
