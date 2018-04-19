@@ -177,13 +177,16 @@ public class RoundRoomWalls : RoomVariables
     [ClientRpc]
     void RpcCloseWalls(bool _walls)
     {
+		Debug.Log ("Close wall on client from Rpc. Set: " + _walls);
         CloseWalls(_walls);
     }
 
     public void CloseWalls(bool _walls)
     {
+		Debug.Log ("Close walls locally");
         foreach (GameObject bwa in walls)
         {
+			Debug.Log ("Animation should be called");
             //bwa.SetActive (_walls);
             bwa.GetComponent<Animator>().SetBool("OpenSesamy", _walls);
         }
@@ -227,4 +230,15 @@ public class RoundRoomWalls : RoomVariables
         GetComponentInChildren<RoundRoomCenter>().activeRandom = true;
         Fail();
     }
+
+	[ClientRpc]
+	public void RpcFailureOnServer(){
+
+		Debug.Log ("Stuff should fail now");
+		CloseWalls(false);
+		usedCorrectSymbolMaterialIndex.Clear();
+		pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();
+		GetComponentInChildren<RoundRoomCenter>().activeRandom = true;
+		Fail();
+	}
 }

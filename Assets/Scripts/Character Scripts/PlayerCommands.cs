@@ -87,6 +87,12 @@ public class PlayerCommands : NetworkBehaviour
 		roundRoom.GetComponent<RoundRoomWalls>().reRandomNow = true;
 	}
 
+	[Command]
+	public void CmdFailure(){
+
+		roundRoom.GetComponent<RoundRoomWalls> ().RpcFailureOnServer ();
+	}
+
     [Command]
     public void CmdPlayerInCenter(bool playerInCenter)
     {
