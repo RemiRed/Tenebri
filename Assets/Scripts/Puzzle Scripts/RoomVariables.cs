@@ -78,6 +78,7 @@ public class RoomVariables : NetworkBehaviour
 
     }
 
+
     public virtual void PartialSuccess()
     {
 
