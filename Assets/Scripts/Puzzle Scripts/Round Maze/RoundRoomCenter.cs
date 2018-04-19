@@ -43,11 +43,14 @@ public class RoundRoomCenter : NetworkBehaviour {
     {
 		Debug.Log (isServer);
         print("Hook en är hä");
-		if (isServer ) {
-			Debug.Log ("PLACE SHIT HERE TO START");
+		if (isServer && activeRandom) {
+			activeRandom = false;
+
 			roomManager.GetComponent<RoundRoomManager>().GetWallSymbols();
 			roundRoom.GetComponent<RoundRoomWalls>().RandomSymbols();
 			roomManager.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
+
+			Debug.Log ("shit should work now");
 
 		}
     }

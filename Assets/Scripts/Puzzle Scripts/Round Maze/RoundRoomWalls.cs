@@ -38,11 +38,11 @@ public class RoundRoomWalls : RoomVariables
 
 
 
-    [Command]
-    public void CmdRandomSymbols()
-    {
-        RandomSymbols();
-    }
+//    [Command]
+//    public void CmdRandomSymbols()
+//    {
+//        RandomSymbols();
+//    }
 
     public void RandomSymbols()
     {
