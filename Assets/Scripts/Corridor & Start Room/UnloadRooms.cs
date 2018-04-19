@@ -2,22 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnloadRooms : MonoBehaviour {
-
-    RoomVariables room;
+public class UnloadRooms : MonoBehaviour
+{
+    [SerializeField]
     RoomLoader roomLoader;
 
-    private void Start()
-    {
-        roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
-        room = transform.parent.GetComponent<RoomVariables>();
-    }
 
     private void OnTriggerEnter(Collider c)
     {
         if (c.tag == "Player")
         {
-            print(roomLoader);
             Unload();
         }
     }
