@@ -17,6 +17,7 @@ public class UnloadRooms : MonoBehaviour {
     {
         if (c.tag == "Player")
         {
+            print(roomLoader);
             Unload();
         }
     }
