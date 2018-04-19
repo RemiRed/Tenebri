@@ -150,6 +150,7 @@ public class RoundRoomWalls : RoomVariables
             {
 //                RandomizeEverything();
 				reRandomNow = true;
+				Debug.Log ("Re-random fixing stuff?");
             }
         }
         else if (!_button.GetComponent<RoundDoors>().entered)   //Opens remaining unopened rooms
@@ -160,13 +161,16 @@ public class RoundRoomWalls : RoomVariables
     }
 		
     //Starts over if fails to find a working path
-    public void RandomizeEverything()
+	public void RandomizeEverything(bool _randomNow)
     {
-		if (isServer) {
-			RandomSymbols ();
-			pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
+		if(_randomNow = true){
+
+			if (isServer) {
+				RandomSymbols ();
+				pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
+			}
+			reRandomNow = false;
 		}
-		reRandomNow = false;
     }
     //Resets Everything to default
     [ClientRpc]
