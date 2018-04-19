@@ -10,6 +10,10 @@ public class ColorSymbolSuccess : RoomVariables  {
 		if (isServer) {
 
 			RpcCompleteSuccess ();
+		} else {
+			GetComponent<RoomVariables> ().passed = true;
+			OpenDoorToNextLevel ();
+			roomLoader.LoadRoom (RoomLoader.Room.roundMaze);
 		}
 	}
 		
@@ -29,6 +33,9 @@ public class ColorSymbolSuccess : RoomVariables  {
 	{
 		if (isServer) {
 			RpcFailure ();
+		} else {
+			Debug.Log ("Wrong password");
+			GetComponent<RoomVariables> ().Fail ();
 		}
 	}
 
