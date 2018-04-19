@@ -230,6 +230,7 @@ public class RoundRoomWalls : RoomVariables
 		Debug.LogWarning("You passed this Puzzle");
 		passed = true;
 		CloseWalls(true);
+		roomLoader.LoadRoom (RoomLoader.Room.outdoorMaze);
 		OpenDoorToNextLevel();
 	}
 
