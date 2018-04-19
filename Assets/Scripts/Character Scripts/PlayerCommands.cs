@@ -88,7 +88,7 @@ public class PlayerCommands : NetworkBehaviour
 	}
 
 	[Command]
-	public void CmdFailure(){
+	public void CmdRoundMazeFailure(){
 
 		roundRoom.GetComponent<RoundRoomWalls> ().RpcFailureOnServer ();
 	}

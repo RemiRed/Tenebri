@@ -223,12 +223,13 @@ public class RoundRoomWalls : RoomVariables
 
     public override void Failure()
     {
-        Debug.Log("incorrect");
-		CloseWalls(false);
-        usedCorrectSymbolMaterialIndex.Clear();
-        pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();
-        GetComponentInChildren<RoundRoomCenter>().activeRandom = true;
-        Fail();
+		playercommand.CmdRoundMazeFailure ();
+//        Debug.Log("incorrect");
+//		  CloseWalls(false);
+//        usedCorrectSymbolMaterialIndex.Clear();
+//        pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();
+//        GetComponentInChildren<RoundRoomCenter>().activeRandom = true;
+//        Fail();
     }
 
 	[ClientRpc]
