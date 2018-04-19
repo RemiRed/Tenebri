@@ -41,17 +41,12 @@ public class RoundRoomCenter : NetworkBehaviour {
 
     void Test(bool playerInCenter)
     {
-		Debug.Log (isServer);
-        print("Hook en är hä");
 		if (isServer && activeRandom) {
 			activeRandom = false;
 
 			roomManager.GetComponent<RoundRoomManager>().GetWallSymbols();
 			roundRoom.GetComponent<RoundRoomWalls>().RandomSymbols();
 			roomManager.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
-
-			Debug.Log ("shit should work now");
-
 		}
     }
 

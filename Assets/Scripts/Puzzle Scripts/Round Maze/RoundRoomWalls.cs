@@ -23,6 +23,9 @@ public class RoundRoomWalls : RoomVariables
     [SerializeField]
     int numberOfButtons, curButtonNumber, numberOfPasswordButtons, materialIndex;
 
+//	[SyncVar (hook = "RandomizeEverything")]
+//	public bool reRandomNow = false;
+
     bool foundPath = true;
 
     void Update()
@@ -35,14 +38,6 @@ public class RoundRoomWalls : RoomVariables
         //			pairedRoom.GetComponent<RoundMazeMapRoom>().MapButtons();
         //		}
     }
-
-
-
-//    [Command]
-//    public void CmdRandomSymbols()
-//    {
-//        RandomSymbols();
-//    }
 
     public void RandomSymbols()
     {
@@ -154,6 +149,8 @@ public class RoundRoomWalls : RoomVariables
             if (curButtonNumber >= numberOfButtons && !foundPath)
             {
                 CmdRandomizeEverything();
+				//reRandomNow = true;
+				Debug.Log ("Re-random fixing stuff?");
             }
         }
         else if (!_button.GetComponent<RoundDoors>().entered)   //Opens remaining unopened rooms
@@ -163,12 +160,28 @@ public class RoundRoomWalls : RoomVariables
         }
     }
 
-    [Command]
+	[Command]
     //Starts over if fails to find a working path
-    public void CmdRandomizeEverything()
+	public void CmdRandomizeEverything()
     {
-        RandomSymbols();
-        pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
+		Debug.Log ("RERANDOMIZE EVERYTHING!");
+		if (isServer) {
+			RandomSymbols ();
+			pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
+		} else {
+			Debug.Log ("Not Server");
+		}
+
+//		if(_randomNow == true){
+//
+//			Debug.Log (isServer);
+//			if (isServer) {
+//				Debug.Log ("SHOULD BE RERANDOMIZED NOW");
+//				RandomSymbols ();
+//				pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
+//			}
+//			reRandomNow = false;
+//		}
     }
     //Resets Everything to default
     [ClientRpc]
@@ -201,11 +214,24 @@ public class RoundRoomWalls : RoomVariables
         foundPath = true;
     }
 
+
+
     public override void PartialSuccess()
     {
-
         Debug.Log("YOU WON!");
         CmdRandomizeEverything();
+//        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+//        {
+//			Debug.Log (player.name);
+//            player.GetComponent<PlayerCommands>().CmdLocalPlayer();
+//            if (player.GetComponent<PlayerCommands>().localPlayer)
+//            {
+//                player.GetComponent<PlayerCommands>().CmdReRandomRoundMazePuzzle();
+//            }
+//        }
+
+		//reRandomNow = true;
+
     }
 
     public override void RpcCompleteSuccess()

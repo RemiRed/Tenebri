@@ -17,9 +17,19 @@ public class PlayerCommands : NetworkBehaviour
 
     RoundRoomCenter center;
 
+    [SyncVar]
+    public bool localPlayer;
+
     private void Start()
     {
         roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
+       // CmdLocalPlayer(isLocalPlayer);
+    }
+
+    [Command]
+    public void CmdLocalPlayer()
+    {
+        localPlayer = isLocalPlayer;
     }
 
     private void Update()
@@ -41,6 +51,7 @@ public class PlayerCommands : NetworkBehaviour
 			}
 			else if (currentRoom == RoomLoader.Room.roundMaze)
             {
+				Debug.Log ("Did the puzzle find these objects?");
                 roomManager = GameObject.FindGameObjectWithTag("roomManager");
                 roundRoom = GameObject.FindGameObjectWithTag("roundRoom");
             }
@@ -81,6 +92,11 @@ public class PlayerCommands : NetworkBehaviour
             print("JAMEN JA");
         }
     }
+//	[Command]
+//	public void CmdReRandomRoundMazePuzzle(){
+//
+//		roundRoom.GetComponent<RoundRoomWalls>().reRandomNow = true;
+//	}
 
     [Command]
     public void CmdPlayerInCenter(bool playerInCenter)
