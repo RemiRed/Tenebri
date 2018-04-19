@@ -20,6 +20,7 @@ TagManager:
   - ColorSymbol
   - roomManager
   - roundRoom
+  - RoundRoomCenter
   layers:
   - Default
   - TransparentFX
