@@ -28,6 +28,7 @@ public class RoundRoomCenter : NetworkBehaviour {
             //player.GetComponent<PlayerCommands>().CmdActivateRoundMazePuzzle ();
             //         activeRandom = false;
             player.gameObject.GetComponent<PlayerCommands>().CmdPlayerInCenter(true);
+			GetComponentInParent<Password> ().success.playercommand = player.GetComponent<PlayerCommands>();
         }
     }
 

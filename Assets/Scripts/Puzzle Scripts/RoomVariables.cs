@@ -8,6 +8,7 @@ public class RoomVariables : NetworkBehaviour
     public GameObject entryDoor, exitDoor;
     public GameObject pairedRoom;
     public RoomLoader.Room room = RoomLoader.Room.startRoom;
+	public PlayerCommands playercommand;
 
     [SerializeField]
     float timerSeconds = 0, timerPenalty = 1;

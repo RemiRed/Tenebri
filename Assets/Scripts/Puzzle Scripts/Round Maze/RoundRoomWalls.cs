@@ -7,6 +7,7 @@ public class RoundRoomWalls : RoomVariables
 {
 
     public Password passwordManager;
+	//public GameObject playerCommand;
 
     [SerializeField]
     List<GameObject> walls = new List<GameObject>();
@@ -23,8 +24,8 @@ public class RoundRoomWalls : RoomVariables
     [SerializeField]
     int numberOfButtons, curButtonNumber, numberOfPasswordButtons, materialIndex;
 
-//	[SyncVar (hook = "RandomizeEverything")]
-//	public bool reRandomNow = false;
+	[SyncVar (hook = "RandomizeEverything")]
+	public bool reRandomNow = false;
 
     bool foundPath = true;
 
@@ -148,7 +149,7 @@ public class RoundRoomWalls : RoomVariables
             //If Path failed; Re-Randomize everything
             if (curButtonNumber >= numberOfButtons && !foundPath)
             {
-                CmdRandomizeEverything();
+                RandomizeEverything(true);
 				//reRandomNow = true;
 				Debug.Log ("Re-random fixing stuff?");
             }
@@ -159,29 +160,20 @@ public class RoundRoomWalls : RoomVariables
             _button.GetComponent<PasswordButton>().SetPasswordButton(false);
         }
     }
-
-	[Command]
+		
     //Starts over if fails to find a working path
-	public void CmdRandomizeEverything()
+	public void RandomizeEverything(bool _reRandomNow)
     {
-		Debug.Log ("RERANDOMIZE EVERYTHING!");
-		if (isServer) {
-			RandomSymbols ();
-			pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
-		} else {
-			Debug.Log ("Not Server");
+		if(_reRandomNow == true){
+			Debug.Log ("RERANDOMIZE EVERYTHING!");
+			Debug.Log (isServer);
+			if (isServer) {
+				Debug.Log ("SHOULD BE RERANDOMIZED NOW");
+				RandomSymbols ();
+				pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
+			}
+			reRandomNow = false;
 		}
-
-//		if(_randomNow == true){
-//
-//			Debug.Log (isServer);
-//			if (isServer) {
-//				Debug.Log ("SHOULD BE RERANDOMIZED NOW");
-//				RandomSymbols ();
-//				pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
-//			}
-//			reRandomNow = false;
-//		}
     }
     //Resets Everything to default
     [ClientRpc]
@@ -219,7 +211,8 @@ public class RoundRoomWalls : RoomVariables
     public override void PartialSuccess()
     {
         Debug.Log("YOU WON!");
-        CmdRandomizeEverything();
+//    	RandomizeEverything();
+		playercommand.CmdReRandomRoundMazePuzzle();
 //        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
 //        {
 //			Debug.Log (player.name);
@@ -236,7 +229,6 @@ public class RoundRoomWalls : RoomVariables
 
     public override void RpcCompleteSuccess()
     {
-
         Debug.LogWarning("You passed this Puzzle");
         passed = true;
         CloseWalls(false);
@@ -245,7 +237,6 @@ public class RoundRoomWalls : RoomVariables
 
     public override void RpcFailure()
     {
-
         Debug.Log("incorrect");
         CloseWalls(true);
         usedCorrectSymbolMaterialIndex.Clear();
