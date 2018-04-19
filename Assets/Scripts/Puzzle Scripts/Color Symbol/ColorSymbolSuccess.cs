@@ -21,13 +21,11 @@ public class ColorSymbolSuccess : RoomVariables  {
     [ClientRpc]
 	public void RpcCompleteSuccess(){
 
-		if (isServer) {
-			Debug.Log ("Color symbol success server:" + isServer);
-			Debug.LogWarning ("You passed this Puzzle");
-			GetComponent<RoomVariables> ().passed = true;
-			OpenDoorToNextLevel ();
-			roomLoader.LoadRoom (RoomLoader.Room.roundMaze);
-		}
+		Debug.Log ("Color symbol success server:" + isServer);
+		Debug.LogWarning ("You passed this Puzzle");
+		GetComponent<RoomVariables> ().passed = true;
+		OpenDoorToNextLevel ();
+		roomLoader.LoadRoom (RoomLoader.Room.roundMaze);
 	}
 
 	public override void Failure ()
@@ -44,10 +42,8 @@ public class ColorSymbolSuccess : RoomVariables  {
     [ClientRpc]
 	public void RpcFailure(){
 
-		if (isServer) {
-			Debug.Log ("server: " + isServer);
-			Debug.Log ("Wrong password");
-			GetComponent<RoomVariables> ().Fail ();
-		}
+		Debug.Log ("server: " + isServer);
+		Debug.Log ("Wrong password");
+		GetComponent<RoomVariables> ().Fail ();
 	}
 }
