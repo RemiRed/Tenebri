@@ -89,7 +89,7 @@ public class PlayerCommands : NetworkBehaviour
 	[Command]
 	public void CmdReRandomRoundMazePuzzle()
 	{
-		Debug.Log ("Looking for round room:" + roundRoom.name);
+		//Debug.Log ("Looking for round room:" + roundRoom.name);
 		GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls>().reRandomNow = true;
 	}
 
