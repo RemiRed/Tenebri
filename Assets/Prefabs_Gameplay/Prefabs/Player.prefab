@@ -307,9 +307,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomLoader: {fileID: 0}
+  colorSymbol: {fileID: 0}
+  roomManager: {fileID: 0}
+  roundRoom: {fileID: 0}
   map1: {fileID: 0}
   map2: {fileID: 0}
   wall: {fileID: 0}
+  localPlayer: 0
 --- !u!114 &114047692334094794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -368,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 0
+  m_TransformSyncMode: 3
   m_SendInterval: 1
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0

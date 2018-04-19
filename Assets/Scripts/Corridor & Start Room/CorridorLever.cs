@@ -8,8 +8,6 @@ public class CorridorLever : Interractable
 
     public GameObject exitDoor;
     public GameObject entryDoor;
-    [SerializeField]
-    RoomLoader roomLoader;
 
     [SerializeField]
     float doorDelay;

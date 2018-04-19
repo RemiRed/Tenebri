@@ -7,7 +7,7 @@ public class RoomLoader : NetworkBehaviour
 {
     public enum Room { startRoom, colorSymbols, roundMaze, outdoorMaze };
     [SyncVar]
-    public bool clearedRoom;
+    public bool clearedRoomBool = false;
 
     public GameObject startRoomP1, startRoomP2, colorSymbolsP1, colorSymbolsP2, roundMazeP1, roundMazeP2, outdoorMazeP1, outdoorMazeP2;
 

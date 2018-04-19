@@ -43,7 +43,7 @@ public class PlayerCommands : NetworkBehaviour
     [Command]
     public void CmdCorridorLever()
     {
-        if (roomLoader.clearedRoom)
+        if (roomLoader.clearedRoomBool)
         {
             if (currentRoom == RoomLoader.Room.colorSymbols)
             {
@@ -68,7 +68,7 @@ public class PlayerCommands : NetworkBehaviour
                     break;
             }
         }
-        roomLoader.clearedRoom = true;
+        roomLoader.clearedRoomBool = true;
     }
 
 	[Command]
@@ -109,7 +109,7 @@ public class PlayerCommands : NetworkBehaviour
     [Command]
     public void CmdCorridorLeverRelease()
     {
-        roomLoader.clearedRoom = false;
+        roomLoader.clearedRoomBool = false;
     }
 
     [Command]
