@@ -23,14 +23,15 @@ public class PlayerCommands : NetworkBehaviour
     private void Start()
     {
         roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
-        CmdLocalPlayer(isLocalPlayer);
+       // CmdLocalPlayer(isLocalPlayer);
     }
 
     [Command]
-    private void CmdLocalPlayer(bool localPlayer)
+    public void CmdLocalPlayer()
     {
-        this.localPlayer = localPlayer;
+        localPlayer = isLocalPlayer;
     }
+
     private void Update()
     {
         if (roomLoader == null)

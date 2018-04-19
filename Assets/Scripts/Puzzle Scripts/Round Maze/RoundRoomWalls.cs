@@ -214,6 +214,7 @@ public class RoundRoomWalls : RoomVariables
         //      RandomizeEverything();
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
         {
+            player.GetComponent<PlayerCommands>().CmdLocalPlayer();
             if (player.GetComponent<PlayerCommands>().localPlayer)
             {
                 player.GetComponent<PlayerCommands>().CmdReRandomRoundMazePuzzle();
