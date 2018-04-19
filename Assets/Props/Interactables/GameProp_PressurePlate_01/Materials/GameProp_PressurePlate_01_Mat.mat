@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: GameProp_PressurePlate_01_Mat
+  m_Name: GameProp_PressurePlate_with_elemental_01_Mat
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 05e989c26985d4b1aaa91acf6f5d2b70, type: 3}
+        m_Texture: {fileID: 2800000, guid: a369be2a4fbc240a38a9ea2d9ae8f535, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -39,11 +39,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1953dd82e0ce24ec6ac88383f0090bac, type: 3}
+        m_Texture: {fileID: 2800000, guid: c9318c397e4b84b4b8c32bf19400ce5f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 4727721be5cbb4b60ab1f847d48931c1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9e44f818fbe6641578d1e98029936641, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
