@@ -30,9 +30,9 @@ public class Password : MonoBehaviour {
 						success.CompleteSuccess ();
 
 					} else {
-
+						
 						success.PartialSuccess ();
-						curPasswordRound++;
+						curPasswordRound = 10;
 						nextID = 0;
 					}
 				}

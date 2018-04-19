@@ -217,27 +217,26 @@ public class RoundRoomWalls : RoomVariables
 
     public override void CompleteSuccess()
     {
-        Debug.LogWarning("You passed this Puzzle");
-        passed = true;
-		CloseWalls(true);
-        OpenDoorToNextLevel();
+		playercommand.CmdRoundMazeCompleteSuccess ();
     }
 
     public override void Failure()
     {
 		playercommand.CmdRoundMazeFailure ();
-//        Debug.Log("incorrect");
-//		  CloseWalls(false);
-//        usedCorrectSymbolMaterialIndex.Clear();
-//        pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();
-//        GetComponentInChildren<RoundRoomCenter>().activeRandom = true;
-//        Fail();
     }
+	[ClientRpc]
+	public void RpcCompleteSuccessOnRoundMaze()
+	{
+		Debug.LogWarning("You passed this Puzzle");
+		passed = true;
+		CloseWalls(true);
+		OpenDoorToNextLevel();
+	}
 
 	[ClientRpc]
-	public void RpcFailureOnServer(){
+	public void RpcRoundMazeFailure(){
 
-		Debug.Log ("Stuff should fail now");
+		Debug.Log ("Fail");
 		CloseWalls(true);
 		usedCorrectSymbolMaterialIndex.Clear();
 		pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();

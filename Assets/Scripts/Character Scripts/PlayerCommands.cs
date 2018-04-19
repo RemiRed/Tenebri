@@ -94,10 +94,18 @@ public class PlayerCommands : NetworkBehaviour
 	}
 
 	[Command]
+	public void CmdRoundMazeCompleteSuccess(){
+
+		GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls> ().RpcCompleteSuccessOnRoundMaze();
+	}
+
+	[Command]
 	public void CmdRoundMazeFailure(){
 
-		GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls> ().RpcFailureOnServer ();
+		GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls> ().RpcRoundMazeFailure ();
 	}
+
+
 
     [Command]
     public void CmdPlayerInCenter(bool playerInCenter)
