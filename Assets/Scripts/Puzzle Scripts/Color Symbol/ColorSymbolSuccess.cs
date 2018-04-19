@@ -7,6 +7,7 @@ public class ColorSymbolSuccess : RoomVariables  {
 
 	public override void CompleteSuccess ()
 	{
+		Debug.Log (isServer);
 		if (isServer) {
 
 			RpcCompleteSuccess ();
@@ -31,6 +32,7 @@ public class ColorSymbolSuccess : RoomVariables  {
 
 	public override void Failure ()
 	{
+		Debug.Log (isServer);
 		if (isServer) {
 			RpcFailure ();
 		} else {
