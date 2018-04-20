@@ -15,6 +15,7 @@ public class ExitPlane : MonoBehaviour
         if (c.tag == "Player")
         {
             video.targetCamera = c.gameObject.GetComponentInChildren<Camera>();
+            video.Play();
             videoCheck = true;
         }
     }
