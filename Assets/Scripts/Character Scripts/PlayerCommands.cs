@@ -80,13 +80,13 @@ public class PlayerCommands : NetworkBehaviour
             print("JAMEN JA");
         }
     }
-
-
+		
 	[Command]
 	public void CmdReRandomRoundMazePuzzle()
 	{
 		//Debug.Log ("Looking for round room:" + roundRoom.name);
-		GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls>().reRandomNow = true;
+		//GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls>().reRandomNow = true;
+		GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls>().RpcRandomizeEverything();
 	}
 
 	[Command]

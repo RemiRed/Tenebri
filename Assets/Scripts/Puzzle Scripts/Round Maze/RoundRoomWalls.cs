@@ -24,8 +24,8 @@ public class RoundRoomWalls : RoomVariables
     [SerializeField]
     int numberOfButtons, curButtonNumber, numberOfPasswordButtons, materialIndex;
 
-	[SyncVar (hook = "RandomizeEverything")]
-	public bool reRandomNow = false;
+//	[SyncVar (hook = "RandomizeEverything")]
+//	public bool reRandomNow = false;
 
     bool foundPath = true;
 
@@ -161,18 +161,19 @@ public class RoundRoomWalls : RoomVariables
     }
 		
     //Starts over if fails to find a working path
-	public void RandomizeEverything(bool _reRandomNow)
+	[ClientRpc]
+	public void RpcRandomizeEverything()
     {
-		if(_reRandomNow == true){
-			Debug.Log ("RERANDOMIZE EVERYTHING!");
-			Debug.Log (isServer);
-			if (isServer) {
-				Debug.Log ("SHOULD BE RERANDOMIZED NOW");
+//		if(_reRandomNow == true){
+//			Debug.Log ("RERANDOMIZE EVERYTHING!");
+//			Debug.Log (isServer);
+//			if (isServer) {
+//				Debug.Log ("SHOULD BE RERANDOMIZED NOW");
 				RandomSymbols ();
 				pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
-			}
-			reRandomNow = false;
-		}
+//			}
+//			reRandomNow = false;
+//		}
     }
     //Resets Everything to default
     [ClientRpc]
