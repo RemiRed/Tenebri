@@ -5,9 +5,7 @@ using UnityEngine.Networking;
 
 public class RoundRoomWalls : RoomVariables
 {
-
     public Password passwordManager;
-	//public GameObject playerCommand;
 
     [SerializeField]
     List<GameObject> walls = new List<GameObject>();
