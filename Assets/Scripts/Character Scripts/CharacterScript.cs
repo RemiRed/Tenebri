@@ -30,6 +30,8 @@ public class CharacterScript : NetworkBehaviour
 
     bool jumping;
 
+    bool hasMoved = false;
+
     void Start()
     {
         if (GetComponent<DirectionalCollision>() != null)
@@ -63,6 +65,7 @@ public class CharacterScript : NetworkBehaviour
 
     public void ToggleMenu()
     {
+       
         menu = !menu;
         if (menu)
         {
@@ -81,6 +84,14 @@ public class CharacterScript : NetworkBehaviour
 
         if (isLocalPlayer)
         {
+            if (Input.anyKeyDown)
+            {
+                hasMoved = true;
+            }
+            if (!hasMoved)
+            {
+                return;
+            }
             //Opens Menu and disables the clocked cursor
             if (Input.GetButtonDown("Menu") && !gameOver)
             {
@@ -95,6 +106,10 @@ public class CharacterScript : NetworkBehaviour
     {
         if (isLocalPlayer && !menu)
         {
+            if (!hasMoved)
+            {
+                return;
+            }
             //Executes all movements determined by active axis and currenty jump value 
             rigby.AddRelativeForce(new Vector3(
                 /* X */     Input.GetAxisRaw("Horizontal Movement") * movementSpeed,
