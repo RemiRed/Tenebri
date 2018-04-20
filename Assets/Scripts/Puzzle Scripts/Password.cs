@@ -32,7 +32,6 @@ public class Password : MonoBehaviour {
 					} else {
 						
 						success.PartialSuccess ();
-						curPasswordRound = 10;
 						nextID = 0;
 					}
 				}

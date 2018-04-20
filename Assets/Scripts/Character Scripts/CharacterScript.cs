@@ -33,7 +33,7 @@ public class CharacterScript : NetworkBehaviour
     bool hasMoved = false;
 
     void Start()
-    {
+	{
         if (GetComponent<DirectionalCollision>() != null)
         {
             proximityDetection = GetComponent<DirectionalCollision>();
@@ -156,10 +156,8 @@ public class CharacterScript : NetworkBehaviour
         if (jumping)
         {
             //Cancels jump if jump is interupted or reaches jumping limit. 
-            if (Input.GetButtonUp("Jump") ||
-                transform.position.y >= jumpStartY + maxJumpHeight ||
-                proximityDetection.DetectDirectionalCollision(Vector3.up))
-            {
+            if (Input.GetButtonUp("Jump") || transform.position.y >= jumpStartY + maxJumpHeight || proximityDetection.DetectDirectionalCollision(Vector3.up))
+                {
                 jumping = false;
                 curJumpPower = Mathf.Min(curJumpPower, 0);
             }
