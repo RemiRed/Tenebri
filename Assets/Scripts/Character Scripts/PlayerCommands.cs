@@ -80,11 +80,7 @@ public class PlayerCommands : NetworkBehaviour
             print("JAMEN JA");
         }
     }
-//	[Command]
-//	public void CmdSetRoundRoomVar(GameObject _roundRoom){
-//
-//		roundRoom = _roundRoom;
-//	}
+
 
 	[Command]
 	public void CmdReRandomRoundMazePuzzle()

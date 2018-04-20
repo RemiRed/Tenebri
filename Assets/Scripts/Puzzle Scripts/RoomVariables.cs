@@ -75,25 +75,12 @@ public class RoomVariables : NetworkBehaviour
 	public virtual void CompleteSuccess(){
 
 	}
-
-//    [ClientRpc]
-//    public virtual void RpcCompleteSuccess()
-//    {
-//
-//    }
-
-
+		
     public virtual void PartialSuccess()
     {
 
     }
-
-//    [ClientRpc]
-//    public virtual void RpcFailure()
-//    {
-//
-//    }
-
+		 
 	public virtual void Failure()
 	{
 
