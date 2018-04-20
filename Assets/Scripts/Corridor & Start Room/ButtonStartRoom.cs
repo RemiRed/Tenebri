@@ -12,7 +12,7 @@ public class ButtonStartRoom : Interractable
 
     void Press()
     {
-        if (activated || (p1.entered && p2.entered))
+        if (activated || (!p1.entered && !p2.entered))
         {
             return;
         }
