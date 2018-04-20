@@ -67,8 +67,7 @@ public class LeverScript : Interractable
                 break;
 
             case 3:
-
-//                playerCmd.CmdLoad();
+                playerCmd.CmdMazeLever3();
 
                 break;
 

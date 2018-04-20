@@ -23,6 +23,7 @@ TagManager:
   - RoundRoomCenter
   - SpawnPoint1
   - SpawnPoint2
+  - OutdoorMaze
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,7 @@ public class RoundRoomCenter : NetworkBehaviour {
     [SerializeField]
     GameObject roomManager;
 
-    [SyncVar(hook = "Test")]
+    [SyncVar(hook = "PlayerInCenter")]
     public bool playerInCenter = false;
 
     void OnTriggerEnter(Collider player)
@@ -32,7 +32,7 @@ public class RoundRoomCenter : NetworkBehaviour {
         }
     }
 
-    void Test(bool playerInCenter)
+    void PlayerInCenter(bool playerInCenter)
     {
 		if (isServer && activeRandom) {
 			activeRandom = false;

@@ -162,5 +162,14 @@ public class PlayerCommands : NetworkBehaviour
     {
         wall.GetComponent<RevealMap>().RpcWallRemover();
     }
-
+    [Command]
+    public void CmdMazeLever3()
+    {
+        RpcMazeLever3();
+    }
+    [ClientRpc]
+    void RpcMazeLever3()
+    {
+        GameObject.FindGameObjectWithTag("OutdoorMaze").GetComponent<RoomVariables>().OpenDoorToNextLevel();
+    }
 }
