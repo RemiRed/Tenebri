@@ -21,6 +21,8 @@ TagManager:
   - roomManager
   - roundRoom
   - RoundRoomCenter
+  - SpawnPoint1
+  - SpawnPoint2
   layers:
   - Default
   - TransparentFX

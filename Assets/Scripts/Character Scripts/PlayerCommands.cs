@@ -20,6 +20,8 @@ public class PlayerCommands : NetworkBehaviour
     [SyncVar]
     public bool localPlayer;
 
+    
+
     private void Start()
     {
         //roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
@@ -110,6 +112,18 @@ public class PlayerCommands : NetworkBehaviour
         center.playerInCenter = playerInCenter;
     }
 
+    [Command]
+    public void CmdStartRoomLanded(int id)
+    {
+        if (id == 1)
+        {
+            GameObject.FindGameObjectWithTag("SpawnPoint1").GetComponent<UnloadRooms>().entered = true;
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("SpawnPoint2").GetComponent<UnloadRooms>().entered = true;
+        }
+    }
 
     [Command]
     public void CmdCorridorLeverRelease()

@@ -14,23 +14,20 @@ public class UnloadRooms : NetworkBehaviour
     [SyncVar]
     public bool entered;
 
+    [SerializeField]
+    int id;
+
     private void OnTriggerEnter(Collider c)
     {
 
         if (c.tag == "Player")
         {
-            CmdEntered();
+            c.gameObject.GetComponent<PlayerCommands>().CmdStartRoomLanded(id);
             if (entered && otherUnloadRooms.entered)
             {
                 Unload();
             }
         }
-    }
-
-    [Command]
-    void CmdEntered()
-    {
-        entered = true;
     }
 
     void Unload()
