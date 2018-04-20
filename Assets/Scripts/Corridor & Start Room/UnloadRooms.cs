@@ -21,7 +21,6 @@ public class UnloadRooms : NetworkBehaviour
 
     private void OnTriggerEnter(Collider c)
     {
-
         if (c.tag == "Player")
         {
             playerCmd = c.gameObject.GetComponent<PlayerCommands>();
