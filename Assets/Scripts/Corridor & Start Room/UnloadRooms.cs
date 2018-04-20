@@ -19,14 +19,21 @@ public class UnloadRooms : NetworkBehaviour
 
     PlayerCommands playerCmd;
 
+    bool unloaded = false;
+
     private void OnTriggerStay(Collider c)
     {
+        if (unloaded)
+        {
+            return;
+        }
         if (c.tag == "Player")
         {
             playerCmd = c.gameObject.GetComponent<PlayerCommands>();
             playerCmd.CmdStartRoomLanded(id);
             if (entered && otherUnloadRooms.entered)
             {
+                unloaded = true;
                 playerCmd.CmdUnloadBeginning();
             }
         }
