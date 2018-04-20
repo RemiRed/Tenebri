@@ -15,6 +15,7 @@ public class ClearSceneManager : MonoBehaviour {
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
         StartCoroutine(WaitForVideo());
     }
 

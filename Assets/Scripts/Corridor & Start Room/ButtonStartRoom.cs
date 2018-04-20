@@ -7,10 +7,12 @@ public class ButtonStartRoom : Interractable
 {
     bool activated = false;
 
+    [SerializeField]
+    UnloadRooms p1, p2;
 
     void Press()
     {
-        if (activated)
+        if (activated || (p1.entered && p2.entered))
         {
             return;
         }
