@@ -17,22 +17,19 @@ public class UnloadRooms : NetworkBehaviour
     [SerializeField]
     int id;
 
+    PlayerCommands playerCmd;
+
     private void OnTriggerEnter(Collider c)
     {
 
         if (c.tag == "Player")
         {
-            c.gameObject.GetComponent<PlayerCommands>().CmdStartRoomLanded(id);
+            playerCmd = c.gameObject.GetComponent<PlayerCommands>();
+            playerCmd.CmdStartRoomLanded(id);
             if (entered && otherUnloadRooms.entered)
             {
-                Unload();
+                playerCmd.CmdUnloadBeginning();
             }
         }
-    }
-
-    void Unload()
-    {
-        roomLoader.UnloadAllRoomsExcept(RoomLoader.Room.startRoom);
-        roomLoader.UnloadAlllCorridorsExcept(0);
     }
 }

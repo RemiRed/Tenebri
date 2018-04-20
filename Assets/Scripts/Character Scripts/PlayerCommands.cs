@@ -11,8 +11,8 @@ public class PlayerCommands : NetworkBehaviour
 
     [SerializeField]
     PasswordRandomizer colorSymbol;
-	//[SerializeField]
-	public GameObject roomManager, roundRoom;
+    //[SerializeField]
+    public GameObject roomManager, roundRoom;
     public GameObject map1, map2, wall;
 
     RoundRoomCenter center;
@@ -20,12 +20,12 @@ public class PlayerCommands : NetworkBehaviour
     [SyncVar]
     public bool localPlayer;
 
-    
+
 
     private void Start()
     {
         //roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
-       // CmdLocalPlayer(isLocalPlayer);
+        // CmdLocalPlayer(isLocalPlayer);
     }
 
     [Command]
@@ -49,13 +49,13 @@ public class PlayerCommands : NetworkBehaviour
         {
             if (currentRoom == RoomLoader.Room.colorSymbols)
             {
-               GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<PasswordRandomizer>().StartPuzzle();
-			}
-			else if (currentRoom == RoomLoader.Room.roundMaze)
+                GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<PasswordRandomizer>().StartPuzzle();
+            }
+            else if (currentRoom == RoomLoader.Room.roundMaze)
             {
                 roomManager = GameObject.FindGameObjectWithTag("roomManager");
                 roundRoom = GameObject.FindGameObjectWithTag("roundRoom");
-				Debug.Log (roundRoom.name);
+                Debug.Log(roundRoom.name);
             }
             roomLoader.RpcOpenDoorTo(currentRoom);
             switch (currentRoom)
@@ -82,26 +82,28 @@ public class PlayerCommands : NetworkBehaviour
             print("JAMEN JA");
         }
     }
-		
-	[Command]
-	public void CmdReRandomRoundMazePuzzle()
-	{
-		//Debug.Log ("Looking for round room:" + roundRoom.name);
-		//GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls>().reRandomNow = true;
-		GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls>().RpcRandomizeEverything();
-	}
 
-	[Command]
-	public void CmdRoundMazeCompleteSuccess(){
+    [Command]
+    public void CmdReRandomRoundMazePuzzle()
+    {
+        //Debug.Log ("Looking for round room:" + roundRoom.name);
+        //GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls>().reRandomNow = true;
+        GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls>().RpcRandomizeEverything();
+    }
 
-		GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls> ().RpcCompleteSuccessOnRoundMaze();
-	}
+    [Command]
+    public void CmdRoundMazeCompleteSuccess()
+    {
 
-	[Command]
-	public void CmdRoundMazeFailure(){
+        GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls>().RpcCompleteSuccessOnRoundMaze();
+    }
 
-		GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls> ().RpcRoundMazeFailure ();
-	}
+    [Command]
+    public void CmdRoundMazeFailure()
+    {
+
+        GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls>().RpcRoundMazeFailure();
+    }
 
 
 
@@ -123,6 +125,14 @@ public class PlayerCommands : NetworkBehaviour
         {
             GameObject.FindGameObjectWithTag("SpawnPoint2").GetComponent<UnloadRooms>().entered = true;
         }
+    }
+
+    [Command]
+    public void CmdUnloadBeginning()
+    {
+        RoomLoader roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
+        roomLoader.UnloadAllRoomsExcept(RoomLoader.Room.startRoom);
+        roomLoader.UnloadAlllCorridorsExcept(0);
     }
 
     [Command]
