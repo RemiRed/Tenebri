@@ -19,7 +19,7 @@ public class UnloadRooms : NetworkBehaviour
 
     PlayerCommands playerCmd;
 
-    private void OnTriggerEnter(Collider c)
+    private void OnTriggerStay(Collider c)
     {
         if (c.tag == "Player")
         {
