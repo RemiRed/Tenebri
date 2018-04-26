@@ -73,15 +73,15 @@ public class PlayerCommands : NetworkBehaviour
         roomLoader.clearedRoom = true;
     }
 
-//    [Command]
-//    public void CmdStartRoundMaze()
-//    {
-//        center = GameObject.FindGameObjectWithTag("RoundRoomCenter").GetComponent<RoundRoomCenter>();
-////        if (center.playerInCenter)
-////        {
-////            print("JAMEN JA");
-////        }
-//    }
+    [Command]
+    public void CmdStartRoundMaze()
+    {
+        center = GameObject.FindGameObjectWithTag("RoundRoomCenter").GetComponent<RoundRoomCenter>();
+        if (center.playerInCenter)
+        {
+            print("JAMEN JA");
+        }
+    }
 
     [Command]
     public void CmdReRandomRoundMazePuzzle()
@@ -108,10 +108,10 @@ public class PlayerCommands : NetworkBehaviour
 
 
     [Command]
-    public void CmdPlayerInCenter()
+    public void CmdPlayerInCenter(bool playerInCenter)
     {
-		GameObject.FindGameObjectWithTag ("RoundRoomCenter").GetComponent<RoundRoomCenter> ().PlayerInCenter ();
-       // center.playerInCenter = playerInCenter;
+        center = GameObject.FindGameObjectWithTag("RoundRoomCenter").GetComponent<RoundRoomCenter>();
+        center.playerInCenter = playerInCenter;
     }
 
     [Command]
@@ -150,36 +150,18 @@ public class PlayerCommands : NetworkBehaviour
     [Command]
     public void CmdMazeLever0()
     {
-	//	map1.GetComponent<RevealMap>().MapRevealer(map1.gameObject);
-		RpcRevealMap1(map1.gameObject);
+        map1.GetComponent<RevealMap>().RpcRevealMap();
     }
-	[ClientRpc]
-	void RpcRevealMap1(GameObject _map1)
-	{
-		_map1.GetComponent<Renderer>().enabled = true;
-	}
     [Command]
     public void CmdMazeLever1()
     {
-		//map2.GetComponent<RevealMap>().MapRevealer(map2.gameObject);
-		RpcRevealMap2(map2.gameObject);
+        map2.GetComponent<RevealMap>().RpcRevealMap();
     }
-	[ClientRpc]
-	void RpcRevealMap2(GameObject _map2)
-	{
-		_map2.GetComponent<Renderer> ().enabled = true;
-	}
     [Command]
     public void CmdMazeLever2()
     {
-       // wall.GetComponent<RevealMap>().WallRemover();
-		RpcRemoveWall(wall.gameObject);
+        wall.GetComponent<RevealMap>().RpcWallRemover();
     }
-	[ClientRpc]
-	void RpcRemoveWall(GameObject _wall)
-	{
-		_wall.SetActive (false);
-	}
     [Command]
     public void CmdMazeLever3()
     {
