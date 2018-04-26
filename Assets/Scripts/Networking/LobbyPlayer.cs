@@ -18,10 +18,6 @@ public class LobbyPlayer : NetworkLobbyPlayer
 
     public void Ready()
     {
-        if (isServer)
-        {
-            return;
-        }
         if (!readyToBegin)
         {
             SendReadyToBeginMessage();
