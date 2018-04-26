@@ -104,7 +104,6 @@ public class RoundRoomWalls : RoomVariables
         {
 
             curButtonNumber++;
-			Debug.Log (_button);
             _button.tag = "Interractable";
             //Sets first button to be the correct matching button
             if (curButtonNumber <= numberOfPasswordButtons)
