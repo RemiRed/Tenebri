@@ -74,9 +74,11 @@ public class RoundRoomWalls : RoomVariables
                     (firstLayer == false || (firstLayer == true && _button.layer != 1)) &&
                     _button.layer != tempLayer)
                 {
+					Debug.Log ("Hej Oskar. Added a button");
                     tempButtons.Add(_button);
                 }
             }
+			Debug.Log (tempButtons.Count);
             //Generates random values for button variables
             int randomButtonInt = Random.Range(0, tempButtons.Count);
             int randomSymbol = Random.Range(0, mazeSymbolMaterialIndex.Count);
