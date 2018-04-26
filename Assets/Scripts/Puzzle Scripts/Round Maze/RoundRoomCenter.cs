@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class RoundRoomCenter : NetworkBehaviour {
+public class RoundRoomCenter : MonoBehaviour {
 
     public bool activeRandom = true;
     [SerializeField]
@@ -11,30 +10,30 @@ public class RoundRoomCenter : NetworkBehaviour {
     [SerializeField]
     GameObject roomManager;
 
-    [SyncVar(hook = "PlayerInCenter")]
-    public bool playerInCenter = false;
+//    [SyncVar(hook = "PlayerInCenter")]
+//    public bool playerInCenter = false;
 
     void OnTriggerEnter(Collider player)
     {        
 		if (player.tag == "Player" && activeRandom == true)
         {
-            player.gameObject.GetComponent<PlayerCommands>().CmdPlayerInCenter(true);
+            player.gameObject.GetComponent<PlayerCommands>().CmdPlayerInCenter();
 
 			GetComponentInParent<Password> ().success.playercommand = player.GetComponent<PlayerCommands>();
         }
     }
 
-    private void OnTriggerExit(Collider player)
-    {
-        if (player.tag == "Player" && activeRandom == true)
-        {
-            player.gameObject.GetComponent<PlayerCommands>().CmdPlayerInCenter(false);
-        }
-    }
+//    private void OnTriggerExit(Collider player)
+//    {
+//        if (player.tag == "Player" && activeRandom == true)
+//        {
+//            player.gameObject.GetComponent<PlayerCommands>().CmdPlayerInCenter(false);
+//        }
+//    }
 
-    void PlayerInCenter(bool playerInCenter)
+    public void PlayerInCenter()
     {
-		if (isServer && activeRandom) {
+		if (activeRandom) {
 			activeRandom = false;
 
 			roomManager.GetComponent<RoundRoomManager>().GetWallSymbols();
