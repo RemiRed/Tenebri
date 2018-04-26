@@ -28,7 +28,6 @@ public class RoundMazeMapRoom : RoomVariables
 				mapButtons[i].SetActive (false);
 			}
 		}*/
-
         List<GameObject> moreButtons = new List<GameObject>();
         int index = 0;
         foreach (int button in pairedRoom.GetComponent<RoundRoomWalls>().theseButtonsIndex)
