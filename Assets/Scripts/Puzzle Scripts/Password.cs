@@ -33,6 +33,7 @@ public class Password : MonoBehaviour {
 						
 						success.PartialSuccess ();
 						nextID = 0;
+						curPasswordRound++;
 					}
 				}
 				nextID++;
