@@ -371,8 +371,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trippy: 0
-  sensitivity: 6
-  smoothing: 3.2
+  sensitivity: 4.2
+  smoothing: 2.3
   visualAngleLimiter: 85
 --- !u!114 &114605931160798978
 MonoBehaviour:
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 0
+  m_TransformSyncMode: 3
   m_SendInterval: 1
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
