@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class PauseMenu : MonoBehaviour
-{
+
+public class PauseMenu : MonoBehaviour {
+	
     [SerializeField]
     GameObject pauseMenu, optionsMenu;
-
+	 
     [SerializeField]
     Slider volumeSlider;
 
@@ -30,7 +31,8 @@ public class PauseMenu : MonoBehaviour
     {
         GameObject tempGO = new GameObject();
         networkingLobby.gameObject.transform.parent = tempGO.transform;
-        networkingLobby.StopHost();
+		Cursor.lockState = CursorLockMode.None;
+		networkingLobby.StopHost();
     }
     public void Exit()
     {

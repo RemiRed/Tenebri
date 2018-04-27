@@ -51,6 +51,7 @@ public class CharacterScript : NetworkBehaviour
         {
             footsteps = GetComponent<AudioSource>();
             Cursor.lockState = CursorLockMode.Locked;
+			//Cursor.visible = false;	//Remember to impelment this everywhere we need to fix with the cursor
             rigby = GetComponent<Rigidbody>();
             collider = GetComponent<Collider>();
 

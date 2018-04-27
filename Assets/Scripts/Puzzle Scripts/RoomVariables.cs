@@ -17,14 +17,16 @@ public class RoomVariables : NetworkBehaviour
     [SerializeField]
     protected RoomLoader roomLoader;
     
-    bool firstPenalty = true, startTimer = false;
+	bool firstPenalty = true; 
+	public int allowedFailures = 1; 
+	bool startTimer = false;
     public bool passed = false;
 
-    public /*protected*/ bool Fail()
+    public bool Fail()
     {
-        if (firstPenalty)
+		if (allowedFailures != 0)
         {
-            firstPenalty = false;
+			allowedFailures--;
             return false;
         }
         else if (!startTimer)
@@ -38,7 +40,9 @@ public class RoomVariables : NetworkBehaviour
         }
         return true;
     }
+	// 'firstPenalty' Could be an Int to allow for a dynamic amount of allowed failures before the GameOver timer is started. 
 
+	//Handles the fail timer that results in GameOVer if it reaches 0
     IEnumerator StartTimer()
     {
         currentTime = timerSeconds;
@@ -53,7 +57,7 @@ public class RoomVariables : NetworkBehaviour
             GameOver();
         }
     }
-
+	//Triggers GameOver variables when the player looses the game 
     private void GameOver()
     {
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
@@ -63,26 +67,16 @@ public class RoomVariables : NetworkBehaviour
             player.GetComponent<CharacterScript>().gameOverMenu.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
         }
-        Debug.LogError("NI E KASS, LUL GEJM ÖVER. GETGUDSTÄDSKRUBB");
     }
-
+	//Opens path to next section when a puzzle has been solved
     public void OpenDoorToNextLevel()
     {
         exitDoor.GetComponent<Animator>().SetBool("open", true);
         pairedRoom.GetComponent<RoomVariables>().exitDoor.GetComponent<Animator>().SetBool("open", true);
     }
 
-	public virtual void CompleteSuccess(){
-
-	}
-		
-    public virtual void PartialSuccess()
-    {
-
-    }
-		 
-	public virtual void Failure()
-	{
-
-	}
+	//Virutal methods to be overriden by inheriting scripts
+	public virtual void CompleteSuccess(){}
+    public virtual void PartialSuccess(){}	 
+	public virtual void Failure(){}
 }
