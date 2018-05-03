@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-//works around the issue of the players not spawning on their network starting positions correctly by teleporting them to their correct positions after the game loads.
+//Works around the issue with the players not spawning on their network starting positions correctly by teleporting them to their correct positions after the game loads.
 public class PlayerStartPositionWorkAroundFix : NetworkBehaviour {
 
 	public Transform realP1StartLocation, realP2StartLocation;	//The two correct start locations
