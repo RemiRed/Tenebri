@@ -343,7 +343,6 @@ MonoBehaviour:
   jumpSpeed: 32
   maxJumpHeight: 1.75
   gravity: 120
-  maxFallSpeed: 200
   gameOverMenu: {fileID: 0}
   menu: 0
   gameOver: 0
@@ -370,10 +369,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688ba75b2a85afd4dae8d45acc192ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trippy: 0
+  character: {fileID: 0}
   sensitivity: 4.2
   smoothing: 2.3
   visualAngleLimiter: 85
+  trippy: 0
 --- !u!114 &114605931160798978
 MonoBehaviour:
   m_ObjectHideFlags: 1

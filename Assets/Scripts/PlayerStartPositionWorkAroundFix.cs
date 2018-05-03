@@ -7,8 +7,8 @@ using UnityEngine.Networking;
 public class PlayerStartPositionWorkAroundFix : NetworkBehaviour {
 
 	public Transform realP1StartLocation, realP2StartLocation;	//The two correct start locations
-	public  GameObject[] theTwoPlayers;	//An array of the two players
-	public bool lookingForMorePlayers = true;
+	GameObject[] theTwoPlayers;	//An array of the two players
+	bool lookingForMorePlayers = true;
 	
 	// Update is called once per frame
 	void Update () {
@@ -16,7 +16,7 @@ public class PlayerStartPositionWorkAroundFix : NetworkBehaviour {
 		//The server looks for the players
 		if (isServer && lookingForMorePlayers) {
 
-			//Keeps looking for more players is not all players are found
+			//Keeps looking for more players if not all players are found
 			if (theTwoPlayers.Length <= 1) {
 
 				theTwoPlayers = GameObject.FindGameObjectsWithTag ("Player");
@@ -24,14 +24,14 @@ public class PlayerStartPositionWorkAroundFix : NetworkBehaviour {
 			} else {	//When all players are found the server stops looking for more players and they're teleporter to their respective correct starting location
 
 				lookingForMorePlayers = false;
-				RpcTeleportPlayer1ToTheCorrectStartLocation (theTwoPlayers [0], theTwoPlayers [1]);
+				RpcTeleportPlayersToTheCorrectStartLocations (theTwoPlayers [0], theTwoPlayers [1]);
 				Destroy (gameObject, 7f);	//Destroy this object after it's task is completed
 			}
 		}
 	}
 		
 	[ClientRpc]	//Teleports the player to their correct starting locations
-	void RpcTeleportPlayer1ToTheCorrectStartLocation(GameObject _player1, GameObject _player2){
+	void RpcTeleportPlayersToTheCorrectStartLocations(GameObject _player1, GameObject _player2){
 
 		_player1.transform.position = realP1StartLocation.transform.position;
 		_player2.transform.position = realP2StartLocation.transform.position;

@@ -5,8 +5,9 @@ using UnityEngine.Networking;
 
 //Placed on the player characters view. Controlls the chatacter's camera motion
 public class CameraController : NetworkBehaviour {
-	
-	public bool trippy;	//Want a trippy camera effect? (Flips the camera backwards and upside-down, making the world appear upside-down and all motion reversed)
+
+	[SerializeField][Tooltip("Sets to the parent gameObject if left empty")]
+	GameObject character;	//The camera view's parent character object
 
 	[SerializeField][Range(1,10)]
     float sensitivity;	//Sets the camera motions sensitivity. Higher sensitivity = faster camera movements. 
@@ -16,11 +17,12 @@ public class CameraController : NetworkBehaviour {
     float visualAngleLimiter = 80;	//Sets the extreme angle values that limits how much the player can look up and down. 
 
 	Vector2 mouseLook, smoothV, cameraView;	//Vector2 values needed to calculate camera movement
-    GameObject character;	//The camera view's parent character object
+
+	public bool trippy;	//Want a trippy camera effect? (Flips the camera backwards and upside-down, making the world appear upside-down and all motion reversed)
 
     void Start()
     {
-        character = transform.parent.gameObject;
+		if (character == null) character = transform.parent.gameObject;
     }
     void Update()
     {
@@ -41,9 +43,7 @@ public class CameraController : NetworkBehaviour {
 		mouseLook += smoothV;
 		//Clamps Mouse Look angle between set extreme values
 		mouseLook.y = Mathf.Clamp (mouseLook.y, -visualAngleLimiter, visualAngleLimiter);
-		if (trippy) {	//Want a trippy camera effect?
-			mouseLook.y = 180;
-		}
+		if (trippy) mouseLook.y = 180;	//Want a trippy camera effect?
 		//Executes the smoothed camera view following the cursor movement
 		transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
         character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, character.transform.up);

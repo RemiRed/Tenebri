@@ -20,7 +20,7 @@ public class RoundRoomCenter : NetworkBehaviour {
         {
             player.gameObject.GetComponent<PlayerCommands>().CmdPlayerInCenter(true);
 
-			GetComponentInParent<Password> ().success.playercommand = player.GetComponent<PlayerCommands>();
+			GetComponentInParent<Password> ().result.playercommand = player.GetComponent<PlayerCommands>();
         }
     }
 

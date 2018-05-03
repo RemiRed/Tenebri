@@ -11,7 +11,6 @@ public class PlayerCommands : NetworkBehaviour
 
     [SerializeField]
     PasswordRandomizer colorSymbol;
-    //[SerializeField]
     public GameObject roomManager, roundRoom;
     public GameObject map1, map2, wall;
 
@@ -19,14 +18,6 @@ public class PlayerCommands : NetworkBehaviour
 
     [SyncVar]
     public bool localPlayer;
-
-
-
-    private void Start()
-    {
-        //roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
-        // CmdLocalPlayer(isLocalPlayer);
-    }
 
     [Command]
     public void CmdLocalPlayer()

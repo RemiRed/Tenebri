@@ -16,19 +16,17 @@ public class PasswordRandomizer : NetworkBehaviour
     public List<Color> symbolColors;
     public List<Material> symbols;
 
-    bool started = false;   //Temp varible needed for testing
-
-    void Update()
-    {
-
-        //Temp function neeced for testing
-        if (isServer && Input.GetButtonDown("Jump") && !started)
-        {
-
-            started = true;
-            StartPuzzle();
-        }
-    }
+//    bool started = false;   //Temp varible needed for testing
+//
+//    void Update()
+//    {
+//        //Temp function neeced for testing
+//        if (isServer && Input.GetButtonDown("Jump") && !started)
+//        {
+//            started = true;
+//            StartPuzzle();
+//        }
+//    }
 
     // Use this for initialization
     void Start()
@@ -39,7 +37,7 @@ public class PasswordRandomizer : NetworkBehaviour
             passwordLength = unsetPasswordButtons.Count;
             Debug.LogWarning("Password set to too long. Password length adjusted to " + unsetPasswordButtons.Count);
         }
-        //StartPuzzle();
+//        StartPuzzle();
     }
 
     //Starts the puzzle by randomizing the password and assigns values to clues on server to send to clients. 

@@ -6,14 +6,11 @@ public class Interract : MonoBehaviour
 {
     [SerializeField]
     GameObject interractionMessage;
-    [SerializeField]
-    [Range(0.001f, int.MaxValue)]
+    [SerializeField][Range(0.001f, int.MaxValue)]
     float carryDistance; //The distance between the player and the carried object
-    [SerializeField]
-    [Range(0.001f, int.MaxValue)]
+    [SerializeField][Range(0.001f, int.MaxValue)]
     float carrySpeed; //The speed the object travels to "catch up" to a player after being stuck
-    [SerializeField]
-    [Range(0.001f, int.MaxValue)]
+    [SerializeField][Range(0.001f, int.MaxValue)]
     float slow; //Modifier for the force added to the object to simulate throwing
 
 	GameObject carriedObject, lastInterractedObject;
