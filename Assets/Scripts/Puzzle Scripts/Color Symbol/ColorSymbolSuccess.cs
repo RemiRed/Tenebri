@@ -3,47 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+//Manages success and failure for 'ColorSymbol' 
+//(Designed to function from both server and client, but not certain if both are needed)
+
 public class ColorSymbolSuccess : RoomVariables  {
 
+	////override method inherited from 'RoomVaribles'
 	public override void CompleteSuccess ()
 	{
-		Debug.Log (isServer);
 		if (isServer) {
-
 			RpcCompleteSuccess ();
 		} else {
-			GetComponent<RoomVariables> ().passed = true;
+			roomPassed = true;
 			OpenDoorToNextLevel ();
 			roomLoader.LoadRoom (RoomLoader.Room.roundMaze);
 		}
 	}
-		
     [ClientRpc]
-	public void RpcCompleteSuccess(){
-
-		Debug.Log ("Color symbol success server:" + isServer);
-		Debug.LogWarning ("You passed this Puzzle");
-		GetComponent<RoomVariables> ().passed = true;
+	public void RpcCompleteSuccess()
+	{
+		roomPassed = true;
 		OpenDoorToNextLevel ();
 		roomLoader.LoadRoom (RoomLoader.Room.roundMaze);
 	}
 
+	//override method inherited from 'RoomVaribles'
 	public override void Failure ()
 	{
-		Debug.Log (isServer);
 		if (isServer) {
 			RpcFailure ();
 		} else {
-			Debug.Log ("Wrong password");
-			GetComponent<RoomVariables> ().Fail ();
+			Fail ();
 		}
 	}
-
     [ClientRpc]
-	public void RpcFailure(){
-
-		Debug.Log ("server: " + isServer);
-		Debug.Log ("Wrong password");
-		GetComponent<RoomVariables> ().Fail ();
+	public void RpcFailure()
+	{
+		Fail ();
 	}
 }

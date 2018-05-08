@@ -6,20 +6,19 @@ using UnityEngine.Networking;
 public class RoomVariables : NetworkBehaviour
 {
 	public GameObject entryDoor, exitDoor, pairedRoom;
-    public RoomLoader.Room room = RoomLoader.Room.startRoom;
+	[SerializeField]
+	protected RoomLoader roomLoader;
+	public RoomLoader.Room room = RoomLoader.Room.startRoom;
 	public PlayerCommands playercommand;
 
     [SerializeField]
-    float timerSeconds = 0, timerPenalty = 1;
+    float timerSeconds = 0, 
+			timerPenalty = 1;
     public float currentTime;
-
-    [SerializeField]
-    protected RoomLoader roomLoader;
-    
-	bool firstPenalty = true; 
+	 
 	public int allowedFailures = 1; 
 	bool startTimer = false;
-    public bool passed = false;
+    public bool roomPassed = false;
 
 	//Called if the player fails in this room
     public bool Fail()
@@ -44,13 +43,13 @@ public class RoomVariables : NetworkBehaviour
     IEnumerator StartTimer()
     {
         currentTime = timerSeconds;
-        while (currentTime > 0 && !passed)
+        while (currentTime > 0 && !roomPassed)
         {
             print(currentTime);
             yield return new WaitForSeconds(.1f);
             currentTime -= .1f;
         }
-        if (!passed)
+        if (!roomPassed)
         {
             GameOver();
         }
@@ -72,7 +71,6 @@ public class RoomVariables : NetworkBehaviour
         exitDoor.GetComponent<Animator>().SetBool("open", true);
         pairedRoom.GetComponent<RoomVariables>().exitDoor.GetComponent<Animator>().SetBool("open", true);
     }
-
 	//Virutal methods to be overriden by inheriting scripts
 	public virtual void CompleteSuccess(){}
     public virtual void PartialSuccess(){}	 

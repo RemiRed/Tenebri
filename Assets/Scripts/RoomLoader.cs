@@ -42,10 +42,7 @@ public class RoomLoader : NetworkBehaviour
             outdoorMazeP2.SetActive(true);
         }
     }
-    
-    
-
-
+   
     public void UnloadAllRoomsExcept(Room room)
     {
         if (room != Room.startRoom)

@@ -8,7 +8,5 @@ using UnityEngine;
 public class PuzzleClues : MonoBehaviour {
 
 	//Used by: 'ColorSymbolPasswordClues'
-	public virtual void SetPuzzleClues(Material _material, Color _color){
-
-	}
+	public virtual void SetPuzzleClues(Material _material, Color _color){}
 }
