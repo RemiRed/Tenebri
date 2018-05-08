@@ -21,7 +21,7 @@ public class UnloadRooms : NetworkBehaviour
 
     bool unloaded = false;
 
-    private void OnTriggerStay(Collider c)
+    private void OnTriggerEnter(Collider c)
     {
         if (unloaded)
         {
@@ -30,12 +30,24 @@ public class UnloadRooms : NetworkBehaviour
         if (c.tag == "Player")
         {
             playerCmd = c.gameObject.GetComponent<PlayerCommands>();
-            playerCmd.CmdStartRoomLanded(id);
+            playerCmd.CmdStartRoomLanded(id, true);
             if (entered && otherUnloadRooms.entered)
             {
                 unloaded = true;
                 playerCmd.CmdUnloadBeginning();
             }
+        }
+    }
+    private void OnTriggerExit(Collider c)
+    {
+        if (unloaded)
+        {
+            return;
+        }
+        if (c.tag == "Player")
+        {
+            playerCmd = c.gameObject.GetComponent<PlayerCommands>();
+            playerCmd.CmdStartRoomLanded(id, false);
         }
     }
 }

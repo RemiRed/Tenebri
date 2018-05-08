@@ -106,15 +106,15 @@ public class PlayerCommands : NetworkBehaviour
     }
 
     [Command]
-    public void CmdStartRoomLanded(int id)
+    public void CmdStartRoomLanded(int id, bool entered)
     {
         if (id == 1)
         {
-            GameObject.FindGameObjectWithTag("SpawnPoint1").GetComponent<UnloadRooms>().entered = true;
+            GameObject.FindGameObjectWithTag("SpawnPoint1").GetComponent<UnloadRooms>().entered = entered;
         }
         else
         {
-            GameObject.FindGameObjectWithTag("SpawnPoint2").GetComponent<UnloadRooms>().entered = true;
+            GameObject.FindGameObjectWithTag("SpawnPoint2").GetComponent<UnloadRooms>().entered = entered;
         }
     }
 
