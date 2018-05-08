@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23498173543517076}
   - component: {fileID: 54957318198992624}
   - component: {fileID: 65705032979972624}
+  - component: {fileID: 215163861006855160}
   m_Layer: 8
   m_Name: Prop_Vase_01
   m_TagString: Movable
@@ -111,3 +112,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.36947295, y: 0.74826825, z: 0.45609465}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!215 &215163861006855160
+ReflectionProbe:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1168804004842402}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 1
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 10, y: 10, z: 10}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 50
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
