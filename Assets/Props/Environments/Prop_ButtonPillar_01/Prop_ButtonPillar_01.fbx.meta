@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: d297d66e205a6e0478696e663ac23dbd
-timeCreated: 1525800312
+guid: 681f188bd32264d4b8dab2e4474c66ac
+timeCreated: 1525799314
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Prop_Kopp_01_Mat
+    2100000: Prop_ButtonPillar_01_Mat
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Prop_Kopp_01
+    4300000: Prop_ButtonPillar_01
   externalObjects: {}
   materials:
     importMaterials: 1
