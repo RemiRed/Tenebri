@@ -13,13 +13,7 @@ public class FadeFromBlack : MonoBehaviour
     float fadeSpeed = 1;
 
 
-    void Start()
-    {
-        print("STARTED");
-        StartCoroutine(Fade());
-    }
-
-    IEnumerator Fade()
+    public IEnumerator Fade()
     {
         print("FADECOROUTINE");
         while (black.color.a > 0)

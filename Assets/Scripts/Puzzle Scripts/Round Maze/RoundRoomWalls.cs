@@ -22,8 +22,8 @@ public class RoundRoomWalls : RoomVariables
     [SerializeField]
     int numberOfButtons, curButtonNumber, numberOfPasswordButtons, materialIndex;
 
-//	[SyncVar (hook = "RandomizeEverything")]
-//	public bool reRandomNow = false;
+    //	[SyncVar (hook = "RandomizeEverything")]
+    //	public bool reRandomNow = false;
 
     bool foundPath = true;
 
@@ -134,7 +134,7 @@ public class RoundRoomWalls : RoomVariables
                 pairedRoom.GetComponent<RoundMazeMapRoom>().mapColours.Add(_symbolColors[rara]);
                 _button.GetComponent<RoundDoors>().graphicalObject.GetComponent<Renderer>().materials = _materials;
             }
-           
+
             //Adds button locations to map room
             theseButtonsIndex.Add(_button.GetComponent<RoundDoors>().buttonNumber);
 
@@ -146,9 +146,9 @@ public class RoundRoomWalls : RoomVariables
             //If Path failed; Re-Randomize everything
             if (curButtonNumber >= numberOfButtons && !foundPath)
             {
-//                RandomizeEverything(true);
-//				//reRandomNow = true;
-				playercommand.CmdReRandomRoundMazePuzzle();
+                //                RandomizeEverything(true);
+                //				//reRandomNow = true;
+                playercommand.CmdReRandomRoundMazePuzzle();
             }
         }
         else if (!_button.GetComponent<RoundDoors>().entered)   //Opens remaining unopened rooms
@@ -157,37 +157,37 @@ public class RoundRoomWalls : RoomVariables
             _button.GetComponent<PasswordButton>().SetPasswordButton(false);
         }
     }
-		
+
     //Starts over if fails to find a working path
-	[ClientRpc]
-	public void RpcRandomizeEverything()
+    [ClientRpc]
+    public void RpcRandomizeEverything()
     {
-//		if(_reRandomNow == true){
-//			Debug.Log ("RERANDOMIZE EVERYTHING!");
-//			Debug.Log (isServer);
-//			if (isServer) {
-//				Debug.Log ("SHOULD BE RERANDOMIZED NOW");
-				RandomSymbols ();
-				pairedRoom.GetComponent<RoundMazeMapRoom> ().RpcMapButtons ();
-//			}
-//			reRandomNow = false;
-//		}
+        //		if(_reRandomNow == true){
+        //			Debug.Log ("RERANDOMIZE EVERYTHING!");
+        //			Debug.Log (isServer);
+        //			if (isServer) {
+        //				Debug.Log ("SHOULD BE RERANDOMIZED NOW");
+        RandomSymbols();
+        pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
+        //			}
+        //			reRandomNow = false;
+        //		}
     }
     //Resets Everything to default
     [ClientRpc]
     void RpcCloseWalls(bool _walls)
     {
-		Debug.Log ("Close wall on client from Rpc. Set: " + _walls);
+        Debug.Log("Close wall on client from Rpc. Set: " + _walls);
         CloseWalls(_walls);
     }
 
     public void CloseWalls(bool _walls)
     {
         curButtonNumber = 0;
-        Debug.Log ("Close walls locally");
+        Debug.Log("Close walls locally");
         foreach (GameObject bwa in walls)
         {
-			Debug.Log ("Animation should be called");
+            Debug.Log("Animation should be called");
             //bwa.SetActive (_walls);
             bwa.GetComponent<Animator>().SetBool("OpenSesamy", _walls);
         }
@@ -211,36 +211,38 @@ public class RoundRoomWalls : RoomVariables
     public override void PartialSuccess()
     {
         Debug.Log("YOU WON!");
-		playercommand.CmdReRandomRoundMazePuzzle();
+        playercommand.CmdReRandomRoundMazePuzzle();
     }
 
     public override void CompleteSuccess()
     {
-		playercommand.CmdRoundMazeCompleteSuccess ();
+        playercommand.CmdRoundMazeCompleteSuccess();
     }
 
     public override void Failure()
     {
-		playercommand.CmdRoundMazeFailure ();
+        playercommand.CmdRoundMazeFailure();
     }
-	[ClientRpc]
-	public void RpcCompleteSuccessOnRoundMaze()
-	{
-		Debug.LogWarning("You passed this Puzzle");
-		roomPassed = true;
-		CloseWalls(true);
-		roomLoader.LoadRoom (RoomLoader.Room.outdoorMaze);
-		OpenDoorToNextLevel();
-	}
+    [ClientRpc]
+    public void RpcCompleteSuccessOnRoundMaze()
+    {
+        Debug.LogWarning("You passed this Puzzle");
+        roomPassed = true;
+        CloseWalls(true);
+        roomLoader.LoadRoom(RoomLoader.Room.outdoorMaze, 1);
+        roomLoader.LoadRoom(RoomLoader.Room.outdoorMaze, 2);
+        OpenDoorToNextLevel();
+    }
 
-	[ClientRpc]
-	public void RpcRoundMazeFailure(){
+    [ClientRpc]
+    public void RpcRoundMazeFailure()
+    {
 
-		Debug.Log ("Fail");
-		CloseWalls(true);
-		usedCorrectSymbolMaterialIndex.Clear();
-		pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();
-		GetComponentInChildren<RoundRoomCenter>().activeRandom = true;
-		Fail();
-	}
+        Debug.Log("Fail");
+        CloseWalls(true);
+        usedCorrectSymbolMaterialIndex.Clear();
+        pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();
+        GetComponentInChildren<RoundRoomCenter>().activeRandom = true;
+        Fail();
+    }
 }

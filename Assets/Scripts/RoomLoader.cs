@@ -15,81 +15,145 @@ public class RoomLoader : NetworkBehaviour
     List<GameObject> corridorsP1 = new List<GameObject>(), corridorsP2 = new List<GameObject>();
 
     Room currentRoom = Room.startRoom;
-    
-    public void LoadRoom(Room room) //Loads the next room
+
+    public void LoadRoom(Room room, int player) //Loads the next room
     {
-        if (room == Room.startRoom)
+        if (player == 1)
         {
-            startRoomP1.SetActive(true);
-            startRoomP2.SetActive(true);
-        }
-
-        if (room == Room.colorSymbols)
-        {
-            colorSymbolsP1.SetActive(true);
-            colorSymbolsP2.SetActive(true);
-        }
-
-        if (room == Room.roundMaze)
-        {
-            roundMazeP1.SetActive(true);
-            roundMazeP2.SetActive(true);
-        }
-
-        if (room == Room.outdoorMaze)
-        {
-            outdoorMazeP1.SetActive(true);
-            outdoorMazeP2.SetActive(true);
-        }
-    }
-   
-    public void UnloadAllRoomsExcept(Room room)
-    {
-        if (room != Room.startRoom)
-        {
-            startRoomP1.SetActive(false);
-            startRoomP2.SetActive(false);
-        }
-
-        if (room != Room.colorSymbols)
-        {
-            colorSymbolsP1.SetActive(false);
-            colorSymbolsP2.SetActive(false);
-        }
-
-        if (room != Room.roundMaze)
-        {
-            roundMazeP1.SetActive(false);
-            roundMazeP2.SetActive(false);
-        }
-
-        if (room != Room.outdoorMaze)
-        {
-            outdoorMazeP1.SetActive(false);
-            outdoorMazeP2.SetActive(false);
-        }
-    }
-
-    public void LoadCorridor(int corridorID)
-    {
-        for (int i = 0; i < corridorsP1.Count; i++)
-        {
-            if (i == corridorID)
+            if (room == Room.startRoom)
             {
-                corridorsP1[i].SetActive(true);
-                corridorsP2[i].SetActive(true);
+                startRoomP1.SetActive(true);
+            }
+            if (room == Room.colorSymbols)
+            {
+                colorSymbolsP1.SetActive(true);
+            }
+            if (room == Room.roundMaze)
+            {
+                roundMazeP1.SetActive(true);
+            }
+            if (room == Room.outdoorMaze)
+            {
+                outdoorMazeP1.SetActive(true);
+            }
+        }
+        else
+        {
+            if (room == Room.startRoom)
+            {
+                startRoomP2.SetActive(true);
+            }
+
+            if (room == Room.colorSymbols)
+            {
+                colorSymbolsP2.SetActive(true);
+            }
+
+            if (room == Room.roundMaze)
+            {
+                roundMazeP2.SetActive(true);
+            }
+
+            if (room == Room.outdoorMaze)
+            {
+                outdoorMazeP2.SetActive(true);
             }
         }
     }
 
-    public void UnloadAlllCorridorsExcept(int corridorID)
+    public void UnloadAllRoomsExcept(Room room, int player)
     {
-        for (int i = 0; i < corridorsP1.Count; i++)
+        if (player == 1)
         {
-            if (i != corridorID)
+            if (room != Room.startRoom)
             {
-                corridorsP1[i].SetActive(false);
-                corridorsP2[i].SetActive(false);
+                startRoomP1.SetActive(false);
+            }
+
+            if (room != Room.colorSymbols)
+            {
+                colorSymbolsP1.SetActive(false);
+            }
+
+            if (room != Room.roundMaze)
+            {
+                roundMazeP1.SetActive(false);
+            }
+
+            if (room != Room.outdoorMaze)
+            {
+                outdoorMazeP1.SetActive(false);
+            }
+        }
+        else
+        {
+            if (room != Room.startRoom)
+            {
+                startRoomP2.SetActive(false);
+            }
+
+            if (room != Room.colorSymbols)
+            {
+                colorSymbolsP2.SetActive(false);
+            }
+
+            if (room != Room.roundMaze)
+            {
+                roundMazeP2.SetActive(false);
+            }
+
+            if (room != Room.outdoorMaze)
+            {
+                outdoorMazeP2.SetActive(false);
+            }
+        }
+    }
+
+    public void LoadCorridor(int corridorID, int player)
+    {
+        if (player == 1)
+        {
+            for (int i = 0; i < corridorsP1.Count; i++)
+            {
+                if (i == corridorID)
+                {
+                    corridorsP1[i].SetActive(true);
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < corridorsP2.Count; i++)
+            {
+                if (i == corridorID)
+                {
+                    corridorsP2[i].SetActive(true);
+                }
+            }
+        }
+    }
+
+    public void UnloadAllCorridorsExcept(int corridorID, int player)
+    {
+
+        if (player == 1)
+        {
+            for (int i = 0; i < corridorsP1.Count; i++)
+            {
+                if (i != corridorID)
+                {
+                    corridorsP1[i].SetActive(false);
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < corridorsP2.Count; i++)
+            {
+                if (i != corridorID)
+                {
+                    corridorsP2[i].SetActive(false);
+                }
             }
         }
     }
@@ -102,12 +166,14 @@ public class RoomLoader : NetworkBehaviour
             case Room.colorSymbols:
                 colorSymbolsP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
                 colorSymbolsP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
-                LoadCorridor(1);
+                LoadCorridor(1, 1);
+                LoadCorridor(1, 2);
                 break;
             case Room.roundMaze:
                 roundMazeP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
                 roundMazeP2.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
-                LoadCorridor(2);
+                LoadCorridor(2, 1);
+                LoadCorridor(2, 2);
                 break;
             case Room.outdoorMaze:
                 outdoorMazeP1.GetComponent<RoomVariables>().entryDoor.GetComponent<Animator>().SetBool("open", true);
