@@ -16,16 +16,18 @@ public class ColorSymbolSuccess : RoomVariables  {
 		} else {
 			roomPassed = true;
 			OpenDoorToNextLevel ();
-			roomLoader.LoadRoom (RoomLoader.Room.roundMaze);
-		}
+			roomLoader.LoadRoom (RoomLoader.Room.roundMaze,1);
+            roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 2);
+        }
 	}
     [ClientRpc]
 	public void RpcCompleteSuccess()
 	{
 		roomPassed = true;
 		OpenDoorToNextLevel ();
-		roomLoader.LoadRoom (RoomLoader.Room.roundMaze);
-	}
+        roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 1);
+        roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 2);
+    }
 
 	//override method inherited from 'RoomVaribles'
 	public override void Failure ()

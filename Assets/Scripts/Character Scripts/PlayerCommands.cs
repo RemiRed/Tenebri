@@ -128,8 +128,10 @@ public class PlayerCommands : NetworkBehaviour
     void RpcUnloadBeginning()
     {
         RoomLoader roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
-        roomLoader.UnloadAllRoomsExcept(RoomLoader.Room.startRoom);
-        roomLoader.UnloadAlllCorridorsExcept(0);
+        roomLoader.UnloadAllRoomsExcept(RoomLoader.Room.startRoom, 1);
+        roomLoader.UnloadAllRoomsExcept(RoomLoader.Room.startRoom, 2);
+        roomLoader.UnloadAllCorridorsExcept(0, 1);
+        roomLoader.UnloadAllCorridorsExcept(0, 2);
     }
 
     [Command]

@@ -17,11 +17,41 @@ public class UnloadRooms : NetworkBehaviour
     [SerializeField]
     int id;
 
+
+    [SerializeField]
+    FadeFromBlack fadeFromBlack;
+
     PlayerCommands playerCmd;
 
-    bool unloaded = false;
+    bool unloaded = false, check = false;
 
     private void OnTriggerEnter(Collider c)
+    {
+        if (c.tag == "Player")
+        {
+            if (!check && id == 1)
+            {
+                bool tempCheck = true;
+                foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+                {
+                    if (player.GetComponent<NetworkTransform>().netId.Value < c.GetComponent<NetworkTransform>().netId.Value)
+                    {
+                        tempCheck = false;
+                        break;
+                    }
+                }
+                if (tempCheck)
+                {
+                    c.gameObject.transform.position = otherUnloadRooms.gameObject.transform.position;
+                }
+            }          
+            playerCmd = c.gameObject.GetComponent<PlayerCommands>();
+            playerCmd.CmdStartRoomLanded(id, true);
+            StartCoroutine(fadeFromBlack.Fade());
+        }
+    }
+
+    private void OnTriggerStay(Collider c)
     {
         if (unloaded)
         {
@@ -29,8 +59,6 @@ public class UnloadRooms : NetworkBehaviour
         }
         if (c.tag == "Player")
         {
-            playerCmd = c.gameObject.GetComponent<PlayerCommands>();
-            playerCmd.CmdStartRoomLanded(id, true);
             if (entered && otherUnloadRooms.entered)
             {
                 unloaded = true;
@@ -38,6 +66,7 @@ public class UnloadRooms : NetworkBehaviour
             }
         }
     }
+
     private void OnTriggerExit(Collider c)
     {
         if (unloaded)

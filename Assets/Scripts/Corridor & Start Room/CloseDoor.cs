@@ -8,6 +8,9 @@ public class CloseDoor : MonoBehaviour
     RoomVariables room;
     RoomLoader roomLoader;
 
+    [SerializeField]
+    int player;
+
     private void Start()
     {
         roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
@@ -25,6 +28,6 @@ public class CloseDoor : MonoBehaviour
     void Close()
     {
         room.entryDoor.GetComponent<Animator>().SetTrigger("isClosing");
-        roomLoader.UnloadAllRoomsExcept(room.room);
+        roomLoader.UnloadAllRoomsExcept(room.room, player);
     }
 }
