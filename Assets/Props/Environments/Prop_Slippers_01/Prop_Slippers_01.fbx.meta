@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 070ae2d05baa5ca4ebfea956ba71a223
-timeCreated: 1525868650
+guid: d1bb1fdf35ef3674ebcc46bfd982cad5
+timeCreated: 1525870162
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Prop_Cupboard_01_Mat
+    2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Prop_Cupboard_01
+    4300000: Prop_Slippers_01
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -66,7 +66,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
