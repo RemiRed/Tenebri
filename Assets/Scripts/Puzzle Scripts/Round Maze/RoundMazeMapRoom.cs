@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+//Handles the map on the map room's floor
+
 public class RoundMazeMapRoom : RoomVariables
 {
     [SerializeField]

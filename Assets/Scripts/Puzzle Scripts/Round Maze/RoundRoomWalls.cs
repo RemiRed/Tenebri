@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+//Handles the randomization of RoundMaze's password 
+
 public class RoundRoomWalls : RoomVariables
 {
     public Password passwordManager;
@@ -22,21 +24,7 @@ public class RoundRoomWalls : RoomVariables
     [SerializeField]
     int numberOfButtons, curButtonNumber, numberOfPasswordButtons, materialIndex;
 
-//	[SyncVar (hook = "RandomizeEverything")]
-//	public bool reRandomNow = false;
-
     bool foundPath = true;
-
-    void Update()
-    {
-        //		//Debug Stuff
-        //		if (isServer && Input.GetKeyDown(KeyCode.G))
-        //		{
-        //			pairedRoom.GetComponent<RoundRoomManager> ().CmdGetWallSymbols ();
-        //			CmdRandomSymbols();
-        //			pairedRoom.GetComponent<RoundMazeMapRoom>().MapButtons();
-        //		}
-    }
 
     public void RandomSymbols()
     {
@@ -44,7 +32,7 @@ public class RoundRoomWalls : RoomVariables
         RpcCloseWalls(false);
         CloseWalls(false);
 
-        curButtonNumber = 0;    //<<-- How can this set 'curButtonNumber' on Client if run on server? 
+        curButtonNumber = 0;  
         int tempLayer = 0;
         int _curSymbolIndex = 0;
         bool firstLayer = false;
@@ -240,7 +228,7 @@ public class RoundRoomWalls : RoomVariables
 		CloseWalls(true);
 		usedCorrectSymbolMaterialIndex.Clear();
 		pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();
-		GetComponentInChildren<RoundRoomCenter>().activeRandom = true;
+		GetComponentInChildren<RoundRoomCenter>().activatePuzzle = true;
 		Fail();
 	}
 }

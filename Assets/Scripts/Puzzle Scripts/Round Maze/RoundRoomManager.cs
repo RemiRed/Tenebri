@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+//Handles the symbols on the walls in the map room
+
 public class RoundRoomManager : NetworkBehaviour {
 
 	public List<GameObject> wallSymbols = new List<GameObject>();
@@ -38,26 +40,26 @@ public class RoundRoomManager : NetworkBehaviour {
 		}
 	}
 
-    [ClientRpc]
-	void RpcSetWallSymbols(int _index, int _randomSymbol, int _randomColor)
-	{
-		if (!symbolsSet) {
-			wallSymbols [_index].GetComponent<Renderer> ().material = symbols [_randomSymbol];
-			wallSymbols [_index].GetComponent<Renderer> ().material.color = symbolColors [_randomColor];
-			symbols.RemoveAt (_randomSymbol);
-			//_colors.RemoveAt (_randomColor);
-
-			if (_index == wallSymbols.Count - 1) {
-				symbolsSet = true;
-			}
-		}
-    }
-	//[Command]
 	public void GetWallSymbols(){
 
 		for (int i = 0; i < wallSymbols.Count; i++) {
 
 			RpcSetWallSymbols (i, symbolOrder [i], colorOrder [i]);
+		}
+	}
+
+	[ClientRpc]
+	void RpcSetWallSymbols(int _index, int _randomSymbol, int _randomColor)
+	{
+		if (!symbolsSet) {
+
+			wallSymbols [_index].GetComponent<Renderer> ().material = symbols [_randomSymbol];
+			wallSymbols [_index].GetComponent<Renderer> ().material.color = symbolColors [_randomColor];
+			symbols.RemoveAt (_randomSymbol);
+
+			if (_index == wallSymbols.Count - 1) {
+				symbolsSet = true;
+			}
 		}
 	}
 }

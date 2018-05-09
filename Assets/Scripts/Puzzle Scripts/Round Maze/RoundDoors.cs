@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//On each "room" segment in 'RoundMaze'. Seeks out and opens a path from an initial starting segment to a previous path or the center segment  
+
 public class RoundDoors : MonoBehaviour {
 
 	public RoundRoomWalls resetManager;
