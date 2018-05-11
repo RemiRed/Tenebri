@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: cce4fa0ac516f3e448e7cedee0318350
-timeCreated: 1525799176
+guid: 5a7c1bc6dadee424c9ee93242c991422
+timeCreated: 1526041445
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Prop_Drawer_01_Mat
+    2100000: Prop_Drawer_01_Mat5
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Prop_Drawer_01
+    4300000: polySurface2
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -66,7 +66,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
