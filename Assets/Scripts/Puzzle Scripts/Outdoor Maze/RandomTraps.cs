@@ -20,7 +20,7 @@ public class RandomTraps : MonoBehaviour {
         {
             foreach(GameObject gre in traps)
             {
-                gre.SetActive(true);
+                gre.GetComponent<FallingDown>().clod.enabled = true;
             }
             RandomizeTrap();
         }
@@ -35,7 +35,7 @@ public class RandomTraps : MonoBehaviour {
         for(int i = 0; i < howMany; i++)
         {
             int theOne = Random.Range(0, tempTraps.Count);
-            tempTraps[theOne].SetActive(false);
+            tempTraps[theOne].GetComponent<FallingDown>().clod.enabled = false;
             tempTraps.Remove(tempTraps[theOne]);
         }
     }
