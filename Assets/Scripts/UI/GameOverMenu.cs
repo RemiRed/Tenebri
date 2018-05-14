@@ -7,7 +7,7 @@ public class GameOverMenu : MonoBehaviour {
     NetworkingLobby networkingLobby;
     private void Start()
     {
-        networkingLobby = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkingLobby>();
+      //  networkingLobby = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkingLobby>();
     }
 
     public void Menu()
