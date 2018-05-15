@@ -7,26 +7,30 @@ using UnityEngine.Networking;
 
 public class RoundRoomManager : NetworkBehaviour {
 
-	public List<GameObject> wallSymbols = new List<GameObject>();
+	//Lists contining all symbols gameObject/location, color & symbol material
+	public List<GameObject> wallSymbols = new List<GameObject>();	//
 	public List<Color> symbolColors = new List<Color>();
 	[SerializeField]
 	List<Material> symbols = new List<Material>();
-	[SerializeField]
+
+	//Temporary lists used to create & store randomized symbol-color combinations
 	List<int> symbolOrder = new List<int> (), colorOrder = new List<int>(); 
+	List<Material> _symbols; //<-- Might not be needed. (Then just use the original 'Symbols' list instead) 
 
-	List<Material> _symbols = new List<Material> ();
-
-	bool symbolsSet = false;
+	bool allSymbolsSet = false;
 
 	void Start(){
 
 		if(isServer){
 
-			foreach(Material _symbol in symbols){
+			_symbols = new List<Material> (symbols);
 
-				_symbols.Add(_symbol);
-			}
+			//			foreach(Material _symbol in symbols){
+			//
+			//				_symbols.Add(_symbol);
+			//			}
 
+			//Generates and saves a random order to assign symbol-color combinations to be applied on each client
 			for (int i = 0; i < wallSymbols.Count; i++) {
 
 				int _randomSymbol = Random.Range (0, _symbols.Count);
@@ -39,26 +43,28 @@ public class RoundRoomManager : NetworkBehaviour {
 			}
 		}
 	}
-
+	//Applies each saved symbol-color combination on both clients 
 	public void GetWallSymbols(){
 
+		//Goes through all wall symbol objects and applies the stored combination values
 		for (int i = 0; i < wallSymbols.Count; i++) {
 
 			RpcSetWallSymbols (i, symbolOrder [i], colorOrder [i]);
 		}
 	}
-
 	[ClientRpc]
 	void RpcSetWallSymbols(int _index, int _randomSymbol, int _randomColor)
 	{
-		if (!symbolsSet) {
+		if (!allSymbolsSet) {
 
+			//Assigns the same randomized color-symbol combination on both clients
 			wallSymbols [_index].GetComponent<Renderer> ().material = symbols [_randomSymbol];
 			wallSymbols [_index].GetComponent<Renderer> ().material.color = symbolColors [_randomColor];
 			symbols.RemoveAt (_randomSymbol);
 
+			// Makes sure wall symbols only can be assigned once
 			if (_index == wallSymbols.Count - 1) {
-				symbolsSet = true;
+				allSymbolsSet = true;
 			}
 		}
 	}
