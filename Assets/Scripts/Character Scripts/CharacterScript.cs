@@ -29,6 +29,8 @@ public class CharacterScript : NetworkBehaviour
     //[SerializeField]
     float maxFallSpeed = 200;       //The hard-cap how fast the character can fall
 
+
+
     //Character physics
     Rigidbody rigby;
     DirectionalCollision proximityDetection;
@@ -74,7 +76,7 @@ public class CharacterScript : NetworkBehaviour
                 pauseMenu.GetComponent<PauseMenu>().character = this;
                 ToggleMenu();
             }
-            Jump();
+            Jump();            
         }
     }
     //Handles all jumping actions
