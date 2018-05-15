@@ -18,7 +18,6 @@ public class FadeFromBlack : MonoBehaviour
         print("FADECOROUTINE");
         while (black.color.a > 0)
         {
-            print("LOOP1 " + black.color.a);
             Color temp = black.color;
             temp.a -= 1 / 255f;
             temp.r += .5f / 255f;
@@ -29,7 +28,6 @@ public class FadeFromBlack : MonoBehaviour
         }
         while (instructions.color.a > 0)
         {
-            print("LOOP2");
             Color temp = instructions.color;
             temp.a -= 1 / 255f;
             instructions.color = temp;

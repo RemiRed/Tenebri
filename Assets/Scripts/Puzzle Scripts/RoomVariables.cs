@@ -14,13 +14,19 @@ public class RoomVariables : NetworkBehaviour
     [SerializeField]
     float timerSeconds = 0, 
 			timerPenalty = 1;
+    //[HideInInspector]
     public float currentTime;
 	 
 	public int allowedFailures = 1; 
-	bool startTimer = false;
+	public bool startTimer = false;
     public bool roomPassed = false;
 
-	//Called if the player fails in this room
+    private void Start()
+    {
+        currentTime = timerSeconds;
+    }
+
+    //Called if the player fails in this room
     public bool Fail()
     {
 		if (allowedFailures != 0)
