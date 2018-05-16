@@ -59,7 +59,7 @@ public class UnloadRooms : NetworkBehaviour
         }
         if (c.tag == "Player")
         {
-            if (entered && otherUnloadRooms.entered)
+            if (entered && otherUnloadRooms.entered && c.gameObject.GetComponent<PlayerCommands>().localPlayer)
             {
                 unloaded = true;
                 playerCmd.CmdUnloadBeginning();
