@@ -18,6 +18,7 @@ public class RoomLoader : NetworkBehaviour
 
     public void LoadRoom(Room room, int player) //Loads the next room
     {
+        print(room + " " + player);
         if (player == 1)
         {
             if (room == Room.startRoom)
