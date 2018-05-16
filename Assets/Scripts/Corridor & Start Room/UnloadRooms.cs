@@ -23,13 +23,13 @@ public class UnloadRooms : NetworkBehaviour
 
     PlayerCommands playerCmd;
 
-    bool unloaded = false, check = false;
+    bool unloaded = false;
 
     private void OnTriggerEnter(Collider c)
     {
         if (c.tag == "Player")
         {
-            if (!check && id == 1)
+            if (id == 1)
             {
                 bool tempCheck = true;
                 foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
