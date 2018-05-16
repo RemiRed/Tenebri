@@ -29,22 +29,20 @@ public class UnloadRooms : NetworkBehaviour
     {
         if (c.tag == "Player")
         {
-            if (id == 1)
+            bool tempCheck = true;
+            foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
             {
-                bool tempCheck = true;
-                foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+                if (player.GetComponent<NetworkTransform>().netId.Value < c.GetComponent<NetworkTransform>().netId.Value)
                 {
-                    if (player.GetComponent<NetworkTransform>().netId.Value < c.GetComponent<NetworkTransform>().netId.Value)
-                    {
-                        tempCheck = false;
-                        break;
-                    }
+                    tempCheck = false;
+                    break;
                 }
-                if (tempCheck)
-                {
-                    c.gameObject.transform.position = otherUnloadRooms.gameObject.transform.position;
-                }
-            }          
+            }
+            if (tempCheck)
+            {
+                c.gameObject.transform.position = otherUnloadRooms.gameObject.transform.position;
+            }
+
             playerCmd = c.gameObject.GetComponent<PlayerCommands>();
             playerCmd.CmdStartRoomLanded(id, true);
             StartCoroutine(fadeFromBlack.Fade());
