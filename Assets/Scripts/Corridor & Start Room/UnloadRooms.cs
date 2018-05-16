@@ -27,18 +27,26 @@ public class UnloadRooms : NetworkBehaviour
 
     private void OnTriggerEnter(Collider c)
     {
-        if (c.tag == "Player" && !check)
-        {
-            //if (isServer)
-            //{
-            //    c.gameObject.transform.position = otherUnloadRooms.gameObject.transform.position;
-            //    check = true;
-                
-            //}
-            playerCmd = c.gameObject.GetComponent<PlayerCommands>();
-            playerCmd.CmdStartRoomLanded(id, true);
-            StartCoroutine(fadeFromBlack.Fade());
-        }
+        //if (c.tag == "Player" && !check)
+        //{
+        //    playerCmd = c.gameObject.GetComponent<PlayerCommands>();
+        //    if (isServer)
+        //    {
+        //        if (!playerCmd.Transported)
+        //        {
+        //            playerCmd.CmdLocalPlayer();
+        //            if (playerCmd.localPlayer)
+        //            {
+
+        //                c.gameObject.transform.position = otherUnloadRooms.gameObject.transform.position;
+        //                playerCmd.Transported = true;
+        //            }
+        //        }
+        //    }
+        //    check = true;
+        //    playerCmd.CmdStartRoomLanded(id, true);
+        //    StartCoroutine(fadeFromBlack.Fade());
+        //}
     }
 
     private void OnTriggerStay(Collider c)
