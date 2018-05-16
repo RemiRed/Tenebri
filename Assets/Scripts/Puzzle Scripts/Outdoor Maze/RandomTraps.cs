@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RandomTraps : MonoBehaviour {
-/*
+
     [SerializeField]
     List<GameObject> traps = new List<GameObject>();
     [SerializeField]
@@ -39,5 +39,4 @@ public class RandomTraps : MonoBehaviour {
             tempTraps.Remove(tempTraps[theOne]);
         }
     }
-    */
 }
