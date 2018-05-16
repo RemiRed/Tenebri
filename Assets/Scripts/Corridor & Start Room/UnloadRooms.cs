@@ -27,6 +27,10 @@ public class UnloadRooms : NetworkBehaviour
 
     private void OnTriggerEnter(Collider c)
     {
+        if (unloaded)
+        {
+            return;
+        }
         if (c.tag == "Player")
         {
             bool tempCheck = true;
