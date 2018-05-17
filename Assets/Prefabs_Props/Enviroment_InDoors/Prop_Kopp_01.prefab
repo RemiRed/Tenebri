@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4194836243808244}
   - component: {fileID: 33551037316134932}
   - component: {fileID: 23391388781092322}
-  - component: {fileID: 95896396639479136}
   m_Layer: 0
   m_Name: Prop_Kopp_01
   m_TagString: Untagged
@@ -83,20 +82,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1521175172335806}
   m_Mesh: {fileID: 4300000, guid: d297d66e205a6e0478696e663ac23dbd, type: 3}
---- !u!95 &95896396639479136
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1521175172335806}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 052dedbb038f88f409383c74c8d40a75, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
