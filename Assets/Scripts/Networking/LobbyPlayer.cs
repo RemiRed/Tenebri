@@ -20,8 +20,7 @@ public class LobbyPlayer : NetworkLobbyPlayer
     {
         if (!readyToBegin)
         {
-            if (this.isLocalPlayer)
-                this.SendReadyToBeginMessage();
+            SendReadyToBeginMessage();
         }
         else
         {
