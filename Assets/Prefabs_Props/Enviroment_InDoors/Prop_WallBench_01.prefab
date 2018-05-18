@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4725312541399348}
   - component: {fileID: 33027978406901960}
   - component: {fileID: 23498249673819134}
+  - component: {fileID: 65438433779649384}
   m_Layer: 0
   m_Name: Prop_WallBench_01
   m_TagString: Untagged
@@ -82,3 +83,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1073861067040998}
   m_Mesh: {fileID: 4300000, guid: 97c89795aa298da4e96593ff9982467f, type: 3}
+--- !u!65 &65438433779649384
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1073861067040998}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.004980794, y: 0.005276392, z: 0.008122194}
+  m_Center: {x: 0, y: 0, z: 0}

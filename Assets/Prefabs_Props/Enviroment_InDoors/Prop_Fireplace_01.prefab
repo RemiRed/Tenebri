@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4332138005237508}
   - component: {fileID: 33488439243190480}
   - component: {fileID: 23895615906882116}
+  - component: {fileID: 65105685539267796}
   m_Layer: 0
   m_Name: Prop_Fireplace_01
   m_TagString: Untagged
@@ -82,3 +83,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336255268943922}
   m_Mesh: {fileID: 4300000, guid: 8b5d273af0549c0418f3953faacf1cb1, type: 3}
+--- !u!65 &65105685539267796
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1336255268943922}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.197316, y: 3.8820114, z: 2.2140448}
+  m_Center: {x: 0, y: 0.3270697, z: 0}

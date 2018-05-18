@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4015898746352368}
   - component: {fileID: 33016941978300070}
   - component: {fileID: 23773332477030082}
+  - component: {fileID: 65984306206222020}
   m_Layer: 0
   m_Name: Prop_Trolley_01
   m_TagString: Untagged
@@ -82,3 +83,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1750354182572818}
   m_Mesh: {fileID: 4300000, guid: 0b5d3df02864dac43a841306d2430647, type: 3}
+--- !u!65 &65984306206222020
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1750354182572818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0822787, y: 0.9579191, z: 0.6782875}
+  m_Center: {x: 0, y: 0, z: 0}

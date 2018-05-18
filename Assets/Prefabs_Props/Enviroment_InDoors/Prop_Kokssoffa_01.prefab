@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4448706451746024}
   - component: {fileID: 33101409371773504}
   - component: {fileID: 23148598377569348}
+  - component: {fileID: 65527543102358426}
   m_Layer: 0
   m_Name: Prop_Kokssoffa_01
   m_TagString: Untagged
@@ -82,3 +83,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1616037749352878}
   m_Mesh: {fileID: 4300000, guid: 3d266339c369d13479f5aed56c70d491, type: 3}
+--- !u!65 &65527543102358426
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1616037749352878}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3967004, y: 0.5772941, z: 0.7820203}
+  m_Center: {x: 0, y: 0, z: 0}
