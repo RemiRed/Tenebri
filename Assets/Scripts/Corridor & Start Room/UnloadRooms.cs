@@ -30,6 +30,7 @@ public class UnloadRooms : NetworkBehaviour
         if (c.tag == "Player" && !check)
         {
             check = true;
+            playerCmd = c.gameObject.GetComponent<PlayerCommands>();
             playerCmd.CmdStartRoomLanded(id, true);
             StartCoroutine(fadeFromBlack.Fade());
         }
