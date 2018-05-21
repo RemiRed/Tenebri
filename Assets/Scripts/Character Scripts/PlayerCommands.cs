@@ -16,7 +16,7 @@ public class PlayerCommands : NetworkBehaviour
 
 
     RoundRoomCenter center;
-    
+
     public bool moved = false;
 
     private void Update()
@@ -56,6 +56,18 @@ public class PlayerCommands : NetworkBehaviour
             }
         }
         roomLoader.clearedRoom = true;
+    }
+
+    [Command]
+    public void CmdColorSymbolCompleteSuccess()
+    {
+        GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<ColorSymbolSuccess>().RpcCompleteSuccess();
+    }
+
+    [Command]
+    public void CmdColorSymbolFailure()
+    {
+        GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<ColorSymbolSuccess>().RpcFailure();
     }
 
     [Command]
