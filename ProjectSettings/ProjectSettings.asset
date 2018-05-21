@@ -678,9 +678,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: b3ebe8de-8926-4a6e-9320-f5a59456ce78
-  projectName: Tenebri
-  organizationId: oggeloppe
+  cloudProjectId: 38c30987-1d1c-4434-953d-4e565bf6516b
+  projectName: Tenebri (2)
+  organizationId: andreas-halldin
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
