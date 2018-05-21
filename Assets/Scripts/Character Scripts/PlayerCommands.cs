@@ -24,6 +24,7 @@ public class PlayerCommands : NetworkBehaviour
         if (roomLoader == null)
         {
             roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
+            
         }
     }
 
@@ -61,14 +62,14 @@ public class PlayerCommands : NetworkBehaviour
     [Command]
     public void CmdColorSymbolCompleteSuccess()
     {
-        GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<ColorSymbolSuccess>().RpcCompleteSuccess();
+        GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<ColorSymbolSuccess>().CompleteSuccessCmd();
     }
 
-    [Command]
-    public void CmdColorSymbolFailure()
-    {
-        GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<ColorSymbolSuccess>().RpcFailure();
-    }
+    //[Command]
+    //public void CmdColorSymbolFailure()
+    //{
+    //    GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<ColorSymbolSuccess>().RpcFailure();
+    //}
 
     [Command]
     public void CmdStartRoundMaze()
