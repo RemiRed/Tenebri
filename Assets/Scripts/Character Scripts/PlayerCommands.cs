@@ -62,7 +62,7 @@ public class PlayerCommands : NetworkBehaviour
     [Command]
     public void CmdColorSymbolCompleteSuccess()
     {
-        GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<ColorSymbolSuccess>().CompleteSuccessCmd();
+        GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<ColorSymbolSuccess>().RpcCompleteSuccess();
     }
 
     //[Command]
