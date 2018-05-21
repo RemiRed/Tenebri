@@ -33,14 +33,14 @@ public class ColorSymbolSuccess : RoomVariables
     //override method inherited from 'RoomVaribles'
     public override void Failure()
     {
-        if (isServer)
-        {
+        //if (isServer)
+        //{
             RpcFailure();
-        }
-        else
-        {
-            Fail();
-        }
+        //}
+        //else
+        //{
+        //    Fail();
+        //}
     }
     [ClientRpc]
     public void RpcFailure()
