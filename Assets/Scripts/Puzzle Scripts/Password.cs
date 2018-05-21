@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Password : MonoBehaviour {
 
-	public RoomVariables result;						//Script to be called when player either succeeds or fails the password
+    public RoomVariables result1, result2;						//Script to be called when player either succeeds or fails the password
 	public List<PasswordButton> passwordButtons;		//List of all buttons in the password. Not nessesary but useful for debuging purposes.
 	public int passwordRounds;							//The number of times the password needs to be solved
 	public bool resetRounds;							//If the number of times a password needs to be solved should be reset completely as well
@@ -34,12 +34,14 @@ public class Password : MonoBehaviour {
 					if (curPasswordRoundsLeft <= 1) {
 
 						solved = true;
-						result.CompleteSuccess ();
+						result1.CompleteSuccess ();
+                        result2.CompleteSuccess();
 
-					} else {
+                    } else {
 						
-						result.PartialSuccess ();
-						nextID = 0;
+						result1.PartialSuccess ();
+                        result2.PartialSuccess();
+                        nextID = 0;
 						curPasswordRoundsLeft--;
 					}
 				}
@@ -57,8 +59,9 @@ public class Password : MonoBehaviour {
 					nextID = 1;
 				}
 
-				result.Failure ();
-				if (resetRounds) {
+				result1.Failure ();
+                result2.Failure();
+                if (resetRounds) {
 					curPasswordRoundsLeft = passwordRounds;
 				}
 			}
