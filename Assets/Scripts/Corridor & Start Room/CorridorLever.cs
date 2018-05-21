@@ -8,6 +8,7 @@ public class CorridorLever : Interractable
 
     public GameObject exitDoor;
     public GameObject entryDoor;
+    Animator anim;
 
     [SerializeField]
     float doorDelay;
@@ -19,10 +20,13 @@ public class CorridorLever : Interractable
 
     void Pull()
     {
+        anim = GetComponent<Animator>();
         if (!pulled)
         {
             pulled = true;
             playerCmd.CmdCorridorLever();
+            anim.Play("Pull");
+
         }
     }
 
