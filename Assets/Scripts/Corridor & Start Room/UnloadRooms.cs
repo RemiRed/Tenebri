@@ -30,11 +30,11 @@ public class UnloadRooms : NetworkBehaviour
         if (c.tag == "Player")
         {
             playerCmd = c.gameObject.GetComponent<PlayerCommands>();
-            if (isServer)
+            if (isServer && !playerCmd.moved)
             {
                 foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
                 {
-                    if (player.GetComponentInChildren<Camera>().enabled && !player.GetComponent<PlayerCommands>().moved)
+                    if (player.GetComponentInChildren<Camera>().enabled)
                     {
                         player.GetComponent<PlayerCommands>().moved = true;
                         player.transform.position = otherUnloadRooms.transform.position;
