@@ -21,7 +21,7 @@ public class ColorSymbolSuccess : RoomVariables
         //          roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 2);
         //      }
     }
-    [ClientRpc]
+    [Command]
     public void CmdCompleteSuccess()
     {
         roomPassed = true;
@@ -42,7 +42,7 @@ public class ColorSymbolSuccess : RoomVariables
         //    Fail();
         //}
     }
-    [ClientRpc]
+    [Command]
     public void CmdFailure()
     {
         Fail();
