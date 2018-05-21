@@ -14,16 +14,10 @@ public class PlayerCommands : NetworkBehaviour
     public GameObject roomManager, roundRoom;
     public GameObject map1, map2, wall;
 
+
     RoundRoomCenter center;
-
-    [SyncVar]
-    public bool localPlayer;
-
-    [Command]
-    public void CmdLocalPlayer()
-    {
-        localPlayer = isLocalPlayer;
-    }
+    
+    public bool moved = false;
 
     private void Update()
     {

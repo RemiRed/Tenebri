@@ -23,14 +23,25 @@ public class UnloadRooms : NetworkBehaviour
 
     PlayerCommands playerCmd;
 
-    bool unloaded = false, check = false;
+    bool unloaded = false;
 
     private void OnTriggerEnter(Collider c)
     {
-        if (c.tag == "Player" && !check)
+        if (c.tag == "Player")
         {
-            check = true;
             playerCmd = c.gameObject.GetComponent<PlayerCommands>();
+            if (isServer)
+            {
+                foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+                {
+                    if (player.GetComponentInChildren<Camera>().enabled && !player.GetComponent<PlayerCommands>().moved)
+                    {
+                        player.GetComponent<PlayerCommands>().moved = true;
+                        player.transform.position = otherUnloadRooms.transform.position;
+                        break;
+                    }
+                }
+            }
             playerCmd.CmdStartRoomLanded(id, true);
             StartCoroutine(fadeFromBlack.Fade());
         }
