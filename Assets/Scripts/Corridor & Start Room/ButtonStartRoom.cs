@@ -9,10 +9,7 @@ public class ButtonStartRoom : Interractable
 
     [SerializeField]
     UnloadRooms p1, p2;
-
-    [SerializeField]
-    int player;
-
+    
     void Press()
     {
         if (activated || !p1.entered || !p2.entered)
@@ -21,6 +18,7 @@ public class ButtonStartRoom : Interractable
         }
         activated = true;
         GetComponentInParent<RoomVariables>().OpenDoorToNextLevel();
-        roomLoader.LoadRoom(RoomLoader.Room.colorSymbols, player);
+        roomLoader.LoadRoom(RoomLoader.Room.colorSymbols, 1);
+        roomLoader.LoadRoom(RoomLoader.Room.colorSymbols, 2);
     }
 }
