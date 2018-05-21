@@ -13,7 +13,7 @@ public class ColorSymbolSuccess : RoomVariables
     public override void CompleteSuccess()
     {
         //	if (isServer) {
-        RpcCompleteSuccess();
+        CmdCompleteSuccess();
         //} else {
         //	roomPassed = true;
         //	OpenDoorToNextLevel ();
@@ -22,7 +22,7 @@ public class ColorSymbolSuccess : RoomVariables
         //      }
     }
     [ClientRpc]
-    public void RpcCompleteSuccess()
+    public void CmdCompleteSuccess()
     {
         roomPassed = true;
         OpenDoorToNextLevel();
@@ -35,7 +35,7 @@ public class ColorSymbolSuccess : RoomVariables
     {
         //if (isServer)
         //{
-            RpcFailure();
+            CmdFailure();
         //}
         //else
         //{
@@ -43,7 +43,7 @@ public class ColorSymbolSuccess : RoomVariables
         //}
     }
     [ClientRpc]
-    public void RpcFailure()
+    public void CmdFailure()
     {
         Fail();
     }
