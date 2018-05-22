@@ -12,20 +12,18 @@ public class ColorSymbolSuccess : RoomVariables
     ////override method inherited from 'RoomVaribles'
     public override void CompleteSuccess()
     {
-        roomPassed = true;
-        playercommand.CmdColorSymbolCompleteSuccess();
-        //if (isServer)
-        //{
-        //    RpcCompleteSuccess();
-        //}
-        //else
-        //{
-        //    OpenDoorToNextLevel();
-        //    roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 1);
-        //    roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 2);
-        //    // playercommand = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCommands>();
-        //    //playercommand.CmdColorSymbolCompleteSuccess();
-        //}
+        if (isServer)
+        {
+            RpcCompleteSuccess();
+        }
+        else
+        {
+            playercommand.CmdColorSymbolCompleteSuccess();
+            roomPassed = true;
+            OpenDoorToNextLevel();
+            roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 1);
+            roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 2);
+        }
     }
     [ClientRpc]
     public void RpcCompleteSuccess()

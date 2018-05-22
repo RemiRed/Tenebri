@@ -21,8 +21,7 @@ public class RoundRoomCenter : NetworkBehaviour {
 			
             player.gameObject.GetComponent<PlayerCommands>().CmdPlayerInCenter(true);
 			//Assigns this password's result's playerCommand component to the active player's playerCommand
-			GetComponentInParent<Password> ().result1.playercommand = player.GetComponent<PlayerCommands>();
-            GetComponentInParent<Password>().result2.playercommand = player.GetComponent<PlayerCommands>();
+			GetComponentInParent<Password> ().result.playercommand = player.GetComponent<PlayerCommands>();
         }
     }
 
