@@ -16,29 +16,44 @@ public class CorridorLever : Interractable
     [SerializeField]
     float leverDelay;
 
+    bool a_isPulling;
     bool pulled = false;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+
     }
 
     void Pull()
     { 
         if (!pulled)
         {
-            pulled = true;
+            a_isPulling = true;
+            if (a_isPulling = true)
+            {
+                anim.SetBool("isPull", true);
+            }
+            anim.Play("newPull");
             playerCmd.CmdCorridorLever();
-            anim.SetBool("isPulling", true);
-            anim.Play("Pull");
+            
         }
     }
 
     void Release()
     {
+        if (pulled)
+        {
+            if (pulled != false)
+            {
+
+            
+
         playerCmd.CmdCorridorLeverRelease();
-        anim.SetBool("isPulling", false);
+        anim.SetBool("isPull", false);
         pulled = false;
+                }
+        }
     }
 
 }
