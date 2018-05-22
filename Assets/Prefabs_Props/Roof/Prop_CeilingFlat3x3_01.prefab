@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4954465687474728}
   - component: {fileID: 33228557968937158}
   - component: {fileID: 23438891157920924}
+  - component: {fileID: 65170329168670438}
   m_Layer: 0
   m_Name: Prop_CeilingFlat3x3_01
   m_TagString: Untagged
@@ -82,3 +83,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1174611751152000}
   m_Mesh: {fileID: 4300002, guid: 90169849b83d7a2469e9db66309c20d6, type: 3}
+--- !u!65 &65170329168670438
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1174611751152000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0000002, y: 0, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}

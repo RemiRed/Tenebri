@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4151188902464062}
   - component: {fileID: 33883128057107688}
   - component: {fileID: 23079375419625918}
+  - component: {fileID: 64827003023067472}
   m_Layer: 0
   m_Name: Prop_CeilingSlanted3x3_01
   m_TagString: Untagged
@@ -81,4 +82,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162333597701712}
+  m_Mesh: {fileID: 4300000, guid: d71fdbbb5d3b4ff4990e3497805a4e33, type: 3}
+--- !u!64 &64827003023067472
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1162333597701712}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: d71fdbbb5d3b4ff4990e3497805a4e33, type: 3}
