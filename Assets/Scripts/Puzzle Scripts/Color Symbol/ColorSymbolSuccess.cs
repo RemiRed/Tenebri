@@ -43,6 +43,7 @@ public class ColorSymbolSuccess : RoomVariables
         }
         else
         {
+            Fail();
             playerCmd.CmdColorSymbolFailure();
         }
     }
