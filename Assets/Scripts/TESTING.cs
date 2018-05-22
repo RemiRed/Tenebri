@@ -9,7 +9,8 @@ public class TESTING : MonoBehaviour
     RoomVariables colorSymbolsP1, colorSymbolsP2, roundMazeP1, roundMazeP2;
     [SerializeField]
     List<Interractable> corridorLevers;
-
+    [SerializeField]
+    RoomLoader roomLoader;
     // Update is called once per frame
     void Update()
     {
@@ -18,13 +19,17 @@ public class TESTING : MonoBehaviour
         {
             colorSymbolsP1.OpenDoorToNextLevel();
             colorSymbolsP2.OpenDoorToNextLevel();
+            roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 1);
+            roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 2);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2)) //RoundMazeSolve
         {
             roundMazeP1.OpenDoorToNextLevel();
             roundMazeP2.OpenDoorToNextLevel();
+            roomLoader.LoadRoom(RoomLoader.Room.outdoorMaze, 1);
+            roomLoader.LoadRoom(RoomLoader.Room.outdoorMaze, 2);
         }
-        if (Input.GetKeyDown(KeyCode.Tab)) //OpenCorridors
+        if (Input.GetKey(KeyCode.Tab)) //OpenCorridors
         {
             foreach (Interractable lever in corridorLevers)
             {
