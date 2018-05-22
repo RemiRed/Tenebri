@@ -18,21 +18,26 @@ public class CorridorLever : Interractable
 
     bool pulled = false;
 
-    void Pull()
+    void Start()
     {
         anim = GetComponent<Animator>();
+    }
+
+    void Pull()
+    { 
         if (!pulled)
         {
             pulled = true;
             playerCmd.CmdCorridorLever();
+            anim.SetBool("isPulling", true);
             anim.Play("Pull");
-
         }
     }
 
     void Release()
     {
         playerCmd.CmdCorridorLeverRelease();
+        anim.SetBool("isPulling", false);
         pulled = false;
     }
 
