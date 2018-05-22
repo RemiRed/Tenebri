@@ -10,7 +10,7 @@ public class ColorSymbolSuccess : RoomVariables
 {
 
     ////override method inherited from 'RoomVaribles'
-    public override void CompleteSuccess()
+    public override void CompleteSuccess(PlayerCommands playerCmd)
     {
         if (isServer)
         {
@@ -18,11 +18,11 @@ public class ColorSymbolSuccess : RoomVariables
         }
         else
         {
-            playercommand.CmdColorSymbolCompleteSuccess();
+            playerCmd.CmdColorSymbolCompleteSuccess();
             roomPassed = true;
-            OpenDoorToNextLevel();
-            roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 1);
-            roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 2);
+            //OpenDoorToNextLevel();
+            //roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 1);
+            //roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 2);
         }
     }
     [ClientRpc]
@@ -35,7 +35,7 @@ public class ColorSymbolSuccess : RoomVariables
     }
 
     //override method inherited from 'RoomVaribles'
-    public override void Failure()
+    public override void Failure(PlayerCommands playerCmd)
     {
         if (isServer)
         {
