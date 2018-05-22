@@ -24,7 +24,7 @@ public class PlayerCommands : NetworkBehaviour
         if (roomLoader == null)
         {
             roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
-            
+
         }
     }
 
@@ -55,6 +55,8 @@ public class PlayerCommands : NetworkBehaviour
                 default:
                     break;
             }
+            roomLoader.clearedRoom = false;
+            return;
         }
         roomLoader.clearedRoom = true;
     }

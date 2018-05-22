@@ -33,7 +33,7 @@ public class TESTING : MonoBehaviour
         {
             foreach (Interractable lever in corridorLevers)
             {
-                lever.Interract();
+                lever.playerCmd.CmdCorridorLever();
             }
         }
     }
