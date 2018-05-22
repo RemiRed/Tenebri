@@ -41,7 +41,7 @@ public class CharacterScript : NetworkBehaviour
     public GameObject gameOverMenu; //<-- Behöver detta vara public? 
 
     public bool menu = false, gameOver = false; //Bools that determines if the player can act.
-
+    bool moved = false;
     void Start()
     {
         if (!isLocalPlayer)
@@ -70,6 +70,10 @@ public class CharacterScript : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
+            if (Input.anyKey)
+            {
+                moved = true;
+            }
             //Toggles menu and the locked cursor
             if (Input.GetButtonDown("Menu") && !gameOver)
             {
@@ -129,6 +133,10 @@ public class CharacterScript : NetworkBehaviour
     //Handles all physics based actions, such as movement, and actions that depend on movement
     void FixedUpdate()
     {
+        if (!moved)
+        {
+            return;
+        }
         if (isLocalPlayer && !menu)
         {
             //Executes all movements determined by active axis and current jump value 
