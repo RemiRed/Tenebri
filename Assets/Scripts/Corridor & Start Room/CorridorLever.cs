@@ -29,6 +29,7 @@ public class CorridorLever : Interractable
     { 
         if (!pulled)
         {
+            pulled = true;
             a_isPulling = true;
             if (a_isPulling = true)
             {
