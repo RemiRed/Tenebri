@@ -41,7 +41,7 @@ public class LeverScript : Interractable
 
             leverPulled = true;
            anim.Play("Pull");
-            Debug.Log("The Lever is now Pulled");
+            
         }
 
         //En switch som kallar olika kommandon beroende på Id:n på spaken.
