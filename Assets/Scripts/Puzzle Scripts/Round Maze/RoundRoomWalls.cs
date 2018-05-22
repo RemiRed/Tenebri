@@ -199,17 +199,17 @@ public class RoundRoomWalls : RoomVariables
     public override void PartialSuccess(PlayerCommands playerCmd)
     {
         Debug.Log("YOU WON!");
-        playercommand.CmdReRandomRoundMazePuzzle();
+        playerCmd.CmdReRandomRoundMazePuzzle();
     }
 
     public override void CompleteSuccess(PlayerCommands playerCmd)
     {
-        playercommand.CmdRoundMazeCompleteSuccess();
+        playerCmd.CmdRoundMazeCompleteSuccess();
     }
 
     public override void Failure(PlayerCommands playerCmd)
     {
-        playercommand.CmdRoundMazeFailure();
+        playerCmd.CmdRoundMazeFailure();
     }
     [ClientRpc]
     public void RpcCompleteSuccessOnRoundMaze()

@@ -36,5 +36,12 @@ public class TESTING : MonoBehaviour
                 lever.playerCmd.CmdCorridorLever();
             }
         }
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            foreach (Interractable lever in corridorLevers)
+            {
+                lever.playerCmd.CmdCorridorLeverRelease();
+            }
+        }
     }
 }

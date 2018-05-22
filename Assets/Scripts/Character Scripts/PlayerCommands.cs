@@ -55,10 +55,13 @@ public class PlayerCommands : NetworkBehaviour
                 default:
                     break;
             }
-            roomLoader.clearedRoom = false;
-            return;
         }
         roomLoader.clearedRoom = true;
+    }
+    [Command]
+    public void CmdCorridorLeverRelease()
+    {
+        roomLoader.clearedRoom = false;
     }
 
     [Command]
@@ -67,12 +70,12 @@ public class PlayerCommands : NetworkBehaviour
         GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<ColorSymbolSuccess>().RpcCompleteSuccess();
     }
 
-   
-    //[Command]
-    //public void CmdColorSymbolFailure()
-    //{
-    //    GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<ColorSymbolSuccess>().RpcFailure();
-    //}
+
+    [Command]
+    public void CmdColorSymbolFailure()
+    {
+        GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<ColorSymbolSuccess>().RpcFailure();
+    }
 
     [Command]
     public void CmdStartRoundMaze()
@@ -144,11 +147,7 @@ public class PlayerCommands : NetworkBehaviour
         roomLoader.UnloadAllCorridorsExcept(0, 2);
     }
 
-    [Command]
-    public void CmdCorridorLeverRelease()
-    {
-        roomLoader.clearedRoom = false;
-    }
+
 
     [Command]
     public void CmdMazeLever0()
