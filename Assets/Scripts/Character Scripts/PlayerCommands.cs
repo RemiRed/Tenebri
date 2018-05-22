@@ -64,12 +64,16 @@ public class PlayerCommands : NetworkBehaviour
     [Command]
     public void CmdColorSymbolCompleteSuccess()
     {
+        RpcColorSymbolCompleteSuccess();
+    }
+
+    [ClientRpc]
+    void RpcColorSymbolCompleteSuccess()
+    {
         roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 1);
         roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 2);
         GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<ColorSymbolSuccess>().OpenDoorToNextLevel();
-
     }
-
     //[Command]
     //public void CmdColorSymbolFailure()
     //{
