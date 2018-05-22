@@ -78,7 +78,7 @@ public class RoomVariables : NetworkBehaviour
         pairedRoom.GetComponent<RoomVariables>().exitDoor.GetComponent<Animator>().SetBool("open", true);
     }
 	//Virutal methods to be overriden by inheriting scripts
-	public virtual void CompleteSuccess(){}
-    public virtual void PartialSuccess(){}	 
-	public virtual void Failure(){}
+	public virtual void CompleteSuccess(PlayerCommands playerCmd){}
+    public virtual void PartialSuccess(PlayerCommands playerCmd) {}	 
+	public virtual void Failure(PlayerCommands playerCmd) {}
 }

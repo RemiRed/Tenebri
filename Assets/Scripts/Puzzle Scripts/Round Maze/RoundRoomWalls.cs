@@ -196,18 +196,18 @@ public class RoundRoomWalls : RoomVariables
         foundPath = true;
     }
 
-    public override void PartialSuccess()
+    public override void PartialSuccess(PlayerCommands playerCmd)
     {
         Debug.Log("YOU WON!");
         playercommand.CmdReRandomRoundMazePuzzle();
     }
 
-    public override void CompleteSuccess()
+    public override void CompleteSuccess(PlayerCommands playerCmd)
     {
         playercommand.CmdRoundMazeCompleteSuccess();
     }
 
-    public override void Failure()
+    public override void Failure(PlayerCommands playerCmd)
     {
         playercommand.CmdRoundMazeFailure();
     }

@@ -14,19 +14,19 @@ public class OutdoorMazeSuccess : RoomVariables {
     }
 
 
-    public override void CompleteSuccess()
-    {
+    //public override void CompleteSuccess()
+    //{
 
-    }
+    //}
 
-    public override void PartialSuccess()
-    {
+    //public override void PartialSuccess()
+    //{
 
-    }
+    //}
 
-    public override void Failure()
-    {
-        player.transform.position = respawnLocatiom.position;
-        Fail();
-    }
+    //public override void Failure()
+    //{
+    //    player.transform.position = respawnLocatiom.position;
+    //    Fail();
+    //}
 }

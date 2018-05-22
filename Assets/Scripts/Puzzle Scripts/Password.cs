@@ -20,7 +20,7 @@ public class Password : MonoBehaviour {
 		curPasswordRoundsLeft = passwordRounds;
 	}
 	//Called to check if a correct password button was pressed 
-	public void CheckPassword(int _ID){
+	public void CheckPassword(int _ID,PlayerCommands playerCmd){
 
 		if (!solved) {
 
@@ -34,11 +34,11 @@ public class Password : MonoBehaviour {
 					if (curPasswordRoundsLeft <= 1) {
 
 						solved = true;
-						result.CompleteSuccess ();
+						result.CompleteSuccess (playerCmd);
 
                     } else {
 						
-						result.PartialSuccess ();
+						result.PartialSuccess (playerCmd);
                         nextID = 0;
 						curPasswordRoundsLeft--;
 					}
@@ -57,7 +57,7 @@ public class Password : MonoBehaviour {
 					nextID = 1;
 				}
 
-				result.Failure ();
+				result.Failure (playerCmd);
                 if (resetRounds) {
 					curPasswordRoundsLeft = passwordRounds;
 				}

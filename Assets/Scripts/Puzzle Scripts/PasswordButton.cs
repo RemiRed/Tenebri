@@ -29,7 +29,8 @@ public class PasswordButton : Interractable {
 		if (buttonActive) {
 
 			buttonActive = false;
-			passwordManager.CheckPassword (buttonOrderID);
+			passwordManager.CheckPassword (buttonOrderID,playerCmd);
+            
 
 			if (lightUpOnPress) {
 				Material[] _materials = graphicalObject.GetComponent<Renderer> ().materials;
