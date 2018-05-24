@@ -106,7 +106,7 @@ public class PlayerCommands : NetworkBehaviour
     public void CmdRoundMazeFailure()
     {
 
-        GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls>().RpcRoundMazeFailure();
+        GameObject.FindGameObjectWithTag("roundRoom").GetComponent<RoundRoomWalls>().RpcFailure();
     }
 
 
