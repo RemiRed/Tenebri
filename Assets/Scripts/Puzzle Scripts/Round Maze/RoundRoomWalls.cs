@@ -224,7 +224,7 @@ public class RoundRoomWalls : RoomVariables
 
     }
     [ClientRpc]
-    public void RpcCompleteSuccessOnRoundMaze()
+    public void RpcCompleteSuccess()
     {
         Debug.LogWarning("You passed this Puzzle");
         roomPassed = true;
