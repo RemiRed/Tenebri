@@ -14,7 +14,7 @@ public class RevealMap : NetworkBehaviour
     [ClientRpc] //Stänger av mesh renderer.
     public void RpcRevealMap()
     {
-        gameObject.GetComponent<Renderer>().enabled = true;
+        gameObject.SetActive(true);
     }
 		
     [ClientRpc]
