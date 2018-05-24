@@ -155,14 +155,11 @@ public class RoundRoomWalls : RoomVariables
         //			Debug.Log (isServer);
         //			if (isServer) {
         //				Debug.Log ("SHOULD BE RERANDOMIZED NOW");
-        // RandomSymbols();
-        //pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
+        RandomSymbols();
+        pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
         //			}
         //			reRandomNow = false;
         //		}
-
-        RpcCloseWalls(false);
-        CloseWalls(false);
     }
     //Resets Everything to default
     [ClientRpc]
@@ -201,31 +198,18 @@ public class RoundRoomWalls : RoomVariables
 
     public override void PartialSuccess(PlayerCommands playerCmd)
     {
-        if (isServer)
-        {
-            RpcRandomizeEverything();
-        }
-        else
-        {
-            playerCmd.CmdReRandomRoundMazePuzzle();
-        }
+        Debug.Log("YOU WON!");
+        playerCmd.CmdReRandomRoundMazePuzzle();
     }
 
     public override void CompleteSuccess(PlayerCommands playerCmd)
     {
-        if (isServer)
-        {
-            RpcCompleteSuccess();
-        }
-        else
-        {
-            playerCmd.CmdRoundMazeCompleteSuccess();
-            roomPassed = true;
-        }
+        playerCmd.CmdRoundMazeCompleteSuccess();
     }
 
     public override void Failure(PlayerCommands playerCmd)
     {
+
         if (isServer)
         {
             RpcFailure();
@@ -235,22 +219,25 @@ public class RoundRoomWalls : RoomVariables
             playerCmd.CmdRoundMazeFailure();
         }
 
-    }
 
+        playerCmd.CmdRoundMazeFailure();
+
+    }
     [ClientRpc]
-    public void RpcCompleteSuccess()
+    public void RpcCompleteSuccessOnRoundMaze()
     {
         Debug.LogWarning("You passed this Puzzle");
         roomPassed = true;
         CloseWalls(true);
-        OpenDoorToNextLevel();
         roomLoader.LoadRoom(RoomLoader.Room.outdoorMaze, 1);
         roomLoader.LoadRoom(RoomLoader.Room.outdoorMaze, 2);
+        OpenDoorToNextLevel();
     }
 
     [ClientRpc]
-    public void RpcFailure()
+    public void RpcRoundMazeFailure()
     {
+
         Debug.Log("Fail");
         CloseWalls(true);
         usedCorrectSymbolMaterialIndex.Clear();
