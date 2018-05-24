@@ -234,6 +234,7 @@ public class RoundRoomWalls : RoomVariables
         {
             playerCmd.CmdRoundMazeFailure();
         }
+
     }
 
     [ClientRpc]

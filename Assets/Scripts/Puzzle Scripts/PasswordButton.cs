@@ -28,15 +28,15 @@ public class PasswordButton : Interractable {
 
 		if (buttonActive) {
 
-			buttonActive = false;
-			passwordManager.CheckPassword (buttonOrderID,playerCmd);
-            
 
 			if (lightUpOnPress) {
 				Material[] _materials = graphicalObject.GetComponent<Renderer> ().materials;
 				_materials[materialIndex].SetColor ("_EmissionColor", Color.white);
 				graphicalObject.GetComponent<Renderer> ().materials = _materials;
 			}
+			buttonActive = false;
+			passwordManager.CheckPassword (buttonOrderID,playerCmd);
+            
 		}
 	}
 	//Called when button is released
