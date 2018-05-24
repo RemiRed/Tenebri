@@ -235,7 +235,7 @@ public class RoundRoomWalls : RoomVariables
     }
 
     [ClientRpc]
-    public void RpcRoundMazeFailure()
+    public void RpcFailure()
     {
 
         Debug.Log("Fail");
