@@ -155,12 +155,12 @@ public class PlayerCommands : NetworkBehaviour
         map1.GetComponent<RevealMap>().RpcRevealMap();
     }
     [Command]
-    public void CmdMazeLever1()
+    public void CmdMazeLever2()
     {
-        map2.GetComponent<RevealMap>().RpcRevealMap();
+        wall.GetComponent<RevealMap>().RpcWallRemover();
     }
     [Command]
-    public void CmdMazeLever2()
+    public void CmdMazeLever3()
     {
         RpcMazeLever3();
     }
