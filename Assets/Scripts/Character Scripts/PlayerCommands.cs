@@ -162,11 +162,6 @@ public class PlayerCommands : NetworkBehaviour
     [Command]
     public void CmdMazeLever2()
     {
-        wall.GetComponent<RevealMap>().RpcWallRemover();
-    }
-    [Command]
-    public void CmdMazeLever3()
-    {
         RpcMazeLever3();
     }
     [ClientRpc]
