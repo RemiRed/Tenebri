@@ -155,11 +155,14 @@ public class RoundRoomWalls : RoomVariables
         //			Debug.Log (isServer);
         //			if (isServer) {
         //				Debug.Log ("SHOULD BE RERANDOMIZED NOW");
-        RandomSymbols();
-        pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
+        // RandomSymbols();
+        //pairedRoom.GetComponent<RoundMazeMapRoom>().RpcMapButtons();
         //			}
         //			reRandomNow = false;
         //		}
+
+        RpcCloseWalls(false);
+        CloseWalls(false);
     }
     //Resets Everything to default
     [ClientRpc]
@@ -198,34 +201,55 @@ public class RoundRoomWalls : RoomVariables
 
     public override void PartialSuccess(PlayerCommands playerCmd)
     {
-        Debug.Log("YOU WON!");
-        playerCmd.CmdReRandomRoundMazePuzzle();
+        if (isServer)
+        {
+            RpcRandomizeEverything();
+        }
+        else
+        {
+            playerCmd.CmdReRandomRoundMazePuzzle();
+        }
     }
 
     public override void CompleteSuccess(PlayerCommands playerCmd)
     {
-        playerCmd.CmdRoundMazeCompleteSuccess();
+        if (isServer)
+        {
+            RpcCompleteSuccess();
+        }
+        else
+        {
+            playerCmd.CmdRoundMazeCompleteSuccess();
+            roomPassed = true;
+        }
     }
 
     public override void Failure(PlayerCommands playerCmd)
     {
-        playerCmd.CmdRoundMazeFailure();
+        if (isServer)
+        {
+            RpcFailure();
+        }
+        else
+        {
+            playerCmd.CmdRoundMazeFailure();
+        }
     }
+
     [ClientRpc]
-    public void RpcCompleteSuccessOnRoundMaze()
+    public void RpcCompleteSuccess()
     {
         Debug.LogWarning("You passed this Puzzle");
         roomPassed = true;
         CloseWalls(true);
+        OpenDoorToNextLevel();
         roomLoader.LoadRoom(RoomLoader.Room.outdoorMaze, 1);
         roomLoader.LoadRoom(RoomLoader.Room.outdoorMaze, 2);
-        OpenDoorToNextLevel();
     }
 
     [ClientRpc]
-    public void RpcRoundMazeFailure()
+    public void RpcFailure()
     {
-
         Debug.Log("Fail");
         CloseWalls(true);
         usedCorrectSymbolMaterialIndex.Clear();
