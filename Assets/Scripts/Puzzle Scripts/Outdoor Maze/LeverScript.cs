@@ -55,12 +55,6 @@ public class LeverScript : Interractable
                 break;
 
             case 1:
-
-                playerCmd.CmdMazeLever1();
-
-                break;
-
-            case 2:
                 playerCmd.CmdMazeLever2();
 
                 break;

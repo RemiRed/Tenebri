@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class MapManager : NetworkBehaviour
 {
-    public GameObject map1, map2, fakewall;
+    public GameObject map1, fakewall;
 
     GameObject player;
 
