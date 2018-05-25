@@ -12,7 +12,7 @@ public class PlayerCommands : NetworkBehaviour
     [SerializeField]
     PasswordRandomizer colorSymbol;
     public GameObject roomManager, roundRoom;
-    public GameObject map1, map2, wall;
+    public GameObject map1, wall;
 
 
     RoundRoomCenter center;

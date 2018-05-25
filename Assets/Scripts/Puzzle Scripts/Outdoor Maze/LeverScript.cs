@@ -49,22 +49,17 @@ public class LeverScript : Interractable
         {
 
             case 0:
-
                 playerCmd.CmdMazeLever0();
-
                 break;
-
             case 1:
                 playerCmd.CmdMazeLever2();
-
                 break;
-
+            case 2:
+                playerCmd.CmdMazeLever3();
+                break;
             default:
-
                 break;
-
         }
-
 
     }
     //När spelaren har släppt knappen E.
