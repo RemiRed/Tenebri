@@ -22,9 +22,9 @@ public class FallingDown : MonoBehaviour {
     {
         other.enabled = !other.enabled;
         anim.SetTrigger("isFalling");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
         other.enabled = !other.enabled;
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(5f);
         failure.Failure(new PlayerCommands());
     }
 }
