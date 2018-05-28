@@ -20,11 +20,14 @@ public class FallingDown : MonoBehaviour {
     //Animation kommer att spelas och sedan så hämtas Failure condition.
     IEnumerator OnTriggerEnter(Collider other)
     {
-        other.enabled = !other.enabled;
-        anim.SetTrigger("isFalling");
-        yield return new WaitForSeconds(0.8f);
-        other.enabled = !other.enabled;
-        yield return new WaitForSeconds(5f);
-        failure.Failure(new PlayerCommands());
+        if (other.tag == "Player")
+        {
+            other.enabled = !other.enabled;
+            anim.SetTrigger("isFalling");
+            yield return new WaitForSeconds(0.8f);
+            other.enabled = !other.enabled;
+            yield return new WaitForSeconds(5f);
+            failure.Failure(other.GetComponent<PlayerCommands>());
+        }
     }
 }

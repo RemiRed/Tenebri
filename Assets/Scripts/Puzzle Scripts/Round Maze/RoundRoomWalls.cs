@@ -237,12 +237,11 @@ public class RoundRoomWalls : RoomVariables
     [ClientRpc]
     public void RpcFailure()
     {
-
         Debug.Log("Fail");
         CloseWalls(true);
         usedCorrectSymbolMaterialIndex.Clear();
         pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();
         GetComponentInChildren<RoundRoomCenter>().activatePuzzle = true;
-        Fail();
+        pairedRoom.GetComponent<RoomVariables>().Fail();
     }
 }
