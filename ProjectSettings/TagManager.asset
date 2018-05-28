@@ -24,6 +24,7 @@ TagManager:
   - SpawnPoint1
   - SpawnPoint2
   - OutdoorMaze
+  - RevealMap
   layers:
   - Default
   - TransparentFX

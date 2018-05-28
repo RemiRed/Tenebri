@@ -147,13 +147,10 @@ public class PlayerCommands : NetworkBehaviour
         roomLoader.UnloadAllCorridorsExcept(0, 2);
     }
 
-
-
-
-
     [Command]
     public void CmdMazeLever(int i)
     {
+        revealMap = GameObject.FindGameObjectWithTag("RevealMap").GetComponent<RevealMap>();
         switch (i)
         {
             case 1: //Reveal Map
