@@ -9,12 +9,13 @@ using UnityEngine.Networking;
 
 public class RevealMap : NetworkBehaviour
 {
-
+    [SerializeField]
+    GameObject daMap;
     //ClientRpc commandon är kod som kallas på Unity multiplayer servern och anropas på respektive gameobject.
     [ClientRpc] //Sätter på objekt
     public void RpcRevealMap()
     {
-        gameObject.SetActive(true);
+        daMap.SetActive(true);
     }
 		
     [ClientRpc]
