@@ -5,8 +5,7 @@ using UnityEngine.Networking;
 
 public class RoomVariables : NetworkBehaviour
 {
-    public GameObject entryDoor, exitDoor;
-    public RoomVariables pairedRoom;
+	public GameObject entryDoor, exitDoor, pairedRoom;
 	[SerializeField]
 	protected RoomLoader roomLoader;
 	public RoomLoader.Room room = RoomLoader.Room.startRoom;

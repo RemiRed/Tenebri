@@ -7,10 +7,12 @@ public class OutdoorMazeSuccess : RoomVariables
 
     [SerializeField]
     Transform respawnLocatiom;
+    [HideInInspector]
+    public GameObject player;
 
     public override void Failure(PlayerCommands playerCmd)
     {
-        playerCmd.gameObject.transform.position = respawnLocatiom.position;
+        player.transform.position = respawnLocatiom.position;
         Fail();
     }
 }
