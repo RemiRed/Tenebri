@@ -7,6 +7,7 @@ public class MapManager : NetworkBehaviour
 {
     public GameObject map1, fakewall;
 
+    [SerializeField]
     GameObject player;
 
     
