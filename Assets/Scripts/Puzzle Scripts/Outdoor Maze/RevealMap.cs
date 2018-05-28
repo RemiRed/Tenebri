@@ -10,17 +10,23 @@ using UnityEngine.Networking;
 public class RevealMap : NetworkBehaviour
 {
     [SerializeField]
-    GameObject daMap;
+    GameObject map;
     //ClientRpc commandon är kod som kallas på Unity multiplayer servern och anropas på respektive gameobject.
-    [ClientRpc] //Sätter på objekt
+    [ClientRpc]
     public void RpcRevealMap()
     {
-        daMap.SetActive(true);
+        map.SetActive(true);
     }
 		
     [ClientRpc]
     public void RpcWallRemover()
-    { // Avaktiverar en vägg.
+    { 
         gameObject.SetActive(false);
+    }
+
+    [ClientRpc]
+    public void RpcOpenDoor()
+    {
+        GameObject.FindGameObjectWithTag("OutdoorMaze").GetComponent<RoomVariables>().OpenDoorToNextLevel();
     }
 }

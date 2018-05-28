@@ -18,6 +18,8 @@ public class LeverScript : Interractable
     Animator anim;
     bool leverPulled = false;
     bool a_isPulling;
+    [SerializeField]
+    Collider trapCollider;
 
     void Start()
     {
@@ -43,22 +45,14 @@ public class LeverScript : Interractable
            anim.Play("Pull");
             
         }
-
-        //En switch som kallar olika kommandon beroende på Id:n på spaken.
-        switch (leverId)
+        
+        if (leverId == 0) //Fake Lever
         {
-
-            case 0:
-                playerCmd.CmdMazeLever0();
-                break;
-            case 1:
-                playerCmd.CmdMazeLever2();
-                break;
-            case 2:
-                playerCmd.CmdMazeLever3();
-                break;
-            default:
-                break;
+            trapCollider.enabled = true;   
+        }
+        else //Real Lever
+        {
+            playerCmd.CmdMazeLever(leverId);
         }
 
     }

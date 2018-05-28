@@ -12,7 +12,7 @@ public class PlayerCommands : NetworkBehaviour
     [SerializeField]
     PasswordRandomizer colorSymbol;
     public GameObject roomManager, roundRoom;
-    public GameObject map1, wall;
+    RevealMap revealMap;
 
 
     RoundRoomCenter center;
@@ -149,24 +149,24 @@ public class PlayerCommands : NetworkBehaviour
 
 
 
+
+
     [Command]
-    public void CmdMazeLever0()
+    public void CmdMazeLever(int i)
     {
-        map1.GetComponent<RevealMap>().RpcRevealMap();
-    }
-    [Command]
-    public void CmdMazeLever2()
-    {
-        wall.GetComponent<RevealMap>().RpcWallRemover();
-    }
-    [Command]
-    public void CmdMazeLever3()
-    {
-        RpcMazeLever3();
-    }
-    [ClientRpc]
-    void RpcMazeLever3()
-    {
-        GameObject.FindGameObjectWithTag("OutdoorMaze").GetComponent<RoomVariables>().OpenDoorToNextLevel();
+        switch (i)
+        {
+            case 1: //Reveal Map
+                revealMap.RpcRevealMap();
+                break;
+            case 2: //Open Fake Wall
+                revealMap.RpcWallRemover();
+                break;
+            case 3: //Open Door
+                revealMap.RpcOpenDoor();
+                break;
+            default:
+                break;
+        }
     }
 }
