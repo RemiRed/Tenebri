@@ -2,31 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OutdoorMazeSuccess : RoomVariables {
+public class OutdoorMazeSuccess : RoomVariables
+{
 
     [SerializeField]
     Transform respawnLocatiom;
-    GameObject player;
+    [HideInInspector]
+    public GameObject player;
 
-    void Start()
+    public override void Failure(PlayerCommands playerCmd)
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player.transform.position = respawnLocatiom.position;
+        Fail();
     }
-
-
-    //public override void CompleteSuccess()
-    //{
-
-    //}
-
-    //public override void PartialSuccess()
-    //{
-
-    //}
-
-    //public override void Failure()
-    //{
-    //    player.transform.position = respawnLocatiom.position;
-    //    Fail();
-    //}
 }
