@@ -152,7 +152,7 @@ public class PlayerCommands : NetworkBehaviour
     [Command]
     public void CmdMazeLever0()
     {
-        map1.GetComponent<RevealMap>().RpcRevealMap();
+        map1.SetActive(true);
     }
     [Command]
     public void CmdMazeLever2()
