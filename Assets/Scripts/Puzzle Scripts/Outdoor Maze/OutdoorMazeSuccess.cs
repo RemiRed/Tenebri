@@ -11,6 +11,6 @@ public class OutdoorMazeSuccess : RoomVariables
     public override void Failure(PlayerCommands playerCmd)
     {
         playerCmd.gameObject.transform.position = respawnLocatiom.position;
-        Fail();
+        pairedRoom.GetComponent<RoomVariables>().Fail();
     }
 }
