@@ -11,7 +11,7 @@ public class RevealMap : NetworkBehaviour
 {
 
     //ClientRpc commandon är kod som kallas på Unity multiplayer servern och anropas på respektive gameobject.
-    [ClientRpc] //Stänger av mesh renderer.
+    [ClientRpc] //Sätter på objekt
     public void RpcRevealMap()
     {
         gameObject.SetActive(true);
