@@ -243,6 +243,6 @@ public class RoundRoomWalls : RoomVariables
         usedCorrectSymbolMaterialIndex.Clear();
         pairedRoom.GetComponent<RoundMazeMapRoom>().RpcResetMap();
         GetComponentInChildren<RoundRoomCenter>().activatePuzzle = true;
-        Fail();
+     pairedRoom.Fail();
     }
 }
