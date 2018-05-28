@@ -28,5 +28,6 @@ public class RevealMap : NetworkBehaviour
     public void RpcOpenDoor()
     {
         GameObject.FindGameObjectWithTag("OutdoorMaze").GetComponent<RoomVariables>().OpenDoorToNextLevel();
+        GameObject.FindGameObjectWithTag("OutdoorMaze2").GetComponent<RoomVariables>().OpenDoorToNextLevel();
     }
 }
