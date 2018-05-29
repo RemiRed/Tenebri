@@ -60,17 +60,23 @@ public class RoomVariables : NetworkBehaviour
             GameOver();
         }
     }
+
+    
+
 	//Triggers GameOver variables when the player looses the game 
     void GameOver()
     {
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
         {
-            player.GetComponent<CharacterScript>().gameOver = true;
-            player.GetComponent<CharacterScript>().menu = true;
-            player.GetComponent<CharacterScript>().gameOverMenu.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
+            GetComponentInChildren<Camera>().transform.gameObject.SetActive(false);
+            if (player.GetComponentInChildren<Camera>().transform.gameObject.activeSelf == true)
+            {
+                player.GetComponent<PlayerCommands>().CmdGameOver();
+            }
         }
     }
+    
+
 	//Opens path to next section when a puzzle has been solved
     public void OpenDoorToNextLevel()
     {
