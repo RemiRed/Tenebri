@@ -14,6 +14,5 @@ public class ExitPlane : MonoBehaviour
         {
             c.transform.position = clearRoomSpawn.transform.position;
         }
-    }
-    
+    }    
 }
