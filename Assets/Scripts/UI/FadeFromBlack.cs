@@ -26,6 +26,7 @@ public class FadeFromBlack : MonoBehaviour
             black.color = temp;
             yield return new WaitForSecondsRealtime(fadeSpeed);
         }
+        black.gameObject.SetActive(false);
         while (instructions.color.a > 0)
         {
             Color temp = instructions.color;
@@ -33,6 +34,7 @@ public class FadeFromBlack : MonoBehaviour
             instructions.color = temp;
             yield return new WaitForSecondsRealtime(fadeSpeed);
         }
+        instructions.gameObject.SetActive(false);
     }
 
 }
