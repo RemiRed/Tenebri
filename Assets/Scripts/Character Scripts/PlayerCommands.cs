@@ -173,13 +173,12 @@ public class PlayerCommands : NetworkBehaviour
     }
 
     [ClientRpc]
-    void RpcGameOver()
+    public void RpcGameOver()
     {
-        GetComponent<CharacterScript>().gameOver = true;
-        GetComponent<CharacterScript>().menu = true;
-        GetComponent<CharacterScript>().gameOverMenu.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            player.GetComponent<CharacterScript>().GameOver();
+        }
     }
 }
 

@@ -174,4 +174,13 @@ public class CharacterScript : NetworkBehaviour
             Cursor.visible = false;
         }
     }
+
+    public void GameOver()
+    {
+        gameOver = true;
+        menu = true;
+        gameOverMenu.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 }

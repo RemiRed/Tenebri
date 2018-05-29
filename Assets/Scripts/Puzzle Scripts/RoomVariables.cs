@@ -5,20 +5,20 @@ using UnityEngine.Networking;
 
 public class RoomVariables : NetworkBehaviour
 {
-	public GameObject entryDoor, exitDoor, pairedRoom;
-	[SerializeField]
-	protected RoomLoader roomLoader;
-	public RoomLoader.Room room = RoomLoader.Room.startRoom;
-	public PlayerCommands playercommand;
+    public GameObject entryDoor, exitDoor, pairedRoom;
+    [SerializeField]
+    protected RoomLoader roomLoader;
+    public RoomLoader.Room room = RoomLoader.Room.startRoom;
+    public PlayerCommands playercommand;
 
     [SerializeField]
-    float timerSeconds = 0, 
-			timerPenalty = 1;
+    float timerSeconds = 0,
+            timerPenalty = 1;
     //[HideInInspector]
     public float currentTime;
-	 
-	public int allowedFailures = 1; 
-	public bool startTimer = false;
+
+    public int allowedFailures = 1;
+    public bool startTimer = false;
     public bool roomPassed = false;
 
     private void Start()
@@ -29,9 +29,9 @@ public class RoomVariables : NetworkBehaviour
     //Called if the player fails in this room
     public bool Fail()
     {
-		if (allowedFailures != 0)
+        if (allowedFailures != 0)
         {
-			allowedFailures--;
+            allowedFailures--;
             return false;
         }
         else if (!startTimer)
@@ -45,7 +45,7 @@ public class RoomVariables : NetworkBehaviour
         }
         return true;
     }
-	//Handles the fail timer that results in GameOver() if it reaches 0
+    //Handles the fail timer that results in GameOver() if it reaches 0
     IEnumerator StartTimer()
     {
         currentTime = timerSeconds;
@@ -61,9 +61,9 @@ public class RoomVariables : NetworkBehaviour
         }
     }
 
-    
 
-	//Triggers GameOver variables when the player looses the game 
+
+    //Triggers GameOver variables when the player looses the game 
     void GameOver()
     {
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
@@ -71,19 +71,20 @@ public class RoomVariables : NetworkBehaviour
             if (player.GetComponent<PlayerCommands>().isLocalPlayer == true)
             {
                 player.GetComponent<PlayerCommands>().CmdGameOver();
+                player.GetComponent<CharacterScript>().GameOver();
             }
         }
     }
-    
 
-	//Opens path to next section when a puzzle has been solved
+
+    //Opens path to next section when a puzzle has been solved
     public void OpenDoorToNextLevel()
     {
         exitDoor.GetComponent<Animator>().SetBool("open", true);
         pairedRoom.GetComponent<RoomVariables>().exitDoor.GetComponent<Animator>().SetBool("open", true);
     }
-	//Virutal methods to be overriden by inheriting scripts
-	public virtual void CompleteSuccess(PlayerCommands playerCmd){}
-    public virtual void PartialSuccess(PlayerCommands playerCmd) {}	 
-	public virtual void Failure(PlayerCommands playerCmd) {}
+    //Virutal methods to be overriden by inheriting scripts
+    public virtual void CompleteSuccess(PlayerCommands playerCmd) { }
+    public virtual void PartialSuccess(PlayerCommands playerCmd) { }
+    public virtual void Failure(PlayerCommands playerCmd) { }
 }
