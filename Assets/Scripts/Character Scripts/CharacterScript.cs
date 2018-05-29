@@ -38,7 +38,7 @@ public class CharacterScript : NetworkBehaviour
     AudioSource footsteps;
     //Menu objects
     GameObject pauseMenu;
-    public GameObject gameOverMenu; //<-- Behöver detta vara public? 
+    public GameObject gameOverMenu; 
 
     public bool menu = false, gameOver = false; //Bools that determines if the player can act.
     bool moved = false;
@@ -56,7 +56,7 @@ public class CharacterScript : NetworkBehaviour
             footsteps = GetComponent<AudioSource>();
             //Sets the cursor
             Cursor.lockState = CursorLockMode.Locked;
-            //			Cursor.visible = false;						//<-- Remember to impelment this everywhere we need to fix with the cursor
+            Cursor.visible = false;						//<-- Remember to impelment this everywhere we need to fix with the cursor
             //Finds and sets 'pauseMenu' object
             pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
             pauseMenu.SetActive(false);
@@ -165,11 +165,13 @@ public class CharacterScript : NetworkBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             pauseMenu.SetActive(true);
+            Cursor.visible = true;
         }
         else
         {
             Cursor.lockState = CursorLockMode.Locked;
             pauseMenu.SetActive(false);
+            Cursor.visible = false;
         }
     }
 }
