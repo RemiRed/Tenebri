@@ -20,8 +20,8 @@ public class RevealMap : NetworkBehaviour
 		
     [ClientRpc]
     public void RpcWallRemover()
-    { 
-        gameObject.SetActive(false);
+    {
+        gameObject.transform.position += 50 * Vector3.down;
     }
 
     [ClientRpc]
