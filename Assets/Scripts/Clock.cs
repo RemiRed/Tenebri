@@ -20,6 +20,10 @@ public class Clock : MonoBehaviour
         room = GetComponentInParent<RoomVariables>();
     }
 
+    public void StopClock()
+    {
+        GetComponent<AudioSource>().Stop();
+    }
     private void Update()
     {
         //TESTING ONLY
@@ -49,7 +53,7 @@ public class Clock : MonoBehaviour
             }
             if (room.currentTime <= 0f)
             {
-                GetComponent<AudioSource>().Stop();
+                StopClock();
             }
         }
     }

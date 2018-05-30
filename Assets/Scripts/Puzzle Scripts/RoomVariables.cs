@@ -84,6 +84,22 @@ public class RoomVariables : NetworkBehaviour
     //Opens path to next section when a puzzle has been solved
     public void OpenDoorToNextLevel()
     {
+        Clock clock = new Clock();
+        bool tempCheck = false;
+        if (GetComponentInChildren<Clock>())
+        {
+            clock = GetComponentInChildren<Clock>();
+            tempCheck = true;
+        }
+        else if (pairedRoom.GetComponentInChildren<Clock>())
+        {
+            clock = pairedRoom.GetComponentInChildren<Clock>();
+            tempCheck = true;
+        }
+        if (tempCheck)
+        {
+            clock.StopClock();
+        }
         exitDoor.GetComponent<Animator>().SetBool("open", true);
         pairedRoom.GetComponent<RoomVariables>().exitDoor.GetComponent<Animator>().SetBool("open", true);
         exitDoor.GetComponent<AudioSource>().clip = openDoor;
