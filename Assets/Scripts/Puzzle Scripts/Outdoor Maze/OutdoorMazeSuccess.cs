@@ -1,16 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class OutdoorMazeSuccess : RoomVariables
 {
 
     [SerializeField]
-    Transform respawnLocatiom;
+    Transform respawnLocation;
 
+    GameObject player;
+
+    public void Respawn(GameObject player)
+    {
+        player.transform.position = respawnLocation.position;
+    }
     public override void Failure(PlayerCommands playerCmd)
     {
-        playerCmd.gameObject.transform.position = respawnLocatiom.position;
+        if (isServer)
+        {
+            RpcFailure();
+        }
+        else
+        {
+            Fail();
+            playerCmd.CmdOutdoorMazeFailure();
+        }
+    }
+    [ClientRpc]
+    public void RpcFailure()
+    {
         //Fail();
         pairedRoom.GetComponent<RoomVariables>().Fail();
     }

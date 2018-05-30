@@ -6,13 +6,12 @@ public class FallingDown : MonoBehaviour {
    
 	Animator anim;
     [SerializeField]
-    RoomVariables failure;
+    OutdoorMazeSuccess failure;
    
     //Hämtar rum variabeln failure.
     void Start()
     {
         anim = GetComponent<Animator>();
-		failure = GameObject.FindGameObjectWithTag ("OutdoorMaze").GetComponent<RoomVariables> ();
     }
 
 
@@ -27,6 +26,7 @@ public class FallingDown : MonoBehaviour {
             yield return new WaitForSeconds(0.8f);
             other.enabled = !other.enabled;
             yield return new WaitForSeconds(5f);
+            failure.Respawn(other.gameObject);
             failure.Failure(other.GetComponent<PlayerCommands>());
         }
     }
