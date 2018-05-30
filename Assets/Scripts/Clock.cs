@@ -8,9 +8,12 @@ public class Clock : MonoBehaviour
 
     [SerializeField]
     GameObject minuteHand, secondHand;
+    [SerializeField]
+    AudioClip clockTickStress;
 
     bool setHands = false;
-    int lastTick;
+    [SerializeField]
+    float stressTick = 60f;
 
     private void Start()
     {
@@ -22,7 +25,6 @@ public class Clock : MonoBehaviour
         //TESTING ONLY
         if (Input.GetKeyDown(KeyCode.AltGr))
         {
-            lastTick = (int)room.currentTime;
             room.Fail();
         }
 
@@ -35,12 +37,19 @@ public class Clock : MonoBehaviour
 
         if (room.startTimer)
         {
+            if (!GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().Play();
+            }
             minuteHand.transform.localRotation = Quaternion.Euler(new Vector3((360 - ((room.currentTime / 60) / 60) * 360), minuteHand.transform.localRotation.eulerAngles.y, minuteHand.transform.localRotation.eulerAngles.z));
             secondHand.transform.localEulerAngles = new Vector3(-6 * room.currentTime, 0, 0);
-            if ((int)room.currentTime < lastTick)
+            if (room.currentTime < stressTick)
             {
-                lastTick = (int)room.currentTime;
-                //tick sound here
+                GetComponent<AudioSource>().clip = clockTickStress;
+            }
+            if (room.currentTime <= 0f)
+            {
+                GetComponent<AudioSource>().Stop();
             }
         }
     }

@@ -10,6 +10,8 @@ public class CloseDoor : MonoBehaviour
 
     [SerializeField]
     int player;
+    [SerializeField]
+    AudioClip closeDoor;
 
     private void Start()
     {
@@ -29,5 +31,7 @@ public class CloseDoor : MonoBehaviour
     {
         room.entryDoor.GetComponent<Animator>().SetTrigger("isClosing");
         roomLoader.UnloadAllRoomsExcept(room.room, player);
+        room.entryDoor.GetComponent<AudioSource>().clip = closeDoor;
+        room.entryDoor.GetComponent<AudioSource>().Play();
     }
 }

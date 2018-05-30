@@ -12,6 +12,9 @@ public class RoomVariables : NetworkBehaviour
     public PlayerCommands playercommand;
 
     [SerializeField]
+    AudioClip openDoor;
+
+    [SerializeField]
     float timerSeconds = 0,
             timerPenalty = 1;
     //[HideInInspector]
@@ -29,6 +32,7 @@ public class RoomVariables : NetworkBehaviour
     //Called if the player fails in this room
     public bool Fail()
     {
+        GetComponent<AudioSource>().Play();
         if (allowedFailures != 0)
         {
             allowedFailures--;
@@ -82,6 +86,10 @@ public class RoomVariables : NetworkBehaviour
     {
         exitDoor.GetComponent<Animator>().SetBool("open", true);
         pairedRoom.GetComponent<RoomVariables>().exitDoor.GetComponent<Animator>().SetBool("open", true);
+        exitDoor.GetComponent<AudioSource>().clip = openDoor;
+        exitDoor.GetComponent<AudioSource>().Play();
+        pairedRoom.GetComponent<RoomVariables>().exitDoor.GetComponent<AudioSource>().clip = openDoor;
+        pairedRoom.GetComponent<RoomVariables>().exitDoor.GetComponent<AudioSource>().Play();
     }
     //Virutal methods to be overriden by inheriting scripts
     public virtual void CompleteSuccess(PlayerCommands playerCmd) { }
