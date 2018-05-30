@@ -22,6 +22,7 @@ public class RevealMap : NetworkBehaviour
     public void RpcWallRemover()
     {
         gameObject.transform.position += 50 * Vector3.down;
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
     }
 
     [ClientRpc]
