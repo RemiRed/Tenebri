@@ -5,6 +5,9 @@ using UnityEngine.Networking;
 
 public class RoomVariables : NetworkBehaviour
 {
+    //By Andreas Halldin
+    //Stores all variables for each room
+
     public GameObject entryDoor, exitDoor, pairedRoom;
     [SerializeField]
     protected RoomLoader roomLoader;
@@ -17,7 +20,7 @@ public class RoomVariables : NetworkBehaviour
     [SerializeField]
     float timerSeconds = 0,
             timerPenalty = 1;
-    //[HideInInspector]
+    [HideInInspector]
     public float currentTime;
 
     public int allowedFailures = 1;
@@ -64,10 +67,8 @@ public class RoomVariables : NetworkBehaviour
             GameOver();
         }
     }
-
-
-
-    //Triggers GameOver variables when the player looses the game 
+    
+    //Triggers GameOver variables when the player loses the game 
     void GameOver()
     {
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
