@@ -8,25 +8,30 @@ using UnityEngine.SceneManagement;
 
 public class NetworkingLobby : NetworkLobbyManager
 {
+    //By Andreas Halldin
+    //The manager for the network lobby
+
+    //Various UI elements to toggle active/not active
     [SerializeField]
     GameObject matchmakingGameObject, optionsGameObject, exitGameObject, scrollView, scrollViewContent, matchPanel, createMatchPanel, closeMatchButton, createMatchButton, playerCount;
-
     [SerializeField]
     InputField matchInputField;
     [SerializeField]
     GameObject matchUIPrefab;
     List<GameObject> matchUIList = new List<GameObject>();
 
+   //Update delay
     [SerializeField]
     int delay = 500;
     int currentDelay;
 
+    //Bools to check if the matchlist or the inMatch related variables should be updated or not
     bool matchListBool = false;
     bool inMatch = false;
 
     private void Update()
     {
-        if (matchListBool)
+        if (matchListBool) //Update the match list
         {
             currentDelay--;
             if (currentDelay <= 0)
@@ -35,13 +40,13 @@ public class NetworkingLobby : NetworkLobbyManager
                 MatchmakingListMatches();
             }
         }
-        if (inMatch)
+        if (inMatch) //Update the player count
         {
             PlayerCount();
         }
     }
 
-    public void MatchmakingStart()
+    public void MatchmakingStart() //Start matchmaking
     {
         print("@ MatchmakingStart");
         StartMatchMaker();
@@ -51,7 +56,7 @@ public class NetworkingLobby : NetworkLobbyManager
         exitGameObject.SetActive(false);
     }
 
-    void MatchmakingListMatches()
+    void MatchmakingListMatches() //List all matches
     {
         print("@ MatchmakingListMatches");
         scrollView.SetActive(true);
@@ -66,7 +71,7 @@ public class NetworkingLobby : NetworkLobbyManager
         matchMaker.ListMatches(0, 20, "", true, 0, 0, OnMatchList);
     }
 
-    public override void OnMatchList(bool success, string extendedInfo, List<MatchInfoSnapshot> matchList)
+    public override void OnMatchList(bool success, string extendedInfo, List<MatchInfoSnapshot> matchList) //Show the list
     {
         print("@ OnMatchList");
         base.OnMatchList(success, extendedInfo, matchList);
@@ -90,8 +95,8 @@ public class NetworkingLobby : NetworkLobbyManager
             }
         }
     }
-		
-    public void MatchmakingJoinMatch(MatchInfoSnapshot match)
+
+    public void MatchmakingJoinMatch(MatchInfoSnapshot match) //Join a match
     {
         print("@ MatchmakingJoinMatch");
         matchListBool = false;
@@ -102,7 +107,7 @@ public class NetworkingLobby : NetworkLobbyManager
         matchMaker.JoinMatch(match.networkId, "", "", "", 0, 0, OnMatchJoined);
     }
 
-    public override void OnMatchJoined(bool success, string extendedInfo, MatchInfo matchInfo)
+    public override void OnMatchJoined(bool success, string extendedInfo, MatchInfo matchInfo) //Information in debug about match joined
     {
         print("@ OnMatchJoined");
         base.OnMatchJoined(success, extendedInfo, matchInfo);
@@ -117,7 +122,7 @@ public class NetworkingLobby : NetworkLobbyManager
         }
     }
 
-    public void MatchmakingCreateMatch()
+    public void MatchmakingCreateMatch() //Create a match
     {
         string matchName = matchInputField.text;
         if (matchName != null && matchName != "")
@@ -132,11 +137,11 @@ public class NetworkingLobby : NetworkLobbyManager
         }
         else
         {
-            //TODO Feedback : ENTER NAME OF MATCH
+            //TODO Feedback : ENTER NAME OF MATCH, allow for enter to be pushed to enter match name
         }
     }
 
-    public override void OnMatchCreate(bool success, string extendedInfo, MatchInfo matchInfo)
+    public override void OnMatchCreate(bool success, string extendedInfo, MatchInfo matchInfo) //Match create info
     {
         print("@ OnMatchCreate");
         base.OnMatchCreate(success, extendedInfo, matchInfo);
@@ -153,7 +158,7 @@ public class NetworkingLobby : NetworkLobbyManager
         }
     }
 
-    public void MatchmakingDestroyMatch(MatchInfo matchInfo)
+    public void MatchmakingDestroyMatch(MatchInfo matchInfo) //Destroy match
     {
         print("@ MatchmakingCloseMatch");
         matchPanel.SetActive(false);
@@ -167,7 +172,7 @@ public class NetworkingLobby : NetworkLobbyManager
         StopHost();
     }
 
-    public void PlayerCount()
+    public void PlayerCount() //Update the player count 
     {
         if (playerCount == null)
         {

@@ -7,6 +7,9 @@ using UnityEngine.Networking.Match;
 
 public class NetworkingMatch : NetworkBehaviour
 {
+    //By Andreas Halldin
+    //UI Element representing a match
+
     public MatchInfoSnapshot matchInfoSnapshot = new MatchInfoSnapshot();
     public MatchInfo matchInfo = new MatchInfo();
     [SerializeField]
@@ -15,11 +18,11 @@ public class NetworkingMatch : NetworkBehaviour
     [SerializeField]
     bool matchList = true;
 
-    private void Start()
+    private void Start() //Set network Manager
     {
         networkManager = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkingLobby>();
     }
-    private void Update()
+    private void Update() //Show name of match
     {
         if (matchList)
         {
@@ -27,12 +30,12 @@ public class NetworkingMatch : NetworkBehaviour
         }
     }
 
-    public void JoinMatch()
+    public void JoinMatch() //Join a match
     {
         networkManager.MatchmakingJoinMatch(matchInfoSnapshot);
     }
 
-    public void DestroyMatch()
+    public void DestroyMatch() //Destroy a match
     {
         networkManager.MatchmakingDestroyMatch(matchInfo);
     }
