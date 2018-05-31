@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TESTING : MonoBehaviour
 {
+    //By Andreas Halldin
+
     //TESTING ONLY REMOVE THIS BEFORE RELEASE
     [SerializeField]
     RoomVariables colorSymbolsP1, colorSymbolsP2, roundMazeP1, roundMazeP2;
@@ -11,23 +13,24 @@ public class TESTING : MonoBehaviour
     List<Interractable> corridorLevers;
     [SerializeField]
     RoomLoader roomLoader;
-    // Update is called once per frame
+
     void Update()
     {
-        //Testing REMOVE THIS BEFORE RELEASE!!!!!!!!!!!!
+        //Testing REMOVE THIS BEFORE RELEASE
+
         if (Input.GetKeyDown(KeyCode.Alpha1)) //ColorSymbolsSolve
         {
             colorSymbolsP1.OpenDoorToNextLevel();
             colorSymbolsP2.OpenDoorToNextLevel();
-            roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 1);
-            roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 2);
+            roomLoader.LoadRoom(Room.roundMaze, 1);
+            roomLoader.LoadRoom(Room.roundMaze, 2);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2)) //RoundMazeSolve
         {
             roundMazeP1.OpenDoorToNextLevel();
             roundMazeP2.OpenDoorToNextLevel();
-            roomLoader.LoadRoom(RoomLoader.Room.outdoorMaze, 1);
-            roomLoader.LoadRoom(RoomLoader.Room.outdoorMaze, 2);
+            roomLoader.LoadRoom(Room.outdoorMaze, 1);
+            roomLoader.LoadRoom(Room.outdoorMaze, 2);
         }
         if (Input.GetKey(KeyCode.Tab)) //OpenCorridors
         {

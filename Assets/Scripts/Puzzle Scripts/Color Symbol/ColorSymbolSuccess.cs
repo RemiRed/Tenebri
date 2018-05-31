@@ -21,8 +21,8 @@ public class ColorSymbolSuccess : RoomVariables
             playerCmd.CmdColorSymbolCompleteSuccess();
             roomPassed = true;
             //OpenDoorToNextLevel();
-            //roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 1);
-            //roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 2);
+            //roomLoader.LoadRoom(Room.roundMaze, 1);
+            //roomLoader.LoadRoom(Room.roundMaze, 2);
         }
     }
     [ClientRpc]
@@ -30,8 +30,8 @@ public class ColorSymbolSuccess : RoomVariables
     {
         roomPassed = true;
         OpenDoorToNextLevel();
-        roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 1);
-        roomLoader.LoadRoom(RoomLoader.Room.roundMaze, 2);
+        roomLoader.LoadRoom(Room.roundMaze, 1);
+        roomLoader.LoadRoom(Room.roundMaze, 2);
     }
 
     //override method inherited from 'RoomVaribles'

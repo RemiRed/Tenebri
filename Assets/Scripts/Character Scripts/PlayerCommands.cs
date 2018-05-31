@@ -7,7 +7,7 @@ public class PlayerCommands : NetworkBehaviour
 {
     [SerializeField]
     RoomLoader roomLoader;
-    RoomLoader.Room currentRoom = RoomLoader.Room.colorSymbols;
+    Room currentRoom = Room.colorSymbols;
 
     [SerializeField]
     PasswordRandomizer colorSymbol;
@@ -32,11 +32,11 @@ public class PlayerCommands : NetworkBehaviour
     {
         if (roomLoader.clearedRoom)
         {
-            if (currentRoom == RoomLoader.Room.colorSymbols)
+            if (currentRoom == Room.colorSymbols)
             {
                 GameObject.FindGameObjectWithTag("ColorSymbol").GetComponent<PasswordRandomizer>().StartPuzzle();
             }
-            else if (currentRoom == RoomLoader.Room.roundMaze)
+            else if (currentRoom == Room.roundMaze)
             {
                 roomManager = GameObject.FindGameObjectWithTag("roomManager");
                 roundRoom = GameObject.FindGameObjectWithTag("roundRoom");
@@ -45,11 +45,11 @@ public class PlayerCommands : NetworkBehaviour
             roomLoader.RpcOpenDoorTo(currentRoom);
             switch (currentRoom)
             {
-                case RoomLoader.Room.colorSymbols:
-                    currentRoom = RoomLoader.Room.roundMaze;
+                case Room.colorSymbols:
+                    currentRoom = Room.roundMaze;
                     break;
-                case RoomLoader.Room.roundMaze:
-                    currentRoom = RoomLoader.Room.outdoorMaze;
+                case Room.roundMaze:
+                    currentRoom = Room.outdoorMaze;
                     break;
                 default:
                     break;
@@ -143,8 +143,8 @@ public class PlayerCommands : NetworkBehaviour
     void RpcUnloadBeginning()
     {
         RoomLoader roomLoader = GameObject.FindGameObjectWithTag("RoomLoader").GetComponent<RoomLoader>();
-        roomLoader.UnloadAllRoomsExcept(RoomLoader.Room.startRoom, 1);
-        roomLoader.UnloadAllRoomsExcept(RoomLoader.Room.startRoom, 2);
+        roomLoader.UnloadAllRoomsExcept(Room.startRoom, 1);
+        roomLoader.UnloadAllRoomsExcept(Room.startRoom, 2);
         roomLoader.UnloadAllCorridorsExcept(0, 1);
         roomLoader.UnloadAllCorridorsExcept(0, 2);
     }

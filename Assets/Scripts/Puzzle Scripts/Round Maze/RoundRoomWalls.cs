@@ -229,8 +229,8 @@ public class RoundRoomWalls : RoomVariables
         Debug.LogWarning("You passed this Puzzle");
         roomPassed = true;
         CloseWalls(true);
-        roomLoader.LoadRoom(RoomLoader.Room.outdoorMaze, 1);
-        roomLoader.LoadRoom(RoomLoader.Room.outdoorMaze, 2);
+        roomLoader.LoadRoom(Room.outdoorMaze, 1);
+        roomLoader.LoadRoom(Room.outdoorMaze, 2);
         OpenDoorToNextLevel();
     }
 

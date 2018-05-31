@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+public enum Room { startRoom, colorSymbols, roundMaze, outdoorMaze }; //Enum to easly and clearly define rooms
 public class RoomLoader : NetworkBehaviour
 {
-    public enum Room { startRoom, colorSymbols, roundMaze, outdoorMaze };
-    [SyncVar]
-    public bool clearedRoom;
+    //By Andreas Halldin
+    //Loads and Unloads rooms
 
-    public GameObject startRoomP1, startRoomP2, colorSymbolsP1, colorSymbolsP2, roundMazeP1, roundMazeP2, outdoorMazeP1, outdoorMazeP2;
+    [SyncVar]
+    public bool clearedRoom; //Check if a room has been cleared or not
+
+    public GameObject startRoomP1, startRoomP2, colorSymbolsP1, colorSymbolsP2, roundMazeP1, roundMazeP2, outdoorMazeP1, outdoorMazeP2; // The Different rooms to be loaded/unloaded
 
     [SerializeField]
-    List<GameObject> corridorsP1 = new List<GameObject>(), corridorsP2 = new List<GameObject>();
+    List<GameObject> corridorsP1 = new List<GameObject>(), corridorsP2 = new List<GameObject>(); //Lists of all corridors by player
+    
 
-    Room currentRoom = Room.startRoom;
-
-    public void LoadRoom(Room room, int player) //Loads the next room
+    public void LoadRoom(Room room, int player) //Loads a room for a player
     {
         if (player == 1)
         {
@@ -61,7 +63,7 @@ public class RoomLoader : NetworkBehaviour
         }
     }
 
-    public void UnloadAllRoomsExcept(Room room, int player)
+    public void UnloadAllRoomsExcept(Room room, int player) //Unloads all rooms except one room, for one player
     {
         if (player == 1)
         {
@@ -109,7 +111,7 @@ public class RoomLoader : NetworkBehaviour
         }
     }
 
-    public void LoadCorridor(int corridorID, int player)
+    public void LoadCorridor(int corridorID, int player) //Loads a certain Corrior for one player
     {
         if (player == 1)
         {
@@ -133,7 +135,7 @@ public class RoomLoader : NetworkBehaviour
         }
     }
 
-    public void UnloadAllCorridorsExcept(int corridorID, int player)
+    public void UnloadAllCorridorsExcept(int corridorID, int player) //Unloads all corridors except one for one player
     {
 
         if (player == 1)
@@ -159,7 +161,7 @@ public class RoomLoader : NetworkBehaviour
     }
 
     [ClientRpc]
-    public void RpcOpenDoorTo(Room room)
+    public void RpcOpenDoorTo(Room room) //Opens a door to a specific room for both players
     {
         switch (room)
         {

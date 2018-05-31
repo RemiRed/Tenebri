@@ -18,7 +18,7 @@ public class ButtonStartRoom : Interractable
         }
         activated = true;
         GetComponentInParent<RoomVariables>().OpenDoorToNextLevel();
-        roomLoader.LoadRoom(RoomLoader.Room.colorSymbols, 1);
-        roomLoader.LoadRoom(RoomLoader.Room.colorSymbols, 2);
+        roomLoader.LoadRoom(Room.colorSymbols, 1);
+        roomLoader.LoadRoom(Room.colorSymbols, 2);
     }
 }
