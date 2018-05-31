@@ -5,17 +5,18 @@ using UnityEngine.Networking;
 
 public class OutdoorMazeSuccess : RoomVariables
 {
+    //By Andreas Halldin
+    //Handles success and failure of OutdoorMaze
 
     [SerializeField]
-    Transform respawnLocation;
+    Transform respawnLocation; //Location where the player should respawn after failing
 
-    GameObject player;
-
-    public void Respawn(GameObject player)
+    public void Respawn(GameObject player) //Respawn the player
     {
         player.transform.position = respawnLocation.position;
     }
-    public override void Failure(PlayerCommands playerCmd)
+
+    public override void Failure(PlayerCommands playerCmd) //Trigger RpcFailure on all clients
     {
         if (isServer)
         {
@@ -28,9 +29,8 @@ public class OutdoorMazeSuccess : RoomVariables
         }
     }
     [ClientRpc]
-    public void RpcFailure()
+    public void RpcFailure() //The paired room triggers its fail (The one with the clock)
     {
-        //Fail();
         pairedRoom.GetComponent<RoomVariables>().Fail();
     }
 }
