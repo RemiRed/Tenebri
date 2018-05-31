@@ -175,7 +175,8 @@ public class CharacterScript : NetworkBehaviour
         }
     }
 
-    public void GameOver()
+    //Turn the Game Over screen on
+    public void GameOver() 
     {
         gameOver = true;
         menu = true;
