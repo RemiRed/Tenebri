@@ -19,7 +19,7 @@ public class Interractable : MonoBehaviour
 
     bool audioCheck = false; //Bool for checking if audio has been started
 
-    public void Interract() //Calls the interactable objects method that should be called when it's interracted with after a delay
+    public void Interract() //Calls the interactable objects method that should be called when it's interracted with after a delay, works like an Update, with a optional delay.
     {
         if (GetComponent<AudioSource>() && !audioCheck) //Plays the interactables sound, if any.
         {

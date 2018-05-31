@@ -5,27 +5,30 @@ using UnityEngine.Networking;
 
 public class UnloadRooms : NetworkBehaviour
 {
-    [SerializeField]
-    RoomLoader roomLoader;
+    //By Andreas Halldin
+    //Handles Unloading rooms when the players are both in their rooms
 
     [SerializeField]
-    UnloadRooms otherUnloadRooms;
+    RoomLoader roomLoader; //The Room Loader
+
+    [SerializeField]
+    UnloadRooms otherUnloadRooms; //The other Unload rooms, attached to the other spawn point
 
     [SyncVar]
-    public bool entered;
+    public bool entered; //a bool to see if a player has entered this objects trigger
 
     [SerializeField]
-    int id;
+    int id; //Id of the spawn, used to determine what player this room is
 
 
     [SerializeField]
-    FadeFromBlack fadeFromBlack;
+    FadeFromBlack fadeFromBlack; //The fade from black script, used to fade the instructions at the start of the game
 
-    PlayerCommands playerCmd;
+    PlayerCommands playerCmd; //the Player Commands of the player landed here
 
-    bool unloaded = false;
+    bool unloaded = false; //bool to check if everything has been unloaded or not
 
-    private void OnTriggerEnter(Collider c)
+    private void OnTriggerEnter(Collider c) //Transports the server to the other spawn point, both players started in the same room prior
     {
         if (c.tag == "Player")
         {
@@ -43,11 +46,11 @@ public class UnloadRooms : NetworkBehaviour
                 }
             }
             playerCmd.CmdStartRoomLanded(id, true);
-            StartCoroutine(fadeFromBlack.Fade());
+            StartCoroutine(fadeFromBlack.Fade()); //Start the fade
         }
     }
 
-    private void OnTriggerStay(Collider c)
+    private void OnTriggerStay(Collider c) //While both players are in their rooms, unload the other rooms
     {
         if (unloaded)
         {
@@ -63,7 +66,7 @@ public class UnloadRooms : NetworkBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider c)
+    private void OnTriggerExit(Collider c) //Prevents one player from triggering both rooms as entered
     {
         if (unloaded)
         {

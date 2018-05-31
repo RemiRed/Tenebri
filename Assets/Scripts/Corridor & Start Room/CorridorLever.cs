@@ -5,55 +5,36 @@ using UnityEngine.Networking;
 
 public class CorridorLever : Interractable
 {
+    //By Andreas Halldin & Andrés Ramirez
+    //Handles pulling the lever in the corridors
 
-    public GameObject exitDoor;
-    public GameObject entryDoor;
-    Animator anim;
+    Animator anim; //The Animator of the lever
 
-    [SerializeField]
-    float doorDelay;
+    bool pulled = false; //Bool for checking if the lever has been pulled
 
-    [SerializeField]
-    float leverDelay;
-
-    bool a_isPulling;
-    bool pulled = false;
-
-    void Start()
+    void Start() //Get the animator
     {
         anim = GetComponent<Animator>();
-
     }
 
-    void Pull()
-    { 
+    void Pull() //The lever is pulled
+    {
         if (!pulled)
         {
             pulled = true;
-            a_isPulling = true;
-            if (a_isPulling = true)
-            {
-                anim.SetBool("isPull", true);
-            }
+            anim.SetBool("isPull", true); //Trigger the animation for pulling the lever
             anim.Play("newPull");
             playerCmd.CmdCorridorLever();
-            
         }
     }
 
-    void Release()
+    void Release() //Lever is released
     {
         if (pulled)
         {
-            if (pulled != false)
-            {
-
-            
-
-        playerCmd.CmdCorridorLeverRelease();
-        anim.SetBool("isPull", false);
-        pulled = false;
-                }
+            playerCmd.CmdCorridorLeverRelease(); 
+            anim.SetBool("isPull", false); //Trigger animation for releasing the lever
+            pulled = false;
         }
     }
 
