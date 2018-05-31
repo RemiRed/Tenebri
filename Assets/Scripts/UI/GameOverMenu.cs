@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameOverMenu : MonoBehaviour {
+public class GameOverMenu : MonoBehaviour
+{
+
+    //By Andreas Halldin
+    //Handles the Game over menu
 
     NetworkingLobby networkingLobby;
-    private void Start()
+    private void Start() //Find the network Manager
     {
-      //  networkingLobby = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkingLobby>();
+        networkingLobby = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkingLobby>();
     }
 
-    public void Menu()
+    public void Menu() //Back to menu
     {
         networkingLobby.StopMatchMaker();
         GameObject newGO = new GameObject();
