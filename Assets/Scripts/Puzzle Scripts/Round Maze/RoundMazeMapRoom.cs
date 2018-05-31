@@ -18,18 +18,7 @@ public class RoundMazeMapRoom : RoomVariables
 
     public void MapButtons()
     {
-        /*for (int i = 0; i < mapButtons.Count; i++) {
-
-			if (pairedRoom.GetComponent<RoundRoomWalls> ().theseButtonsIndex.Contains (i)) {
-
-				mapButtons[i].SetActive (true);
-				mapButtons[i].GetComponent<Renderer> ().material.SetColor (Shader.PropertyToID ("_SpecColor"), Color.red);
-
-			} else {
-				
-				mapButtons[i].SetActive (false);
-			}
-		}*/
+       
         List<GameObject> moreButtons = new List<GameObject>();
         int index = 0;
         foreach (int button in pairedRoom.GetComponent<RoundRoomWalls>().theseButtonsIndex)
